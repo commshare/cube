@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="GB2312" ?>
+<root>
+    <m_ProductShortChinese>
+        <item productName="cu" alias="铜">
+            <test productName="">
+                <alias>10000</alias>
+            </test>
+        </item>
+        <item productName="al" alias="铝">
+            <test productName="">
+                <alias>10000</alias>
+            </test>
+        </item>
+    </m_ProductShortChinese>
+    <m_ProductNameAlias />
+    <m_test_name productName="SR">
+        <alias>100</alias>
+    </m_test_name>
+    <m_only_str></m_only_str>
+</root>
