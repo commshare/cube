@@ -12,7 +12,7 @@ linux centos7
 mysql、oracle、redis
 
 #第三方开源库封装：
-pugixml、jsoncpp、zip、log4cplus、activemq、asio、protobuf
+pugixml、jsoncpp、zip、log4cplus、asio、protobuf
 
 #实现两个常用服务器开发框架
 
