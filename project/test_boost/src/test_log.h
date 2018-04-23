@@ -15,7 +15,7 @@ eric     2016.1.13   1.0     Create
 #include <chrono>
 #include <thread>
 #include "test_common.h"
-#include "log/Log.h"
+#include "liblog/log.h"
 class test_log
 {
 public:
@@ -27,10 +27,10 @@ public:
         // 文件日志
         // 服务运行测试阶段：使用实时同步的日志策略，以便于跟踪问题。(当前)
         // 服务正常运行阶段：使用非实时异步的日志策略，以提高性能。
-        light::Logger::Instance().InitLevelLog("test_log");
-        //light::Logger::Instance().InitPersistLog(true, true);
-        light::Logger::Instance().InitConsoleLog(info);
-        light::Logger::Instance().Filter(error);
+        //light::Logger::Instance().InitLevelLog();
+        light::Logger::Instance().InitPersistLog(false, true);
+        light::Logger::Instance().InitConsoleLog();
+        light::Logger::Instance().Filter(info);
 
         auto begin_clock = chrono::system_clock::now();
         for (int i = 0; i < 100; i++) {

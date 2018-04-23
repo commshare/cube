@@ -16,9 +16,6 @@
     <Filter Include="src">
       <UniqueIdentifier>{b7f6ead0-803e-4f97-ae0f-6533843bdd55}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\log">
-      <UniqueIdentifier>{1460c281-6b59-49e5-b27f-3f99c2442093}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\test_common.h">
@@ -36,12 +33,6 @@
     <ClInclude Include="src\test_base.h">
       <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="src\log\log.h">
-      <Filter>src\log</Filter>
-    </ClInclude>
-    <ClInclude Include="src\log\logger.h">
-      <Filter>src\log</Filter>
-    </ClInclude>
     <ClInclude Include="src\timer_manager.h">
       <Filter>src</Filter>
     </ClInclude>
@@ -52,9 +43,6 @@
   <ItemGroup>
     <ClCompile Include="src\main.cpp">
       <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="src\log\logger.cpp">
-      <Filter>src\log</Filter>
     </ClCompile>
     <ClCompile Include="src\timer_manager.cpp">
       <Filter>src</Filter>
