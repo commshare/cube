@@ -76,7 +76,7 @@ void light::Session::pushtrans(transaction_ptr trans)
 		}
 		else
 		{
-			if ((buffer_write_.writableBytes() < trans->get_head_ptr()->body_length_ + Trans_Head_Length_))
+			if ((buffer_write_.writableBytes() < (size_t)trans->trasaction_length()))
 			{
 				cache_write_.push_back(trans);
 			}
@@ -133,10 +133,10 @@ void light::Session::handle_read( boost::system::error_code ec, std::size_t leng
 		while (buffer_read_.readableBytes() >= light::transaction::get_additionallength())
 		{
 			light::transaction_head* head_ptr = (light::transaction_head*)buffer_read_.peek();
-			if(buffer_read_.readableBytes() < head_ptr->body_length_ + light::Trans_Head_Length_)
+			if(buffer_read_.readableBytes() < head_ptr->body_length_ + light::transaction::get_additionallength())
 			{
 				//only head read complete
-				buffer_read_.ensureWritableBytes(head_ptr->body_length_ + Trans_Head_Length_ - buffer_read_.readableBytes());
+				buffer_read_.ensureWritableBytes(head_ptr->body_length_ + light::transaction::get_additionallength() - buffer_read_.readableBytes());
 				break;
 			}else
 			{
@@ -163,8 +163,8 @@ void light::Session::handle_read( boost::system::error_code ec, std::size_t leng
 		{
 			buffer_read_.retrieveAll();
 		}
-		if (buffer_read_.readableBytes() < Trans_Head_Length_)
-			buffer_read_.ensureWritableBytes(Trans_Head_Length_ - buffer_read_.readableBytes());
+		if (buffer_read_.readableBytes() < light::transaction::get_additionallength())
+			buffer_read_.ensureWritableBytes(light::transaction::get_additionallength() - buffer_read_.readableBytes());
 		do_read();
 	}else
 	{
