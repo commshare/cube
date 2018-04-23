@@ -1,0 +1,179 @@
+syntax = "proto3";
+
+package risk;
+
+message trade_gateway_trade_field
+{
+    int32   Id = 1;
+    int32   UniqSequenceNo = 2;
+    string  BrokerID = 3;
+    string  InvestorID = 4;
+    string  InstrumentID = 5;
+    string  OrderRef = 6;
+    string  ExchangeID = 7;
+    string  TradeID = 8;
+    int32   Direction = 9;
+    string  OrderSysID = 10;
+    int32   OffsetFlag = 11;
+    int32   HedgeFlag = 12;
+    double  Price = 13;
+    int32   Volume = 14;
+    string  TradeDate = 15;
+    string  TradeTime = 16;
+    string  TradeType = 17;
+    string  OrderLocalID = 18;
+    int32   SequenceNo = 19;
+    string  TradingDay = 20;
+    int32   BrokerOrderSeq = 21;
+}
+
+message trade_gateway_order_field
+{
+    int32   Id = 1;
+    int32   UniqSequenceNo = 2;
+    string  BrokerID = 3;
+    string  InvestorID = 4;
+    string  InstrumentID = 5;
+    string  OrderRef = 6;
+    string  OrderPriceType = 7;
+    int32   Direction = 8;
+    int32   CombOffsetFlag = 9;
+    int32   CombHedgeFlag = 10;
+    double  LimitPrice = 11;
+    int32   VolumeTotalOriginal = 12;
+    string  TimeCondition = 13;
+    string  GTDDate = 14;
+    string  VolumeCondition = 15;
+    int32   MinVolume = 16;
+    string  ContingentCondition = 17;
+    double  StopPrice = 18;
+    string  ForceCloseReason = 19;
+    int32   RequestID = 20;
+    string  OrderLocalID = 21;
+    string  ExchangeID = 22;
+    string  OrderSubmitStatus = 23;
+    string  TradingDay = 24;
+    string  OrderSysID = 25;
+    string  OrderSource = 26;
+    string  OrderStatus = 27;
+    string  OrderType = 28;
+    int32   VolumeTraded = 29;
+    int32   VolumeTotal = 30;
+    string  InsertDate = 31;
+    string  InsertTime = 32;
+    string  ActiveTime = 33;
+    string  SuspendTime = 34;
+    string  UpdateTime = 35;
+    string  CancelTime = 36;
+    int32   SequenceNo = 37;
+    int32   FrontID = 38;
+    int32   SessionID = 39;
+    string  UserProductInfo = 40;
+    bytes   StatusMsg = 41;
+    int32   UserForceClose = 42;
+    int32   BrokerOrderSeq = 43;
+    int32   ZCETotalTradedVolume = 44;
+    int32   IsSwapOrder = 45;
+    bytes   BranchID = 46;
+    string  CurrencyID = 47;
+    bytes   IPAddress = 48;
+    bytes   MacAddress = 49;
+}
+
+message trade_gateway_sync_account_field
+{
+    string  BrokerID = 1;
+    string  InvestorID = 2;
+    double  Withdraw = 3;
+    double  CurrMargin = 4;
+    double  Commission = 5;
+    double  CloseProfit = 6;
+    double  PositionProfit = 7;
+    double  Balance = 8;
+    double  Available = 9;
+    double  Mortgage = 10;
+    double  ExchangeMargin = 11;
+    double  WithdrawQuota = 12;
+    double  FrozenMargin = 13;
+    double  FrozenCommission = 14;
+    string  CurrencyID = 15;
+    double  FrozenMarginOnMortgage = 16;
+    double  MarginOnMortgage = 17;
+    double  ExchMarginOnMortgage = 18;
+    double  FrozenCommissionOnMortgage = 19;
+    double  PositionProfitOnMortgage = 20;
+    double  CommissionOnMortgage = 21;
+    double  CloseProfitOnMortgage = 22;
+    double  OptionCloseProfit = 23;
+    double  OptionValue = 24;
+    double  FrozenCash = 25;
+    double  CashIn = 26;
+    double  Credit = 27;
+}
+
+message trade_gateway_position_field
+{
+    int32   UniqSequenceNo = 1;
+    string  InstrumentID = 2;
+    string  BrokerID = 3;
+    string  InvestorID = 4;
+    int32   PosiDirection = 5;
+    int32   HedgeFlag = 6;
+    string  PositionDate = 7;
+    int32   YdPosition = 8;
+    int32   Position = 9;
+    int32   LongFrozen = 10;
+    int32   ShortFrozen = 11;
+    double  LongFrozenAmount = 12;
+    double  ShortFrozenAmount = 13;
+    int32   OpenVolume = 14;
+    int32   CloseVolume = 15;
+    double  OpenAmount = 16;
+    double  CloseAmount = 17;
+    double  PositionCost = 18;
+    double  PreMargin = 19;
+    double  UseMargin = 20;
+    double  FrozenMargin = 21;
+    double  FrozenCash = 22;
+    double  FrozenCommission = 23;
+    double  CashIn = 24;
+    double  Commission = 25;
+    double  CloseProfit = 26;
+    double  PositionProfit = 27;
+    double  PreSettlementPrice = 28;
+    double  SettlementPrice = 29;
+    string  TradingDay = 30;
+    int32   SettlementID = 31;
+    double  OpenCost = 32;
+    double  ExchangeMargin = 33;
+    int32   CombPosition = 34;
+    int32   CombLongFrozen = 35;
+    int32   CombShortFrozen = 36;
+    double  CloseProfitByDate = 37;
+    double  CloseProfitByTrade = 38;
+    int32   TodayPosition = 39;
+    double  MarginRateByMoney = 40;
+    double  MarginRateByVolume = 41;
+    int32   StrikeFrozen = 42;
+    double  StrikeFrozenAmount = 43;
+    int32   AbandonFrozen = 44;
+    double  OptionValue = 45;
+}
+
+message investorID_list
+{
+    string RiskUser = 1;
+    repeated string InvestorIDList = 2;
+    bool IsLast = 3;
+}
+
+message req_trade_login
+{
+    string  riskerid=1;
+    string  password=2;
+}
+
+message rsp_trade_login
+{
+    int32  max_id = 1;
+}

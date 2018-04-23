@@ -1,0 +1,195 @@
+syntax = "proto3";
+
+//namespace
+package manager;
+
+message error_info
+{
+    sint32 errorid=1;
+    string errormsg=2;
+}
+
+message rsp_action_info
+{
+    int32 requestid=1;
+    error_info info=2;
+}
+
+message rsp_head_info
+{
+    int32 requestid=1;
+    error_info info=2;
+    bool islast=3;
+}
+
+message sys_auth
+{
+    int32 authid = 1;
+    string name = 2;
+}
+
+message role_auth
+{
+	int32 roleid = 1;
+	repeated sys_auth auth = 2;
+}
+
+message req_login
+{
+    int32 requestid=1;
+    int32 userid = 2;
+    string pwd = 3;
+}
+
+message rsp_login
+{
+    rsp_head_info header=1;
+    repeated role_auth auth = 2;
+}
+
+message req_sys_subs
+{
+    int32 requestid=1;
+    int32 userid = 2;
+}
+
+message sys_user
+{
+    int32 id = 1;
+    int32 userid = 2;
+    string username = 3;
+    int32 father = 4;
+    int32 roleid = 5;
+    string pwd = 6;
+    string desc = 7;
+    repeated sys_auth auths = 8;
+}
+
+message rsp_sys_subs
+{
+    rsp_head_info header=1;
+    repeated sys_user info = 2;
+}
+
+message req_add_sys_user
+{
+    int32 requestid=1;
+    sys_user user = 2;
+}
+
+message req_del_sys_user
+{
+    int32 requestid=1;
+    int32 userid = 2;
+}
+
+message req_edit_sys_user
+{
+    int32 requestid=1;
+    sys_user user = 2;
+}
+
+message sys_investor
+{
+    string investor = 1;
+    string name = 2;
+    int32 state = 3;
+}
+
+message req_risk_investors
+{
+    int32 requestid=1;
+    int32 userid = 2; //riskid
+}
+
+message rsp_risk_investors
+{
+    rsp_head_info header=1;
+    int32 userid = 2;
+    repeated sys_investor investors = 3;
+}
+
+message req_investors
+{
+    int32 requestid=1;
+    int32 state = 2;
+}
+
+message rsp_investors
+{
+    rsp_head_info header=1;
+    repeated sys_investor investors = 2;
+}
+
+message req_add_investors
+{
+    int32 requestid=1;
+    int32 userid = 2; //riskid
+    repeated string investor = 3;
+}
+
+message req_del_investors
+{
+    int32 requestid=1;
+    int32 userid = 2; //riskid
+    repeated string investor = 3;
+}
+
+message rtn_change_tree
+{
+    //operatorid comment
+    //1:add user 2:del user 3:edit user
+    int32 operatorid = 1; 
+    sys_user info = 2;
+}
+
+message rtn_change_risker_investor
+{
+    //operatorid comment
+    //1:insert risker investor 2:remove risker investor
+    int32 operatorid = 1; 
+    int32 userid = 2;
+    repeated string investor = 3;
+}
+
+message rtn_change_investor
+{
+    //operatorid comment
+    //1:insert investor 2:remove investor
+    int32 operatorid = 1; 
+    repeated string investor = 2;
+}
+
+message insmrgnrate_info
+{
+    string tradingday=1;
+    string contractcode=2;
+    string exchangecode=3;
+    string direction=4;
+    string hedgeflag=5;
+    double marginrate=6;
+    double segmrgn=7;
+}
+
+message req_insmrgnrate
+{
+    int32 requestid=1;
+}
+
+message rsp_insmrgnrate
+{
+    rsp_head_info header=1;
+    repeated insmrgnrate_info infos = 2;
+}
+
+message req_edit_insmrgnrate
+{
+    int32 requestid=1;
+    repeated insmrgnrate_info infos = 2;
+}
+
+message rtn_change_insmrgnrate
+{
+    repeated insmrgnrate_info infos = 1;
+}
+

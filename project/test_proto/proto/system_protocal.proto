@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+//namespace
+package esunnysystem;
+
+// 状态推送对象
+message rtn_status
+{
+	// 系统ID（唯一），全局定义，用来区分各个系统
+    sint32          systemid=1;
+	// 系统子ID，区分系统多套部署
+	sint32          systemsubid=2;
+	// 系统名称，自定义
+	string          systemname=3;
+    // 状态ID，0：代表正常状态; 负数：代表各种异常状态; 正数：代表系统正常运行中各种不同状态，如：正在初始化，已经完成初始化;
+    sint32          id=4;
+	// 状态内容：自定义
+    string          content=5;
+	//夲机ip
+	string localIP=6;
+}
+

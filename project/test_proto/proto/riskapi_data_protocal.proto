@@ -1,0 +1,226 @@
+syntax = "proto3";
+
+import "trade_protocal.proto";
+import "quote_protocal.proto";
+import "riskapi_action_protocal.proto";
+
+//namespace
+package risk;
+
+message error_info
+{
+    sint32          errorid=1;
+    string          errormsg=2;
+}
+
+message rsp_head_info
+{
+    int32           requestid=1;
+    error_info      info=2;
+    bool            islast=3;
+}
+
+message rsp_risker_login
+{
+    int32           requestid=1;
+    error_info      info=2;
+}
+
+message rsp_investor_list
+{
+    rsp_head_info   header=1;
+    string          investorid=2;
+}
+
+message instrument_info
+{
+    string          instrumentid=1;
+    string          exchangeid=2;
+    string          instrumentname=3;
+    string          exchangeinstid=4;
+    string          productid=5;
+    string          productclass=6;
+    int32           deliveryyear=7;
+    int32           deliverymonth=8;
+    int32           maxmarketordervolume=9;
+    int32           minmarketordervolume=10;
+    int32           maxlimitordervolume=11;
+    int32           minlimitordervolume=12;
+    int32           volumemultiple=13;
+    double          pricetick=14;
+    string          createdate=15;
+    string          opendate=16;
+    string          expiredate=17;
+    string          startdelivdate=18;
+    string          enddelivdate=19;
+    string          instlifephase=20;
+    int32           istrading=21;
+    string          positiontype=22;
+    string          positiondatetype=23;
+    double          longmarginratio=24;
+    double          shortmarginratio=25;
+    string          maxmarginsidealgorithm=26;
+    string          underlyinginstrid=27;
+    double          strikeprice=28;
+    string          optionstype=29;
+    double          underlyingmultiple=30;
+    string          combinationtype=31;
+    string          productgroupid=32;
+}
+
+message rsp_instrument_field
+{
+    rsp_head_info   header=1;
+    instrument_info field=2;
+}
+
+message rtn_quote_field
+{
+    quote_gateway_market_field field=1;
+}
+
+message rsp_position_field
+{
+    rsp_head_info header=1;
+    trade_gateway_position_field field=2;
+    double trypositionprofit=3;
+}
+
+message rtn_position_field
+{
+    trade_gateway_position_field field=1;
+    double trypositionprofit=2;
+}
+
+message rsp_trade_field
+{
+    rsp_head_info             header=1;
+    trade_gateway_trade_field field=2;
+}
+
+message rsp_order_field
+{
+    rsp_head_info             header=1;
+    trade_gateway_order_field field=2;
+}
+
+message rtn_trade_field
+{
+    trade_gateway_trade_field field=1;
+}
+
+message rtn_order_field
+{
+    trade_gateway_order_field field=1;
+}
+
+message rsp_sync_account_field
+{
+    rsp_head_info                    header=1;
+    trade_gateway_sync_account_field field=2;
+}
+
+message rtn_sync_account_field
+{
+    trade_gateway_sync_account_field field=1;
+}
+
+message shfe_margin_field
+{
+    double           pre_favorable=1;
+    double           big_side_favorable=2;
+}
+
+message cffex_margin_field
+{
+    double           pre_favorable=1;
+    double           speculation_favorable=2;
+    double           hedging_favorable=3;
+    double           arbitrage_favorable=4;
+    double           market_favorable=5;
+}
+
+message dce_margin_field
+{
+    double           pre_favorable=1;
+    double           sp_favorable=2;
+    double           spc_favorable=3;
+    double           locked_favorable=4;
+}
+
+message czce_margin_field
+{
+    double           pre_favorable=1;
+    double           spd_favorable=2;
+    double           ips_favorable=3;
+    double           prt_favorable=4;
+    double           std_favorable=5;
+    double           stg_favorable=6;
+    double           zprt_favorable=7;
+    double           locked_favorable=8;
+}
+
+message ine_margin_field
+{
+    double           pre_favorable=1;
+    double           big_side_favorable=2;
+}
+
+message delivery_margin_field
+{
+    double shfe_margin=1;
+    double cffex_margin=2;
+    double dce_margin=3;
+    double czce_margin=4;
+    double ine_margin=5;
+}
+
+message rtn_margin_field
+{
+    uint32 timestamp=1;
+    string investor=2;
+    shfe_margin_field shfe_margin=3;
+    cffex_margin_field cffex_margin=4;
+    dce_margin_field dce_margin=5;
+    czce_margin_field czce_margin=6;
+    ine_margin_field ine_margin=7;
+    delivery_margin_field delivery_margin=8;
+}
+
+message rsp_margin_field
+{
+    rsp_head_info       header=1;
+    rtn_margin_field    field=2;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+message rsp_risker_investor
+{
+    rsp_head_info header=1;
+    int32 riskgroupid = 2;
+    string investorid = 3;
+}
+
+message rsp_groups
+{
+    rsp_head_info header=1;
+    repeated sys_group infos = 2;
+}
+
+message rsp_action_info
+{
+    int32 requestid=1;
+    error_info info=2;
+}
+
+message rtn_change_risker
+{
+    //operatorid comment
+    //1:insert group 2:remove group 
+    //3:insert group investor 4:remove group investor 
+    //5:insert risker investor 6:remove risker investor
+    int32 operatorid = 1; 
+    int32 userid = 2; //riskid
+    int32 riskgroupid = 3;
+    repeated string investor = 4;
+}

@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+import "trade_protocal.proto";
+import "quote_protocal.proto";
+
+//namespace
+package risk;
+
+message quote_snapshot_field
+{
+    quote_gateway_market_field field=1;
+    uint32 timestamp=2;
+}
+
+message position_snapshot_field
+{
+    trade_gateway_position_field field=1;
+    uint32 timestamp=2;
+    string exchangeid = 3;
+}
+
+message insmrgnrate_snapshot_field
+{
+    string tradingday=1;
+    string contractcode=2;
+    string hedgeflag=3;
+    string direction=4;
+    double marginrate=5;
+    double segmrgn=6;
+    uint32 timestamp=7;
+}

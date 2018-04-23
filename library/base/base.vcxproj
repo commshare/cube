@@ -103,10 +103,15 @@
     </Link>
     <PostBuildEvent>
       <Command>IF NOT EXIST $(SolutionDir)lib\$(Configuration) md $(SolutionDir)lib\$(Configuration)
+
 IF NOT EXIST $(SolutionDir)bin\$(Configuration) md $(SolutionDir)bin\$(Configuration)
+
 IF NOT EXIST $(SolutionDir)include\$(TargetName) md $(SolutionDir)include\$(TargetName)
+
 copy $(OutDir)$(TargetName).lib $(SolutionDir)lib\$(Configuration)
+
 copy $(OutDir)$(TargetName).dll $(SolutionDir)bin\$(Configuration)
+
 copy $(ProjectDir)src\*.h*  $(SolutionDir)include\$(TargetName)</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>

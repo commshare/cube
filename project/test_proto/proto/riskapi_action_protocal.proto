@@ -1,0 +1,166 @@
+syntax = "proto3";
+
+//namespace
+package risk;
+
+message req_risker_login
+{
+    int32           requestid=1;
+    int32           riskerid=2;
+    string          password=3;
+}
+
+message req_investor_list
+{
+    int32           requestid=1;
+    int32           riskerid=2;
+}
+
+message req_instrument_list
+{
+    int32           requestid=1;
+}
+
+message subscribe_quote
+{
+    repeated string instrument=1;
+}
+
+message unsubscribe_quote
+{
+    repeated string instrument=1;
+}
+
+message req_position
+{
+    int32           requestid=1;
+    repeated string investor=2;
+}
+
+message subscribe_position
+{
+    repeated string investor=1;
+}
+
+message unsubscribe_position
+{
+    repeated string investor=1;
+}
+
+message req_trade
+{
+    int32           requestid=1;
+    repeated string investor=2;
+}
+
+message req_order
+{
+    int32           requestid=1;
+    repeated string investor=2;
+}
+
+message private_topic_info
+{
+    string investor=1;
+    int32 id=2;
+}
+
+message subscribe_private_topic
+{
+    repeated private_topic_info field=1;
+}
+
+message unsubscribe_private_topic
+{
+    repeated string investor=1;
+}
+
+message req_sync_account
+{
+    int32           requestid=1;
+    repeated string investor=2;
+}
+
+message subscribe_sync_account
+{
+    repeated string investor=1;
+}
+
+message unsubscribe_sync_account
+{
+    repeated string investor=1;
+}
+
+message req_margin
+{
+    int32           requestid=1;
+    repeated string investor=2;
+}
+
+message subscribe_margin
+{
+    repeated string investor=1;
+}
+
+message unsubscribe_margin
+{
+    repeated string investor=1;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+message req_risker_investor
+{
+    int32 requestid=1;
+    int32 userid = 2; //riskid
+}
+
+message sys_group
+{
+    int32 riskgroupid = 1;
+    string name = 2;
+    string desc = 3;
+}
+
+message req_groups
+{
+    int32 requestid=1;
+    int32 userid = 2; //riskid
+}
+
+message req_add_group
+{
+    int32 requestid=1;
+    int32 userid = 2; //riskid
+    sys_group group = 3;
+}
+
+message req_del_group
+{
+    int32 requestid=1;
+    int32 userid = 2; //riskid
+    int32 riskgroupid = 3;
+}
+
+message req_edit_group
+{
+    int32 requestid=1;
+    int32 userid = 2; //riskid
+    sys_group group = 3;
+}
+
+message req_insert_investors_to_group
+{
+    int32 requestid=1;
+    int32 userid = 2; //riskid
+    int32 riskgroupid = 3;
+    repeated string investor = 4;
+}
+
+message req_remove_investors_from_group
+{
+    int32 requestid=1;
+    int32 userid = 2; //riskid
+    int32 riskgroupid = 3;
+    repeated string investor = 4;
+}
+

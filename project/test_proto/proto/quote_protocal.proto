@@ -1,0 +1,58 @@
+syntax = "proto3";
+
+package risk;
+
+message quote_gateway_market_field
+{
+    string  TradingDay = 1;
+    string  InstrumentID = 2;
+    string  ExchangeID = 3;
+    string  ExchangeInstID = 4;
+    double  LastPrice = 5;
+    double  PreSettlementPrice = 6;
+    double  PreClosePrice = 7;
+    double  PreOpenInterest = 8;
+    double  OpenPrice = 9;
+    double  HighestPrice = 10;
+    double  LowestPrice = 11;
+    int32   Volume = 12;
+    double  Turnover = 13;
+    double  OpenInterest = 14;
+    double  ClosePrice = 15;
+    double  SettlementPrice = 16;
+    double  UpperLimitPrice = 17;
+    double  LowerLimitPrice = 18;
+    double  PreDelta = 19;
+    double  CurrDelta = 20;
+    string  UpdateTime = 21;
+    int32   UpdateMillisec = 22;
+    double  BidPrice1 = 23;
+    int32   BidVolume1 = 24;
+    double  AskPrice1 = 25;
+    int32   AskVolume1 = 26;
+    double  BidPrice2 = 27;
+    int32   BidVolume2 = 28;
+    double  AskPrice2 = 29;
+    int32   AskVolume2 = 30;
+    double  BidPrice3 = 31;
+    int32   BidVolume3 = 32;
+    double  AskPrice3 = 33;
+    int32   AskVolume3 = 34;
+    double  BidPrice4 = 35;
+    int32   BidVolume4 = 36;
+    double  AskPrice4 = 37;
+    int32   AskVolume4 = 38;
+    double  BidPrice5 = 39;
+    int32   BidVolume5 = 40;
+    double  AskPrice5 = 41;
+    int32   AskVolume5 = 42;
+    double  AveragePrice = 43;
+    string  ActionDay = 44;
+    int32   VolumeMultiple = 45;
+}
+
+message req_quote_login
+{
+    string  riskerid=1;
+    string  password=2;
+}
