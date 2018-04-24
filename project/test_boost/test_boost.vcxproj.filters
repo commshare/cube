@@ -111,6 +111,9 @@
     <ClInclude Include="..\eco\Typex.h">
       <Filter>eco</Filter>
     </ClInclude>
+    <ClInclude Include="src\test_eco.h">
+      <Filter>src</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp">

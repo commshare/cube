@@ -12,6 +12,7 @@
 #include "timer_manager.h"
 #include <boost/date_time/gregorian/gregorian.hpp>
 #include <boost/date_time/posix_time/posix_time.hpp> 
+#include "test_eco.h"
 void test_strand1(int argc, char* argv[])
 {
     test_strand tt;
@@ -54,6 +55,15 @@ void test()
     cout << "hello world" << endl;
 }
 
+void test_eco(int argc, char* argv[])
+{
+    TestEco tt;
+    tt.TestFileSystem();
+    getchar(); //»»ÐÐ·û
+    getchar();
+}
+
+
 void TestTimer(int argc, char* argv[])
 {
     alarm inst(9, 14, 0);
@@ -79,6 +89,7 @@ int main(int argc, char* argv[])
         printf("3: test log \n");
         printf("4: test base \n");
         printf("5: test timer \n");
+        printf("6: test eco \n");
         printf("please select your decide: ");
         ch = getchar();
         switch (ch) {
@@ -99,6 +110,9 @@ int main(int argc, char* argv[])
             break;
         case '5':
             TestTimer(argc, argv);
+            break;
+        case '6':
+            test_eco(argc, argv);
             break;
         default:
             printf("please input right decide~~\n");
