@@ -15,6 +15,22 @@ eric     2016.1.13   1.0     Create
 #include <chrono>
 #include <thread>
 #include "eco/filesystem/Operations.h"
+#include "eco/thread/DispatchServer.h"
+
+class Context
+{
+public:
+    inline Context()
+    {}
+
+    inline const uint32_t get_type() const
+    {
+        return type;
+    }
+private:
+    uint32_t type;
+    std::string data;
+};
 
 class TestEco
 {
@@ -31,6 +47,11 @@ public:
         eco::filesystem::File wfile("./logs/backup.log", "w+");
         wfile.write(rfile.data().c_str(), rfile.data().size());
         wfile.flush();
+    }
+
+    void TestDispatchServer()
+    {
+        eco::DispatchServer<uint32_t, Context> inst;
     }
 };
 
