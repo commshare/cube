@@ -15,7 +15,6 @@ eric     2016.1.13   1.0     Create
 #include <chrono>
 #include <thread>
 #include "eco/filesystem/Operations.h"
-#include "eco/thread/DispatchServer.h"
 
 class Context
 {
@@ -51,7 +50,6 @@ public:
 
     void TestDispatchServer()
     {
-        eco::DispatchServer<uint32_t, Context> inst;
     }
 };
 

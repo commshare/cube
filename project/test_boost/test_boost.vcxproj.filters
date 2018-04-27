@@ -19,9 +19,6 @@
     <Filter Include="eco">
       <UniqueIdentifier>{365ad089-fd12-4b41-935c-ae3831408dbd}</UniqueIdentifier>
     </Filter>
-    <Filter Include="eco\thread">
-      <UniqueIdentifier>{2b8c7976-28bc-41e2-ae3f-674be5c89063}</UniqueIdentifier>
-    </Filter>
     <Filter Include="eco\filesystem">
       <UniqueIdentifier>{bb4e080a-7ea7-41b8-addb-717e860da544}</UniqueIdentifier>
     </Filter>
@@ -117,60 +114,6 @@
     <ClInclude Include="src\test_eco.h">
       <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="..\eco\thread\Atomic.h">
-      <Filter>eco\thread</Filter>
-    </ClInclude>
-    <ClInclude Include="..\eco\thread\AtomicImpl.h">
-      <Filter>eco\thread</Filter>
-    </ClInclude>
-    <ClInclude Include="..\eco\thread\AutoRef.h">
-      <Filter>eco\thread</Filter>
-    </ClInclude>
-    <ClInclude Include="..\eco\thread\CallOnce.h">
-      <Filter>eco\thread</Filter>
-    </ClInclude>
-    <ClInclude Include="..\eco\thread\ConditionVariable.h">
-      <Filter>eco\thread</Filter>
-    </ClInclude>
-    <ClInclude Include="..\eco\thread\DispatchServer.h">
-      <Filter>eco\thread</Filter>
-    </ClInclude>
-    <ClInclude Include="..\eco\thread\Index.h">
-      <Filter>eco\thread</Filter>
-    </ClInclude>
-    <ClInclude Include="..\eco\thread\Map.h">
-      <Filter>eco\thread</Filter>
-    </ClInclude>
-    <ClInclude Include="..\eco\thread\MessageQueue.h">
-      <Filter>eco\thread</Filter>
-    </ClInclude>
-    <ClInclude Include="..\eco\thread\MessageServer.h">
-      <Filter>eco\thread</Filter>
-    </ClInclude>
-    <ClInclude Include="..\eco\thread\Monitor.h">
-      <Filter>eco\thread</Filter>
-    </ClInclude>
-    <ClInclude Include="..\eco\thread\Mutex.h">
-      <Filter>eco\thread</Filter>
-    </ClInclude>
-    <ClInclude Include="..\eco\thread\State.h">
-      <Filter>eco\thread</Filter>
-    </ClInclude>
-    <ClInclude Include="..\eco\thread\TaskServer.h">
-      <Filter>eco\thread</Filter>
-    </ClInclude>
-    <ClInclude Include="..\eco\thread\Thread.h">
-      <Filter>eco\thread</Filter>
-    </ClInclude>
-    <ClInclude Include="..\eco\thread\ThreadPool.h">
-      <Filter>eco\thread</Filter>
-    </ClInclude>
-    <ClInclude Include="..\eco\thread\ThreadState.h">
-      <Filter>eco\thread</Filter>
-    </ClInclude>
-    <ClInclude Include="..\eco\thread\Timer.h">
-      <Filter>eco\thread</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp">
@@ -181,15 +124,6 @@
     </ClCompile>
     <ClCompile Include="src\alarm.cpp">
       <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="..\eco\prj\src\thread\ThreadLin.cpp">
-      <Filter>eco\thread</Filter>
-    </ClCompile>
-    <ClCompile Include="..\eco\prj\src\thread\ThreadWin.cpp">
-      <Filter>eco\thread</Filter>
-    </ClCompile>
-    <ClCompile Include="..\eco\prj\src\thread\Timer.cpp">
-      <Filter>eco\thread</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

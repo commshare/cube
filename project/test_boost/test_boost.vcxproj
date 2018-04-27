@@ -31,24 +31,6 @@
     <ClInclude Include="..\eco\Object.h" />
     <ClInclude Include="..\eco\Project.h" />
     <ClInclude Include="..\eco\RxApp.h" />
-    <ClInclude Include="..\eco\thread\Atomic.h" />
-    <ClInclude Include="..\eco\thread\AtomicImpl.h" />
-    <ClInclude Include="..\eco\thread\AutoRef.h" />
-    <ClInclude Include="..\eco\thread\CallOnce.h" />
-    <ClInclude Include="..\eco\thread\ConditionVariable.h" />
-    <ClInclude Include="..\eco\thread\DispatchServer.h" />
-    <ClInclude Include="..\eco\thread\Index.h" />
-    <ClInclude Include="..\eco\thread\Map.h" />
-    <ClInclude Include="..\eco\thread\MessageQueue.h" />
-    <ClInclude Include="..\eco\thread\MessageServer.h" />
-    <ClInclude Include="..\eco\thread\Monitor.h" />
-    <ClInclude Include="..\eco\thread\Mutex.h" />
-    <ClInclude Include="..\eco\thread\State.h" />
-    <ClInclude Include="..\eco\thread\TaskServer.h" />
-    <ClInclude Include="..\eco\thread\Thread.h" />
-    <ClInclude Include="..\eco\thread\ThreadPool.h" />
-    <ClInclude Include="..\eco\thread\ThreadState.h" />
-    <ClInclude Include="..\eco\thread\Timer.h" />
     <ClInclude Include="..\eco\Type.h" />
     <ClInclude Include="..\eco\Typex.h" />
     <ClInclude Include="src\alarm.h" />
@@ -61,9 +43,6 @@
     <ClInclude Include="src\test_strand.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\eco\prj\src\thread\ThreadLin.cpp" />
-    <ClCompile Include="..\eco\prj\src\thread\ThreadWin.cpp" />
-    <ClCompile Include="..\eco\prj\src\thread\Timer.cpp" />
     <ClCompile Include="src\alarm.cpp" />
     <ClCompile Include="src\timer_manager.cpp" />
     <ClCompile Include="src\main.cpp" />
@@ -127,7 +106,7 @@
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(SolutionDir)..\contrib\boost_1_65_0\win32;$(SolutionDir)lib\$(Configuration);</AdditionalLibraryDirectories>
-      <AdditionalDependencies>liblog.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>Ws2_32.lib;liblog.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
