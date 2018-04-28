@@ -59,5 +59,11 @@
     <ClInclude Include="src\protocol.h">
       <Filter>src</Filter>
     </ClInclude>
+    <ClInclude Include="src\monitor.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\event.h">
+      <Filter>src</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

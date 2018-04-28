@@ -13,9 +13,14 @@ eric     2018.4.27   1.0     Create
 #include <string>
 #include <set>
 #include <functional>
+#include <chrono>
+#include <thread>
+
 #include "project.h"
 #include "dispatch_server.h"
 #include "protocol.h"
+#include "monitor.h"
+#include "event.h"
 
 using namespace std;
 
@@ -94,13 +99,29 @@ MyClass::~MyClass()
 }
 ECO_SINGLETON_GET(MyClass)
 
+eco::Event g_event;
+
+void thread_func()
+{
+    std::this_thread::sleep_for(std::chrono::milliseconds(3000));
+    g_event.SignalEvent();
+
+    std::this_thread::sleep_for(std::chrono::milliseconds(3000));
+    g_event.SignalEvent();
+}
+
 
 int main(int argc, char **argv)
 {
     cout << "hello reddot" << endl;
     
+    std::thread thr(thread_func);
+    g_event.WaitEvent();
+
+
     GetMyClass().test();
 
+    g_event.WaitEvent();
     eco::DispatchServer<uint32_t, eco::MessageMeta> dispatch;
     dispatch.set_default(fun_default);
     dispatch.set_dispatch(10001, fun_eco);

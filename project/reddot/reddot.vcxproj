@@ -152,10 +152,12 @@
   <ItemGroup>
     <ClInclude Include="src\cast.h" />
     <ClInclude Include="src\dispatch_server.h" />
+    <ClInclude Include="src\event.h" />
     <ClInclude Include="src\export.h" />
     <ClInclude Include="src\memory.h" />
     <ClInclude Include="src\message_queue.h" />
     <ClInclude Include="src\message_server.h" />
+    <ClInclude Include="src\monitor.h" />
     <ClInclude Include="src\object.h" />
     <ClInclude Include="src\project.h" />
     <ClInclude Include="src\protocol.h" />
