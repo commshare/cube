@@ -41,5 +41,23 @@
     <ClInclude Include="src\type.h">
       <Filter>src</Filter>
     </ClInclude>
+    <ClInclude Include="src\message_queue.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\state.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dispatch_server.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\message_server.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\thread_pool.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\protocol.h">
+      <Filter>src</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

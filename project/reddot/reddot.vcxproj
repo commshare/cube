@@ -151,10 +151,16 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\cast.h" />
+    <ClInclude Include="src\dispatch_server.h" />
     <ClInclude Include="src\export.h" />
     <ClInclude Include="src\memory.h" />
+    <ClInclude Include="src\message_queue.h" />
+    <ClInclude Include="src\message_server.h" />
     <ClInclude Include="src\object.h" />
     <ClInclude Include="src\project.h" />
+    <ClInclude Include="src\protocol.h" />
+    <ClInclude Include="src\state.h" />
+    <ClInclude Include="src\thread_pool.h" />
     <ClInclude Include="src\type.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

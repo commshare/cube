@@ -12,7 +12,10 @@ eric     2018.4.27   1.0     Create
 #include <sstream>
 #include <string>
 #include <set>
+#include <functional>
 #include "project.h"
+#include "dispatch_server.h"
+#include "protocol.h"
 
 using namespace std;
 
@@ -49,11 +52,40 @@ const char* Test::get_str() const
     return m_impl->data_.c_str();
 }
 
+void fun_default(IN eco::MessageMeta& msg)
+{
+    std::cout << __FUNCTION__  
+        <<" session_id:" << msg.get_session_id()
+        << " message_type:" << msg.get_type()
+        << " data:" << msg.get_request_data()
+        << std::endl;
+}
+
+void fun_eco(IN eco::MessageMeta& msg)
+{
+    std::cout << __FUNCTION__ 
+        << " session_id:" << msg.get_session_id()
+        << " message_type:" << msg.get_type()
+        << " data:" << msg.get_request_data()
+        << std::endl;
+}
+
 int main(int argc, char **argv)
 {
     cout << "hello reddot" << endl;
     
-    cout << eco::Format<64>("hello@yahoo.cn")%100 << endl;
+
+    eco::DispatchServer<uint32_t, eco::MessageMeta> dispatch;
+    dispatch.set_default(fun_default);
+    dispatch.set_dispatch(10001, fun_eco);
+    dispatch.run(3);
+
+    for (int i = 0; i < 10; ++i)
+    {
+        eco::MessageMeta msg(i, 10001+i, "hello world");
+        dispatch.post(msg);
+    }
+
 
     getchar();
     return 0;
