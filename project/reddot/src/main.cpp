@@ -70,15 +70,41 @@ void fun_eco(IN eco::MessageMeta& msg)
         << std::endl;
 }
 
+class MyClass
+{
+    ECO_SINGLETON_UNINIT(MyClass)
+public:
+    MyClass();
+    ~MyClass();
+
+    void test()
+    {
+        EcoCout << "hello world";
+    }
+private:
+
+};
+
+MyClass::MyClass()
+{
+}
+
+MyClass::~MyClass()
+{
+}
+ECO_SINGLETON_GET(MyClass)
+
+
 int main(int argc, char **argv)
 {
     cout << "hello reddot" << endl;
     
+    GetMyClass().test();
 
     eco::DispatchServer<uint32_t, eco::MessageMeta> dispatch;
     dispatch.set_default(fun_default);
     dispatch.set_dispatch(10001, fun_eco);
-    dispatch.run(3);
+    dispatch.run(1);
 
     for (int i = 0; i < 10; ++i)
     {

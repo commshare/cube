@@ -3,7 +3,7 @@
 
 #include "export.h"
 #include <memory>
-
+#include <mutex>
 NS_BEGIN(eco);
 
 
@@ -80,17 +80,19 @@ inline T* object_t(std::shared_ptr<T>& ptr) { return ptr.get(); }
 template<typename ObjectType>
 class Singleton
 {
-	ECO_OBJECT(Singleton);
+	ECO_OBJECT(Singleton)
 public:
 	inline static ObjectType& instance()
 	{
+        //std::unique_lock<std::mutex> lock(m_mutex_);
+        static ObjectType s_object;
 		return s_object;
 	}
 private:
-	static ObjectType s_object;
+	static std::mutex m_mutex_;
 };
-template<typename ObjectType>
-ObjectType Singleton<ObjectType>::s_object;
+// template<typename ObjectType>
+// std::mutex Singleton<ObjectType>::m_mutex_;
 
 
 /*@ singleton instance to access singleton object. */
@@ -104,16 +106,13 @@ private:\
 
 #define ECO_SINGLETON_UNINIT(ObjectType)\
 	ECO_NONCOPYABLE(ObjectType);\
-public:\
-	friend class eco::Singleton<ObjectType>;\
-	~ObjectType();\
 private:\
-	ObjectType();
+	friend class eco::Singleton<ObjectType>;
 
 
 /*@ singleton get function to access singleton object.*/
-#define ECO_SINGLETON_NAME(ObjectType, method)\
-inline ObjectType& method()\
+#define ECO_SINGLETON_GET(ObjectType)\
+inline ObjectType& Get##ObjectType()\
 {\
 	return eco::Singleton<ObjectType>::instance();\
 }
