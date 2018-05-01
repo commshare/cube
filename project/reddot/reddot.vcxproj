@@ -155,6 +155,7 @@
     <ClInclude Include="src\event.h" />
     <ClInclude Include="src\export.h" />
     <ClInclude Include="src\memory.h" />
+    <ClInclude Include="src\memory_pool.h" />
     <ClInclude Include="src\message_queue.h" />
     <ClInclude Include="src\message_server.h" />
     <ClInclude Include="src\monitor.h" />

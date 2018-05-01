@@ -21,6 +21,7 @@ eric     2018.4.27   1.0     Create
 #include "protocol.h"
 #include "monitor.h"
 #include "event.h"
+#include "memory_pool.h"
 
 using namespace std;
 
@@ -78,9 +79,9 @@ void fun_eco(IN eco::MessageMeta& msg)
 class MyClass
 {
     ECO_SINGLETON_UNINIT(MyClass)
+    MyClass() {}
 public:
-    MyClass();
-    ~MyClass();
+    ~MyClass() {};
 
     void test()
     {
@@ -89,39 +90,35 @@ public:
 private:
 
 };
-
-MyClass::MyClass()
-{
-}
-
-MyClass::~MyClass()
-{
-}
 ECO_SINGLETON_GET(MyClass)
 
-eco::Event g_event;
 
-void thread_func()
+template <typename T>
+class Templ
 {
-    std::this_thread::sleep_for(std::chrono::milliseconds(3000));
-    g_event.SignalEvent();
+public:
+    void  test(T val)
+    {
+        cout << __FUNCTION__ << val << endl;
+    }
 
-    std::this_thread::sleep_for(std::chrono::milliseconds(3000));
-    g_event.SignalEvent();
-}
-
+    template <typename Object>
+    void  test(Object val)
+    {
+        cout << __FUNCTION__ << val << endl;
+    }
+};
 
 int main(int argc, char **argv)
 {
     cout << "hello reddot" << endl;
-    
-    std::thread thr(thread_func);
-    g_event.WaitEvent();
+    Templ<int> inst;
+    inst.test(100);
+    {
+        std::shared_ptr<eco::MessageMeta> val = ECO_POOL_NEW(eco::MessageMeta);
+        cout << val->m_message_type << endl;
+    }
 
-
-    GetMyClass().test();
-
-    g_event.WaitEvent();
     eco::DispatchServer<uint32_t, eco::MessageMeta> dispatch;
     dispatch.set_default(fun_default);
     dispatch.set_dispatch(10001, fun_eco);
