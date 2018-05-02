@@ -76,12 +76,12 @@ private:
 
 ////////////////////////////////////////////////////////////////////////////////
 template<typename Object>
-inline MemoryPool<Object>& get_memory_pool()
+inline MemoryPool<Object>& GetMemoryPool()
 {
     return eco::Singleton<MemoryPool<Object>>::instance();
 }
 
-#define ECO_POOL_NEW(object_t) eco::get_memory_pool<object_t>().create()
+#define ECO_POOL_NEW(Object) eco::GetMemoryPool<Object>().create()
 ////////////////////////////////////////////////////////////////////////////////
 NS_END(eco);
 #endif
