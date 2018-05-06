@@ -33,7 +33,7 @@ public:
 	*/
 	inline void operator()(IN Message& msg) const
 	{
-		dispatch((MessageType)msg.get_type(), msg);
+		dispatch((MessageType)msg["type"].AnyCast<int>(), msg);
 	}
 
 	inline void dispatch(IN const MessageType& type, IN Message& msg) const

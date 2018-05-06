@@ -22,9 +22,11 @@ eric     2018.4.27   1.0     Create
 #include "monitor.h"
 #include "event.h"
 #include "memory_pool.h"
+#include "any.h"
 
 using namespace std;
 
+typedef std::map<std::string, eco::Any> MessagePro;
 class Test
 {
     ECO_VALUE_API(Test)
@@ -109,26 +111,61 @@ public:
     }
 };
 
+void fun_any_default(IN MessagePro& msg)
+{
+    std::cout << __FUNCTION__ << std::endl;
+    cout << msg["type"].AnyCast<int>() << endl;
+    cout << msg["two"].AnyCast<double>() << endl;
+    cout << msg["three"].AnyCast<const char*>() << endl;
+    cout << msg["four"].AnyCast<string>() << endl;
+}
+
+void fun_any_eco(IN MessagePro& msg)
+{
+    std::cout << __FUNCTION__ << std::endl;
+    cout << msg["type"].AnyCast<int>() << endl;
+    cout << msg["two"].AnyCast<double>() << endl;
+    cout << msg["three"].AnyCast<const char*>() << endl;
+    cout << msg["four"].AnyCast<string>() << endl;
+
+    vector<int> tmp = msg["five"].AnyCast< vector<int> >();
+    for (auto it = tmp.begin(); it != tmp.end(); ++it) {
+        cout << *it << endl;
+    }
+}
+
 int main(int argc, char **argv)
 {
     cout << "hello reddot" << endl;
-    Templ<int> inst;
-    inst.test(100);
-    {
-        std::shared_ptr<eco::MessageMeta> val = ECO_POOL_NEW(eco::MessageMeta);
-        cout << val->m_message_type << endl;
-    }
 
-    eco::DispatchServer<uint32_t, eco::MessageMeta> dispatch;
-    dispatch.set_default(fun_default);
-    dispatch.set_dispatch(10001, fun_eco);
+
+    eco::DispatchServer < uint32_t, std::map<std::string, eco::Any> > dispatch;
+    dispatch.set_default(fun_any_default);
+    dispatch.set_dispatch(10001, fun_any_eco);
     dispatch.run(1);
 
     for (int i = 0; i < 10; ++i)
     {
-        eco::MessageMeta msg(i, 10001+i, "hello world");
+        MessagePro msg;
+        msg["type"] = 10001+i;
+        msg["two"] = 1.2;
+        msg["three"] = "hello";
+        msg["four"] = string("word");
+        vector<int> two = { 1, 2, 3, 4, 5 };
+        msg["five"] = two;
         dispatch.post(msg);
     }
+
+    //eco::DispatchServer<uint32_t, eco::MessageMeta> dispatch;
+    //dispatch.set_default(fun_default);
+    //dispatch.set_dispatch(10001, fun_eco);
+    //dispatch.run(1);
+
+    //for (int i = 0; i < 10; ++i)
+    //{
+    //    eco::MessageMeta msg(i, 10001+i, "hello world");
+    //    dispatch.post(msg);
+    //}
 
 
     getchar();

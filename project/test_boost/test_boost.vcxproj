@@ -11,28 +11,6 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\eco\App.h" />
-    <ClInclude Include="..\eco\Being.h" />
-    <ClInclude Include="..\eco\Bobject.h" />
-    <ClInclude Include="..\eco\Btask.h" />
-    <ClInclude Include="..\eco\Cast.h" />
-    <ClInclude Include="..\eco\Config.h" />
-    <ClInclude Include="..\eco\DateTime.h" />
-    <ClInclude Include="..\eco\DllObject.h" />
-    <ClInclude Include="..\eco\Export.h" />
-    <ClInclude Include="..\eco\ExportApi.h" />
-    <ClInclude Include="..\eco\filesystem\File.h" />
-    <ClInclude Include="..\eco\filesystem\Operations.h" />
-    <ClInclude Include="..\eco\filesystem\SourceFile.h" />
-    <ClInclude Include="..\eco\HeapOperators.h" />
-    <ClInclude Include="..\eco\Implement.h" />
-    <ClInclude Include="..\eco\Memory.h" />
-    <ClInclude Include="..\eco\MemoryPool.h" />
-    <ClInclude Include="..\eco\Object.h" />
-    <ClInclude Include="..\eco\Project.h" />
-    <ClInclude Include="..\eco\RxApp.h" />
-    <ClInclude Include="..\eco\Type.h" />
-    <ClInclude Include="..\eco\Typex.h" />
     <ClInclude Include="src\alarm.h" />
     <ClInclude Include="src\test_eco.h" />
     <ClInclude Include="src\timer_manager.h" />
@@ -46,14 +24,6 @@
     <ClCompile Include="src\alarm.cpp" />
     <ClCompile Include="src\timer_manager.cpp" />
     <ClCompile Include="src\main.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <Xml Include="..\eco\cfg.app.xml" />
-    <Xml Include="..\eco\cfg.sys.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="..\eco\LICENSE" />
-    <None Include="..\eco\Typex.ipp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{E1F89C96-1E73-49C4-A5CD-DE6ADFFEE129}</ProjectGuid>
