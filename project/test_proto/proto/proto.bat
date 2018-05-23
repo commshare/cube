@@ -7,7 +7,6 @@ riskapi_data_protocal.proto ^
 quote_protocal.proto ^
 trade_protocal.proto ^
 trial_protocal.proto ^
-monitor_protocal.proto ^
 manager_protocal.proto ^
 system_protocal.proto
 pause

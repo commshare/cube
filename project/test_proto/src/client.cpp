@@ -190,8 +190,8 @@ void Client::Start()
 {
     //connect trialserver
     boost::asio::ip::tcp::endpoint ed(
-            boost::asio::ip::address::from_string("192.168.4.58"),
-            7777);
+            boost::asio::ip::address::from_string("120.136.160.83"),
+        16270);
     clientptr_ = std::make_shared<light::clientapi>(ed);
     clientptr_->set_handle(this);
     clientptr_->run();

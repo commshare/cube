@@ -16,7 +16,7 @@ void test_manager_login()
 {
     manager::req_login req_message;
     req_message.set_requestid(10000);
-    req_message.set_userid(9999);
+    req_message.set_userid("9999");
     req_message.set_pwd("111111");
 
     std::string reply;
@@ -28,7 +28,7 @@ void test_manager_subs()
 {
     manager::req_risk_investors req_message;
     req_message.set_requestid(10000);
-    req_message.set_userid(9999);
+    req_message.set_userid("9999");
 
     std::string reply;
     req_message.AppendToString(&reply);
@@ -39,8 +39,8 @@ void test_manager_adduser()
 {
     manager::req_add_sys_user req_message;
     req_message.set_requestid(10000);
-    req_message.mutable_user()->set_userid(10002);
-    req_message.mutable_user()->set_father(101);
+    req_message.mutable_user()->set_userid("9999");
+    req_message.mutable_user()->set_father("9999");
     req_message.mutable_user()->set_roleid(2);
 
     for (size_t i = 0; i < 4; i++)
@@ -57,7 +57,7 @@ void test_manager_adduser()
 
 void test_manager_deluser()
 {
-    int userid = -1;
+    std::string userid;
 
     cout << "input deluser userid£º ";
     cin >> userid;
@@ -84,7 +84,7 @@ void test_manager_req_investor()
 
 void test_manager_req_riskinvestor()
 {
-    int userid = -1;
+    std::string userid;
 
     cout << "input userid£º ";
     cin >> userid;
@@ -99,7 +99,7 @@ void test_manager_req_riskinvestor()
 
 void test_manager_addinvestor()
 {
-    int userid = -1;
+    std::string userid;
     cout << "input addinvestor userid£º ";
     cin >> userid;
 
@@ -116,7 +116,7 @@ void test_manager_addinvestor()
 
 void test_manager_delinvestor()
 {
-    int userid = -1;
+    std::string userid;
     cout << "input delinvestor userid£º ";
     cin >> userid;
 
@@ -133,7 +133,7 @@ void test_manager_delinvestor()
 
 void test_manager_queryrate()
 {
-    int userid = -1;
+    std::string userid;
 
     manager::req_insmrgnrate req_message;
     req_message.set_requestid(10000);
@@ -145,7 +145,7 @@ void test_manager_queryrate()
 
 void test_manager_editrate()
 {
-    int userid = -1;
+    std::string userid;
 
     manager::req_edit_insmrgnrate req_message;
     req_message.set_requestid(10000);
@@ -163,14 +163,14 @@ void test_manager_editrate()
 
 void test_riskapi_addgroup()
 {
-    int userid = -1;
+    std::string userid;
 
     cout << "input addgroup userid£º ";
     cin >> userid;
     risk::req_add_group req_message;
     req_message.set_requestid(10000);
     req_message.set_userid(userid);
-    req_message.mutable_group()->set_riskgroupid(1234);
+    req_message.mutable_group()->set_riskgroupid("1234");
 
     std::string reply;
     req_message.AppendToString(&reply);
@@ -179,14 +179,14 @@ void test_riskapi_addgroup()
 
 void test_riskapi_delgroup()
 {
-    int userid = -1;
+    std::string userid;
 
     cout << "input delgroup userid£º ";
     cin >> userid;
     risk::req_del_group req_message;
     req_message.set_requestid(10000);
     req_message.set_userid(userid);
-    req_message.set_riskgroupid(1234);
+    req_message.set_riskgroupid("1234");
 
     std::string reply;
     req_message.AppendToString(&reply);
@@ -195,7 +195,7 @@ void test_riskapi_delgroup()
 
 void test_riskapi_querygroup()
 {
-    int userid = -1;
+    std::string userid;
 
     cout << "input querygroup userid£º ";
     cin >> userid;

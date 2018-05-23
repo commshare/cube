@@ -22,7 +22,7 @@ eric     2018.4.27   1.0     Create
 #include "monitor.h"
 #include "event.h"
 #include "memory_pool.h"
-
+#include "file.h"
 using namespace std;
 
 class Test
@@ -112,22 +112,20 @@ public:
 int main(int argc, char **argv)
 {
     cout << "hello reddot" << endl;
-    Templ<int> inst;
-    inst.test(100);
+    std::string str;
+    str = "hello world" + 1;
+    cout << str << endl;
     {
-        std::shared_ptr<eco::MessageMeta> val = ECO_POOL_NEW(eco::MessageMeta);
-        cout << val->m_message_type << endl;
+        eco::DispatchServer<uint32_t, eco::MessageMeta> dispatch;
+        dispatch.set_default(fun_default);
+        dispatch.set_dispatch(10001, fun_eco);
+        dispatch.run(1);
+        std::this_thread::sleep_for(std::chrono::seconds(10));
     }
-
-    eco::DispatchServer<uint32_t, eco::MessageMeta> dispatch;
-    dispatch.set_default(fun_default);
-    dispatch.set_dispatch(10001, fun_eco);
-    dispatch.run(1);
-
     for (int i = 0; i < 10; ++i)
     {
         eco::MessageMeta msg(i, 10001+i, "hello world");
-        dispatch.post(msg);
+        //dispatch.post(msg);
     }
 
 

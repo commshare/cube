@@ -26,12 +26,6 @@ message rsp_risker_login
     error_info      info=2;
 }
 
-message rsp_investor_list
-{
-    rsp_head_info   header=1;
-    string          investorid=2;
-}
-
 message instrument_info
 {
     string          instrumentid=1;
@@ -197,7 +191,7 @@ message rsp_margin_field
 message rsp_risker_investor
 {
     rsp_head_info header=1;
-    int32 riskgroupid = 2;
+    string riskgroupid = 2;
     string investorid = 3;
 }
 
@@ -220,7 +214,42 @@ message rtn_change_risker
     //3:insert group investor 4:remove group investor 
     //5:insert risker investor 6:remove risker investor
     int32 operatorid = 1; 
-    int32 userid = 2; //riskid
-    int32 riskgroupid = 3;
+    string userid = 2; //riskid
+    sys_group group = 3;
     repeated string investor = 4;
 }
+
+///////////////////////////////////////////////////////////////////////////////
+message rtn_option_position_risk
+{
+    //1:delta 2:gamma 3:theta 4:vega 5:rho 6:implied_volatility
+    int32 type = 1; 
+    int32 model = 2;
+    string instrument = 3;
+    double value = 4;
+}
+
+message rsp_whatif
+{
+    rsp_head_info header=1;
+    int32 type = 2; //1:price 2:vol 3:rate
+    int32 model = 3; //0:binomial 1:black 2:bs
+    string instrument = 4;
+    double range = 5;
+    double option_value = 6;
+}
+
+message option_argv
+{
+    int32 model=1; //0:binomial 1:black 2:bs
+    int32 price_type=2; //1:lastprice 2:presettlementprice 3:precloseprice 4:settlementprice
+    double vol=3;
+    double rate=4;
+}
+
+message rsp_option_argv
+{
+    rsp_head_info header=1;
+    option_argv info=2;
+}
+

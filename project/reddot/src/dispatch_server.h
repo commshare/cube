@@ -1,7 +1,7 @@
 #ifndef DISPATCH_SERVER_H_
 #define DISPATCH_SERVER_H_
 
-#include "project.h"
+//#include "project.h"
 #include "message_server.h"
 #include <unordered_map>
 
@@ -13,7 +13,7 @@ namespace eco{;
 template<typename MessageType, typename Message>
 class DispatchHandler
 {
-	ECO_OBJECT(DispatchHandler)
+	//ECO_OBJECT(DispatchHandler)
 public:
 	typedef std::function<void(IN Message&)> HandlerFunc;
 	typedef std::unordered_map<MessageType, HandlerFunc> HandlerMap;

@@ -152,7 +152,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="proto\manager_protocal.pb.cc" />
-    <ClCompile Include="proto\monitor_protocal.pb.cc" />
     <ClCompile Include="proto\quote_protocal.pb.cc" />
     <ClCompile Include="proto\riskapi_action_protocal.pb.cc" />
     <ClCompile Include="proto\riskapi_data_protocal.pb.cc" />
@@ -165,7 +164,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="proto\manager_protocal.pb.h" />
-    <ClInclude Include="proto\monitor_protocal.pb.h" />
     <ClInclude Include="proto\quote_protocal.pb.h" />
     <ClInclude Include="proto\riskapi_action_protocal.pb.h" />
     <ClInclude Include="proto\riskapi_data_protocal.pb.h" />
@@ -177,9 +175,7 @@
     <ClInclude Include="src\msgtype_def.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="proto\db_server_protocal.proto" />
     <None Include="proto\manager_protocal.proto" />
-    <None Include="proto\monitor_protocal.proto" />
     <None Include="proto\proto.bat" />
     <None Include="proto\quote_protocal.proto" />
     <None Include="proto\riskapi_action_protocal.proto" />

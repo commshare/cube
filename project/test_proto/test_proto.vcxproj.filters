@@ -33,9 +33,6 @@
     <ClCompile Include="proto\manager_protocal.pb.cc">
       <Filter>proto</Filter>
     </ClCompile>
-    <ClCompile Include="proto\monitor_protocal.pb.cc">
-      <Filter>proto</Filter>
-    </ClCompile>
     <ClCompile Include="proto\quote_protocal.pb.cc">
       <Filter>proto</Filter>
     </ClCompile>
@@ -68,9 +65,6 @@
     <ClInclude Include="proto\manager_protocal.pb.h">
       <Filter>proto</Filter>
     </ClInclude>
-    <ClInclude Include="proto\monitor_protocal.pb.h">
-      <Filter>proto</Filter>
-    </ClInclude>
     <ClInclude Include="proto\quote_protocal.pb.h">
       <Filter>proto</Filter>
     </ClInclude>
@@ -91,13 +85,7 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="proto\db_server_protocal.proto">
-      <Filter>proto</Filter>
-    </None>
     <None Include="proto\manager_protocal.proto">
-      <Filter>proto</Filter>
-    </None>
-    <None Include="proto\monitor_protocal.proto">
       <Filter>proto</Filter>
     </None>
     <None Include="proto\quote_protocal.proto">

@@ -14,7 +14,7 @@ namespace eco{;
 template<typename Message>
 class MessageQueue
 {
-    ECO_OBJECT(MessageQueue)
+    //ECO_OBJECT(MessageQueue)
 ////////////////////////////////////////////////////////////////////////////////
 public:
     // max size.

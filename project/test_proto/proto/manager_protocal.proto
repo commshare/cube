@@ -37,7 +37,7 @@ message role_auth
 message req_login
 {
     int32 requestid=1;
-    int32 userid = 2;
+    string userid = 2;
     string pwd = 3;
 }
 
@@ -50,15 +50,15 @@ message rsp_login
 message req_sys_subs
 {
     int32 requestid=1;
-    int32 userid = 2;
+    string userid = 2;
 }
 
 message sys_user
 {
     int32 id = 1;
-    int32 userid = 2;
+    string userid = 2;
     string username = 3;
-    int32 father = 4;
+    string father = 4;
     int32 roleid = 5;
     string pwd = 6;
     string desc = 7;
@@ -80,7 +80,7 @@ message req_add_sys_user
 message req_del_sys_user
 {
     int32 requestid=1;
-    int32 userid = 2;
+    string userid = 2;
 }
 
 message req_edit_sys_user
@@ -99,13 +99,13 @@ message sys_investor
 message req_risk_investors
 {
     int32 requestid=1;
-    int32 userid = 2; //riskid
+    string userid = 2; //riskid
 }
 
 message rsp_risk_investors
 {
     rsp_head_info header=1;
-    int32 userid = 2;
+    string userid = 2; //riskid
     repeated sys_investor investors = 3;
 }
 
@@ -124,14 +124,14 @@ message rsp_investors
 message req_add_investors
 {
     int32 requestid=1;
-    int32 userid = 2; //riskid
+    string userid = 2; //riskid
     repeated string investor = 3;
 }
 
 message req_del_investors
 {
     int32 requestid=1;
-    int32 userid = 2; //riskid
+    string userid = 2; //riskid
     repeated string investor = 3;
 }
 
@@ -148,7 +148,7 @@ message rtn_change_risker_investor
     //operatorid comment
     //1:insert risker investor 2:remove risker investor
     int32 operatorid = 1; 
-    int32 userid = 2;
+    string userid = 2;
     repeated string investor = 3;
 }
 
@@ -192,4 +192,31 @@ message rtn_change_insmrgnrate
 {
     repeated insmrgnrate_info infos = 1;
 }
+
+message req_option_argv
+{
+    int32 requestid=1;
+}
+
+message option_argv
+{
+    //1:lastprice 2:presettlementprice 
+    //3:precloseprice 4:settlementprice
+    int32 price_type=1;
+    double vol=2;
+    double rate=3;
+}
+
+message rsp_option_argv
+{
+    rsp_head_info header=1;
+    option_argv info=2;
+}
+
+message req_option_argv_adj
+{
+    int32 requestid=1;
+    option_argv info=2;
+}
+
 

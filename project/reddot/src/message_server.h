@@ -109,12 +109,12 @@ public:
 	/*@ post message to message server, using template is for parameter of 
 	message and const message.
 	*/
-	template<typename Message>
+	//template<typename Message>
 	inline void post(IN Message& msg)
 	{
 		m_message_queue.post(msg);
 	}
-	template<typename Message, typename UniqueChecker>
+	template</*typename Message, */typename UniqueChecker>
 	inline void post_unique(IN Message& msg, IN UniqueChecker& unique_check)
 	{
 		m_message_queue.post_unique(msg, unique_check);

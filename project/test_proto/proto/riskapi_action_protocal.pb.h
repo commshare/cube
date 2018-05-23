@@ -52,12 +52,12 @@ extern req_insert_investors_to_groupDefaultTypeInternal _req_insert_investors_to
 class req_instrument_list;
 class req_instrument_listDefaultTypeInternal;
 extern req_instrument_listDefaultTypeInternal _req_instrument_list_default_instance_;
-class req_investor_list;
-class req_investor_listDefaultTypeInternal;
-extern req_investor_listDefaultTypeInternal _req_investor_list_default_instance_;
 class req_margin;
 class req_marginDefaultTypeInternal;
 extern req_marginDefaultTypeInternal _req_margin_default_instance_;
+class req_option_argv;
+class req_option_argvDefaultTypeInternal;
+extern req_option_argvDefaultTypeInternal _req_option_argv_default_instance_;
 class req_order;
 class req_orderDefaultTypeInternal;
 extern req_orderDefaultTypeInternal _req_order_default_instance_;
@@ -79,6 +79,12 @@ extern req_sync_accountDefaultTypeInternal _req_sync_account_default_instance_;
 class req_trade;
 class req_tradeDefaultTypeInternal;
 extern req_tradeDefaultTypeInternal _req_trade_default_instance_;
+class req_whatif;
+class req_whatifDefaultTypeInternal;
+extern req_whatifDefaultTypeInternal _req_whatif_default_instance_;
+class sub_option_position_risk;
+class sub_option_position_riskDefaultTypeInternal;
+extern sub_option_position_riskDefaultTypeInternal _sub_option_position_risk_default_instance_;
 class subscribe_margin;
 class subscribe_marginDefaultTypeInternal;
 extern subscribe_marginDefaultTypeInternal _subscribe_margin_default_instance_;
@@ -97,6 +103,9 @@ extern subscribe_sync_accountDefaultTypeInternal _subscribe_sync_account_default
 class sys_group;
 class sys_groupDefaultTypeInternal;
 extern sys_groupDefaultTypeInternal _sys_group_default_instance_;
+class unsub_option_position_risk;
+class unsub_option_position_riskDefaultTypeInternal;
+extern unsub_option_position_riskDefaultTypeInternal _unsub_option_position_risk_default_instance_;
 class unsubscribe_margin;
 class unsubscribe_marginDefaultTypeInternal;
 extern unsubscribe_marginDefaultTypeInternal _unsubscribe_margin_default_instance_;
@@ -214,6 +223,20 @@ class req_risker_login : public ::google::protobuf::Message /* @@protoc_insertio
 
   // accessors -------------------------------------------------------
 
+  // string riskerid = 2;
+  void clear_riskerid();
+  static const int kRiskeridFieldNumber = 2;
+  const ::std::string& riskerid() const;
+  void set_riskerid(const ::std::string& value);
+  #if LANG_CXX11
+  void set_riskerid(::std::string&& value);
+  #endif
+  void set_riskerid(const char* value);
+  void set_riskerid(const char* value, size_t size);
+  ::std::string* mutable_riskerid();
+  ::std::string* release_riskerid();
+  void set_allocated_riskerid(::std::string* riskerid);
+
   // string password = 3;
   void clear_password();
   static const int kPasswordFieldNumber = 3;
@@ -234,123 +257,13 @@ class req_risker_login : public ::google::protobuf::Message /* @@protoc_insertio
   ::google::protobuf::int32 requestid() const;
   void set_requestid(::google::protobuf::int32 value);
 
-  // int32 riskerid = 2;
-  void clear_riskerid();
-  static const int kRiskeridFieldNumber = 2;
-  ::google::protobuf::int32 riskerid() const;
-  void set_riskerid(::google::protobuf::int32 value);
-
   // @@protoc_insertion_point(class_scope:risk.req_risker_login)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr riskerid_;
   ::google::protobuf::internal::ArenaStringPtr password_;
   ::google::protobuf::int32 requestid_;
-  ::google::protobuf::int32 riskerid_;
-  mutable int _cached_size_;
-  friend struct protobuf_riskapi_5faction_5fprotocal_2eproto::TableStruct;
-};
-// -------------------------------------------------------------------
-
-class req_investor_list : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:risk.req_investor_list) */ {
- public:
-  req_investor_list();
-  virtual ~req_investor_list();
-
-  req_investor_list(const req_investor_list& from);
-
-  inline req_investor_list& operator=(const req_investor_list& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  #if LANG_CXX11
-  req_investor_list(req_investor_list&& from) noexcept
-    : req_investor_list() {
-    *this = ::std::move(from);
-  }
-
-  inline req_investor_list& operator=(req_investor_list&& from) noexcept {
-    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
-      if (this != &from) InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-  #endif
-  static const ::google::protobuf::Descriptor* descriptor();
-  static const req_investor_list& default_instance();
-
-  static inline const req_investor_list* internal_default_instance() {
-    return reinterpret_cast<const req_investor_list*>(
-               &_req_investor_list_default_instance_);
-  }
-  static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
-    1;
-
-  void Swap(req_investor_list* other);
-  friend void swap(req_investor_list& a, req_investor_list& b) {
-    a.Swap(&b);
-  }
-
-  // implements Message ----------------------------------------------
-
-  inline req_investor_list* New() const PROTOBUF_FINAL { return New(NULL); }
-
-  req_investor_list* New(::google::protobuf::Arena* arena) const PROTOBUF_FINAL;
-  void CopyFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
-  void MergeFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
-  void CopyFrom(const req_investor_list& from);
-  void MergeFrom(const req_investor_list& from);
-  void Clear() PROTOBUF_FINAL;
-  bool IsInitialized() const PROTOBUF_FINAL;
-
-  size_t ByteSizeLong() const PROTOBUF_FINAL;
-  bool MergePartialFromCodedStream(
-      ::google::protobuf::io::CodedInputStream* input) PROTOBUF_FINAL;
-  void SerializeWithCachedSizes(
-      ::google::protobuf::io::CodedOutputStream* output) const PROTOBUF_FINAL;
-  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
-      bool deterministic, ::google::protobuf::uint8* target) const PROTOBUF_FINAL;
-  int GetCachedSize() const PROTOBUF_FINAL { return _cached_size_; }
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const PROTOBUF_FINAL;
-  void InternalSwap(req_investor_list* other);
-  private:
-  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
-    return NULL;
-  }
-  inline void* MaybeArenaPtr() const {
-    return NULL;
-  }
-  public:
-
-  ::google::protobuf::Metadata GetMetadata() const PROTOBUF_FINAL;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  // int32 requestid = 1;
-  void clear_requestid();
-  static const int kRequestidFieldNumber = 1;
-  ::google::protobuf::int32 requestid() const;
-  void set_requestid(::google::protobuf::int32 value);
-
-  // int32 riskerid = 2;
-  void clear_riskerid();
-  static const int kRiskeridFieldNumber = 2;
-  ::google::protobuf::int32 riskerid() const;
-  void set_riskerid(::google::protobuf::int32 value);
-
-  // @@protoc_insertion_point(class_scope:risk.req_investor_list)
- private:
-
-  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::int32 requestid_;
-  ::google::protobuf::int32 riskerid_;
   mutable int _cached_size_;
   friend struct protobuf_riskapi_5faction_5fprotocal_2eproto::TableStruct;
 };
@@ -390,7 +303,7 @@ class req_instrument_list : public ::google::protobuf::Message /* @@protoc_inser
                &_req_instrument_list_default_instance_);
   }
   static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
-    2;
+    1;
 
   void Swap(req_instrument_list* other);
   friend void swap(req_instrument_list& a, req_instrument_list& b) {
@@ -487,7 +400,7 @@ class subscribe_quote : public ::google::protobuf::Message /* @@protoc_insertion
                &_subscribe_quote_default_instance_);
   }
   static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
-    3;
+    2;
 
   void Swap(subscribe_quote* other);
   friend void swap(subscribe_quote& a, subscribe_quote& b) {
@@ -600,7 +513,7 @@ class unsubscribe_quote : public ::google::protobuf::Message /* @@protoc_inserti
                &_unsubscribe_quote_default_instance_);
   }
   static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
-    4;
+    3;
 
   void Swap(unsubscribe_quote* other);
   friend void swap(unsubscribe_quote& a, unsubscribe_quote& b) {
@@ -713,7 +626,7 @@ class req_position : public ::google::protobuf::Message /* @@protoc_insertion_po
                &_req_position_default_instance_);
   }
   static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
-    5;
+    4;
 
   void Swap(req_position* other);
   friend void swap(req_position& a, req_position& b) {
@@ -833,7 +746,7 @@ class subscribe_position : public ::google::protobuf::Message /* @@protoc_insert
                &_subscribe_position_default_instance_);
   }
   static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
-    6;
+    5;
 
   void Swap(subscribe_position* other);
   friend void swap(subscribe_position& a, subscribe_position& b) {
@@ -946,7 +859,7 @@ class unsubscribe_position : public ::google::protobuf::Message /* @@protoc_inse
                &_unsubscribe_position_default_instance_);
   }
   static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
-    7;
+    6;
 
   void Swap(unsubscribe_position* other);
   friend void swap(unsubscribe_position& a, unsubscribe_position& b) {
@@ -1059,7 +972,7 @@ class req_trade : public ::google::protobuf::Message /* @@protoc_insertion_point
                &_req_trade_default_instance_);
   }
   static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
-    8;
+    7;
 
   void Swap(req_trade* other);
   friend void swap(req_trade& a, req_trade& b) {
@@ -1179,7 +1092,7 @@ class req_order : public ::google::protobuf::Message /* @@protoc_insertion_point
                &_req_order_default_instance_);
   }
   static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
-    9;
+    8;
 
   void Swap(req_order* other);
   friend void swap(req_order& a, req_order& b) {
@@ -1299,7 +1212,7 @@ class private_topic_info : public ::google::protobuf::Message /* @@protoc_insert
                &_private_topic_info_default_instance_);
   }
   static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
-    10;
+    9;
 
   void Swap(private_topic_info* other);
   friend void swap(private_topic_info& a, private_topic_info& b) {
@@ -1411,7 +1324,7 @@ class subscribe_private_topic : public ::google::protobuf::Message /* @@protoc_i
                &_subscribe_private_topic_default_instance_);
   }
   static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
-    11;
+    10;
 
   void Swap(subscribe_private_topic* other);
   friend void swap(subscribe_private_topic& a, subscribe_private_topic& b) {
@@ -1514,7 +1427,7 @@ class unsubscribe_private_topic : public ::google::protobuf::Message /* @@protoc
                &_unsubscribe_private_topic_default_instance_);
   }
   static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
-    12;
+    11;
 
   void Swap(unsubscribe_private_topic* other);
   friend void swap(unsubscribe_private_topic& a, unsubscribe_private_topic& b) {
@@ -1627,7 +1540,7 @@ class req_sync_account : public ::google::protobuf::Message /* @@protoc_insertio
                &_req_sync_account_default_instance_);
   }
   static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
-    13;
+    12;
 
   void Swap(req_sync_account* other);
   friend void swap(req_sync_account& a, req_sync_account& b) {
@@ -1747,7 +1660,7 @@ class subscribe_sync_account : public ::google::protobuf::Message /* @@protoc_in
                &_subscribe_sync_account_default_instance_);
   }
   static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
-    14;
+    13;
 
   void Swap(subscribe_sync_account* other);
   friend void swap(subscribe_sync_account& a, subscribe_sync_account& b) {
@@ -1860,7 +1773,7 @@ class unsubscribe_sync_account : public ::google::protobuf::Message /* @@protoc_
                &_unsubscribe_sync_account_default_instance_);
   }
   static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
-    15;
+    14;
 
   void Swap(unsubscribe_sync_account* other);
   friend void swap(unsubscribe_sync_account& a, unsubscribe_sync_account& b) {
@@ -1973,7 +1886,7 @@ class req_margin : public ::google::protobuf::Message /* @@protoc_insertion_poin
                &_req_margin_default_instance_);
   }
   static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
-    16;
+    15;
 
   void Swap(req_margin* other);
   friend void swap(req_margin& a, req_margin& b) {
@@ -2093,7 +2006,7 @@ class subscribe_margin : public ::google::protobuf::Message /* @@protoc_insertio
                &_subscribe_margin_default_instance_);
   }
   static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
-    17;
+    16;
 
   void Swap(subscribe_margin* other);
   friend void swap(subscribe_margin& a, subscribe_margin& b) {
@@ -2206,7 +2119,7 @@ class unsubscribe_margin : public ::google::protobuf::Message /* @@protoc_insert
                &_unsubscribe_margin_default_instance_);
   }
   static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
-    18;
+    17;
 
   void Swap(unsubscribe_margin* other);
   friend void swap(unsubscribe_margin& a, unsubscribe_margin& b) {
@@ -2319,7 +2232,7 @@ class req_risker_investor : public ::google::protobuf::Message /* @@protoc_inser
                &_req_risker_investor_default_instance_);
   }
   static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
-    19;
+    18;
 
   void Swap(req_risker_investor* other);
   friend void swap(req_risker_investor& a, req_risker_investor& b) {
@@ -2366,24 +2279,32 @@ class req_risker_investor : public ::google::protobuf::Message /* @@protoc_inser
 
   // accessors -------------------------------------------------------
 
+  // string userid = 2;
+  void clear_userid();
+  static const int kUseridFieldNumber = 2;
+  const ::std::string& userid() const;
+  void set_userid(const ::std::string& value);
+  #if LANG_CXX11
+  void set_userid(::std::string&& value);
+  #endif
+  void set_userid(const char* value);
+  void set_userid(const char* value, size_t size);
+  ::std::string* mutable_userid();
+  ::std::string* release_userid();
+  void set_allocated_userid(::std::string* userid);
+
   // int32 requestid = 1;
   void clear_requestid();
   static const int kRequestidFieldNumber = 1;
   ::google::protobuf::int32 requestid() const;
   void set_requestid(::google::protobuf::int32 value);
 
-  // int32 userid = 2;
-  void clear_userid();
-  static const int kUseridFieldNumber = 2;
-  ::google::protobuf::int32 userid() const;
-  void set_userid(::google::protobuf::int32 value);
-
   // @@protoc_insertion_point(class_scope:risk.req_risker_investor)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr userid_;
   ::google::protobuf::int32 requestid_;
-  ::google::protobuf::int32 userid_;
   mutable int _cached_size_;
   friend struct protobuf_riskapi_5faction_5fprotocal_2eproto::TableStruct;
 };
@@ -2423,7 +2344,7 @@ class sys_group : public ::google::protobuf::Message /* @@protoc_insertion_point
                &_sys_group_default_instance_);
   }
   static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
-    20;
+    19;
 
   void Swap(sys_group* other);
   friend void swap(sys_group& a, sys_group& b) {
@@ -2470,6 +2391,20 @@ class sys_group : public ::google::protobuf::Message /* @@protoc_insertion_point
 
   // accessors -------------------------------------------------------
 
+  // string riskgroupid = 1;
+  void clear_riskgroupid();
+  static const int kRiskgroupidFieldNumber = 1;
+  const ::std::string& riskgroupid() const;
+  void set_riskgroupid(const ::std::string& value);
+  #if LANG_CXX11
+  void set_riskgroupid(::std::string&& value);
+  #endif
+  void set_riskgroupid(const char* value);
+  void set_riskgroupid(const char* value, size_t size);
+  ::std::string* mutable_riskgroupid();
+  ::std::string* release_riskgroupid();
+  void set_allocated_riskgroupid(::std::string* riskgroupid);
+
   // string name = 2;
   void clear_name();
   static const int kNameFieldNumber = 2;
@@ -2498,19 +2433,13 @@ class sys_group : public ::google::protobuf::Message /* @@protoc_insertion_point
   ::std::string* release_desc();
   void set_allocated_desc(::std::string* desc);
 
-  // int32 riskgroupid = 1;
-  void clear_riskgroupid();
-  static const int kRiskgroupidFieldNumber = 1;
-  ::google::protobuf::int32 riskgroupid() const;
-  void set_riskgroupid(::google::protobuf::int32 value);
-
   // @@protoc_insertion_point(class_scope:risk.sys_group)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr riskgroupid_;
   ::google::protobuf::internal::ArenaStringPtr name_;
   ::google::protobuf::internal::ArenaStringPtr desc_;
-  ::google::protobuf::int32 riskgroupid_;
   mutable int _cached_size_;
   friend struct protobuf_riskapi_5faction_5fprotocal_2eproto::TableStruct;
 };
@@ -2550,7 +2479,7 @@ class req_groups : public ::google::protobuf::Message /* @@protoc_insertion_poin
                &_req_groups_default_instance_);
   }
   static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
-    21;
+    20;
 
   void Swap(req_groups* other);
   friend void swap(req_groups& a, req_groups& b) {
@@ -2597,24 +2526,32 @@ class req_groups : public ::google::protobuf::Message /* @@protoc_insertion_poin
 
   // accessors -------------------------------------------------------
 
+  // string userid = 2;
+  void clear_userid();
+  static const int kUseridFieldNumber = 2;
+  const ::std::string& userid() const;
+  void set_userid(const ::std::string& value);
+  #if LANG_CXX11
+  void set_userid(::std::string&& value);
+  #endif
+  void set_userid(const char* value);
+  void set_userid(const char* value, size_t size);
+  ::std::string* mutable_userid();
+  ::std::string* release_userid();
+  void set_allocated_userid(::std::string* userid);
+
   // int32 requestid = 1;
   void clear_requestid();
   static const int kRequestidFieldNumber = 1;
   ::google::protobuf::int32 requestid() const;
   void set_requestid(::google::protobuf::int32 value);
 
-  // int32 userid = 2;
-  void clear_userid();
-  static const int kUseridFieldNumber = 2;
-  ::google::protobuf::int32 userid() const;
-  void set_userid(::google::protobuf::int32 value);
-
   // @@protoc_insertion_point(class_scope:risk.req_groups)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr userid_;
   ::google::protobuf::int32 requestid_;
-  ::google::protobuf::int32 userid_;
   mutable int _cached_size_;
   friend struct protobuf_riskapi_5faction_5fprotocal_2eproto::TableStruct;
 };
@@ -2654,7 +2591,7 @@ class req_add_group : public ::google::protobuf::Message /* @@protoc_insertion_p
                &_req_add_group_default_instance_);
   }
   static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
-    22;
+    21;
 
   void Swap(req_add_group* other);
   friend void swap(req_add_group& a, req_add_group& b) {
@@ -2701,6 +2638,20 @@ class req_add_group : public ::google::protobuf::Message /* @@protoc_insertion_p
 
   // accessors -------------------------------------------------------
 
+  // string userid = 2;
+  void clear_userid();
+  static const int kUseridFieldNumber = 2;
+  const ::std::string& userid() const;
+  void set_userid(const ::std::string& value);
+  #if LANG_CXX11
+  void set_userid(::std::string&& value);
+  #endif
+  void set_userid(const char* value);
+  void set_userid(const char* value, size_t size);
+  ::std::string* mutable_userid();
+  ::std::string* release_userid();
+  void set_allocated_userid(::std::string* userid);
+
   // .risk.sys_group group = 3;
   bool has_group() const;
   void clear_group();
@@ -2716,19 +2667,13 @@ class req_add_group : public ::google::protobuf::Message /* @@protoc_insertion_p
   ::google::protobuf::int32 requestid() const;
   void set_requestid(::google::protobuf::int32 value);
 
-  // int32 userid = 2;
-  void clear_userid();
-  static const int kUseridFieldNumber = 2;
-  ::google::protobuf::int32 userid() const;
-  void set_userid(::google::protobuf::int32 value);
-
   // @@protoc_insertion_point(class_scope:risk.req_add_group)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr userid_;
   ::risk::sys_group* group_;
   ::google::protobuf::int32 requestid_;
-  ::google::protobuf::int32 userid_;
   mutable int _cached_size_;
   friend struct protobuf_riskapi_5faction_5fprotocal_2eproto::TableStruct;
 };
@@ -2768,7 +2713,7 @@ class req_del_group : public ::google::protobuf::Message /* @@protoc_insertion_p
                &_req_del_group_default_instance_);
   }
   static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
-    23;
+    22;
 
   void Swap(req_del_group* other);
   friend void swap(req_del_group& a, req_del_group& b) {
@@ -2815,31 +2760,47 @@ class req_del_group : public ::google::protobuf::Message /* @@protoc_insertion_p
 
   // accessors -------------------------------------------------------
 
+  // string userid = 2;
+  void clear_userid();
+  static const int kUseridFieldNumber = 2;
+  const ::std::string& userid() const;
+  void set_userid(const ::std::string& value);
+  #if LANG_CXX11
+  void set_userid(::std::string&& value);
+  #endif
+  void set_userid(const char* value);
+  void set_userid(const char* value, size_t size);
+  ::std::string* mutable_userid();
+  ::std::string* release_userid();
+  void set_allocated_userid(::std::string* userid);
+
+  // string riskgroupid = 3;
+  void clear_riskgroupid();
+  static const int kRiskgroupidFieldNumber = 3;
+  const ::std::string& riskgroupid() const;
+  void set_riskgroupid(const ::std::string& value);
+  #if LANG_CXX11
+  void set_riskgroupid(::std::string&& value);
+  #endif
+  void set_riskgroupid(const char* value);
+  void set_riskgroupid(const char* value, size_t size);
+  ::std::string* mutable_riskgroupid();
+  ::std::string* release_riskgroupid();
+  void set_allocated_riskgroupid(::std::string* riskgroupid);
+
   // int32 requestid = 1;
   void clear_requestid();
   static const int kRequestidFieldNumber = 1;
   ::google::protobuf::int32 requestid() const;
   void set_requestid(::google::protobuf::int32 value);
 
-  // int32 userid = 2;
-  void clear_userid();
-  static const int kUseridFieldNumber = 2;
-  ::google::protobuf::int32 userid() const;
-  void set_userid(::google::protobuf::int32 value);
-
-  // int32 riskgroupid = 3;
-  void clear_riskgroupid();
-  static const int kRiskgroupidFieldNumber = 3;
-  ::google::protobuf::int32 riskgroupid() const;
-  void set_riskgroupid(::google::protobuf::int32 value);
-
   // @@protoc_insertion_point(class_scope:risk.req_del_group)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr userid_;
+  ::google::protobuf::internal::ArenaStringPtr riskgroupid_;
   ::google::protobuf::int32 requestid_;
-  ::google::protobuf::int32 userid_;
-  ::google::protobuf::int32 riskgroupid_;
   mutable int _cached_size_;
   friend struct protobuf_riskapi_5faction_5fprotocal_2eproto::TableStruct;
 };
@@ -2879,7 +2840,7 @@ class req_edit_group : public ::google::protobuf::Message /* @@protoc_insertion_
                &_req_edit_group_default_instance_);
   }
   static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
-    24;
+    23;
 
   void Swap(req_edit_group* other);
   friend void swap(req_edit_group& a, req_edit_group& b) {
@@ -2926,6 +2887,20 @@ class req_edit_group : public ::google::protobuf::Message /* @@protoc_insertion_
 
   // accessors -------------------------------------------------------
 
+  // string userid = 2;
+  void clear_userid();
+  static const int kUseridFieldNumber = 2;
+  const ::std::string& userid() const;
+  void set_userid(const ::std::string& value);
+  #if LANG_CXX11
+  void set_userid(::std::string&& value);
+  #endif
+  void set_userid(const char* value);
+  void set_userid(const char* value, size_t size);
+  ::std::string* mutable_userid();
+  ::std::string* release_userid();
+  void set_allocated_userid(::std::string* userid);
+
   // .risk.sys_group group = 3;
   bool has_group() const;
   void clear_group();
@@ -2941,19 +2916,13 @@ class req_edit_group : public ::google::protobuf::Message /* @@protoc_insertion_
   ::google::protobuf::int32 requestid() const;
   void set_requestid(::google::protobuf::int32 value);
 
-  // int32 userid = 2;
-  void clear_userid();
-  static const int kUseridFieldNumber = 2;
-  ::google::protobuf::int32 userid() const;
-  void set_userid(::google::protobuf::int32 value);
-
   // @@protoc_insertion_point(class_scope:risk.req_edit_group)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr userid_;
   ::risk::sys_group* group_;
   ::google::protobuf::int32 requestid_;
-  ::google::protobuf::int32 userid_;
   mutable int _cached_size_;
   friend struct protobuf_riskapi_5faction_5fprotocal_2eproto::TableStruct;
 };
@@ -2993,7 +2962,7 @@ class req_insert_investors_to_group : public ::google::protobuf::Message /* @@pr
                &_req_insert_investors_to_group_default_instance_);
   }
   static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
-    25;
+    24;
 
   void Swap(req_insert_investors_to_group* other);
   friend void swap(req_insert_investors_to_group& a, req_insert_investors_to_group& b) {
@@ -3062,32 +3031,48 @@ class req_insert_investors_to_group : public ::google::protobuf::Message /* @@pr
   const ::google::protobuf::RepeatedPtrField< ::std::string>& investor() const;
   ::google::protobuf::RepeatedPtrField< ::std::string>* mutable_investor();
 
+  // string userid = 2;
+  void clear_userid();
+  static const int kUseridFieldNumber = 2;
+  const ::std::string& userid() const;
+  void set_userid(const ::std::string& value);
+  #if LANG_CXX11
+  void set_userid(::std::string&& value);
+  #endif
+  void set_userid(const char* value);
+  void set_userid(const char* value, size_t size);
+  ::std::string* mutable_userid();
+  ::std::string* release_userid();
+  void set_allocated_userid(::std::string* userid);
+
+  // string riskgroupid = 3;
+  void clear_riskgroupid();
+  static const int kRiskgroupidFieldNumber = 3;
+  const ::std::string& riskgroupid() const;
+  void set_riskgroupid(const ::std::string& value);
+  #if LANG_CXX11
+  void set_riskgroupid(::std::string&& value);
+  #endif
+  void set_riskgroupid(const char* value);
+  void set_riskgroupid(const char* value, size_t size);
+  ::std::string* mutable_riskgroupid();
+  ::std::string* release_riskgroupid();
+  void set_allocated_riskgroupid(::std::string* riskgroupid);
+
   // int32 requestid = 1;
   void clear_requestid();
   static const int kRequestidFieldNumber = 1;
   ::google::protobuf::int32 requestid() const;
   void set_requestid(::google::protobuf::int32 value);
 
-  // int32 userid = 2;
-  void clear_userid();
-  static const int kUseridFieldNumber = 2;
-  ::google::protobuf::int32 userid() const;
-  void set_userid(::google::protobuf::int32 value);
-
-  // int32 riskgroupid = 3;
-  void clear_riskgroupid();
-  static const int kRiskgroupidFieldNumber = 3;
-  ::google::protobuf::int32 riskgroupid() const;
-  void set_riskgroupid(::google::protobuf::int32 value);
-
   // @@protoc_insertion_point(class_scope:risk.req_insert_investors_to_group)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::RepeatedPtrField< ::std::string> investor_;
+  ::google::protobuf::internal::ArenaStringPtr userid_;
+  ::google::protobuf::internal::ArenaStringPtr riskgroupid_;
   ::google::protobuf::int32 requestid_;
-  ::google::protobuf::int32 userid_;
-  ::google::protobuf::int32 riskgroupid_;
   mutable int _cached_size_;
   friend struct protobuf_riskapi_5faction_5fprotocal_2eproto::TableStruct;
 };
@@ -3127,7 +3112,7 @@ class req_remove_investors_from_group : public ::google::protobuf::Message /* @@
                &_req_remove_investors_from_group_default_instance_);
   }
   static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
-    26;
+    25;
 
   void Swap(req_remove_investors_from_group* other);
   friend void swap(req_remove_investors_from_group& a, req_remove_investors_from_group& b) {
@@ -3196,32 +3181,525 @@ class req_remove_investors_from_group : public ::google::protobuf::Message /* @@
   const ::google::protobuf::RepeatedPtrField< ::std::string>& investor() const;
   ::google::protobuf::RepeatedPtrField< ::std::string>* mutable_investor();
 
+  // string userid = 2;
+  void clear_userid();
+  static const int kUseridFieldNumber = 2;
+  const ::std::string& userid() const;
+  void set_userid(const ::std::string& value);
+  #if LANG_CXX11
+  void set_userid(::std::string&& value);
+  #endif
+  void set_userid(const char* value);
+  void set_userid(const char* value, size_t size);
+  ::std::string* mutable_userid();
+  ::std::string* release_userid();
+  void set_allocated_userid(::std::string* userid);
+
+  // string riskgroupid = 3;
+  void clear_riskgroupid();
+  static const int kRiskgroupidFieldNumber = 3;
+  const ::std::string& riskgroupid() const;
+  void set_riskgroupid(const ::std::string& value);
+  #if LANG_CXX11
+  void set_riskgroupid(::std::string&& value);
+  #endif
+  void set_riskgroupid(const char* value);
+  void set_riskgroupid(const char* value, size_t size);
+  ::std::string* mutable_riskgroupid();
+  ::std::string* release_riskgroupid();
+  void set_allocated_riskgroupid(::std::string* riskgroupid);
+
   // int32 requestid = 1;
   void clear_requestid();
   static const int kRequestidFieldNumber = 1;
   ::google::protobuf::int32 requestid() const;
   void set_requestid(::google::protobuf::int32 value);
 
-  // int32 userid = 2;
-  void clear_userid();
-  static const int kUseridFieldNumber = 2;
-  ::google::protobuf::int32 userid() const;
-  void set_userid(::google::protobuf::int32 value);
-
-  // int32 riskgroupid = 3;
-  void clear_riskgroupid();
-  static const int kRiskgroupidFieldNumber = 3;
-  ::google::protobuf::int32 riskgroupid() const;
-  void set_riskgroupid(::google::protobuf::int32 value);
-
   // @@protoc_insertion_point(class_scope:risk.req_remove_investors_from_group)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::google::protobuf::RepeatedPtrField< ::std::string> investor_;
+  ::google::protobuf::internal::ArenaStringPtr userid_;
+  ::google::protobuf::internal::ArenaStringPtr riskgroupid_;
   ::google::protobuf::int32 requestid_;
-  ::google::protobuf::int32 userid_;
-  ::google::protobuf::int32 riskgroupid_;
+  mutable int _cached_size_;
+  friend struct protobuf_riskapi_5faction_5fprotocal_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
+class sub_option_position_risk : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:risk.sub_option_position_risk) */ {
+ public:
+  sub_option_position_risk();
+  virtual ~sub_option_position_risk();
+
+  sub_option_position_risk(const sub_option_position_risk& from);
+
+  inline sub_option_position_risk& operator=(const sub_option_position_risk& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  sub_option_position_risk(sub_option_position_risk&& from) noexcept
+    : sub_option_position_risk() {
+    *this = ::std::move(from);
+  }
+
+  inline sub_option_position_risk& operator=(sub_option_position_risk&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const sub_option_position_risk& default_instance();
+
+  static inline const sub_option_position_risk* internal_default_instance() {
+    return reinterpret_cast<const sub_option_position_risk*>(
+               &_sub_option_position_risk_default_instance_);
+  }
+  static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
+    26;
+
+  void Swap(sub_option_position_risk* other);
+  friend void swap(sub_option_position_risk& a, sub_option_position_risk& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline sub_option_position_risk* New() const PROTOBUF_FINAL { return New(NULL); }
+
+  sub_option_position_risk* New(::google::protobuf::Arena* arena) const PROTOBUF_FINAL;
+  void CopyFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void MergeFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void CopyFrom(const sub_option_position_risk& from);
+  void MergeFrom(const sub_option_position_risk& from);
+  void Clear() PROTOBUF_FINAL;
+  bool IsInitialized() const PROTOBUF_FINAL;
+
+  size_t ByteSizeLong() const PROTOBUF_FINAL;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) PROTOBUF_FINAL;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const PROTOBUF_FINAL;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const PROTOBUF_FINAL;
+  int GetCachedSize() const PROTOBUF_FINAL { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const PROTOBUF_FINAL;
+  void InternalSwap(sub_option_position_risk* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const PROTOBUF_FINAL;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // repeated string instrument = 2;
+  int instrument_size() const;
+  void clear_instrument();
+  static const int kInstrumentFieldNumber = 2;
+  const ::std::string& instrument(int index) const;
+  ::std::string* mutable_instrument(int index);
+  void set_instrument(int index, const ::std::string& value);
+  #if LANG_CXX11
+  void set_instrument(int index, ::std::string&& value);
+  #endif
+  void set_instrument(int index, const char* value);
+  void set_instrument(int index, const char* value, size_t size);
+  ::std::string* add_instrument();
+  void add_instrument(const ::std::string& value);
+  #if LANG_CXX11
+  void add_instrument(::std::string&& value);
+  #endif
+  void add_instrument(const char* value);
+  void add_instrument(const char* value, size_t size);
+  const ::google::protobuf::RepeatedPtrField< ::std::string>& instrument() const;
+  ::google::protobuf::RepeatedPtrField< ::std::string>* mutable_instrument();
+
+  // int32 model = 1;
+  void clear_model();
+  static const int kModelFieldNumber = 1;
+  ::google::protobuf::int32 model() const;
+  void set_model(::google::protobuf::int32 value);
+
+  // @@protoc_insertion_point(class_scope:risk.sub_option_position_risk)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::RepeatedPtrField< ::std::string> instrument_;
+  ::google::protobuf::int32 model_;
+  mutable int _cached_size_;
+  friend struct protobuf_riskapi_5faction_5fprotocal_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
+class unsub_option_position_risk : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:risk.unsub_option_position_risk) */ {
+ public:
+  unsub_option_position_risk();
+  virtual ~unsub_option_position_risk();
+
+  unsub_option_position_risk(const unsub_option_position_risk& from);
+
+  inline unsub_option_position_risk& operator=(const unsub_option_position_risk& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  unsub_option_position_risk(unsub_option_position_risk&& from) noexcept
+    : unsub_option_position_risk() {
+    *this = ::std::move(from);
+  }
+
+  inline unsub_option_position_risk& operator=(unsub_option_position_risk&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const unsub_option_position_risk& default_instance();
+
+  static inline const unsub_option_position_risk* internal_default_instance() {
+    return reinterpret_cast<const unsub_option_position_risk*>(
+               &_unsub_option_position_risk_default_instance_);
+  }
+  static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
+    27;
+
+  void Swap(unsub_option_position_risk* other);
+  friend void swap(unsub_option_position_risk& a, unsub_option_position_risk& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline unsub_option_position_risk* New() const PROTOBUF_FINAL { return New(NULL); }
+
+  unsub_option_position_risk* New(::google::protobuf::Arena* arena) const PROTOBUF_FINAL;
+  void CopyFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void MergeFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void CopyFrom(const unsub_option_position_risk& from);
+  void MergeFrom(const unsub_option_position_risk& from);
+  void Clear() PROTOBUF_FINAL;
+  bool IsInitialized() const PROTOBUF_FINAL;
+
+  size_t ByteSizeLong() const PROTOBUF_FINAL;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) PROTOBUF_FINAL;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const PROTOBUF_FINAL;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const PROTOBUF_FINAL;
+  int GetCachedSize() const PROTOBUF_FINAL { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const PROTOBUF_FINAL;
+  void InternalSwap(unsub_option_position_risk* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const PROTOBUF_FINAL;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // repeated string instrument = 2;
+  int instrument_size() const;
+  void clear_instrument();
+  static const int kInstrumentFieldNumber = 2;
+  const ::std::string& instrument(int index) const;
+  ::std::string* mutable_instrument(int index);
+  void set_instrument(int index, const ::std::string& value);
+  #if LANG_CXX11
+  void set_instrument(int index, ::std::string&& value);
+  #endif
+  void set_instrument(int index, const char* value);
+  void set_instrument(int index, const char* value, size_t size);
+  ::std::string* add_instrument();
+  void add_instrument(const ::std::string& value);
+  #if LANG_CXX11
+  void add_instrument(::std::string&& value);
+  #endif
+  void add_instrument(const char* value);
+  void add_instrument(const char* value, size_t size);
+  const ::google::protobuf::RepeatedPtrField< ::std::string>& instrument() const;
+  ::google::protobuf::RepeatedPtrField< ::std::string>* mutable_instrument();
+
+  // int32 model = 1;
+  void clear_model();
+  static const int kModelFieldNumber = 1;
+  ::google::protobuf::int32 model() const;
+  void set_model(::google::protobuf::int32 value);
+
+  // @@protoc_insertion_point(class_scope:risk.unsub_option_position_risk)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::RepeatedPtrField< ::std::string> instrument_;
+  ::google::protobuf::int32 model_;
+  mutable int _cached_size_;
+  friend struct protobuf_riskapi_5faction_5fprotocal_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
+class req_whatif : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:risk.req_whatif) */ {
+ public:
+  req_whatif();
+  virtual ~req_whatif();
+
+  req_whatif(const req_whatif& from);
+
+  inline req_whatif& operator=(const req_whatif& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  req_whatif(req_whatif&& from) noexcept
+    : req_whatif() {
+    *this = ::std::move(from);
+  }
+
+  inline req_whatif& operator=(req_whatif&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const req_whatif& default_instance();
+
+  static inline const req_whatif* internal_default_instance() {
+    return reinterpret_cast<const req_whatif*>(
+               &_req_whatif_default_instance_);
+  }
+  static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
+    28;
+
+  void Swap(req_whatif* other);
+  friend void swap(req_whatif& a, req_whatif& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline req_whatif* New() const PROTOBUF_FINAL { return New(NULL); }
+
+  req_whatif* New(::google::protobuf::Arena* arena) const PROTOBUF_FINAL;
+  void CopyFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void MergeFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void CopyFrom(const req_whatif& from);
+  void MergeFrom(const req_whatif& from);
+  void Clear() PROTOBUF_FINAL;
+  bool IsInitialized() const PROTOBUF_FINAL;
+
+  size_t ByteSizeLong() const PROTOBUF_FINAL;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) PROTOBUF_FINAL;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const PROTOBUF_FINAL;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const PROTOBUF_FINAL;
+  int GetCachedSize() const PROTOBUF_FINAL { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const PROTOBUF_FINAL;
+  void InternalSwap(req_whatif* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const PROTOBUF_FINAL;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // string instrument = 4;
+  void clear_instrument();
+  static const int kInstrumentFieldNumber = 4;
+  const ::std::string& instrument() const;
+  void set_instrument(const ::std::string& value);
+  #if LANG_CXX11
+  void set_instrument(::std::string&& value);
+  #endif
+  void set_instrument(const char* value);
+  void set_instrument(const char* value, size_t size);
+  ::std::string* mutable_instrument();
+  ::std::string* release_instrument();
+  void set_allocated_instrument(::std::string* instrument);
+
+  // int32 requestid = 1;
+  void clear_requestid();
+  static const int kRequestidFieldNumber = 1;
+  ::google::protobuf::int32 requestid() const;
+  void set_requestid(::google::protobuf::int32 value);
+
+  // int32 type = 2;
+  void clear_type();
+  static const int kTypeFieldNumber = 2;
+  ::google::protobuf::int32 type() const;
+  void set_type(::google::protobuf::int32 value);
+
+  // double range = 5;
+  void clear_range();
+  static const int kRangeFieldNumber = 5;
+  double range() const;
+  void set_range(double value);
+
+  // double base_value = 6;
+  void clear_base_value();
+  static const int kBaseValueFieldNumber = 6;
+  double base_value() const;
+  void set_base_value(double value);
+
+  // int32 model = 3;
+  void clear_model();
+  static const int kModelFieldNumber = 3;
+  ::google::protobuf::int32 model() const;
+  void set_model(::google::protobuf::int32 value);
+
+  // @@protoc_insertion_point(class_scope:risk.req_whatif)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr instrument_;
+  ::google::protobuf::int32 requestid_;
+  ::google::protobuf::int32 type_;
+  double range_;
+  double base_value_;
+  ::google::protobuf::int32 model_;
+  mutable int _cached_size_;
+  friend struct protobuf_riskapi_5faction_5fprotocal_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
+class req_option_argv : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:risk.req_option_argv) */ {
+ public:
+  req_option_argv();
+  virtual ~req_option_argv();
+
+  req_option_argv(const req_option_argv& from);
+
+  inline req_option_argv& operator=(const req_option_argv& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  req_option_argv(req_option_argv&& from) noexcept
+    : req_option_argv() {
+    *this = ::std::move(from);
+  }
+
+  inline req_option_argv& operator=(req_option_argv&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const req_option_argv& default_instance();
+
+  static inline const req_option_argv* internal_default_instance() {
+    return reinterpret_cast<const req_option_argv*>(
+               &_req_option_argv_default_instance_);
+  }
+  static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
+    29;
+
+  void Swap(req_option_argv* other);
+  friend void swap(req_option_argv& a, req_option_argv& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline req_option_argv* New() const PROTOBUF_FINAL { return New(NULL); }
+
+  req_option_argv* New(::google::protobuf::Arena* arena) const PROTOBUF_FINAL;
+  void CopyFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void MergeFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void CopyFrom(const req_option_argv& from);
+  void MergeFrom(const req_option_argv& from);
+  void Clear() PROTOBUF_FINAL;
+  bool IsInitialized() const PROTOBUF_FINAL;
+
+  size_t ByteSizeLong() const PROTOBUF_FINAL;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) PROTOBUF_FINAL;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const PROTOBUF_FINAL;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const PROTOBUF_FINAL;
+  int GetCachedSize() const PROTOBUF_FINAL { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const PROTOBUF_FINAL;
+  void InternalSwap(req_option_argv* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const PROTOBUF_FINAL;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // int32 requestid = 1;
+  void clear_requestid();
+  static const int kRequestidFieldNumber = 1;
+  ::google::protobuf::int32 requestid() const;
+  void set_requestid(::google::protobuf::int32 value);
+
+  // @@protoc_insertion_point(class_scope:risk.req_option_argv)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::int32 requestid_;
   mutable int _cached_size_;
   friend struct protobuf_riskapi_5faction_5fprotocal_2eproto::TableStruct;
 };
@@ -3251,18 +3729,57 @@ inline void req_risker_login::set_requestid(::google::protobuf::int32 value) {
   // @@protoc_insertion_point(field_set:risk.req_risker_login.requestid)
 }
 
-// int32 riskerid = 2;
+// string riskerid = 2;
 inline void req_risker_login::clear_riskerid() {
-  riskerid_ = 0;
+  riskerid_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline ::google::protobuf::int32 req_risker_login::riskerid() const {
+inline const ::std::string& req_risker_login::riskerid() const {
   // @@protoc_insertion_point(field_get:risk.req_risker_login.riskerid)
-  return riskerid_;
+  return riskerid_.GetNoArena();
 }
-inline void req_risker_login::set_riskerid(::google::protobuf::int32 value) {
+inline void req_risker_login::set_riskerid(const ::std::string& value) {
   
-  riskerid_ = value;
+  riskerid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
   // @@protoc_insertion_point(field_set:risk.req_risker_login.riskerid)
+}
+#if LANG_CXX11
+inline void req_risker_login::set_riskerid(::std::string&& value) {
+  
+  riskerid_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:risk.req_risker_login.riskerid)
+}
+#endif
+inline void req_risker_login::set_riskerid(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  riskerid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:risk.req_risker_login.riskerid)
+}
+inline void req_risker_login::set_riskerid(const char* value, size_t size) {
+  
+  riskerid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:risk.req_risker_login.riskerid)
+}
+inline ::std::string* req_risker_login::mutable_riskerid() {
+  
+  // @@protoc_insertion_point(field_mutable:risk.req_risker_login.riskerid)
+  return riskerid_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* req_risker_login::release_riskerid() {
+  // @@protoc_insertion_point(field_release:risk.req_risker_login.riskerid)
+  
+  return riskerid_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void req_risker_login::set_allocated_riskerid(::std::string* riskerid) {
+  if (riskerid != NULL) {
+    
+  } else {
+    
+  }
+  riskerid_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), riskerid);
+  // @@protoc_insertion_point(field_set_allocated:risk.req_risker_login.riskerid)
 }
 
 // string password = 3;
@@ -3316,38 +3833,6 @@ inline void req_risker_login::set_allocated_password(::std::string* password) {
   }
   password_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), password);
   // @@protoc_insertion_point(field_set_allocated:risk.req_risker_login.password)
-}
-
-// -------------------------------------------------------------------
-
-// req_investor_list
-
-// int32 requestid = 1;
-inline void req_investor_list::clear_requestid() {
-  requestid_ = 0;
-}
-inline ::google::protobuf::int32 req_investor_list::requestid() const {
-  // @@protoc_insertion_point(field_get:risk.req_investor_list.requestid)
-  return requestid_;
-}
-inline void req_investor_list::set_requestid(::google::protobuf::int32 value) {
-  
-  requestid_ = value;
-  // @@protoc_insertion_point(field_set:risk.req_investor_list.requestid)
-}
-
-// int32 riskerid = 2;
-inline void req_investor_list::clear_riskerid() {
-  riskerid_ = 0;
-}
-inline ::google::protobuf::int32 req_investor_list::riskerid() const {
-  // @@protoc_insertion_point(field_get:risk.req_investor_list.riskerid)
-  return riskerid_;
-}
-inline void req_investor_list::set_riskerid(::google::protobuf::int32 value) {
-  
-  riskerid_ = value;
-  // @@protoc_insertion_point(field_set:risk.req_investor_list.riskerid)
 }
 
 // -------------------------------------------------------------------
@@ -4583,36 +5068,114 @@ inline void req_risker_investor::set_requestid(::google::protobuf::int32 value) 
   // @@protoc_insertion_point(field_set:risk.req_risker_investor.requestid)
 }
 
-// int32 userid = 2;
+// string userid = 2;
 inline void req_risker_investor::clear_userid() {
-  userid_ = 0;
+  userid_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline ::google::protobuf::int32 req_risker_investor::userid() const {
+inline const ::std::string& req_risker_investor::userid() const {
   // @@protoc_insertion_point(field_get:risk.req_risker_investor.userid)
-  return userid_;
+  return userid_.GetNoArena();
 }
-inline void req_risker_investor::set_userid(::google::protobuf::int32 value) {
+inline void req_risker_investor::set_userid(const ::std::string& value) {
   
-  userid_ = value;
+  userid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
   // @@protoc_insertion_point(field_set:risk.req_risker_investor.userid)
+}
+#if LANG_CXX11
+inline void req_risker_investor::set_userid(::std::string&& value) {
+  
+  userid_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:risk.req_risker_investor.userid)
+}
+#endif
+inline void req_risker_investor::set_userid(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  userid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:risk.req_risker_investor.userid)
+}
+inline void req_risker_investor::set_userid(const char* value, size_t size) {
+  
+  userid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:risk.req_risker_investor.userid)
+}
+inline ::std::string* req_risker_investor::mutable_userid() {
+  
+  // @@protoc_insertion_point(field_mutable:risk.req_risker_investor.userid)
+  return userid_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* req_risker_investor::release_userid() {
+  // @@protoc_insertion_point(field_release:risk.req_risker_investor.userid)
+  
+  return userid_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void req_risker_investor::set_allocated_userid(::std::string* userid) {
+  if (userid != NULL) {
+    
+  } else {
+    
+  }
+  userid_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), userid);
+  // @@protoc_insertion_point(field_set_allocated:risk.req_risker_investor.userid)
 }
 
 // -------------------------------------------------------------------
 
 // sys_group
 
-// int32 riskgroupid = 1;
+// string riskgroupid = 1;
 inline void sys_group::clear_riskgroupid() {
-  riskgroupid_ = 0;
+  riskgroupid_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline ::google::protobuf::int32 sys_group::riskgroupid() const {
+inline const ::std::string& sys_group::riskgroupid() const {
   // @@protoc_insertion_point(field_get:risk.sys_group.riskgroupid)
-  return riskgroupid_;
+  return riskgroupid_.GetNoArena();
 }
-inline void sys_group::set_riskgroupid(::google::protobuf::int32 value) {
+inline void sys_group::set_riskgroupid(const ::std::string& value) {
   
-  riskgroupid_ = value;
+  riskgroupid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
   // @@protoc_insertion_point(field_set:risk.sys_group.riskgroupid)
+}
+#if LANG_CXX11
+inline void sys_group::set_riskgroupid(::std::string&& value) {
+  
+  riskgroupid_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:risk.sys_group.riskgroupid)
+}
+#endif
+inline void sys_group::set_riskgroupid(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  riskgroupid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:risk.sys_group.riskgroupid)
+}
+inline void sys_group::set_riskgroupid(const char* value, size_t size) {
+  
+  riskgroupid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:risk.sys_group.riskgroupid)
+}
+inline ::std::string* sys_group::mutable_riskgroupid() {
+  
+  // @@protoc_insertion_point(field_mutable:risk.sys_group.riskgroupid)
+  return riskgroupid_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* sys_group::release_riskgroupid() {
+  // @@protoc_insertion_point(field_release:risk.sys_group.riskgroupid)
+  
+  return riskgroupid_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void sys_group::set_allocated_riskgroupid(::std::string* riskgroupid) {
+  if (riskgroupid != NULL) {
+    
+  } else {
+    
+  }
+  riskgroupid_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), riskgroupid);
+  // @@protoc_insertion_point(field_set_allocated:risk.sys_group.riskgroupid)
 }
 
 // string name = 2;
@@ -4739,18 +5302,57 @@ inline void req_groups::set_requestid(::google::protobuf::int32 value) {
   // @@protoc_insertion_point(field_set:risk.req_groups.requestid)
 }
 
-// int32 userid = 2;
+// string userid = 2;
 inline void req_groups::clear_userid() {
-  userid_ = 0;
+  userid_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline ::google::protobuf::int32 req_groups::userid() const {
+inline const ::std::string& req_groups::userid() const {
   // @@protoc_insertion_point(field_get:risk.req_groups.userid)
-  return userid_;
+  return userid_.GetNoArena();
 }
-inline void req_groups::set_userid(::google::protobuf::int32 value) {
+inline void req_groups::set_userid(const ::std::string& value) {
   
-  userid_ = value;
+  userid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
   // @@protoc_insertion_point(field_set:risk.req_groups.userid)
+}
+#if LANG_CXX11
+inline void req_groups::set_userid(::std::string&& value) {
+  
+  userid_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:risk.req_groups.userid)
+}
+#endif
+inline void req_groups::set_userid(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  userid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:risk.req_groups.userid)
+}
+inline void req_groups::set_userid(const char* value, size_t size) {
+  
+  userid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:risk.req_groups.userid)
+}
+inline ::std::string* req_groups::mutable_userid() {
+  
+  // @@protoc_insertion_point(field_mutable:risk.req_groups.userid)
+  return userid_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* req_groups::release_userid() {
+  // @@protoc_insertion_point(field_release:risk.req_groups.userid)
+  
+  return userid_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void req_groups::set_allocated_userid(::std::string* userid) {
+  if (userid != NULL) {
+    
+  } else {
+    
+  }
+  userid_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), userid);
+  // @@protoc_insertion_point(field_set_allocated:risk.req_groups.userid)
 }
 
 // -------------------------------------------------------------------
@@ -4771,18 +5373,57 @@ inline void req_add_group::set_requestid(::google::protobuf::int32 value) {
   // @@protoc_insertion_point(field_set:risk.req_add_group.requestid)
 }
 
-// int32 userid = 2;
+// string userid = 2;
 inline void req_add_group::clear_userid() {
-  userid_ = 0;
+  userid_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline ::google::protobuf::int32 req_add_group::userid() const {
+inline const ::std::string& req_add_group::userid() const {
   // @@protoc_insertion_point(field_get:risk.req_add_group.userid)
-  return userid_;
+  return userid_.GetNoArena();
 }
-inline void req_add_group::set_userid(::google::protobuf::int32 value) {
+inline void req_add_group::set_userid(const ::std::string& value) {
   
-  userid_ = value;
+  userid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
   // @@protoc_insertion_point(field_set:risk.req_add_group.userid)
+}
+#if LANG_CXX11
+inline void req_add_group::set_userid(::std::string&& value) {
+  
+  userid_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:risk.req_add_group.userid)
+}
+#endif
+inline void req_add_group::set_userid(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  userid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:risk.req_add_group.userid)
+}
+inline void req_add_group::set_userid(const char* value, size_t size) {
+  
+  userid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:risk.req_add_group.userid)
+}
+inline ::std::string* req_add_group::mutable_userid() {
+  
+  // @@protoc_insertion_point(field_mutable:risk.req_add_group.userid)
+  return userid_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* req_add_group::release_userid() {
+  // @@protoc_insertion_point(field_release:risk.req_add_group.userid)
+  
+  return userid_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void req_add_group::set_allocated_userid(::std::string* userid) {
+  if (userid != NULL) {
+    
+  } else {
+    
+  }
+  userid_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), userid);
+  // @@protoc_insertion_point(field_set_allocated:risk.req_add_group.userid)
 }
 
 // .risk.sys_group group = 3;
@@ -4843,32 +5484,110 @@ inline void req_del_group::set_requestid(::google::protobuf::int32 value) {
   // @@protoc_insertion_point(field_set:risk.req_del_group.requestid)
 }
 
-// int32 userid = 2;
+// string userid = 2;
 inline void req_del_group::clear_userid() {
-  userid_ = 0;
+  userid_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline ::google::protobuf::int32 req_del_group::userid() const {
+inline const ::std::string& req_del_group::userid() const {
   // @@protoc_insertion_point(field_get:risk.req_del_group.userid)
-  return userid_;
+  return userid_.GetNoArena();
 }
-inline void req_del_group::set_userid(::google::protobuf::int32 value) {
+inline void req_del_group::set_userid(const ::std::string& value) {
   
-  userid_ = value;
+  userid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
   // @@protoc_insertion_point(field_set:risk.req_del_group.userid)
 }
-
-// int32 riskgroupid = 3;
-inline void req_del_group::clear_riskgroupid() {
-  riskgroupid_ = 0;
-}
-inline ::google::protobuf::int32 req_del_group::riskgroupid() const {
-  // @@protoc_insertion_point(field_get:risk.req_del_group.riskgroupid)
-  return riskgroupid_;
-}
-inline void req_del_group::set_riskgroupid(::google::protobuf::int32 value) {
+#if LANG_CXX11
+inline void req_del_group::set_userid(::std::string&& value) {
   
-  riskgroupid_ = value;
+  userid_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:risk.req_del_group.userid)
+}
+#endif
+inline void req_del_group::set_userid(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  userid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:risk.req_del_group.userid)
+}
+inline void req_del_group::set_userid(const char* value, size_t size) {
+  
+  userid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:risk.req_del_group.userid)
+}
+inline ::std::string* req_del_group::mutable_userid() {
+  
+  // @@protoc_insertion_point(field_mutable:risk.req_del_group.userid)
+  return userid_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* req_del_group::release_userid() {
+  // @@protoc_insertion_point(field_release:risk.req_del_group.userid)
+  
+  return userid_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void req_del_group::set_allocated_userid(::std::string* userid) {
+  if (userid != NULL) {
+    
+  } else {
+    
+  }
+  userid_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), userid);
+  // @@protoc_insertion_point(field_set_allocated:risk.req_del_group.userid)
+}
+
+// string riskgroupid = 3;
+inline void req_del_group::clear_riskgroupid() {
+  riskgroupid_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& req_del_group::riskgroupid() const {
+  // @@protoc_insertion_point(field_get:risk.req_del_group.riskgroupid)
+  return riskgroupid_.GetNoArena();
+}
+inline void req_del_group::set_riskgroupid(const ::std::string& value) {
+  
+  riskgroupid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
   // @@protoc_insertion_point(field_set:risk.req_del_group.riskgroupid)
+}
+#if LANG_CXX11
+inline void req_del_group::set_riskgroupid(::std::string&& value) {
+  
+  riskgroupid_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:risk.req_del_group.riskgroupid)
+}
+#endif
+inline void req_del_group::set_riskgroupid(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  riskgroupid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:risk.req_del_group.riskgroupid)
+}
+inline void req_del_group::set_riskgroupid(const char* value, size_t size) {
+  
+  riskgroupid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:risk.req_del_group.riskgroupid)
+}
+inline ::std::string* req_del_group::mutable_riskgroupid() {
+  
+  // @@protoc_insertion_point(field_mutable:risk.req_del_group.riskgroupid)
+  return riskgroupid_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* req_del_group::release_riskgroupid() {
+  // @@protoc_insertion_point(field_release:risk.req_del_group.riskgroupid)
+  
+  return riskgroupid_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void req_del_group::set_allocated_riskgroupid(::std::string* riskgroupid) {
+  if (riskgroupid != NULL) {
+    
+  } else {
+    
+  }
+  riskgroupid_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), riskgroupid);
+  // @@protoc_insertion_point(field_set_allocated:risk.req_del_group.riskgroupid)
 }
 
 // -------------------------------------------------------------------
@@ -4889,18 +5608,57 @@ inline void req_edit_group::set_requestid(::google::protobuf::int32 value) {
   // @@protoc_insertion_point(field_set:risk.req_edit_group.requestid)
 }
 
-// int32 userid = 2;
+// string userid = 2;
 inline void req_edit_group::clear_userid() {
-  userid_ = 0;
+  userid_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline ::google::protobuf::int32 req_edit_group::userid() const {
+inline const ::std::string& req_edit_group::userid() const {
   // @@protoc_insertion_point(field_get:risk.req_edit_group.userid)
-  return userid_;
+  return userid_.GetNoArena();
 }
-inline void req_edit_group::set_userid(::google::protobuf::int32 value) {
+inline void req_edit_group::set_userid(const ::std::string& value) {
   
-  userid_ = value;
+  userid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
   // @@protoc_insertion_point(field_set:risk.req_edit_group.userid)
+}
+#if LANG_CXX11
+inline void req_edit_group::set_userid(::std::string&& value) {
+  
+  userid_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:risk.req_edit_group.userid)
+}
+#endif
+inline void req_edit_group::set_userid(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  userid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:risk.req_edit_group.userid)
+}
+inline void req_edit_group::set_userid(const char* value, size_t size) {
+  
+  userid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:risk.req_edit_group.userid)
+}
+inline ::std::string* req_edit_group::mutable_userid() {
+  
+  // @@protoc_insertion_point(field_mutable:risk.req_edit_group.userid)
+  return userid_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* req_edit_group::release_userid() {
+  // @@protoc_insertion_point(field_release:risk.req_edit_group.userid)
+  
+  return userid_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void req_edit_group::set_allocated_userid(::std::string* userid) {
+  if (userid != NULL) {
+    
+  } else {
+    
+  }
+  userid_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), userid);
+  // @@protoc_insertion_point(field_set_allocated:risk.req_edit_group.userid)
 }
 
 // .risk.sys_group group = 3;
@@ -4961,32 +5719,110 @@ inline void req_insert_investors_to_group::set_requestid(::google::protobuf::int
   // @@protoc_insertion_point(field_set:risk.req_insert_investors_to_group.requestid)
 }
 
-// int32 userid = 2;
+// string userid = 2;
 inline void req_insert_investors_to_group::clear_userid() {
-  userid_ = 0;
+  userid_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline ::google::protobuf::int32 req_insert_investors_to_group::userid() const {
+inline const ::std::string& req_insert_investors_to_group::userid() const {
   // @@protoc_insertion_point(field_get:risk.req_insert_investors_to_group.userid)
-  return userid_;
+  return userid_.GetNoArena();
 }
-inline void req_insert_investors_to_group::set_userid(::google::protobuf::int32 value) {
+inline void req_insert_investors_to_group::set_userid(const ::std::string& value) {
   
-  userid_ = value;
+  userid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
   // @@protoc_insertion_point(field_set:risk.req_insert_investors_to_group.userid)
 }
-
-// int32 riskgroupid = 3;
-inline void req_insert_investors_to_group::clear_riskgroupid() {
-  riskgroupid_ = 0;
-}
-inline ::google::protobuf::int32 req_insert_investors_to_group::riskgroupid() const {
-  // @@protoc_insertion_point(field_get:risk.req_insert_investors_to_group.riskgroupid)
-  return riskgroupid_;
-}
-inline void req_insert_investors_to_group::set_riskgroupid(::google::protobuf::int32 value) {
+#if LANG_CXX11
+inline void req_insert_investors_to_group::set_userid(::std::string&& value) {
   
-  riskgroupid_ = value;
+  userid_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:risk.req_insert_investors_to_group.userid)
+}
+#endif
+inline void req_insert_investors_to_group::set_userid(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  userid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:risk.req_insert_investors_to_group.userid)
+}
+inline void req_insert_investors_to_group::set_userid(const char* value, size_t size) {
+  
+  userid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:risk.req_insert_investors_to_group.userid)
+}
+inline ::std::string* req_insert_investors_to_group::mutable_userid() {
+  
+  // @@protoc_insertion_point(field_mutable:risk.req_insert_investors_to_group.userid)
+  return userid_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* req_insert_investors_to_group::release_userid() {
+  // @@protoc_insertion_point(field_release:risk.req_insert_investors_to_group.userid)
+  
+  return userid_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void req_insert_investors_to_group::set_allocated_userid(::std::string* userid) {
+  if (userid != NULL) {
+    
+  } else {
+    
+  }
+  userid_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), userid);
+  // @@protoc_insertion_point(field_set_allocated:risk.req_insert_investors_to_group.userid)
+}
+
+// string riskgroupid = 3;
+inline void req_insert_investors_to_group::clear_riskgroupid() {
+  riskgroupid_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& req_insert_investors_to_group::riskgroupid() const {
+  // @@protoc_insertion_point(field_get:risk.req_insert_investors_to_group.riskgroupid)
+  return riskgroupid_.GetNoArena();
+}
+inline void req_insert_investors_to_group::set_riskgroupid(const ::std::string& value) {
+  
+  riskgroupid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
   // @@protoc_insertion_point(field_set:risk.req_insert_investors_to_group.riskgroupid)
+}
+#if LANG_CXX11
+inline void req_insert_investors_to_group::set_riskgroupid(::std::string&& value) {
+  
+  riskgroupid_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:risk.req_insert_investors_to_group.riskgroupid)
+}
+#endif
+inline void req_insert_investors_to_group::set_riskgroupid(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  riskgroupid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:risk.req_insert_investors_to_group.riskgroupid)
+}
+inline void req_insert_investors_to_group::set_riskgroupid(const char* value, size_t size) {
+  
+  riskgroupid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:risk.req_insert_investors_to_group.riskgroupid)
+}
+inline ::std::string* req_insert_investors_to_group::mutable_riskgroupid() {
+  
+  // @@protoc_insertion_point(field_mutable:risk.req_insert_investors_to_group.riskgroupid)
+  return riskgroupid_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* req_insert_investors_to_group::release_riskgroupid() {
+  // @@protoc_insertion_point(field_release:risk.req_insert_investors_to_group.riskgroupid)
+  
+  return riskgroupid_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void req_insert_investors_to_group::set_allocated_riskgroupid(::std::string* riskgroupid) {
+  if (riskgroupid != NULL) {
+    
+  } else {
+    
+  }
+  riskgroupid_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), riskgroupid);
+  // @@protoc_insertion_point(field_set_allocated:risk.req_insert_investors_to_group.riskgroupid)
 }
 
 // repeated string investor = 4;
@@ -5076,32 +5912,110 @@ inline void req_remove_investors_from_group::set_requestid(::google::protobuf::i
   // @@protoc_insertion_point(field_set:risk.req_remove_investors_from_group.requestid)
 }
 
-// int32 userid = 2;
+// string userid = 2;
 inline void req_remove_investors_from_group::clear_userid() {
-  userid_ = 0;
+  userid_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline ::google::protobuf::int32 req_remove_investors_from_group::userid() const {
+inline const ::std::string& req_remove_investors_from_group::userid() const {
   // @@protoc_insertion_point(field_get:risk.req_remove_investors_from_group.userid)
-  return userid_;
+  return userid_.GetNoArena();
 }
-inline void req_remove_investors_from_group::set_userid(::google::protobuf::int32 value) {
+inline void req_remove_investors_from_group::set_userid(const ::std::string& value) {
   
-  userid_ = value;
+  userid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
   // @@protoc_insertion_point(field_set:risk.req_remove_investors_from_group.userid)
 }
-
-// int32 riskgroupid = 3;
-inline void req_remove_investors_from_group::clear_riskgroupid() {
-  riskgroupid_ = 0;
-}
-inline ::google::protobuf::int32 req_remove_investors_from_group::riskgroupid() const {
-  // @@protoc_insertion_point(field_get:risk.req_remove_investors_from_group.riskgroupid)
-  return riskgroupid_;
-}
-inline void req_remove_investors_from_group::set_riskgroupid(::google::protobuf::int32 value) {
+#if LANG_CXX11
+inline void req_remove_investors_from_group::set_userid(::std::string&& value) {
   
-  riskgroupid_ = value;
+  userid_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:risk.req_remove_investors_from_group.userid)
+}
+#endif
+inline void req_remove_investors_from_group::set_userid(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  userid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:risk.req_remove_investors_from_group.userid)
+}
+inline void req_remove_investors_from_group::set_userid(const char* value, size_t size) {
+  
+  userid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:risk.req_remove_investors_from_group.userid)
+}
+inline ::std::string* req_remove_investors_from_group::mutable_userid() {
+  
+  // @@protoc_insertion_point(field_mutable:risk.req_remove_investors_from_group.userid)
+  return userid_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* req_remove_investors_from_group::release_userid() {
+  // @@protoc_insertion_point(field_release:risk.req_remove_investors_from_group.userid)
+  
+  return userid_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void req_remove_investors_from_group::set_allocated_userid(::std::string* userid) {
+  if (userid != NULL) {
+    
+  } else {
+    
+  }
+  userid_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), userid);
+  // @@protoc_insertion_point(field_set_allocated:risk.req_remove_investors_from_group.userid)
+}
+
+// string riskgroupid = 3;
+inline void req_remove_investors_from_group::clear_riskgroupid() {
+  riskgroupid_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& req_remove_investors_from_group::riskgroupid() const {
+  // @@protoc_insertion_point(field_get:risk.req_remove_investors_from_group.riskgroupid)
+  return riskgroupid_.GetNoArena();
+}
+inline void req_remove_investors_from_group::set_riskgroupid(const ::std::string& value) {
+  
+  riskgroupid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
   // @@protoc_insertion_point(field_set:risk.req_remove_investors_from_group.riskgroupid)
+}
+#if LANG_CXX11
+inline void req_remove_investors_from_group::set_riskgroupid(::std::string&& value) {
+  
+  riskgroupid_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:risk.req_remove_investors_from_group.riskgroupid)
+}
+#endif
+inline void req_remove_investors_from_group::set_riskgroupid(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  riskgroupid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:risk.req_remove_investors_from_group.riskgroupid)
+}
+inline void req_remove_investors_from_group::set_riskgroupid(const char* value, size_t size) {
+  
+  riskgroupid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:risk.req_remove_investors_from_group.riskgroupid)
+}
+inline ::std::string* req_remove_investors_from_group::mutable_riskgroupid() {
+  
+  // @@protoc_insertion_point(field_mutable:risk.req_remove_investors_from_group.riskgroupid)
+  return riskgroupid_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* req_remove_investors_from_group::release_riskgroupid() {
+  // @@protoc_insertion_point(field_release:risk.req_remove_investors_from_group.riskgroupid)
+  
+  return riskgroupid_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void req_remove_investors_from_group::set_allocated_riskgroupid(::std::string* riskgroupid) {
+  if (riskgroupid != NULL) {
+    
+  } else {
+    
+  }
+  riskgroupid_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), riskgroupid);
+  // @@protoc_insertion_point(field_set_allocated:risk.req_remove_investors_from_group.riskgroupid)
 }
 
 // repeated string investor = 4;
@@ -5173,10 +6087,335 @@ req_remove_investors_from_group::mutable_investor() {
   return &investor_;
 }
 
+// -------------------------------------------------------------------
+
+// sub_option_position_risk
+
+// int32 model = 1;
+inline void sub_option_position_risk::clear_model() {
+  model_ = 0;
+}
+inline ::google::protobuf::int32 sub_option_position_risk::model() const {
+  // @@protoc_insertion_point(field_get:risk.sub_option_position_risk.model)
+  return model_;
+}
+inline void sub_option_position_risk::set_model(::google::protobuf::int32 value) {
+  
+  model_ = value;
+  // @@protoc_insertion_point(field_set:risk.sub_option_position_risk.model)
+}
+
+// repeated string instrument = 2;
+inline int sub_option_position_risk::instrument_size() const {
+  return instrument_.size();
+}
+inline void sub_option_position_risk::clear_instrument() {
+  instrument_.Clear();
+}
+inline const ::std::string& sub_option_position_risk::instrument(int index) const {
+  // @@protoc_insertion_point(field_get:risk.sub_option_position_risk.instrument)
+  return instrument_.Get(index);
+}
+inline ::std::string* sub_option_position_risk::mutable_instrument(int index) {
+  // @@protoc_insertion_point(field_mutable:risk.sub_option_position_risk.instrument)
+  return instrument_.Mutable(index);
+}
+inline void sub_option_position_risk::set_instrument(int index, const ::std::string& value) {
+  // @@protoc_insertion_point(field_set:risk.sub_option_position_risk.instrument)
+  instrument_.Mutable(index)->assign(value);
+}
+#if LANG_CXX11
+inline void sub_option_position_risk::set_instrument(int index, ::std::string&& value) {
+  // @@protoc_insertion_point(field_set:risk.sub_option_position_risk.instrument)
+  instrument_.Mutable(index)->assign(std::move(value));
+}
+#endif
+inline void sub_option_position_risk::set_instrument(int index, const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  instrument_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set_char:risk.sub_option_position_risk.instrument)
+}
+inline void sub_option_position_risk::set_instrument(int index, const char* value, size_t size) {
+  instrument_.Mutable(index)->assign(
+    reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:risk.sub_option_position_risk.instrument)
+}
+inline ::std::string* sub_option_position_risk::add_instrument() {
+  // @@protoc_insertion_point(field_add_mutable:risk.sub_option_position_risk.instrument)
+  return instrument_.Add();
+}
+inline void sub_option_position_risk::add_instrument(const ::std::string& value) {
+  instrument_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add:risk.sub_option_position_risk.instrument)
+}
+#if LANG_CXX11
+inline void sub_option_position_risk::add_instrument(::std::string&& value) {
+  instrument_.Add(std::move(value));
+  // @@protoc_insertion_point(field_add:risk.sub_option_position_risk.instrument)
+}
+#endif
+inline void sub_option_position_risk::add_instrument(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  instrument_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add_char:risk.sub_option_position_risk.instrument)
+}
+inline void sub_option_position_risk::add_instrument(const char* value, size_t size) {
+  instrument_.Add()->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_add_pointer:risk.sub_option_position_risk.instrument)
+}
+inline const ::google::protobuf::RepeatedPtrField< ::std::string>&
+sub_option_position_risk::instrument() const {
+  // @@protoc_insertion_point(field_list:risk.sub_option_position_risk.instrument)
+  return instrument_;
+}
+inline ::google::protobuf::RepeatedPtrField< ::std::string>*
+sub_option_position_risk::mutable_instrument() {
+  // @@protoc_insertion_point(field_mutable_list:risk.sub_option_position_risk.instrument)
+  return &instrument_;
+}
+
+// -------------------------------------------------------------------
+
+// unsub_option_position_risk
+
+// int32 model = 1;
+inline void unsub_option_position_risk::clear_model() {
+  model_ = 0;
+}
+inline ::google::protobuf::int32 unsub_option_position_risk::model() const {
+  // @@protoc_insertion_point(field_get:risk.unsub_option_position_risk.model)
+  return model_;
+}
+inline void unsub_option_position_risk::set_model(::google::protobuf::int32 value) {
+  
+  model_ = value;
+  // @@protoc_insertion_point(field_set:risk.unsub_option_position_risk.model)
+}
+
+// repeated string instrument = 2;
+inline int unsub_option_position_risk::instrument_size() const {
+  return instrument_.size();
+}
+inline void unsub_option_position_risk::clear_instrument() {
+  instrument_.Clear();
+}
+inline const ::std::string& unsub_option_position_risk::instrument(int index) const {
+  // @@protoc_insertion_point(field_get:risk.unsub_option_position_risk.instrument)
+  return instrument_.Get(index);
+}
+inline ::std::string* unsub_option_position_risk::mutable_instrument(int index) {
+  // @@protoc_insertion_point(field_mutable:risk.unsub_option_position_risk.instrument)
+  return instrument_.Mutable(index);
+}
+inline void unsub_option_position_risk::set_instrument(int index, const ::std::string& value) {
+  // @@protoc_insertion_point(field_set:risk.unsub_option_position_risk.instrument)
+  instrument_.Mutable(index)->assign(value);
+}
+#if LANG_CXX11
+inline void unsub_option_position_risk::set_instrument(int index, ::std::string&& value) {
+  // @@protoc_insertion_point(field_set:risk.unsub_option_position_risk.instrument)
+  instrument_.Mutable(index)->assign(std::move(value));
+}
+#endif
+inline void unsub_option_position_risk::set_instrument(int index, const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  instrument_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set_char:risk.unsub_option_position_risk.instrument)
+}
+inline void unsub_option_position_risk::set_instrument(int index, const char* value, size_t size) {
+  instrument_.Mutable(index)->assign(
+    reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:risk.unsub_option_position_risk.instrument)
+}
+inline ::std::string* unsub_option_position_risk::add_instrument() {
+  // @@protoc_insertion_point(field_add_mutable:risk.unsub_option_position_risk.instrument)
+  return instrument_.Add();
+}
+inline void unsub_option_position_risk::add_instrument(const ::std::string& value) {
+  instrument_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add:risk.unsub_option_position_risk.instrument)
+}
+#if LANG_CXX11
+inline void unsub_option_position_risk::add_instrument(::std::string&& value) {
+  instrument_.Add(std::move(value));
+  // @@protoc_insertion_point(field_add:risk.unsub_option_position_risk.instrument)
+}
+#endif
+inline void unsub_option_position_risk::add_instrument(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  instrument_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add_char:risk.unsub_option_position_risk.instrument)
+}
+inline void unsub_option_position_risk::add_instrument(const char* value, size_t size) {
+  instrument_.Add()->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_add_pointer:risk.unsub_option_position_risk.instrument)
+}
+inline const ::google::protobuf::RepeatedPtrField< ::std::string>&
+unsub_option_position_risk::instrument() const {
+  // @@protoc_insertion_point(field_list:risk.unsub_option_position_risk.instrument)
+  return instrument_;
+}
+inline ::google::protobuf::RepeatedPtrField< ::std::string>*
+unsub_option_position_risk::mutable_instrument() {
+  // @@protoc_insertion_point(field_mutable_list:risk.unsub_option_position_risk.instrument)
+  return &instrument_;
+}
+
+// -------------------------------------------------------------------
+
+// req_whatif
+
+// int32 requestid = 1;
+inline void req_whatif::clear_requestid() {
+  requestid_ = 0;
+}
+inline ::google::protobuf::int32 req_whatif::requestid() const {
+  // @@protoc_insertion_point(field_get:risk.req_whatif.requestid)
+  return requestid_;
+}
+inline void req_whatif::set_requestid(::google::protobuf::int32 value) {
+  
+  requestid_ = value;
+  // @@protoc_insertion_point(field_set:risk.req_whatif.requestid)
+}
+
+// int32 type = 2;
+inline void req_whatif::clear_type() {
+  type_ = 0;
+}
+inline ::google::protobuf::int32 req_whatif::type() const {
+  // @@protoc_insertion_point(field_get:risk.req_whatif.type)
+  return type_;
+}
+inline void req_whatif::set_type(::google::protobuf::int32 value) {
+  
+  type_ = value;
+  // @@protoc_insertion_point(field_set:risk.req_whatif.type)
+}
+
+// int32 model = 3;
+inline void req_whatif::clear_model() {
+  model_ = 0;
+}
+inline ::google::protobuf::int32 req_whatif::model() const {
+  // @@protoc_insertion_point(field_get:risk.req_whatif.model)
+  return model_;
+}
+inline void req_whatif::set_model(::google::protobuf::int32 value) {
+  
+  model_ = value;
+  // @@protoc_insertion_point(field_set:risk.req_whatif.model)
+}
+
+// string instrument = 4;
+inline void req_whatif::clear_instrument() {
+  instrument_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& req_whatif::instrument() const {
+  // @@protoc_insertion_point(field_get:risk.req_whatif.instrument)
+  return instrument_.GetNoArena();
+}
+inline void req_whatif::set_instrument(const ::std::string& value) {
+  
+  instrument_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:risk.req_whatif.instrument)
+}
+#if LANG_CXX11
+inline void req_whatif::set_instrument(::std::string&& value) {
+  
+  instrument_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:risk.req_whatif.instrument)
+}
+#endif
+inline void req_whatif::set_instrument(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  instrument_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:risk.req_whatif.instrument)
+}
+inline void req_whatif::set_instrument(const char* value, size_t size) {
+  
+  instrument_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:risk.req_whatif.instrument)
+}
+inline ::std::string* req_whatif::mutable_instrument() {
+  
+  // @@protoc_insertion_point(field_mutable:risk.req_whatif.instrument)
+  return instrument_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* req_whatif::release_instrument() {
+  // @@protoc_insertion_point(field_release:risk.req_whatif.instrument)
+  
+  return instrument_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void req_whatif::set_allocated_instrument(::std::string* instrument) {
+  if (instrument != NULL) {
+    
+  } else {
+    
+  }
+  instrument_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), instrument);
+  // @@protoc_insertion_point(field_set_allocated:risk.req_whatif.instrument)
+}
+
+// double range = 5;
+inline void req_whatif::clear_range() {
+  range_ = 0;
+}
+inline double req_whatif::range() const {
+  // @@protoc_insertion_point(field_get:risk.req_whatif.range)
+  return range_;
+}
+inline void req_whatif::set_range(double value) {
+  
+  range_ = value;
+  // @@protoc_insertion_point(field_set:risk.req_whatif.range)
+}
+
+// double base_value = 6;
+inline void req_whatif::clear_base_value() {
+  base_value_ = 0;
+}
+inline double req_whatif::base_value() const {
+  // @@protoc_insertion_point(field_get:risk.req_whatif.base_value)
+  return base_value_;
+}
+inline void req_whatif::set_base_value(double value) {
+  
+  base_value_ = value;
+  // @@protoc_insertion_point(field_set:risk.req_whatif.base_value)
+}
+
+// -------------------------------------------------------------------
+
+// req_option_argv
+
+// int32 requestid = 1;
+inline void req_option_argv::clear_requestid() {
+  requestid_ = 0;
+}
+inline ::google::protobuf::int32 req_option_argv::requestid() const {
+  // @@protoc_insertion_point(field_get:risk.req_option_argv.requestid)
+  return requestid_;
+}
+inline void req_option_argv::set_requestid(::google::protobuf::int32 value) {
+  
+  requestid_ = value;
+  // @@protoc_insertion_point(field_set:risk.req_option_argv.requestid)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
 #endif  // !PROTOBUF_INLINE_NOT_IN_HEADERS
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------
