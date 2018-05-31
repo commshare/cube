@@ -80,13 +80,13 @@ public:
 	/*@ add message and handler map.*/
 	void set_dispatch(IN const MessageType& type, IN HandlerFunc func)
 	{
-		message_handler().set_dispatch(type, func);
+		this->message_handler().set_dispatch(type, func);
 	}
 
 	/*@ set message default handler.*/
 	void set_default(IN HandlerFunc func)
 	{
-		message_handler().set_default(func);
+		this->message_handler().set_default(func);
 	}
 };
 
