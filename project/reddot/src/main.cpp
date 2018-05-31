@@ -112,22 +112,17 @@ public:
 int main(int argc, char **argv)
 {
     cout << "hello reddot" << endl;
-    std::string str;
-    str = "hello world" + 1;
-    cout << str << endl;
-    {
-        eco::DispatchServer<uint32_t, eco::MessageMeta> dispatch;
-        dispatch.set_default(fun_default);
-        dispatch.set_dispatch(10001, fun_eco);
-        dispatch.run(1);
-        std::this_thread::sleep_for(std::chrono::seconds(10));
-    }
-    for (int i = 0; i < 10; ++i)
+
+    eco::DispatchServer<uint32_t, eco::MessageMeta> dispatch;
+    dispatch.set_default(fun_default);
+    dispatch.set_dispatch(10001, fun_eco);
+    dispatch.run(4);
+    std::this_thread::sleep_for(std::chrono::seconds(3));
+    for (int i = 0; i < 5; ++i)
     {
         eco::MessageMeta msg(i, 10001+i, "hello world");
-        //dispatch.post(msg);
+        dispatch.post(msg);
     }
-
 
     getchar();
     return 0;

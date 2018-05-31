@@ -16,12 +16,6 @@
     <Filter Include="src">
       <UniqueIdentifier>{b7f6ead0-803e-4f97-ae0f-6533843bdd55}</UniqueIdentifier>
     </Filter>
-    <Filter Include="eco">
-      <UniqueIdentifier>{365ad089-fd12-4b41-935c-ae3831408dbd}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="eco\filesystem">
-      <UniqueIdentifier>{bb4e080a-7ea7-41b8-addb-717e860da544}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\test_common.h">
@@ -45,72 +39,6 @@
     <ClInclude Include="src\alarm.h">
       <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="..\eco\filesystem\File.h">
-      <Filter>eco\filesystem</Filter>
-    </ClInclude>
-    <ClInclude Include="..\eco\filesystem\Operations.h">
-      <Filter>eco\filesystem</Filter>
-    </ClInclude>
-    <ClInclude Include="..\eco\filesystem\SourceFile.h">
-      <Filter>eco\filesystem</Filter>
-    </ClInclude>
-    <ClInclude Include="..\eco\App.h">
-      <Filter>eco</Filter>
-    </ClInclude>
-    <ClInclude Include="..\eco\Being.h">
-      <Filter>eco</Filter>
-    </ClInclude>
-    <ClInclude Include="..\eco\Bobject.h">
-      <Filter>eco</Filter>
-    </ClInclude>
-    <ClInclude Include="..\eco\Btask.h">
-      <Filter>eco</Filter>
-    </ClInclude>
-    <ClInclude Include="..\eco\Cast.h">
-      <Filter>eco</Filter>
-    </ClInclude>
-    <ClInclude Include="..\eco\Config.h">
-      <Filter>eco</Filter>
-    </ClInclude>
-    <ClInclude Include="..\eco\DateTime.h">
-      <Filter>eco</Filter>
-    </ClInclude>
-    <ClInclude Include="..\eco\DllObject.h">
-      <Filter>eco</Filter>
-    </ClInclude>
-    <ClInclude Include="..\eco\Export.h">
-      <Filter>eco</Filter>
-    </ClInclude>
-    <ClInclude Include="..\eco\ExportApi.h">
-      <Filter>eco</Filter>
-    </ClInclude>
-    <ClInclude Include="..\eco\HeapOperators.h">
-      <Filter>eco</Filter>
-    </ClInclude>
-    <ClInclude Include="..\eco\Implement.h">
-      <Filter>eco</Filter>
-    </ClInclude>
-    <ClInclude Include="..\eco\Memory.h">
-      <Filter>eco</Filter>
-    </ClInclude>
-    <ClInclude Include="..\eco\MemoryPool.h">
-      <Filter>eco</Filter>
-    </ClInclude>
-    <ClInclude Include="..\eco\Object.h">
-      <Filter>eco</Filter>
-    </ClInclude>
-    <ClInclude Include="..\eco\Project.h">
-      <Filter>eco</Filter>
-    </ClInclude>
-    <ClInclude Include="..\eco\RxApp.h">
-      <Filter>eco</Filter>
-    </ClInclude>
-    <ClInclude Include="..\eco\Type.h">
-      <Filter>eco</Filter>
-    </ClInclude>
-    <ClInclude Include="..\eco\Typex.h">
-      <Filter>eco</Filter>
-    </ClInclude>
     <ClInclude Include="src\test_eco.h">
       <Filter>src</Filter>
     </ClInclude>
@@ -125,21 +53,5 @@
     <ClCompile Include="src\alarm.cpp">
       <Filter>src</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <Xml Include="..\eco\cfg.app.xml">
-      <Filter>eco</Filter>
-    </Xml>
-    <Xml Include="..\eco\cfg.sys.xml">
-      <Filter>eco</Filter>
-    </Xml>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="..\eco\LICENSE">
-      <Filter>eco</Filter>
-    </None>
-    <None Include="..\eco\Typex.ipp">
-      <Filter>eco</Filter>
-    </None>
   </ItemGroup>
 </Project>

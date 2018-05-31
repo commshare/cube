@@ -150,6 +150,7 @@
     <ClCompile Include="src\main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\any.h" />
     <ClInclude Include="src\cast.h" />
     <ClInclude Include="src\dispatch_server.h" />
     <ClInclude Include="src\event.h" />

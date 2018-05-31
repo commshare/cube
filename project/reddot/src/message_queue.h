@@ -147,7 +147,8 @@ private:
     {
         //m_deque.push_back(message());
         //m_deque.back().swap(msg);
-        m_deque.push_back(std::move(msg));
+        //m_deque.push_back(std::move(msg));
+        m_deque.push_back(msg);
         m_empty_cond_var.notify_one();
     }
 
