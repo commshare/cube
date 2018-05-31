@@ -23,6 +23,8 @@ eric     2018.4.27   1.0     Create
 #include "event.h"
 #include "memory_pool.h"
 #include "file.h"
+#include "lexical_cast.h"
+
 using namespace std;
 
 class Test
@@ -76,53 +78,48 @@ void fun_eco(IN eco::MessageMeta& msg)
         << std::endl;
 }
 
-class MyClass
+void test()
 {
-    ECO_SINGLETON_UNINIT(MyClass)
-    MyClass() {}
-public:
-    ~MyClass() {};
-
-    void test()
-    {
-        EcoCout << "hello world";
-    }
-private:
-
-};
-ECO_SINGLETON_GET(MyClass)
-
-
-template <typename T>
-class Templ
-{
-public:
-    void  test(T val)
-    {
-        cout << __FUNCTION__ << val << endl;
-    }
-
-    template <typename Object>
-    void  test(Object val)
-    {
-        cout << __FUNCTION__ << val << endl;
-    }
-};
+    cout << eco::lexical_cast<int>(1) << endl;
+    cout << eco::lexical_cast<int>("1") << endl;
+    cout << eco::lexical_cast<long>("1") << endl;
+    cout << eco::lexical_cast<string>(1) << endl;
+    cout << eco::lexical_cast<bool>(2) << endl;
+    cout << eco::lexical_cast<double>("1.2") << endl;
+    cout << eco::lexical_cast<float>("1.2") << endl;
+    string s = "true";
+    cout << eco::lexical_cast<bool>(s) << endl;
+    char* p = "false";
+    cout << eco::lexical_cast<bool>(p) << endl;
+    const char* q = "false";
+    cout << eco::lexical_cast<bool>(q) << endl;
+    cout << eco::lexical_cast<bool>("false") << endl;
+    cout << eco::lexical_cast<bool>("test") << endl;
+}
 
 int main(int argc, char **argv)
 {
     cout << "hello reddot" << endl;
 
-    eco::DispatchServer<uint32_t, eco::MessageMeta> dispatch;
-    dispatch.set_default(fun_default);
-    dispatch.set_dispatch(10001, fun_eco);
-    dispatch.run(4);
-    std::this_thread::sleep_for(std::chrono::seconds(3));
-    for (int i = 0; i < 5; ++i)
+    try
     {
-        eco::MessageMeta msg(i, 10001+i, "hello world");
-        dispatch.post(msg);
+        test();
     }
+    catch (const std::exception& e)
+    {
+        cout << e.what() << endl;
+    }
+
+    //eco::DispatchServer<uint32_t, eco::MessageMeta> dispatch;
+    //dispatch.set_default(fun_default);
+    //dispatch.set_dispatch(10001, fun_eco);
+    //dispatch.run(4);
+    //std::this_thread::sleep_for(std::chrono::seconds(3));
+    //for (int i = 0; i < 5; ++i)
+    //{
+    //    eco::MessageMeta msg(i, 10001+i, "hello world");
+    //    dispatch.post(msg);
+    //}
 
     getchar();
     return 0;
