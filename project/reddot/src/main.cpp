@@ -61,18 +61,18 @@ const char* Test::get_str() const
 void fun_default(IN eco::MessageMeta& msg)
 {
     std::cout << __FUNCTION__  
-        <<" session_id:" << msg.get_session_id()
+        <<" session_id:" << msg.get_session()
         << " message_type:" << msg.get_type()
-        << " data:" << msg.get_request_data()
+        << " data:" << msg.get_data()
         << std::endl;
 }
 
 void fun_eco(IN eco::MessageMeta& msg)
 {
-    std::cout << __FUNCTION__ 
-        << " session_id:" << msg.get_session_id()
+    std::cout << __FUNCTION__
+        << " session_id:" << msg.get_session()
         << " message_type:" << msg.get_type()
-        << " data:" << msg.get_request_data()
+        << " data:" << msg.get_data()
         << std::endl;
 }
 

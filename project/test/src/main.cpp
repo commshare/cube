@@ -52,16 +52,85 @@ private:
 
 };
 
-
 MyClass::MyClass(int i)
 {
     cout << __FUNCTION__ << endl;
     cout << i << endl;
 }
 
+template <typename Derived>
+class Strategy
+{
+public:
+    Strategy(void)
+    {
+        cout << "Strategy....." << endl;
+    }
+    virtual ~Strategy()
+    {
+        cout << "~Strategy....." << endl;
+    }
+
+    //由于虚函数不能是模板函数，故使用c++ template多态的CRTP 模式
+    template<typename ...Args>
+    void VirAlgrithmInterface(Args...args)
+    {
+        static_cast<Derived&>(*this).AlgrithmInterface(args...);
+    }
+
+    template<typename ...Args>
+    void AlgrithmInterface(Args...args)
+    {
+        std::cout << "Strategy::AlgrithmInterface\n";
+    }
+
+protected:
+private:
+};
+
+template <typename T>
+class Test
+{
+public:
+    Test(const Strategy<T>& t)
+    : inst(t)
+    {}
+
+    void test(int a, int b)
+    {
+        inst.VirAlgrithmInterface(a, b);
+    }
+
+private:
+    Strategy<T> inst;
+};
+
+class ConcreteStrategyA : public Strategy<ConcreteStrategyA>
+{
+public:
+    ConcreteStrategyA()
+    {
+        cout << "ConcreteStrategyA....." << endl;
+    }
+    virtual ~ConcreteStrategyA()
+    {
+        cout << "~ConcreteStrategyA....." << endl;
+    }
+
+    void AlgrithmInterface(int a, int b)
+    {
+        cout << "testConcreteStrategyA....." << a << ", " << b << endl;
+    }
+
+protected:
+private:
+};
+
 int main(int argc, char *argv[])
 {
-    MyClass inst;
+    ConcreteStrategyA inst;
+    Test<ConcreteStrategyA> one(inst);
+    one.test(1, 2);
 
     getchar();
     return 0;

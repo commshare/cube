@@ -3,64 +3,58 @@
 
 #include "project.h"
 
-namespace eco{;
-
-////////////////////////////////////////////////////////////////////////////////
+namespace eco {
 class MessageMeta
 {
 public:
-	uint32_t		m_session_id;
-	uint32_t		m_message_type;
-	std::string		m_request_data;
-	
+    uint32_t session_;
+    uint32_t type_;
+    std::string data_;
+
 public:
-	inline MessageMeta()
-	{
-		memset(this, 0, sizeof(*this));
-	}
-
-	inline MessageMeta(
-		IN const uint32_t session_id,
-		IN const uint32_t type,
-		IN const std::string& data)
-	{
-		memset(this, 0, sizeof(*this));
-		set_session_id(session_id);
-		set_message_type(type);
-        set_request_data(data);
-	}
-
-	inline void set_session_id(IN const uint32_t id)
-	{
-		m_session_id = id;
-	}
-
-	inline void set_message_type(IN const uint32_t type)
-	{
-        m_message_type = type;
-	}
-
-	inline void set_request_data(IN const std::string& req_data)
-	{
-		m_request_data = req_data;
-	}
-
-    inline const uint32_t get_session_id() const
+    inline MessageMeta()
     {
-        return m_session_id;
+    }
+
+    inline MessageMeta(
+        IN const uint32_t session,
+        IN const uint32_t type,
+        IN const std::string& data)
+        : session_(session),
+        type_(type),
+        data_(data)
+    {
+    }
+
+    inline void set_session(IN const uint32_t session)
+    {
+        session_ = session;
+    }
+
+    inline void set_type(IN const uint32_t type)
+    {
+        type_ = type;
+    }
+
+    inline void set_data(IN const std::string& data)
+    {
+        data_ = data;
+    }
+
+    inline const uint32_t get_session() const
+    {
+        return session_;
     }
 
     inline const uint32_t get_type() const
     {
-        return m_message_type;
+        return type_;
     }
 
-    inline const std::string& get_request_data() const
+    inline const std::string& get_data() const
     {
-        return m_request_data;
+        return data_;
     }
 };
-
-////////////////////////////////////////////////////////////////////////////////
 }
 #endif
