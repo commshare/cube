@@ -78,37 +78,23 @@ void fun_eco(IN eco::MessageMeta& msg)
         << std::endl;
 }
 
-void test()
+template <typename T, typename... argv>
+int print(T first, argv... rest)
 {
-    cout << eco::lexical_cast<int>(1) << endl;
-    cout << eco::lexical_cast<int>("1") << endl;
-    cout << eco::lexical_cast<long>("1") << endl;
-    cout << eco::lexical_cast<string>(1) << endl;
-    cout << eco::lexical_cast<bool>(2) << endl;
-    cout << eco::lexical_cast<double>("1.2") << endl;
-    cout << eco::lexical_cast<float>("1.2") << endl;
-    string s = "true";
-    cout << eco::lexical_cast<bool>(s) << endl;
-    char* p = "false";
-    cout << eco::lexical_cast<bool>(p) << endl;
-    const char* q = "false";
-    cout << eco::lexical_cast<bool>(q) << endl;
-    cout << eco::lexical_cast<bool>("false") << endl;
-    cout << eco::lexical_cast<bool>("test") << endl;
+    return first + print(std::forward<argv>(rest)...);
+}
+
+template <typename T>
+int print(T value)
+{
+    return value;
 }
 
 int main(int argc, char **argv)
 {
     cout << "hello reddot" << endl;
 
-    try
-    {
-        test();
-    }
-    catch (const std::exception& e)
-    {
-        cout << e.what() << endl;
-    }
+    cout << print(1, 2, 3, 100) << endl;
 
     //eco::DispatchServer<uint32_t, eco::MessageMeta> dispatch;
     //dispatch.set_default(fun_default);

@@ -10,11 +10,11 @@ NS_BEGIN(eco);
 ////////////////////////////////////////////////////////////////////////////////
 #define ECO_OBJECT(object_t) \
 public:\
-	typedef object_t object;\
-	typedef std::shared_ptr<object_t> value;\
-	typedef std::shared_ptr<object_t> ptr;\
-	typedef std::weak_ptr<object_t> wptr;\
-	ECO_NONCOPYABLE(object_t);
+    typedef object_t object;\
+    typedef std::shared_ptr<object_t> value;\
+    typedef std::shared_ptr<object_t> ptr;\
+    typedef std::weak_ptr<object_t> wptr;\
+    ECO_NONCOPYABLE(object_t);
 
 #define ECO_NEW(object_t) object_t::ptr(new object_t)
 
@@ -24,18 +24,18 @@ template<typename object_t>
 class Object
 {
 public:
-	typedef object_t object;
-	typedef std::shared_ptr<object_t> value;
-	typedef std::shared_ptr<object_t> ptr;
-	typedef std::weak_ptr<object_t> wptr;
+    typedef object_t object;
+    typedef std::shared_ptr<object_t> value;
+    typedef std::shared_ptr<object_t> ptr;
+    typedef std::weak_ptr<object_t> wptr;
 
 protected:
-	Object() {};
-	~Object() {};
+    Object() {};
+    ~Object() {};
 
 private:
-	Object(const Object&);
-	const Object& operator=(const Object& );
+    Object(const Object&);
+    const Object& operator=(const Object& );
 };
 
 
@@ -44,8 +44,8 @@ template<typename value_t>
 class Value
 {
 public:
-	typedef value_t object;
-	typedef value_t value;
+    typedef value_t object;
+    typedef value_t value;
 };
 
 
@@ -60,7 +60,7 @@ inline static void make(std::shared_ptr<T>& ptr) { ptr.reset(new T()); }
 template<typename T>
 inline T& object(T& obj) { return obj; }
 template<typename T>
-inline T& object(std::shared_ptr<T>& ptr) {	return *ptr; }
+inline T& object(std::shared_ptr<T>& ptr) {    return *ptr; }
 template<typename T>
 inline const T& get_object(const T& obj) { return obj; }
 template<typename T>
@@ -68,7 +68,7 @@ inline const T& get_object(const std::shared_ptr<T>& ptr) { return *ptr; }
 
 // get decltype type.
 template<typename T>
-inline T& object_v() {	static T* t = nullptr;	return *t; }
+inline T& object_v() {    static T* t = nullptr;    return *t; }
 template<typename T>
 inline T* object_t(T& obj) { return &obj; }
 template<typename T>
@@ -77,44 +77,44 @@ inline T* object_t(std::shared_ptr<T>& ptr) { return ptr.get(); }
 
 ////////////////////////////////////////////////////////////////////////////////
 // singleton proxy object that instantiate the object.
-template<typename ObjectType>
+template<typename T>
 class Singleton
 {
-	ECO_OBJECT(Singleton)
+    ECO_OBJECT(Singleton)
 public:
-	inline static ObjectType& instance()
-	{
+    inline static T& instance()
+    {
         //std::unique_lock<std::mutex> lock(m_mutex_);
-        static ObjectType s_object;
-		return s_object;
-	}
+        static T s_object;
+        return s_object;
+    }
 private:
-	static std::mutex m_mutex_;
+    //static std::mutex m_mutex_;
 };
-// template<typename ObjectType>
-// std::mutex Singleton<ObjectType>::m_mutex_;
+//template<typename T>
+//std::mutex Singleton<T>::m_mutex_;
 
 
 /*@ singleton instance to access singleton object. */
 #define ECO_SINGLETON(ObjectType)\
-	ECO_NONCOPYABLE(ObjectType);\
+    ECO_NONCOPYABLE(ObjectType);\
 public:\
-	inline ~ObjectType(){}\
+    inline ~ObjectType(){}\
 private:\
-	friend class eco::Singleton<ObjectType>;\
-	inline ObjectType(){}
+    friend class eco::Singleton<ObjectType>;\
+    inline ObjectType(){}
 
 #define ECO_SINGLETON_UNINIT(ObjectType)\
-	ECO_NONCOPYABLE(ObjectType);\
+    ECO_NONCOPYABLE(ObjectType);\
 private:\
-	friend class eco::Singleton<ObjectType>;
+    friend class eco::Singleton<ObjectType>;
 
 
 /*@ singleton get function to access singleton object.*/
 #define ECO_SINGLETON_GET(ObjectType)\
 inline ObjectType& Get##ObjectType()\
 {\
-	return eco::Singleton<ObjectType>::instance();\
+    return eco::Singleton<ObjectType>::instance();\
 }
 
 
