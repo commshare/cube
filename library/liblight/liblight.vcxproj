@@ -104,9 +104,25 @@ copy $(ProjectDir)*.h*  $(SolutionDir)include\$(TargetName)</Command>
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="makefile" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Buffer.cpp" />
+    <ClCompile Include="business_unit.cpp" />
+    <ClCompile Include="business_unit_declare.cpp" />
+    <ClCompile Include="business_unit_group.cpp" />
+    <ClCompile Include="clientapi.cpp" />
+    <ClCompile Include="dispatcher.cpp" />
+    <ClCompile Include="light_service.cpp" />
+    <ClCompile Include="server.cpp" />
+    <ClCompile Include="session.cpp" />
+    <ClCompile Include="transaction.cpp" />
+  </ItemGroup>
+  <ItemGroup>
     <ClInclude Include="Buffer.h" />
     <ClInclude Include="business_unit.h" />
     <ClInclude Include="business_unit_declare.h" />
+    <ClInclude Include="business_unit_group.h" />
     <ClInclude Include="clientapi.h" />
     <ClInclude Include="clientreceivehandle.h" />
     <ClInclude Include="dispatcher.h" />
@@ -114,43 +130,10 @@ copy $(ProjectDir)*.h*  $(SolutionDir)include\$(TargetName)</Command>
     <ClInclude Include="light_ptr.h" />
     <ClInclude Include="light_service.h" />
     <ClInclude Include="participant.h" />
-    <ClInclude Include="business_unit_group.h" />
     <ClInclude Include="server.h" />
     <ClInclude Include="session.h" />
     <ClInclude Include="transaction.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="Buffer.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="business_unit.cpp" />
-    <ClCompile Include="business_unit_declare.cpp" />
-    <ClCompile Include="clientapi.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="dispatcher.cpp" />
-    <ClCompile Include="light_service.cpp" />
-    <ClCompile Include="business_unit_group.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="server.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="session.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
-    </ClCompile>
-    <ClCompile Include="transaction.cpp">
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="makefile" />
+    <ClInclude Include="transaction_processor.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

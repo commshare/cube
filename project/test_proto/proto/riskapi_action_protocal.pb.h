@@ -85,6 +85,9 @@ extern req_whatifDefaultTypeInternal _req_whatif_default_instance_;
 class sub_option_position_risk;
 class sub_option_position_riskDefaultTypeInternal;
 extern sub_option_position_riskDefaultTypeInternal _sub_option_position_risk_default_instance_;
+class sub_whatif;
+class sub_whatifDefaultTypeInternal;
+extern sub_whatifDefaultTypeInternal _sub_whatif_default_instance_;
 class subscribe_margin;
 class subscribe_marginDefaultTypeInternal;
 extern subscribe_marginDefaultTypeInternal _subscribe_margin_default_instance_;
@@ -121,6 +124,9 @@ extern unsubscribe_quoteDefaultTypeInternal _unsubscribe_quote_default_instance_
 class unsubscribe_sync_account;
 class unsubscribe_sync_accountDefaultTypeInternal;
 extern unsubscribe_sync_accountDefaultTypeInternal _unsubscribe_sync_account_default_instance_;
+class whatif_argv;
+class whatif_argvDefaultTypeInternal;
+extern whatif_argvDefaultTypeInternal _whatif_argv_default_instance_;
 }  // namespace risk
 
 namespace risk {
@@ -3703,6 +3709,235 @@ class req_option_argv : public ::google::protobuf::Message /* @@protoc_insertion
   mutable int _cached_size_;
   friend struct protobuf_riskapi_5faction_5fprotocal_2eproto::TableStruct;
 };
+// -------------------------------------------------------------------
+
+class whatif_argv : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:risk.whatif_argv) */ {
+ public:
+  whatif_argv();
+  virtual ~whatif_argv();
+
+  whatif_argv(const whatif_argv& from);
+
+  inline whatif_argv& operator=(const whatif_argv& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  whatif_argv(whatif_argv&& from) noexcept
+    : whatif_argv() {
+    *this = ::std::move(from);
+  }
+
+  inline whatif_argv& operator=(whatif_argv&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const whatif_argv& default_instance();
+
+  static inline const whatif_argv* internal_default_instance() {
+    return reinterpret_cast<const whatif_argv*>(
+               &_whatif_argv_default_instance_);
+  }
+  static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
+    30;
+
+  void Swap(whatif_argv* other);
+  friend void swap(whatif_argv& a, whatif_argv& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline whatif_argv* New() const PROTOBUF_FINAL { return New(NULL); }
+
+  whatif_argv* New(::google::protobuf::Arena* arena) const PROTOBUF_FINAL;
+  void CopyFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void MergeFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void CopyFrom(const whatif_argv& from);
+  void MergeFrom(const whatif_argv& from);
+  void Clear() PROTOBUF_FINAL;
+  bool IsInitialized() const PROTOBUF_FINAL;
+
+  size_t ByteSizeLong() const PROTOBUF_FINAL;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) PROTOBUF_FINAL;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const PROTOBUF_FINAL;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const PROTOBUF_FINAL;
+  int GetCachedSize() const PROTOBUF_FINAL { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const PROTOBUF_FINAL;
+  void InternalSwap(whatif_argv* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const PROTOBUF_FINAL;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // string instrument = 2;
+  void clear_instrument();
+  static const int kInstrumentFieldNumber = 2;
+  const ::std::string& instrument() const;
+  void set_instrument(const ::std::string& value);
+  #if LANG_CXX11
+  void set_instrument(::std::string&& value);
+  #endif
+  void set_instrument(const char* value);
+  void set_instrument(const char* value, size_t size);
+  ::std::string* mutable_instrument();
+  ::std::string* release_instrument();
+  void set_allocated_instrument(::std::string* instrument);
+
+  // double range = 3;
+  void clear_range();
+  static const int kRangeFieldNumber = 3;
+  double range() const;
+  void set_range(double value);
+
+  // double base_value = 4;
+  void clear_base_value();
+  static const int kBaseValueFieldNumber = 4;
+  double base_value() const;
+  void set_base_value(double value);
+
+  // int32 type = 1;
+  void clear_type();
+  static const int kTypeFieldNumber = 1;
+  ::google::protobuf::int32 type() const;
+  void set_type(::google::protobuf::int32 value);
+
+  // @@protoc_insertion_point(class_scope:risk.whatif_argv)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr instrument_;
+  double range_;
+  double base_value_;
+  ::google::protobuf::int32 type_;
+  mutable int _cached_size_;
+  friend struct protobuf_riskapi_5faction_5fprotocal_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
+class sub_whatif : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:risk.sub_whatif) */ {
+ public:
+  sub_whatif();
+  virtual ~sub_whatif();
+
+  sub_whatif(const sub_whatif& from);
+
+  inline sub_whatif& operator=(const sub_whatif& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  sub_whatif(sub_whatif&& from) noexcept
+    : sub_whatif() {
+    *this = ::std::move(from);
+  }
+
+  inline sub_whatif& operator=(sub_whatif&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const sub_whatif& default_instance();
+
+  static inline const sub_whatif* internal_default_instance() {
+    return reinterpret_cast<const sub_whatif*>(
+               &_sub_whatif_default_instance_);
+  }
+  static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
+    31;
+
+  void Swap(sub_whatif* other);
+  friend void swap(sub_whatif& a, sub_whatif& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline sub_whatif* New() const PROTOBUF_FINAL { return New(NULL); }
+
+  sub_whatif* New(::google::protobuf::Arena* arena) const PROTOBUF_FINAL;
+  void CopyFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void MergeFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void CopyFrom(const sub_whatif& from);
+  void MergeFrom(const sub_whatif& from);
+  void Clear() PROTOBUF_FINAL;
+  bool IsInitialized() const PROTOBUF_FINAL;
+
+  size_t ByteSizeLong() const PROTOBUF_FINAL;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) PROTOBUF_FINAL;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const PROTOBUF_FINAL;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const PROTOBUF_FINAL;
+  int GetCachedSize() const PROTOBUF_FINAL { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const PROTOBUF_FINAL;
+  void InternalSwap(sub_whatif* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const PROTOBUF_FINAL;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // repeated .risk.whatif_argv infos = 1;
+  int infos_size() const;
+  void clear_infos();
+  static const int kInfosFieldNumber = 1;
+  const ::risk::whatif_argv& infos(int index) const;
+  ::risk::whatif_argv* mutable_infos(int index);
+  ::risk::whatif_argv* add_infos();
+  ::google::protobuf::RepeatedPtrField< ::risk::whatif_argv >*
+      mutable_infos();
+  const ::google::protobuf::RepeatedPtrField< ::risk::whatif_argv >&
+      infos() const;
+
+  // @@protoc_insertion_point(class_scope:risk.sub_whatif)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::RepeatedPtrField< ::risk::whatif_argv > infos_;
+  mutable int _cached_size_;
+  friend struct protobuf_riskapi_5faction_5fprotocal_2eproto::TableStruct;
+};
 // ===================================================================
 
 
@@ -6406,10 +6641,147 @@ inline void req_option_argv::set_requestid(::google::protobuf::int32 value) {
   // @@protoc_insertion_point(field_set:risk.req_option_argv.requestid)
 }
 
+// -------------------------------------------------------------------
+
+// whatif_argv
+
+// int32 type = 1;
+inline void whatif_argv::clear_type() {
+  type_ = 0;
+}
+inline ::google::protobuf::int32 whatif_argv::type() const {
+  // @@protoc_insertion_point(field_get:risk.whatif_argv.type)
+  return type_;
+}
+inline void whatif_argv::set_type(::google::protobuf::int32 value) {
+  
+  type_ = value;
+  // @@protoc_insertion_point(field_set:risk.whatif_argv.type)
+}
+
+// string instrument = 2;
+inline void whatif_argv::clear_instrument() {
+  instrument_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& whatif_argv::instrument() const {
+  // @@protoc_insertion_point(field_get:risk.whatif_argv.instrument)
+  return instrument_.GetNoArena();
+}
+inline void whatif_argv::set_instrument(const ::std::string& value) {
+  
+  instrument_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:risk.whatif_argv.instrument)
+}
+#if LANG_CXX11
+inline void whatif_argv::set_instrument(::std::string&& value) {
+  
+  instrument_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:risk.whatif_argv.instrument)
+}
+#endif
+inline void whatif_argv::set_instrument(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  instrument_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:risk.whatif_argv.instrument)
+}
+inline void whatif_argv::set_instrument(const char* value, size_t size) {
+  
+  instrument_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:risk.whatif_argv.instrument)
+}
+inline ::std::string* whatif_argv::mutable_instrument() {
+  
+  // @@protoc_insertion_point(field_mutable:risk.whatif_argv.instrument)
+  return instrument_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* whatif_argv::release_instrument() {
+  // @@protoc_insertion_point(field_release:risk.whatif_argv.instrument)
+  
+  return instrument_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void whatif_argv::set_allocated_instrument(::std::string* instrument) {
+  if (instrument != NULL) {
+    
+  } else {
+    
+  }
+  instrument_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), instrument);
+  // @@protoc_insertion_point(field_set_allocated:risk.whatif_argv.instrument)
+}
+
+// double range = 3;
+inline void whatif_argv::clear_range() {
+  range_ = 0;
+}
+inline double whatif_argv::range() const {
+  // @@protoc_insertion_point(field_get:risk.whatif_argv.range)
+  return range_;
+}
+inline void whatif_argv::set_range(double value) {
+  
+  range_ = value;
+  // @@protoc_insertion_point(field_set:risk.whatif_argv.range)
+}
+
+// double base_value = 4;
+inline void whatif_argv::clear_base_value() {
+  base_value_ = 0;
+}
+inline double whatif_argv::base_value() const {
+  // @@protoc_insertion_point(field_get:risk.whatif_argv.base_value)
+  return base_value_;
+}
+inline void whatif_argv::set_base_value(double value) {
+  
+  base_value_ = value;
+  // @@protoc_insertion_point(field_set:risk.whatif_argv.base_value)
+}
+
+// -------------------------------------------------------------------
+
+// sub_whatif
+
+// repeated .risk.whatif_argv infos = 1;
+inline int sub_whatif::infos_size() const {
+  return infos_.size();
+}
+inline void sub_whatif::clear_infos() {
+  infos_.Clear();
+}
+inline const ::risk::whatif_argv& sub_whatif::infos(int index) const {
+  // @@protoc_insertion_point(field_get:risk.sub_whatif.infos)
+  return infos_.Get(index);
+}
+inline ::risk::whatif_argv* sub_whatif::mutable_infos(int index) {
+  // @@protoc_insertion_point(field_mutable:risk.sub_whatif.infos)
+  return infos_.Mutable(index);
+}
+inline ::risk::whatif_argv* sub_whatif::add_infos() {
+  // @@protoc_insertion_point(field_add:risk.sub_whatif.infos)
+  return infos_.Add();
+}
+inline ::google::protobuf::RepeatedPtrField< ::risk::whatif_argv >*
+sub_whatif::mutable_infos() {
+  // @@protoc_insertion_point(field_mutable_list:risk.sub_whatif.infos)
+  return &infos_;
+}
+inline const ::google::protobuf::RepeatedPtrField< ::risk::whatif_argv >&
+sub_whatif::infos() const {
+  // @@protoc_insertion_point(field_list:risk.sub_whatif.infos)
+  return infos_;
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
 #endif  // !PROTOBUF_INLINE_NOT_IN_HEADERS
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

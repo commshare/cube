@@ -186,3 +186,16 @@ message req_option_argv
     int32 requestid=1;
 }
 
+message whatif_argv
+{
+    int32 type = 1; //1:price 2:vol 3:rate
+    string instrument = 2;
+    double range = 3;
+    double base_value= 4;
+}
+
+message sub_whatif
+{
+    repeated whatif_argv infos = 1;
+}
+

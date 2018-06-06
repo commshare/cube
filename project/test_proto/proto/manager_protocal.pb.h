@@ -3688,25 +3688,39 @@ class option_argv : public ::google::protobuf::Message /* @@protoc_insertion_poi
   double vol() const;
   void set_vol(double value);
 
-  // double rate = 3;
-  void clear_rate();
-  static const int kRateFieldNumber = 3;
-  double rate() const;
-  void set_rate(double value);
-
   // int32 price_type = 1;
   void clear_price_type();
   static const int kPriceTypeFieldNumber = 1;
   ::google::protobuf::int32 price_type() const;
   void set_price_type(::google::protobuf::int32 value);
 
+  // int32 step = 4;
+  void clear_step();
+  static const int kStepFieldNumber = 4;
+  ::google::protobuf::int32 step() const;
+  void set_step(::google::protobuf::int32 value);
+
+  // double rate = 3;
+  void clear_rate();
+  static const int kRateFieldNumber = 3;
+  double rate() const;
+  void set_rate(double value);
+
+  // int32 iterations = 5;
+  void clear_iterations();
+  static const int kIterationsFieldNumber = 5;
+  ::google::protobuf::int32 iterations() const;
+  void set_iterations(::google::protobuf::int32 value);
+
   // @@protoc_insertion_point(class_scope:manager.option_argv)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   double vol_;
-  double rate_;
   ::google::protobuf::int32 price_type_;
+  ::google::protobuf::int32 step_;
+  double rate_;
+  ::google::protobuf::int32 iterations_;
   mutable int _cached_size_;
   friend struct protobuf_manager_5fprotocal_2eproto::TableStruct;
 };
@@ -6638,6 +6652,34 @@ inline void option_argv::set_rate(double value) {
   
   rate_ = value;
   // @@protoc_insertion_point(field_set:manager.option_argv.rate)
+}
+
+// int32 step = 4;
+inline void option_argv::clear_step() {
+  step_ = 0;
+}
+inline ::google::protobuf::int32 option_argv::step() const {
+  // @@protoc_insertion_point(field_get:manager.option_argv.step)
+  return step_;
+}
+inline void option_argv::set_step(::google::protobuf::int32 value) {
+  
+  step_ = value;
+  // @@protoc_insertion_point(field_set:manager.option_argv.step)
+}
+
+// int32 iterations = 5;
+inline void option_argv::clear_iterations() {
+  iterations_ = 0;
+}
+inline ::google::protobuf::int32 option_argv::iterations() const {
+  // @@protoc_insertion_point(field_get:manager.option_argv.iterations)
+  return iterations_;
+}
+inline void option_argv::set_iterations(::google::protobuf::int32 value) {
+  
+  iterations_ = value;
+  // @@protoc_insertion_point(field_set:manager.option_argv.iterations)
 }
 
 // -------------------------------------------------------------------

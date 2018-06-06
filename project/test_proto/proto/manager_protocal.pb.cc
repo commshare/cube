@@ -460,6 +460,8 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_ATTRIBUTE_SECTION
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(option_argv, price_type_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(option_argv, vol_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(option_argv, rate_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(option_argv, step_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(option_argv, iterations_),
   ~0u,  // no _has_bits_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(rsp_option_argv, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -506,8 +508,8 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_ATTR
   { 206, -1, sizeof(rtn_change_insmrgnrate)},
   { 212, -1, sizeof(req_option_argv)},
   { 218, -1, sizeof(option_argv)},
-  { 226, -1, sizeof(rsp_option_argv)},
-  { 233, -1, sizeof(req_option_argv_adj)},
+  { 228, -1, sizeof(rsp_option_argv)},
+  { 235, -1, sizeof(req_option_argv_adj)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -726,16 +728,17 @@ void AddDescriptorsImpl() {
       "\001(\005\022(\n\005infos\030\002 \003(\0132\031.manager.insmrgnrate"
       "_info\"B\n\026rtn_change_insmrgnrate\022(\n\005infos"
       "\030\001 \003(\0132\031.manager.insmrgnrate_info\"$\n\017req"
-      "_option_argv\022\021\n\trequestid\030\001 \001(\005\"<\n\013optio"
+      "_option_argv\022\021\n\trequestid\030\001 \001(\005\"^\n\013optio"
       "n_argv\022\022\n\nprice_type\030\001 \001(\005\022\013\n\003vol\030\002 \001(\001\022"
-      "\014\n\004rate\030\003 \001(\001\"]\n\017rsp_option_argv\022&\n\006head"
-      "er\030\001 \001(\0132\026.manager.rsp_head_info\022\"\n\004info"
-      "\030\002 \001(\0132\024.manager.option_argv\"L\n\023req_opti"
-      "on_argv_adj\022\021\n\trequestid\030\001 \001(\005\022\"\n\004info\030\002"
-      " \001(\0132\024.manager.option_argvb\006proto3"
+      "\014\n\004rate\030\003 \001(\001\022\014\n\004step\030\004 \001(\005\022\022\n\niteration"
+      "s\030\005 \001(\005\"]\n\017rsp_option_argv\022&\n\006header\030\001 \001"
+      "(\0132\026.manager.rsp_head_info\022\"\n\004info\030\002 \001(\013"
+      "2\024.manager.option_argv\"L\n\023req_option_arg"
+      "v_adj\022\021\n\trequestid\030\001 \001(\005\022\"\n\004info\030\002 \001(\0132\024"
+      ".manager.option_argvb\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 2474);
+      descriptor, 2508);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "manager_protocal.proto", &protobuf_RegisterTypes);
 }
@@ -12573,6 +12576,8 @@ void req_option_argv::set_requestid(::google::protobuf::int32 value) {
 const int option_argv::kPriceTypeFieldNumber;
 const int option_argv::kVolFieldNumber;
 const int option_argv::kRateFieldNumber;
+const int option_argv::kStepFieldNumber;
+const int option_argv::kIterationsFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 option_argv::option_argv()
@@ -12589,15 +12594,15 @@ option_argv::option_argv(const option_argv& from)
       _cached_size_(0) {
   _internal_metadata_.MergeFrom(from._internal_metadata_);
   ::memcpy(&vol_, &from.vol_,
-    static_cast<size_t>(reinterpret_cast<char*>(&price_type_) -
-    reinterpret_cast<char*>(&vol_)) + sizeof(price_type_));
+    static_cast<size_t>(reinterpret_cast<char*>(&iterations_) -
+    reinterpret_cast<char*>(&vol_)) + sizeof(iterations_));
   // @@protoc_insertion_point(copy_constructor:manager.option_argv)
 }
 
 void option_argv::SharedCtor() {
   ::memset(&vol_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&price_type_) -
-      reinterpret_cast<char*>(&vol_)) + sizeof(price_type_));
+      reinterpret_cast<char*>(&iterations_) -
+      reinterpret_cast<char*>(&vol_)) + sizeof(iterations_));
   _cached_size_ = 0;
 }
 
@@ -12639,8 +12644,8 @@ void option_argv::Clear() {
   (void) cached_has_bits;
 
   ::memset(&vol_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&price_type_) -
-      reinterpret_cast<char*>(&vol_)) + sizeof(price_type_));
+      reinterpret_cast<char*>(&iterations_) -
+      reinterpret_cast<char*>(&vol_)) + sizeof(iterations_));
   _internal_metadata_.Clear();
 }
 
@@ -12696,6 +12701,34 @@ bool option_argv::MergePartialFromCodedStream(
         break;
       }
 
+      // int32 step = 4;
+      case 4: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(32u /* 32 & 0xFF */)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &step_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // int32 iterations = 5;
+      case 5: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(40u /* 40 & 0xFF */)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &iterations_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       default: {
       handle_unusual:
         if (tag == 0) {
@@ -12737,6 +12770,16 @@ void option_argv::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteDouble(3, this->rate(), output);
   }
 
+  // int32 step = 4;
+  if (this->step() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(4, this->step(), output);
+  }
+
+  // int32 iterations = 5;
+  if (this->iterations() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(5, this->iterations(), output);
+  }
+
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
@@ -12766,6 +12809,16 @@ void option_argv::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(3, this->rate(), target);
   }
 
+  // int32 step = 4;
+  if (this->step() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(4, this->step(), target);
+  }
+
+  // int32 iterations = 5;
+  if (this->iterations() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(5, this->iterations(), target);
+  }
+
   if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
         (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
@@ -12788,16 +12841,30 @@ size_t option_argv::ByteSizeLong() const {
     total_size += 1 + 8;
   }
 
-  // double rate = 3;
-  if (this->rate() != 0) {
-    total_size += 1 + 8;
-  }
-
   // int32 price_type = 1;
   if (this->price_type() != 0) {
     total_size += 1 +
       ::google::protobuf::internal::WireFormatLite::Int32Size(
         this->price_type());
+  }
+
+  // int32 step = 4;
+  if (this->step() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::Int32Size(
+        this->step());
+  }
+
+  // double rate = 3;
+  if (this->rate() != 0) {
+    total_size += 1 + 8;
+  }
+
+  // int32 iterations = 5;
+  if (this->iterations() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::Int32Size(
+        this->iterations());
   }
 
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
@@ -12832,11 +12899,17 @@ void option_argv::MergeFrom(const option_argv& from) {
   if (from.vol() != 0) {
     set_vol(from.vol());
   }
+  if (from.price_type() != 0) {
+    set_price_type(from.price_type());
+  }
+  if (from.step() != 0) {
+    set_step(from.step());
+  }
   if (from.rate() != 0) {
     set_rate(from.rate());
   }
-  if (from.price_type() != 0) {
-    set_price_type(from.price_type());
+  if (from.iterations() != 0) {
+    set_iterations(from.iterations());
   }
 }
 
@@ -12865,8 +12938,10 @@ void option_argv::Swap(option_argv* other) {
 void option_argv::InternalSwap(option_argv* other) {
   using std::swap;
   swap(vol_, other->vol_);
-  swap(rate_, other->rate_);
   swap(price_type_, other->price_type_);
+  swap(step_, other->step_);
+  swap(rate_, other->rate_);
+  swap(iterations_, other->iterations_);
   _internal_metadata_.Swap(&other->_internal_metadata_);
   swap(_cached_size_, other->_cached_size_);
 }
@@ -12919,6 +12994,34 @@ void option_argv::set_rate(double value) {
   
   rate_ = value;
   // @@protoc_insertion_point(field_set:manager.option_argv.rate)
+}
+
+// int32 step = 4;
+void option_argv::clear_step() {
+  step_ = 0;
+}
+::google::protobuf::int32 option_argv::step() const {
+  // @@protoc_insertion_point(field_get:manager.option_argv.step)
+  return step_;
+}
+void option_argv::set_step(::google::protobuf::int32 value) {
+  
+  step_ = value;
+  // @@protoc_insertion_point(field_set:manager.option_argv.step)
+}
+
+// int32 iterations = 5;
+void option_argv::clear_iterations() {
+  iterations_ = 0;
+}
+::google::protobuf::int32 option_argv::iterations() const {
+  // @@protoc_insertion_point(field_get:manager.option_argv.iterations)
+  return iterations_;
+}
+void option_argv::set_iterations(::google::protobuf::int32 value) {
+  
+  iterations_ = value;
+  // @@protoc_insertion_point(field_set:manager.option_argv.iterations)
 }
 
 #endif  // PROTOBUF_INLINE_NOT_IN_HEADERS

@@ -200,11 +200,11 @@ message req_option_argv
 
 message option_argv
 {
-    //1:lastprice 2:presettlementprice 
-    //3:precloseprice 4:settlementprice
-    int32 price_type=1;
+    int32 price_type=1; //1:lastprice 2:presettlementprice 3:precloseprice 4:settlementprice
     double vol=2;
     double rate=3;
+    int32 step=4;
+    int32 iterations=5;
 }
 
 message rsp_option_argv

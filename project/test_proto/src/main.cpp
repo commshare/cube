@@ -208,8 +208,42 @@ void test_riskapi_querygroup()
     client.Send(common::TYPE_RISKAPI_QUERY_RISKGROUP_REQ, reply);
 }
 
+struct WhatifArgvComp
+{
+    bool operator() (const risk::whatif_argv& lhs, const risk::whatif_argv& rhs) const
+    {
+        return lhs.type() < rhs.type() ||
+            lhs.instrument() < rhs.instrument() ||
+            lhs.range() < rhs.range() ||
+            lhs.base_value() < rhs.base_value();
+    }
+};
+
 int main(int argc, char *argv[])
 {
+    std::map<risk::whatif_argv, double, WhatifArgvComp> book;
+    for (int i = 0; i < 1000000; ++i) {
+        risk::whatif_argv message;
+        message.set_type(1);
+        std::string inst = std::to_string(i%10);
+        message.set_instrument(inst);
+        message.set_range(1);
+        message.set_base_value(1);
+        double result = 0.0;
+        auto it = book.find(message);
+        if (it != book.end()) {
+             result = it->second;
+        }
+         else {
+            result = 99.99;
+            book[message] = result;
+        }
+    }
+
+    cout << "this test is over..." << endl;
+    getchar();
+    getchar();
+
     client.Start();
 
     int ch = '1';

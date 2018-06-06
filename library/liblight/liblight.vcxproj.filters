@@ -13,87 +13,93 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{b1dca8f1-d905-4a40-850a-4c429fbe7719}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="participant.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="session.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="light_ptr.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="transaction.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="Buffer.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="server.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="clientapi.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="clientreceivehandle.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="light_service.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="business_unit.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="dispatcher.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="business_unit_group.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="business_unit_declare.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="event_def.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
+    <None Include="makefile" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="session.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="transaction.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="Buffer.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="clientapi.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="server.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="light_service.cpp">
-      <Filter>源文件</Filter>
+      <Filter>src</Filter>
     </ClCompile>
     <ClCompile Include="business_unit.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="dispatcher.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="business_unit_group.cpp">
-      <Filter>源文件</Filter>
+      <Filter>src</Filter>
     </ClCompile>
     <ClCompile Include="business_unit_declare.cpp">
-      <Filter>源文件</Filter>
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="business_unit_group.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="clientapi.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="dispatcher.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="light_service.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="server.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="session.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="transaction.cpp">
+      <Filter>src</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="makefile" />
+    <ClInclude Include="Buffer.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="business_unit.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="business_unit_declare.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="business_unit_group.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="clientapi.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="clientreceivehandle.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="dispatcher.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="event_def.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="light_ptr.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="light_service.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="participant.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="server.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="session.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="transaction.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="transaction_processor.h">
+      <Filter>src</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

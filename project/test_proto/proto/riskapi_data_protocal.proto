@@ -28,38 +28,29 @@ message rsp_risker_login
 
 message instrument_info
 {
-    string          instrumentid=1;
-    string          exchangeid=2;
-    string          instrumentname=3;
-    string          exchangeinstid=4;
-    string          productid=5;
-    string          productclass=6;
-    int32           deliveryyear=7;
-    int32           deliverymonth=8;
-    int32           maxmarketordervolume=9;
-    int32           minmarketordervolume=10;
-    int32           maxlimitordervolume=11;
-    int32           minlimitordervolume=12;
-    int32           volumemultiple=13;
-    double          pricetick=14;
-    string          createdate=15;
-    string          opendate=16;
-    string          expiredate=17;
-    string          startdelivdate=18;
-    string          enddelivdate=19;
-    string          instlifephase=20;
-    int32           istrading=21;
-    string          positiontype=22;
-    string          positiondatetype=23;
-    double          longmarginratio=24;
-    double          shortmarginratio=25;
-    string          maxmarginsidealgorithm=26;
-    string          underlyinginstrid=27;
-    double          strikeprice=28;
-    string          optionstype=29;
-    double          underlyingmultiple=30;
-    string          combinationtype=31;
-    string          productgroupid=32;
+    string          contractcode=1;
+    string          productcode=2;
+    string          productkind=3;
+    string          exchangecode=4;
+    string          marketcode=5;
+    string          createdate=6;
+    string          opendate=7;
+    string          expiredate=8;
+    int32           multiplier=9;
+    double          pricetick=10;
+    string          contractname=11;
+    string          delivbegindate=12;
+    string          delivenddate=13;
+    string          excontractname=14;
+    string          exproductname=15;
+    string          ismrgndisc=16;
+    string          productclass=17;
+    double          baseprice=18;
+    string          optionstype=19;
+    double          strikeprice=20;
+    string          underlyinginstrid=21;
+    string          strikemode=22;
+    double          underlyingmultiple=23;
 }
 
 message rsp_instrument_field
@@ -251,5 +242,11 @@ message rsp_option_argv
 {
     rsp_head_info header=1;
     option_argv info=2;
+}
+
+message rtn_whatif
+{
+    whatif_argv field = 1;
+    double option_value = 2;
 }
 

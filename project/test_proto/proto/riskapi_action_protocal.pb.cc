@@ -168,13 +168,23 @@ public:
  ::google::protobuf::internal::ExplicitlyConstructed<req_option_argv>
      _instance;
 } _req_option_argv_default_instance_;
+class whatif_argvDefaultTypeInternal {
+public:
+ ::google::protobuf::internal::ExplicitlyConstructed<whatif_argv>
+     _instance;
+} _whatif_argv_default_instance_;
+class sub_whatifDefaultTypeInternal {
+public:
+ ::google::protobuf::internal::ExplicitlyConstructed<sub_whatif>
+     _instance;
+} _sub_whatif_default_instance_;
 
 namespace protobuf_riskapi_5faction_5fprotocal_2eproto {
 
 
 namespace {
 
-::google::protobuf::Metadata file_level_metadata[30];
+::google::protobuf::Metadata file_level_metadata[32];
 
 }  // namespace
 
@@ -189,6 +199,8 @@ PROTOBUF_CONSTEXPR_VAR ::google::protobuf::internal::AuxillaryParseTableField
 };
 PROTOBUF_CONSTEXPR_VAR ::google::protobuf::internal::ParseTable const
     TableStruct::schema[] GOOGLE_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
+  { NULL, NULL, 0, -1, -1, -1, -1, NULL, false },
+  { NULL, NULL, 0, -1, -1, -1, -1, NULL, false },
   { NULL, NULL, 0, -1, -1, -1, -1, NULL, false },
   { NULL, NULL, 0, -1, -1, -1, -1, NULL, false },
   { NULL, NULL, 0, -1, -1, -1, -1, NULL, false },
@@ -433,6 +445,21 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_ATTRIBUTE_SECTION
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(req_option_argv, requestid_),
+  ~0u,  // no _has_bits_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(whatif_argv, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(whatif_argv, type_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(whatif_argv, instrument_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(whatif_argv, range_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(whatif_argv, base_value_),
+  ~0u,  // no _has_bits_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(sub_whatif, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(sub_whatif, infos_),
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(req_risker_login)},
@@ -465,6 +492,8 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_ATTR
   { 187, -1, sizeof(unsub_option_position_risk)},
   { 194, -1, sizeof(req_whatif)},
   { 205, -1, sizeof(req_option_argv)},
+  { 211, -1, sizeof(whatif_argv)},
+  { 220, -1, sizeof(sub_whatif)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -498,6 +527,8 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::google::protobuf::Message*>(&_unsub_option_position_risk_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&_req_whatif_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&_req_option_argv_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&_whatif_argv_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&_sub_whatif_default_instance_),
 };
 
 namespace {
@@ -518,7 +549,7 @@ void protobuf_AssignDescriptorsOnce() {
 void protobuf_RegisterTypes(const ::std::string&) GOOGLE_ATTRIBUTE_COLD;
 void protobuf_RegisterTypes(const ::std::string&) {
   protobuf_AssignDescriptorsOnce();
-  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 30);
+  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 32);
 }
 
 }  // namespace
@@ -586,7 +617,11 @@ void TableStruct::InitDefaultsImpl() {
   ::google::protobuf::internal::OnShutdownDestroyMessage(
       &_req_whatif_default_instance_);_req_option_argv_default_instance_._instance.DefaultConstruct();
   ::google::protobuf::internal::OnShutdownDestroyMessage(
-      &_req_option_argv_default_instance_);_req_add_group_default_instance_._instance.get_mutable()->group_ = const_cast< ::risk::sys_group*>(
+      &_req_option_argv_default_instance_);_whatif_argv_default_instance_._instance.DefaultConstruct();
+  ::google::protobuf::internal::OnShutdownDestroyMessage(
+      &_whatif_argv_default_instance_);_sub_whatif_default_instance_._instance.DefaultConstruct();
+  ::google::protobuf::internal::OnShutdownDestroyMessage(
+      &_sub_whatif_default_instance_);_req_add_group_default_instance_._instance.get_mutable()->group_ = const_cast< ::risk::sys_group*>(
       ::risk::sys_group::internal_default_instance());
   _req_edit_group_default_instance_._instance.get_mutable()->group_ = const_cast< ::risk::sys_group*>(
       ::risk::sys_group::internal_default_instance());
@@ -645,10 +680,14 @@ void AddDescriptorsImpl() {
       "f\022\021\n\trequestid\030\001 \001(\005\022\014\n\004type\030\002 \001(\005\022\r\n\005mo"
       "del\030\003 \001(\005\022\022\n\ninstrument\030\004 \001(\t\022\r\n\005range\030\005"
       " \001(\001\022\022\n\nbase_value\030\006 \001(\001\"$\n\017req_option_a"
-      "rgv\022\021\n\trequestid\030\001 \001(\005b\006proto3"
+      "rgv\022\021\n\trequestid\030\001 \001(\005\"R\n\013whatif_argv\022\014\n"
+      "\004type\030\001 \001(\005\022\022\n\ninstrument\030\002 \001(\t\022\r\n\005range"
+      "\030\003 \001(\001\022\022\n\nbase_value\030\004 \001(\001\".\n\nsub_whatif"
+      "\022 \n\005infos\030\001 \003(\0132\021.risk.whatif_argvb\006prot"
+      "o3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 1830);
+      descriptor, 1962);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "riskapi_action_protocal.proto", &protobuf_RegisterTypes);
 }
@@ -12166,6 +12205,746 @@ void req_option_argv::set_requestid(::google::protobuf::int32 value) {
   
   requestid_ = value;
   // @@protoc_insertion_point(field_set:risk.req_option_argv.requestid)
+}
+
+#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
+
+// ===================================================================
+
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int whatif_argv::kTypeFieldNumber;
+const int whatif_argv::kInstrumentFieldNumber;
+const int whatif_argv::kRangeFieldNumber;
+const int whatif_argv::kBaseValueFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+whatif_argv::whatif_argv()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  if (GOOGLE_PREDICT_TRUE(this != internal_default_instance())) {
+    protobuf_riskapi_5faction_5fprotocal_2eproto::InitDefaults();
+  }
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:risk.whatif_argv)
+}
+whatif_argv::whatif_argv(const whatif_argv& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(NULL),
+      _cached_size_(0) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  instrument_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.instrument().size() > 0) {
+    instrument_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.instrument_);
+  }
+  ::memcpy(&range_, &from.range_,
+    static_cast<size_t>(reinterpret_cast<char*>(&type_) -
+    reinterpret_cast<char*>(&range_)) + sizeof(type_));
+  // @@protoc_insertion_point(copy_constructor:risk.whatif_argv)
+}
+
+void whatif_argv::SharedCtor() {
+  instrument_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  ::memset(&range_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&type_) -
+      reinterpret_cast<char*>(&range_)) + sizeof(type_));
+  _cached_size_ = 0;
+}
+
+whatif_argv::~whatif_argv() {
+  // @@protoc_insertion_point(destructor:risk.whatif_argv)
+  SharedDtor();
+}
+
+void whatif_argv::SharedDtor() {
+  instrument_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+
+void whatif_argv::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* whatif_argv::descriptor() {
+  protobuf_riskapi_5faction_5fprotocal_2eproto::protobuf_AssignDescriptorsOnce();
+  return protobuf_riskapi_5faction_5fprotocal_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+}
+
+const whatif_argv& whatif_argv::default_instance() {
+  protobuf_riskapi_5faction_5fprotocal_2eproto::InitDefaults();
+  return *internal_default_instance();
+}
+
+whatif_argv* whatif_argv::New(::google::protobuf::Arena* arena) const {
+  whatif_argv* n = new whatif_argv;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
+}
+
+void whatif_argv::Clear() {
+// @@protoc_insertion_point(message_clear_start:risk.whatif_argv)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  instrument_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  ::memset(&range_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&type_) -
+      reinterpret_cast<char*>(&range_)) + sizeof(type_));
+  _internal_metadata_.Clear();
+}
+
+bool whatif_argv::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:risk.whatif_argv)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // int32 type = 1;
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(8u /* 8 & 0xFF */)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &type_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // string instrument = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(18u /* 18 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_instrument()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->instrument().data(), static_cast<int>(this->instrument().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "risk.whatif_argv.instrument"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // double range = 3;
+      case 3: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(25u /* 25 & 0xFF */)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   double, ::google::protobuf::internal::WireFormatLite::TYPE_DOUBLE>(
+                 input, &range_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // double base_value = 4;
+      case 4: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(33u /* 33 & 0xFF */)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   double, ::google::protobuf::internal::WireFormatLite::TYPE_DOUBLE>(
+                 input, &base_value_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:risk.whatif_argv)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:risk.whatif_argv)
+  return false;
+#undef DO_
+}
+
+void whatif_argv::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:risk.whatif_argv)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // int32 type = 1;
+  if (this->type() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->type(), output);
+  }
+
+  // string instrument = 2;
+  if (this->instrument().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->instrument().data(), static_cast<int>(this->instrument().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "risk.whatif_argv.instrument");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      2, this->instrument(), output);
+  }
+
+  // double range = 3;
+  if (this->range() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteDouble(3, this->range(), output);
+  }
+
+  // double base_value = 4;
+  if (this->base_value() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteDouble(4, this->base_value(), output);
+  }
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
+  }
+  // @@protoc_insertion_point(serialize_end:risk.whatif_argv)
+}
+
+::google::protobuf::uint8* whatif_argv::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic; // Unused
+  // @@protoc_insertion_point(serialize_to_array_start:risk.whatif_argv)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // int32 type = 1;
+  if (this->type() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->type(), target);
+  }
+
+  // string instrument = 2;
+  if (this->instrument().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->instrument().data(), static_cast<int>(this->instrument().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "risk.whatif_argv.instrument");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        2, this->instrument(), target);
+  }
+
+  // double range = 3;
+  if (this->range() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(3, this->range(), target);
+  }
+
+  // double base_value = 4;
+  if (this->base_value() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(4, this->base_value(), target);
+  }
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:risk.whatif_argv)
+  return target;
+}
+
+size_t whatif_argv::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:risk.whatif_argv)
+  size_t total_size = 0;
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
+  }
+  // string instrument = 2;
+  if (this->instrument().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->instrument());
+  }
+
+  // double range = 3;
+  if (this->range() != 0) {
+    total_size += 1 + 8;
+  }
+
+  // double base_value = 4;
+  if (this->base_value() != 0) {
+    total_size += 1 + 8;
+  }
+
+  // int32 type = 1;
+  if (this->type() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::Int32Size(
+        this->type());
+  }
+
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = cached_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void whatif_argv::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:risk.whatif_argv)
+  GOOGLE_DCHECK_NE(&from, this);
+  const whatif_argv* source =
+      ::google::protobuf::internal::DynamicCastToGenerated<const whatif_argv>(
+          &from);
+  if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:risk.whatif_argv)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:risk.whatif_argv)
+    MergeFrom(*source);
+  }
+}
+
+void whatif_argv::MergeFrom(const whatif_argv& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:risk.whatif_argv)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.instrument().size() > 0) {
+
+    instrument_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.instrument_);
+  }
+  if (from.range() != 0) {
+    set_range(from.range());
+  }
+  if (from.base_value() != 0) {
+    set_base_value(from.base_value());
+  }
+  if (from.type() != 0) {
+    set_type(from.type());
+  }
+}
+
+void whatif_argv::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:risk.whatif_argv)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void whatif_argv::CopyFrom(const whatif_argv& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:risk.whatif_argv)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool whatif_argv::IsInitialized() const {
+  return true;
+}
+
+void whatif_argv::Swap(whatif_argv* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void whatif_argv::InternalSwap(whatif_argv* other) {
+  using std::swap;
+  instrument_.Swap(&other->instrument_);
+  swap(range_, other->range_);
+  swap(base_value_, other->base_value_);
+  swap(type_, other->type_);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(_cached_size_, other->_cached_size_);
+}
+
+::google::protobuf::Metadata whatif_argv::GetMetadata() const {
+  protobuf_riskapi_5faction_5fprotocal_2eproto::protobuf_AssignDescriptorsOnce();
+  return protobuf_riskapi_5faction_5fprotocal_2eproto::file_level_metadata[kIndexInFileMessages];
+}
+
+#if PROTOBUF_INLINE_NOT_IN_HEADERS
+// whatif_argv
+
+// int32 type = 1;
+void whatif_argv::clear_type() {
+  type_ = 0;
+}
+::google::protobuf::int32 whatif_argv::type() const {
+  // @@protoc_insertion_point(field_get:risk.whatif_argv.type)
+  return type_;
+}
+void whatif_argv::set_type(::google::protobuf::int32 value) {
+  
+  type_ = value;
+  // @@protoc_insertion_point(field_set:risk.whatif_argv.type)
+}
+
+// string instrument = 2;
+void whatif_argv::clear_instrument() {
+  instrument_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+const ::std::string& whatif_argv::instrument() const {
+  // @@protoc_insertion_point(field_get:risk.whatif_argv.instrument)
+  return instrument_.GetNoArena();
+}
+void whatif_argv::set_instrument(const ::std::string& value) {
+  
+  instrument_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:risk.whatif_argv.instrument)
+}
+#if LANG_CXX11
+void whatif_argv::set_instrument(::std::string&& value) {
+  
+  instrument_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:risk.whatif_argv.instrument)
+}
+#endif
+void whatif_argv::set_instrument(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  instrument_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:risk.whatif_argv.instrument)
+}
+void whatif_argv::set_instrument(const char* value, size_t size) {
+  
+  instrument_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:risk.whatif_argv.instrument)
+}
+::std::string* whatif_argv::mutable_instrument() {
+  
+  // @@protoc_insertion_point(field_mutable:risk.whatif_argv.instrument)
+  return instrument_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+::std::string* whatif_argv::release_instrument() {
+  // @@protoc_insertion_point(field_release:risk.whatif_argv.instrument)
+  
+  return instrument_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+void whatif_argv::set_allocated_instrument(::std::string* instrument) {
+  if (instrument != NULL) {
+    
+  } else {
+    
+  }
+  instrument_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), instrument);
+  // @@protoc_insertion_point(field_set_allocated:risk.whatif_argv.instrument)
+}
+
+// double range = 3;
+void whatif_argv::clear_range() {
+  range_ = 0;
+}
+double whatif_argv::range() const {
+  // @@protoc_insertion_point(field_get:risk.whatif_argv.range)
+  return range_;
+}
+void whatif_argv::set_range(double value) {
+  
+  range_ = value;
+  // @@protoc_insertion_point(field_set:risk.whatif_argv.range)
+}
+
+// double base_value = 4;
+void whatif_argv::clear_base_value() {
+  base_value_ = 0;
+}
+double whatif_argv::base_value() const {
+  // @@protoc_insertion_point(field_get:risk.whatif_argv.base_value)
+  return base_value_;
+}
+void whatif_argv::set_base_value(double value) {
+  
+  base_value_ = value;
+  // @@protoc_insertion_point(field_set:risk.whatif_argv.base_value)
+}
+
+#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
+
+// ===================================================================
+
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int sub_whatif::kInfosFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+sub_whatif::sub_whatif()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  if (GOOGLE_PREDICT_TRUE(this != internal_default_instance())) {
+    protobuf_riskapi_5faction_5fprotocal_2eproto::InitDefaults();
+  }
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:risk.sub_whatif)
+}
+sub_whatif::sub_whatif(const sub_whatif& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(NULL),
+      infos_(from.infos_),
+      _cached_size_(0) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:risk.sub_whatif)
+}
+
+void sub_whatif::SharedCtor() {
+  _cached_size_ = 0;
+}
+
+sub_whatif::~sub_whatif() {
+  // @@protoc_insertion_point(destructor:risk.sub_whatif)
+  SharedDtor();
+}
+
+void sub_whatif::SharedDtor() {
+}
+
+void sub_whatif::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* sub_whatif::descriptor() {
+  protobuf_riskapi_5faction_5fprotocal_2eproto::protobuf_AssignDescriptorsOnce();
+  return protobuf_riskapi_5faction_5fprotocal_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+}
+
+const sub_whatif& sub_whatif::default_instance() {
+  protobuf_riskapi_5faction_5fprotocal_2eproto::InitDefaults();
+  return *internal_default_instance();
+}
+
+sub_whatif* sub_whatif::New(::google::protobuf::Arena* arena) const {
+  sub_whatif* n = new sub_whatif;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
+}
+
+void sub_whatif::Clear() {
+// @@protoc_insertion_point(message_clear_start:risk.sub_whatif)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  infos_.Clear();
+  _internal_metadata_.Clear();
+}
+
+bool sub_whatif::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:risk.sub_whatif)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // repeated .risk.whatif_argv infos = 1;
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+                input, add_infos()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:risk.sub_whatif)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:risk.sub_whatif)
+  return false;
+#undef DO_
+}
+
+void sub_whatif::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:risk.sub_whatif)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // repeated .risk.whatif_argv infos = 1;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->infos_size()); i < n; i++) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      1, this->infos(static_cast<int>(i)), output);
+  }
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
+  }
+  // @@protoc_insertion_point(serialize_end:risk.sub_whatif)
+}
+
+::google::protobuf::uint8* sub_whatif::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic; // Unused
+  // @@protoc_insertion_point(serialize_to_array_start:risk.sub_whatif)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // repeated .risk.whatif_argv infos = 1;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->infos_size()); i < n; i++) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageNoVirtualToArray(
+        1, this->infos(static_cast<int>(i)), deterministic, target);
+  }
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:risk.sub_whatif)
+  return target;
+}
+
+size_t sub_whatif::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:risk.sub_whatif)
+  size_t total_size = 0;
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
+  }
+  // repeated .risk.whatif_argv infos = 1;
+  {
+    unsigned int count = static_cast<unsigned int>(this->infos_size());
+    total_size += 1UL * count;
+    for (unsigned int i = 0; i < count; i++) {
+      total_size +=
+        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+          this->infos(static_cast<int>(i)));
+    }
+  }
+
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = cached_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void sub_whatif::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:risk.sub_whatif)
+  GOOGLE_DCHECK_NE(&from, this);
+  const sub_whatif* source =
+      ::google::protobuf::internal::DynamicCastToGenerated<const sub_whatif>(
+          &from);
+  if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:risk.sub_whatif)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:risk.sub_whatif)
+    MergeFrom(*source);
+  }
+}
+
+void sub_whatif::MergeFrom(const sub_whatif& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:risk.sub_whatif)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  infos_.MergeFrom(from.infos_);
+}
+
+void sub_whatif::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:risk.sub_whatif)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void sub_whatif::CopyFrom(const sub_whatif& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:risk.sub_whatif)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool sub_whatif::IsInitialized() const {
+  return true;
+}
+
+void sub_whatif::Swap(sub_whatif* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void sub_whatif::InternalSwap(sub_whatif* other) {
+  using std::swap;
+  infos_.InternalSwap(&other->infos_);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(_cached_size_, other->_cached_size_);
+}
+
+::google::protobuf::Metadata sub_whatif::GetMetadata() const {
+  protobuf_riskapi_5faction_5fprotocal_2eproto::protobuf_AssignDescriptorsOnce();
+  return protobuf_riskapi_5faction_5fprotocal_2eproto::file_level_metadata[kIndexInFileMessages];
+}
+
+#if PROTOBUF_INLINE_NOT_IN_HEADERS
+// sub_whatif
+
+// repeated .risk.whatif_argv infos = 1;
+int sub_whatif::infos_size() const {
+  return infos_.size();
+}
+void sub_whatif::clear_infos() {
+  infos_.Clear();
+}
+const ::risk::whatif_argv& sub_whatif::infos(int index) const {
+  // @@protoc_insertion_point(field_get:risk.sub_whatif.infos)
+  return infos_.Get(index);
+}
+::risk::whatif_argv* sub_whatif::mutable_infos(int index) {
+  // @@protoc_insertion_point(field_mutable:risk.sub_whatif.infos)
+  return infos_.Mutable(index);
+}
+::risk::whatif_argv* sub_whatif::add_infos() {
+  // @@protoc_insertion_point(field_add:risk.sub_whatif.infos)
+  return infos_.Add();
+}
+::google::protobuf::RepeatedPtrField< ::risk::whatif_argv >*
+sub_whatif::mutable_infos() {
+  // @@protoc_insertion_point(field_mutable_list:risk.sub_whatif.infos)
+  return &infos_;
+}
+const ::google::protobuf::RepeatedPtrField< ::risk::whatif_argv >&
+sub_whatif::infos() const {
+  // @@protoc_insertion_point(field_list:risk.sub_whatif.infos)
+  return infos_;
 }
 
 #endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
