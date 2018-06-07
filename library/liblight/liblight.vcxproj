@@ -116,7 +116,6 @@ copy $(ProjectDir)*.h*  $(SolutionDir)include\$(TargetName)</Command>
     <ClCompile Include="light_service.cpp" />
     <ClCompile Include="server.cpp" />
     <ClCompile Include="session.cpp" />
-    <ClCompile Include="transaction.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Buffer.h" />
@@ -133,7 +132,6 @@ copy $(ProjectDir)*.h*  $(SolutionDir)include\$(TargetName)</Command>
     <ClInclude Include="server.h" />
     <ClInclude Include="session.h" />
     <ClInclude Include="transaction.h" />
-    <ClInclude Include="transaction_processor.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

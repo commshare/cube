@@ -1,239 +1,191 @@
 #include "Buffer.h"
 
-char* light::Buffer::begin()
+namespace light
 {
-	return &*buffer_.begin();
+char* Buffer::begin()
+{
+    return &*buffer_.begin();
 }
 
-
-void light::Buffer::makeSpace( size_t len )
+const char* Buffer::begin() const
 {
-	if (writableBytes() + prependableBytes() < len + kCheapPrepend)
-	{
-		// FIXME: move readable data
-		buffer_.resize(writerIndex_+len);
-	}
-	else
-	{
-		// move readable data to the front, make space inside buffer
-		remove();
-	}
+    return &*buffer_.begin();
 }
 
-const char* light::Buffer::begin() const
+void Buffer::makeSpace(size_t len)
 {
-	return &*buffer_.begin();
+    if (has_capacity(len)) {
+        // move readable data to the front, make space inside buffer
+        remove();
+    }
+    else {
+        // FIXME: move readable data
+        buffer_.resize(writerIndex_ + len);
+    }
 }
 
-const char light::Buffer::kCRLF[] = "\r\n";
-//const size_t light::Buffer::kCheapPrepend;
-//const size_t light::Buffer::kInitialSize;
-
-light::Buffer::Buffer()
-	: buffer_(kCheapPrepend + kInitialSize),
-	readerIndex_(kCheapPrepend),
-	writerIndex_(kCheapPrepend)
+Buffer::Buffer()
+    : buffer_(kCheapPrepend + kInitialSize),
+    readerIndex_(kCheapPrepend),
+    writerIndex_(kCheapPrepend)
 {
-	assert(readableBytes() == 0);
-	assert(writableBytes() == kInitialSize);
-	assert(prependableBytes() == kCheapPrepend);
+    assert(readableBytes() == 0);
+    assert(writableBytes() == kInitialSize);
+    assert(prependableBytes() == kCheapPrepend);
 }
 
-void light::Buffer::swap( Buffer& rhs )
+void Buffer::swap(Buffer& rhs)
 {
-	buffer_.swap(rhs.buffer_);
-	std::swap(readerIndex_, rhs.readerIndex_);
-	std::swap(writerIndex_, rhs.writerIndex_);
+    buffer_.swap(rhs.buffer_);
+    std::swap(readerIndex_, rhs.readerIndex_);
+    std::swap(writerIndex_, rhs.writerIndex_);
 }
 
-size_t light::Buffer::readableBytes() const
+size_t Buffer::readableBytes() const
 {
-	return writerIndex_ - readerIndex_;
+    return writerIndex_ - readerIndex_;
 }
 
-size_t light::Buffer::writableBytes() const
+size_t Buffer::writableBytes() const
 {
-	return buffer_.size() - writerIndex_;
+    return buffer_.size() - writerIndex_;
 }
 
-size_t light::Buffer::prependableBytes() const
+size_t Buffer::prependableBytes() const
 {
-	return readerIndex_;
+    return readerIndex_;
 }
 
-const char* light::Buffer::peek() const
+const char* Buffer::peek() const
 {
-	return begin() + readerIndex_;
+    return begin() + readerIndex_;
 }
 
-const char* light::Buffer::findCRLF() const
+void Buffer::retrieve(size_t len)
 {
-	const char* crlf = std::search(peek(), beginWrite(), kCRLF, kCRLF+2);
-	return crlf == beginWrite() ? NULL : crlf;
+    assert(len <= readableBytes());
+    if (len < readableBytes())
+    {
+        readerIndex_ += len;
+    }
+    else
+    {
+        retrieveAll();
+    }
 }
 
-
-//const char* light::Buffer::findEOL() const
-//{
-//	const void* eol = memchr(peek(), '\n', readableBytes());
-//	return static_cast<const char*>(eol);
-//}
-
-
-void light::Buffer::retrieve( size_t len )
+void Buffer::retrieveUntil(const char* end)
 {
-	assert(len <= readableBytes());
-	if (len < readableBytes())
-	{
-		readerIndex_ += len;
-	}
-	else
-	{
-		retrieveAll();
-	}
+    assert(peek() <= end);
+    assert(end <= beginWrite());
+    retrieve(end - peek());
 }
 
-
-void light::Buffer::retrieveUntil( const char* end )
+void Buffer::retrieveInt32()
 {
-	assert(peek() <= end);
-	assert(end <= beginWrite());
-	retrieve(end - peek());
+    retrieve(sizeof(int32_t));
 }
 
-
-void light::Buffer::retrieveInt32()
+void Buffer::retrieveInt16()
 {
-	retrieve(sizeof(int32_t));
+    retrieve(sizeof(int16_t));
 }
 
-
-void light::Buffer::retrieveInt16()
+void Buffer::retrieveInt8()
 {
-	retrieve(sizeof(int16_t));
+    retrieve(sizeof(int8_t));
 }
 
-
-void light::Buffer::retrieveInt8()
+void Buffer::retrieveAll()
 {
-	retrieve(sizeof(int8_t));
+    readerIndex_ = kCheapPrepend;
+    writerIndex_ = kCheapPrepend;
 }
 
-
-void light::Buffer::retrieveAll()
+bool Buffer::has_capacity(size_t len)
 {
-	readerIndex_ = kCheapPrepend;
-	writerIndex_ = kCheapPrepend;
+    return writableBytes() + prependableBytes() >= len + kCheapPrepend;
 }
 
-
-bool light::Buffer::has_capacity(size_t len)
+std::string Buffer::retrieveAllAsString()
 {
-	return writableBytes() + prependableBytes() >= len + kCheapPrepend;
+    return retrieveAsString(readableBytes());;
 }
 
-std::string light::Buffer::retrieveAllAsString()
+std::string Buffer::retrieveAsString(size_t len)
 {
-	return retrieveAsString(readableBytes());;
+    assert(len <= readableBytes());
+    std::string result(peek(), len);
+    retrieve(len);
+    return result;
 }
 
-
-std::string light::Buffer::retrieveAsString( size_t len )
+void Buffer::append(const char* data, size_t len)
 {
-	assert(len <= readableBytes());
-	std::string result(peek(), len);
-	retrieve(len);
-	return result;
+    ensureWritableBytes(len);
+    std::copy(data, data + len, beginWrite());
+    hasWritten(len);
 }
 
-
-void light::Buffer::append( const char* /*restrict*/ data, size_t len )
+void Buffer::append(const void* data, size_t len)
 {
-	ensureWritableBytes(len);
-	std::copy(data, data+len, beginWrite());
-	hasWritten(len);
+    append(static_cast<const char*>(data), len);
 }
 
-
-void light::Buffer::ensureWritableBytes( size_t len )
+void Buffer::ensureWritableBytes(size_t len)
 {
-	if (writableBytes() < len)
-	{
-		makeSpace(len);
-	}
-	assert(writableBytes() >= len);
+    if (writableBytes() < len)
+    {
+        makeSpace(len);
+    }
+    assert(writableBytes() >= len);
 }
 
-
-char* light::Buffer::beginWrite()
+char* Buffer::beginWrite()
 {
-	return begin() + writerIndex_;
+    return begin() + writerIndex_;
 }
 
-
-void light::Buffer::hasWritten( size_t len )
+const char* Buffer::beginWrite() const
 {
-	assert(len <= writableBytes());
-	writerIndex_ += len;
+    return begin() + writerIndex_;
 }
 
-
-void light::Buffer::unwrite( size_t len )
+void Buffer::hasWritten(size_t len)
 {
-	assert(len <= readableBytes());
-	writerIndex_ -= len;
+    assert(len <= writableBytes());
+    writerIndex_ += len;
 }
 
-
-void light::Buffer::prepend( const void* /*restrict*/ data, size_t len )
+void Buffer::unwrite(size_t len)
 {
-	assert(len <= prependableBytes());
-	readerIndex_ -= len;
-	const char* d = static_cast<const char*>(data);
-	std::copy(d, d+len, begin()+readerIndex_);
+    assert(len <= readableBytes());
+    writerIndex_ -= len;
 }
 
-
-size_t light::Buffer::internalCapacity() const
+void Buffer::prepend(const void* data, size_t len)
 {
-	return buffer_.capacity();
+    assert(len <= prependableBytes());
+    readerIndex_ -= len;
+    const char* d = static_cast<const char*>(data);
+    std::copy(d, d + len, begin() + readerIndex_);
 }
 
-
-void light::Buffer::remove()
+size_t Buffer::internalCapacity() const
 {
-	assert(kCheapPrepend < readerIndex_);
-	size_t readable = readableBytes();
-	std::copy(begin()+readerIndex_,
-		begin()+writerIndex_,
-		begin()+kCheapPrepend);
-	readerIndex_ = kCheapPrepend;
-	writerIndex_ = readerIndex_ + readable;
-	assert(readable == readableBytes());
+    return buffer_.capacity();
 }
 
-const char* light::Buffer::beginWrite() const
+void Buffer::remove()
 {
-	return begin() + writerIndex_;
+    assert(kCheapPrepend < readerIndex_);
+    size_t readable = readableBytes();
+    std::copy(begin() + readerIndex_,
+        begin() + writerIndex_,
+        begin() + kCheapPrepend);
+    readerIndex_ = kCheapPrepend;
+    writerIndex_ = readerIndex_ + readable;
+    assert(readable == readableBytes());
 }
 
-void light::Buffer::append( const void* /*restrict*/ data, size_t len )
-{
-	append(static_cast<const char*>(data), len);
-}
-
-//const char* light::Buffer::findEOL( const char* start ) const
-//{
-//	assert(peek() <= start);
-//	assert(start <= beginWrite());
-//	const void* eol = memchr(start, '\n', readableBytes());
-//	return static_cast<const char*>(eol);
-//}
-
-const char* light::Buffer::findCRLF( const char* start ) const
-{
-	assert(peek() <= start);
-	assert(start <= beginWrite());
-	const char* crlf = std::search(start, beginWrite(), kCRLF, kCRLF+2);
-	return crlf == beginWrite() ? NULL : crlf;
 }

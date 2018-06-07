@@ -51,9 +51,6 @@
     <ClCompile Include="session.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="transaction.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Buffer.h">
@@ -96,9 +93,6 @@
       <Filter>src</Filter>
     </ClInclude>
     <ClInclude Include="transaction.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="transaction_processor.h">
       <Filter>src</Filter>
     </ClInclude>
   </ItemGroup>
