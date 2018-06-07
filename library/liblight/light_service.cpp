@@ -1,84 +1,83 @@
 #include "light_service.h"
-#include "session.h"
-#include "liblog/log.h"
 #include <iostream>
 #include <thread>
+#include "liblog/log.h"
+#include "session.h"
 
-light::LightService::LightService(int id)
-	: serviceid_(id)
-	, session_serial_(0)
-	, pre_add_session_(0)
+namespace light
+{
+LightService::LightService(int id)
+    : serviceid_(id)
+    , session_serial_(0)
+    , pre_add_session_(0)
 {
 }
 
-light::LightService::~LightService()
+LightService::~LightService()
 {
-    STLOG_WARN << "LightService destroyed..." << serviceid_;
+    STLOG_INFO << "LightService destructor..." << serviceid_;
 }
 
-void light::LightService::start()
+void LightService::start()
 {
-	work_ = std::make_shared<boost::asio::io_service::work>(io_service_);
-	thread_ = std::make_shared<boost::thread>(std::bind(&light::LightService::run, shared_from_this()));
-	STLOG_ERROR << "start light service thread...thread_id: " << thread_->get_id() << std::endl;
+    work_ = std::make_shared<boost::asio::io_service::work>(io_service_);
+    thread_ = std::make_shared<boost::thread>(std::bind(&LightService::run, shared_from_this()));
+    STLOG_INFO << "start LightService thread, thread_id: " << thread_->get_id();
 }
 
-void light::LightService::stop()
+void LightService::stop()
 {
-    for(auto it = sessions_.begin(); it != sessions_.end(); ++it) {
-        it->second->close("closed for stop");
+    for (auto val : sessions_) {
+        val.second->close("closed for stop");
     }
-    while(!sessions_.empty()) {
+    while (!sessions_.empty()) {
         std::this_thread::sleep_for(std::chrono::milliseconds(0));
     };
     sessions_.clear();
     io_service_.stop();
-    while(io_service_.stopped()) {
+    while (io_service_.stopped()) {
         thread_->join();
         break;
     }
-    if(work_) work_.reset();
+    if (work_) work_.reset();
 }
 
-void light::LightService::add_session(std::shared_ptr<Session> s)
+void LightService::add_session(std::shared_ptr<Session> s)
 {
-	--pre_add_session_;
-	int childid = GenerateSessionSerial();
-	s->sessionid_ = (serviceid_ << 16) + childid;
-	sessions_[s->sessionid_] = s;
-	STLOG_INFO << "light service "
-		<< "0x" << std::setbase(16) << serviceid_ << " add a new session, sessionid " << "0x" << s->sessionid_ << ", session amount now is " << sessions_.size() << std::endl;
+    --pre_add_session_;
+    int childid = GenerateSessionSerial();
+    s->sessionid_ = (serviceid_ << 16) + childid;
+    sessions_[s->sessionid_] = s;
+    STLOG_INFO << "light service: " << "0x" << std::setbase(16) << serviceid_ << " add a new session, sessionid: " 
+        << "0x" << s->sessionid_ << ", session amount now is: " << sessions_.size();
 }
 
-boost::asio::io_service& light::LightService::get_io_service()
+void LightService::del_session(std::shared_ptr<Session> s)
 {
-	return io_service_;
+    auto it = sessions_.find(s->sessionid_);
+    if (it != sessions_.end())
+    {
+        sessions_.erase(it->first);
+        STLOG_INFO << "light service: " << "0x" << std::setbase(16) << serviceid_ << " del a new session, sessionid: "
+            << "0x" << s->sessionid_ << ", session amount now is: " << sessions_.size();
+    }
+    else
+    {
+        STLOG_FATAL << "sessionid: " << s->sessionid_ << " is invalid...";
+    }
 }
 
-void light::LightService::del_session(std::shared_ptr<Session> s)
+void LightService::send(int sessionid, transaction_ptr trans)
 {
-	auto it = sessions_.find(s->sessionid_);
-	if (it != sessions_.end())
-	{
-		sessions_.erase(it->first);
-		STLOG_INFO << "light service " << thread_->get_id() << " delete a session, session amount now is " << sessions_.size() << std::endl;
-	}
-	else
-	{
-		STLOG_ERROR << "light service " << s->sessionid_ << " is invalid...";
-	}
+    auto it = sessions_.find(sessionid);
+    if (sessions_.end() != it && it->second)
+    {
+        it->second->send(*trans->get_head_ptr(), trans->get_body_ptr());
+    }
 }
 
-void light::LightService::send(int sessionid, transaction_ptr trans)
+void LightService::run()
 {
-	auto it = sessions_.find(sessionid);
-	if (sessions_.end() != it && it->second)
-	{
-		it->second->send(*trans->get_head_ptr(), trans->get_body_ptr());
-	}
+    io_service_.run();
 }
-
-void light::LightService::run()
-{
-	io_service_.run();
 }

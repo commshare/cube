@@ -1,78 +1,77 @@
-#include <iostream>
 #include "server.h"
+#include <iostream>
+#include "liblog/log.h"
 #include "session.h"
-#include "business_unit_group.h"
 #include "light_service.h"
 #include "dispatcher.h"
-#include "liblog/log.h"
+#include "business_unit_group.h"
 
-light::Server::Server(const boost::asio::ip::tcp::endpoint& endpoint, int rwthread)
-	: acceptor_(accept_service_, endpoint)
+namespace light {
+
+Server::Server(const boost::asio::ip::tcp::endpoint& endpoint, int rwthread)
+    : acceptor_(accept_service_, endpoint)
 {
-	rwthreadnum_ = rwthread > 0 ? rwthread : 1;
-	for (int rwt = 0; rwt < rwthreadnum_; ++rwt)
-	{
-		rw_services_.push_back(std::make_shared<LightService>(rwt));
-		Dispatcher::_Instance().RegisterLightService(*(rw_services_.rbegin()));
-	}
-	do_accept();
+    rwthreadnum_ = rwthread > 0 ? rwthread : 1;
+    for (int rwt = 0; rwt < rwthreadnum_; ++rwt) {
+        rw_services_.push_back(std::make_shared<LightService>(rwt));
+        Dispatcher::_Instance().RegisterLightService(*(rw_services_.rbegin()));
+    }
+    do_accept();
 }
-light::Server::~Server()
+
+Server::~Server()
 {
-    STLOG_WARN << "server destroyed...";
+    STLOG_INFO << "server destructor...";
 }
-void light::Server::start()
+
+void Server::start()
 {
-	for (auto it = rw_services_.begin(); it!= rw_services_.end(); ++it)
-	{
-		(*it)->start();
-	}
+    for (auto val : rw_services_) {
+        val->start();
+    }
+    accept_service_.run();
 }
-void light::Server::stop() {
+
+void Server::stop() {
     accept_service_.stop();
-    while(accept_service_.stopped()) {
+    while (accept_service_.stopped()) {
         break;
     }
-    for(auto it = rw_services_.begin(); it != rw_services_.end(); ++it) {
-        if(*it) {
-            (*it)->stop();
+    for (auto val : rw_services_) {
+        if (val) {
+            val->stop();
         }
     }
     rw_services_.clear();
 }
-void light::Server::run()
+
+void Server::do_accept()
 {
-	start();
-	accept_service_.run();
+    //todo multi rw_io_service
+    std::shared_ptr<LightService>& service = get_service();
+    service->pre_add_session();
+    socket_ptr sock = std::make_shared<boost::asio::ip::tcp::socket>(service->get_io_service());
+    acceptor_.async_accept(*sock, std::bind(&Server::handle_accept, this, sock, service, std::placeholders::_1));
 }
 
-void light::Server::do_accept()
+void Server::handle_accept(socket_ptr sock, std::shared_ptr<LightService>& service, const boost::system::error_code& err)
 {
-	//todo multi rw_io_service
-	std::shared_ptr<LightService>& service = get_service();
-	service->pre_add_session();
-	light::socket_ptr sock = std::make_shared<boost::asio::ip::tcp::socket>(service->get_io_service());
-	acceptor_.async_accept(*sock, std::bind(&light::Server::handle_accept, this, sock, service, std::placeholders::_1));
+    if (!err) {
+        sock->get_io_service().post(std::bind(&Session::start, std::make_shared<Session>(sock, service)));
+    }
+    else {
+        STLOG_FATAL << "accept error: " << err.message();
+    }
+    do_accept();
 }
 
-void light::Server::handle_accept( light::socket_ptr sock, std::shared_ptr<LightService>& service, const boost::system::error_code& err)
+std::shared_ptr<LightService>& Server::get_service()
 {
-	if (!err)
-	{
-		sock->get_io_service().post(std::bind(&Session::start, std::make_shared<Session>(sock, service)));
-	}else
-	{
-	    STLOG_FATAL << "accept error: " << err.message() << std::endl;
-	}
-	do_accept();
+    auto it = std::min_element(rw_services_.begin(), rw_services_.end(), 
+        [](const std::shared_ptr<LightService>& ptr1, const std::shared_ptr<LightService>& ptr2) {
+        return ptr1->get_sessions() < ptr2->get_sessions();
+    });
+    return *it;
 }
 
-std::shared_ptr<light::LightService>& light::Server::get_service()
-{
-	auto it = std::min_element(rw_services_.begin(), rw_services_.end(), [](const std::shared_ptr<LightService>& ptr1, const std::shared_ptr<LightService>& ptr2) {
-		return ptr1->get_sessions() < ptr2->get_sessions();
-	});
-	return *it;
 }
-
- 
