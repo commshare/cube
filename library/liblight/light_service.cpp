@@ -28,7 +28,7 @@ void LightService::start()
 void LightService::stop()
 {
     for (auto val : sessions_) {
-        val.second->close("closed for stop");
+        val.second->stop("Session for stop");
     }
     while (!sessions_.empty()) {
         std::this_thread::sleep_for(std::chrono::milliseconds(0));
@@ -57,7 +57,7 @@ void LightService::del_session(std::shared_ptr<Session> s)
     auto it = sessions_.find(s->sessionid_);
     if (it != sessions_.end())
     {
-        sessions_.erase(it->first);
+        sessions_.erase(it);
         STLOG_INFO << "light service: " << "0x" << std::setbase(16) << serviceid_ << " del a new session, sessionid: "
             << "0x" << s->sessionid_ << ", session amount now is: " << sessions_.size();
     }

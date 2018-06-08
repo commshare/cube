@@ -1,44 +1,46 @@
 #include "business_unit.h"
+#include "liblog/log.h"
 #include "transaction.h"
 #include "dispatcher.h"
-#include <memory>
-#include "liblog/log.h"
-light::BusinessUnit::BusinessUnit(const std::string& name)
-	: bu_name_(name)
-	, business_unit_group_(nullptr)
+
+namespace light
 {
-
-}
-
-light::BusinessUnit::~BusinessUnit()
+BusinessUnit::BusinessUnit(const std::string& name)
+    : bu_name_(name)
+    , business_unit_group_(nullptr)
 {
 }
-std::shared_ptr<light::BusinessUnitGroup>& light::BusinessUnit::business_unit_group()
+
+BusinessUnit::~BusinessUnit()
 {
-	return business_unit_group_;
 }
 
-void light::BusinessUnit::join(std::shared_ptr<BusinessUnitGroup> group)
+void BusinessUnit::join(std::shared_ptr<BusinessUnitGroup> group)
 {
-	business_unit_group_ = group;
+    business_unit_group_ = group;
 }
 
-void light::BusinessUnit::send(int sessionid, int transactionid, const std::string& msg)
+std::shared_ptr<BusinessUnitGroup>& BusinessUnit::business_unit_group()
 {
-	if (sessionid)
-	{
-		transaction_head head;
-		head.body_length_ = msg.length();
-		head.transaction_type_ = transactionid;
-		Dispatcher::_Instance().SendTransaction(sessionid, std::make_shared<transaction>(&head, &msg[0]));
-	}
+    return business_unit_group_;
 }
 
-void light::BusinessUnit::publish(int trasactionid, const std::string& msg)
+void BusinessUnit::send(int sessionid, int transactionid, const std::string& msg)
 {
-	transaction_head head;
-	head.body_length_ = msg.size();
-	head.transaction_type_ = trasactionid;
-	Dispatcher::_Instance().DispatchTransaction(nullptr, std::make_shared<transaction>(&head, &msg[0]));
+    if (sessionid)
+    {
+        transaction_head head;
+        head.body_length_ = msg.size();
+        head.transaction_type_ = transactionid;
+        Dispatcher::_Instance().SendTransaction(sessionid, std::make_shared<transaction>(&head, &msg[0]));
+    }
 }
 
+void BusinessUnit::publish(int trasactionid, const std::string& msg)
+{
+    transaction_head head;
+    head.body_length_ = msg.size();
+    head.transaction_type_ = trasactionid;
+    Dispatcher::_Instance().DispatchTransaction(nullptr, std::make_shared<transaction>(&head, &msg[0]));
+}
+}

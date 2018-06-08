@@ -2,13 +2,13 @@
 
 namespace light
 {
-	class LightEvent
-	{
-	public:
-		enum {
-			OnSessionConnected = 1,
-			OnSessionDisconnected,
-			OnTimer
-		};
-	};
+class LightEvent
+{
+public:
+    enum {
+        OnSessionConnected = 1,
+        OnSessionDisconnected,
+        OnTimer
+    };
+};
 }

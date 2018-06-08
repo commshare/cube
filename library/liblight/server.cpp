@@ -4,7 +4,6 @@
 #include "session.h"
 #include "light_service.h"
 #include "dispatcher.h"
-#include "business_unit_group.h"
 
 namespace light {
 
