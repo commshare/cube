@@ -1,0 +1,180 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="evpp">
+      <UniqueIdentifier>{7029ac98-ab2e-4ff2-a1f7-7eb045422ace}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+    <Text Include="evpp\CMakeLists.txt">
+      <Filter>evpp</Filter>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="evpp\any.h">
+      <Filter>evpp</Filter>
+    </ClInclude>
+    <ClInclude Include="evpp\buffer.h">
+      <Filter>evpp</Filter>
+    </ClInclude>
+    <ClInclude Include="evpp\connector.h">
+      <Filter>evpp</Filter>
+    </ClInclude>
+    <ClInclude Include="evpp\dns_resolver.h">
+      <Filter>evpp</Filter>
+    </ClInclude>
+    <ClInclude Include="evpp\duration.h">
+      <Filter>evpp</Filter>
+    </ClInclude>
+    <ClInclude Include="evpp\duration.inl.h">
+      <Filter>evpp</Filter>
+    </ClInclude>
+    <ClInclude Include="evpp\event_loop.h">
+      <Filter>evpp</Filter>
+    </ClInclude>
+    <ClInclude Include="evpp\event_loop_thread.h">
+      <Filter>evpp</Filter>
+    </ClInclude>
+    <ClInclude Include="evpp\event_loop_thread_pool.h">
+      <Filter>evpp</Filter>
+    </ClInclude>
+    <ClInclude Include="evpp\event_watcher.h">
+      <Filter>evpp</Filter>
+    </ClInclude>
+    <ClInclude Include="evpp\fd_channel.h">
+      <Filter>evpp</Filter>
+    </ClInclude>
+    <ClInclude Include="evpp\gettimeofday.h">
+      <Filter>evpp</Filter>
+    </ClInclude>
+    <ClInclude Include="evpp\inner_pre.h">
+      <Filter>evpp</Filter>
+    </ClInclude>
+    <ClInclude Include="evpp\invoke_timer.h">
+      <Filter>evpp</Filter>
+    </ClInclude>
+    <ClInclude Include="evpp\libevent.h">
+      <Filter>evpp</Filter>
+    </ClInclude>
+    <ClInclude Include="evpp\listener.h">
+      <Filter>evpp</Filter>
+    </ClInclude>
+    <ClInclude Include="evpp\logging.h">
+      <Filter>evpp</Filter>
+    </ClInclude>
+    <ClInclude Include="evpp\memmem.h">
+      <Filter>evpp</Filter>
+    </ClInclude>
+    <ClInclude Include="evpp\platform_config.h">
+      <Filter>evpp</Filter>
+    </ClInclude>
+    <ClInclude Include="evpp\server_status.h">
+      <Filter>evpp</Filter>
+    </ClInclude>
+    <ClInclude Include="evpp\slice.h">
+      <Filter>evpp</Filter>
+    </ClInclude>
+    <ClInclude Include="evpp\sockets.h">
+      <Filter>evpp</Filter>
+    </ClInclude>
+    <ClInclude Include="evpp\sys_addrinfo.h">
+      <Filter>evpp</Filter>
+    </ClInclude>
+    <ClInclude Include="evpp\sys_sockets.h">
+      <Filter>evpp</Filter>
+    </ClInclude>
+    <ClInclude Include="evpp\tcp_callbacks.h">
+      <Filter>evpp</Filter>
+    </ClInclude>
+    <ClInclude Include="evpp\tcp_client.h">
+      <Filter>evpp</Filter>
+    </ClInclude>
+    <ClInclude Include="evpp\tcp_conn.h">
+      <Filter>evpp</Filter>
+    </ClInclude>
+    <ClInclude Include="evpp\tcp_server.h">
+      <Filter>evpp</Filter>
+    </ClInclude>
+    <ClInclude Include="evpp\thread_dispatch_policy.h">
+      <Filter>evpp</Filter>
+    </ClInclude>
+    <ClInclude Include="evpp\timestamp.h">
+      <Filter>evpp</Filter>
+    </ClInclude>
+    <ClInclude Include="evpp\timestamp.inl.h">
+      <Filter>evpp</Filter>
+    </ClInclude>
+    <ClInclude Include="evpp\utility.h">
+      <Filter>evpp</Filter>
+    </ClInclude>
+    <ClInclude Include="evpp\windows_port.h">
+      <Filter>evpp</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="evpp\buffer.cc">
+      <Filter>evpp</Filter>
+    </ClCompile>
+    <ClCompile Include="evpp\connector.cc">
+      <Filter>evpp</Filter>
+    </ClCompile>
+    <ClCompile Include="evpp\dns_resolver.cc">
+      <Filter>evpp</Filter>
+    </ClCompile>
+    <ClCompile Include="evpp\duration.cc">
+      <Filter>evpp</Filter>
+    </ClCompile>
+    <ClCompile Include="evpp\event_loop.cc">
+      <Filter>evpp</Filter>
+    </ClCompile>
+    <ClCompile Include="evpp\event_loop_thread.cc">
+      <Filter>evpp</Filter>
+    </ClCompile>
+    <ClCompile Include="evpp\event_loop_thread_pool.cc">
+      <Filter>evpp</Filter>
+    </ClCompile>
+    <ClCompile Include="evpp\event_watcher.cc">
+      <Filter>evpp</Filter>
+    </ClCompile>
+    <ClCompile Include="evpp\fd_channel.cc">
+      <Filter>evpp</Filter>
+    </ClCompile>
+    <ClCompile Include="evpp\inner_pre.cc">
+      <Filter>evpp</Filter>
+    </ClCompile>
+    <ClCompile Include="evpp\invoke_timer.cc">
+      <Filter>evpp</Filter>
+    </ClCompile>
+    <ClCompile Include="evpp\libevent.cc">
+      <Filter>evpp</Filter>
+    </ClCompile>
+    <ClCompile Include="evpp\listener.cc">
+      <Filter>evpp</Filter>
+    </ClCompile>
+    <ClCompile Include="evpp\sockets.cc">
+      <Filter>evpp</Filter>
+    </ClCompile>
+    <ClCompile Include="evpp\tcp_client.cc">
+      <Filter>evpp</Filter>
+    </ClCompile>
+    <ClCompile Include="evpp\tcp_conn.cc">
+      <Filter>evpp</Filter>
+    </ClCompile>
+    <ClCompile Include="evpp\tcp_server.cc">
+      <Filter>evpp</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
