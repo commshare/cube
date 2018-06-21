@@ -16,15 +16,15 @@ eric     2018.4.27   1.0     Create
 #include <chrono>
 #include <thread>
 
-#include "project.h"
-#include "dispatch_server.h"
-#include "protocol.h"
-#include "monitor.h"
-#include "event.h"
-#include "memory_pool.h"
-#include "file.h"
-#include "lexical_cast.h"
-#include "any.h"
+#include "libeco/project.h"
+#include "libeco/dispatch_server.h"
+#include "libeco/protocol.h"
+#include "libeco/monitor.h"
+#include "libeco/event.h"
+#include "libeco/memory_pool.h"
+#include "libeco/file.h"
+#include "libeco/lexical_cast.h"
+#include "libeco/any.h"
 
 using namespace std;
 
@@ -98,6 +98,11 @@ int print(T value)
 int main(int argc, char **argv)
 {
     cout << "hello reddot" << endl;
+	std::string str = "hello'world''hehe'";
+	cout << str << endl;
+	eco::replace_all(str, "'", "''");
+	cout << str << endl;
+
     
     eco::DispatchServer<uint32_t, protocal_struct> dispatch;
     dispatch.set_default(fun_default);

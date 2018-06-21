@@ -13,69 +13,10 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="src">
-      <UniqueIdentifier>{c7a57a63-f426-429a-b214-d64c7ac5656e}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp">
-      <Filter>src</Filter>
+      <Filter>源文件</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="src\export.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="src\cast.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="src\memory.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="src\object.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="src\project.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="src\type.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="src\message_queue.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="src\state.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="src\dispatch_server.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="src\message_server.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="src\thread_pool.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="src\protocol.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="src\monitor.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="src\event.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="src\memory_pool.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="src\file.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="src\any.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="src\lexical_cast.h">
-      <Filter>src</Filter>
-    </ClInclude>
   </ItemGroup>
 </Project>

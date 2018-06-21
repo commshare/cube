@@ -2,8 +2,8 @@
 #define MEMORY_H_
 
 #include <memory>
+#include <string>
 #include <assert.h>
-#include "export.h"
 
 ////////////////////////////////////////////////////////////////////////////////
 #ifdef WIN32
@@ -139,6 +139,17 @@ inline void replace(OUT char* path, IN const char c, IN const char r)
     }
 }
 
+inline void replace_all(std::string& str, const std::string& src, const std::string& dest)
+{
+    std::string::size_type pos = 0;
+    std::string::size_type srclen = src.size();
+    std::string::size_type deslen = dest.size();
+    pos = str.find(src, pos);
+    while ((pos != std::string::npos)) {
+        str.replace(pos, srclen, dest);
+        pos = str.find(src, (pos + deslen));
+    }
+}
 
 ////////////////////////////////////////////////////////////////////////////////
 inline void cpy_pos(OUT char& dest, OUT uint32_t& pos, IN  const char sour)

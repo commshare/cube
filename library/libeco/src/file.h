@@ -294,6 +294,5 @@ private:
     std::string path;
 };
 
-
 }
 #endif
