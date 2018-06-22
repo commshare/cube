@@ -135,6 +135,10 @@ void State::del(IN const uint32_t v)
 {
 	m_value &= ~v;
 }
+void State::set(IN bool is, IN const uint32_t v)
+{
+    return is ? add(v) : del(v);
+}
 void State::set_v(IN const uint32_t add_v, IN const uint32_t del_v)
 {
 	add(add_v);
@@ -143,10 +147,6 @@ void State::set_v(IN const uint32_t add_v, IN const uint32_t del_v)
 void State::operator=(IN const uint32_t v)
 {
 	m_value = v;
-}
-void State::set(bool is, IN const uint32_t v)
-{
-	return is ? add(v) : del(v);
 }
 bool State::has(IN const uint32_t v) const
 {
