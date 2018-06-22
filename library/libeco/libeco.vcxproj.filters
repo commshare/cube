@@ -75,7 +75,7 @@
     <ClInclude Include="src\windows_port.h">
       <Filter>源文件</Filter>
     </ClInclude>
-    <ClInclude Include="src\parse.h">
+    <ClInclude Include="src\memoryex.h">
       <Filter>源文件</Filter>
     </ClInclude>
   </ItemGroup>

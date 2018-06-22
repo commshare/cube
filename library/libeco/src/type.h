@@ -1,6 +1,7 @@
 #ifndef TYPE_H_
 #define TYPE_H_
 
+#include <math.h>
 #include <map>
 #include <limits>
 #include <functional>
@@ -71,7 +72,7 @@ inline void clear(OUT char* v)
 inline size_t fit_size(IN const char* str, IN const size_t size)
 {
     size_t x = 0;
-    size_t i = size - 1;
+    int i = size - 1;
     for (; i != -1 && str[i] == 0; --i) ++x;
     if (i == 0 && str[i] == 0) ++x;
     return x;
@@ -172,7 +173,7 @@ public:
 
     inline explicit Bytes(
         IN const char* data,
-        IN const uint32_t size = -1)
+        IN const int size = -1)
         : m_data(data)
         , m_size(size != -1 ? size : static_cast<uint32_t>(strlen(data)))
     {}
@@ -201,9 +202,9 @@ public:
 inline eco::Bytes func(IN const char* full_func_name)
 {
     uint32_t len = (uint32_t)strlen(full_func_name);
-    uint32_t end = eco::find_last(full_func_name, len, '(');
+    int end = eco::find_last(full_func_name, len, '(');
     if (end == -1) end = len;
-    uint32_t start = eco::find_last(full_func_name, end, ':');
+    int start = eco::find_last(full_func_name, end, ':');
     if (start == -1) start = 0;
     return eco::Bytes(full_func_name + start, end - start);
 }
@@ -712,14 +713,14 @@ public:
         m_buffer.append(str, str.size());
         return *this;
     }
-    inline StreamT& operator<<(IN const long v)
-    {
-        return operator<<(int32_t(v));
-    }
-    inline StreamT& operator<<(IN unsigned long v)
-    {
-        return operator<<(uint32_t(v));
-    }
+    //inline StreamT& operator<<(IN const long v)
+    //{
+    //    return operator<<(int32_t(v));
+    //}
+    //inline StreamT& operator<<(IN unsigned long v)
+    //{
+    //    return operator<<(uint32_t(v));
+    //}
     inline StreamT& operator<<(IN const int64_t v)
     {
         Integer<int64_t> str(v);
@@ -1040,7 +1041,7 @@ inline bool is_negative(IN const double v)
 }
 inline bool is_nan(IN const double v)
 {
-    return int(_isnan(v)) > 0;
+    return int(::isnan(v)) > 0;
 }
 inline bool is_infinity(IN const double v)
 {

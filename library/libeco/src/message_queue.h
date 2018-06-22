@@ -1,62 +1,62 @@
+/******************************************************************************
+Copyright (c) 2016. All Rights Reserved.
+
+FileName: message_queue.h
+Version: 1.0
+Date: 2018.5.4
+
+History:
+eric        2018.5.4   1.0     Create
+******************************************************************************/
+
 #ifndef MESSAGE_QUEUE_H_
 #define MESSAGE_QUEUE_H_
 
 #include <deque>
 #include <mutex>
 #include <condition_variable>
-
 #include "state.h"
 
 namespace eco{;
 
-
-////////////////////////////////////////////////////////////////////////////////
 template<typename Message>
 class MessageQueue
 {
-    //ECO_OBJECT(MessageQueue)
-////////////////////////////////////////////////////////////////////////////////
 public:
-    // max size.
     enum {default_capacity = 5000 };
 
-    /*@ the message queue max message size.*/
     inline MessageQueue(IN const uint32_t capacity = default_capacity)
     {
         set_capacity(capacity);
         open();
     }
 
-    /*@ set message queue capacity.*/
     inline void set_capacity(IN const uint32_t capacity)
     {
         m_capacity = (capacity > 0) ? capacity : default_capacity;
     }
 
-    /*@ open message queue so that it can recv message.*/
     inline void open()
     {
         m_state.ok();
     }
+
     inline const bool is_open() const
     {
         return m_state.is_ok();
     }
 
-    /*@ close message queue so that it stop to recv message. but it will wait 
-    all message be handled.
-    */
     inline void close()
     {
         std::unique_lock<std::mutex> lock(m_mutex);
         raw_close();
     }
+
     inline const bool is_close() const
     {
         return m_state.is_none();
     }
 
-    /*@ release message queue so that it stop to recv message and clear message.*/
     inline void release()
     {
         std::unique_lock<std::mutex> lock(m_mutex);
@@ -64,10 +64,6 @@ public:
         raw_close();
     }
 
-    /*@ post message to message queue.
-    * @ para.msg: message type is like "std::function", "std::shared_ptr",
-    and some can be operated by "std::move()".
-    */
     void post(IN Message& msg)
     {
         std::unique_lock<std::mutex> lock(m_mutex);
@@ -77,9 +73,6 @@ public:
         raw_post(msg);
     }
 
-    /*@ post message to message queue and ensure that this message is unique.
-    if this message is exist, replace it.
-    */
     template<typename UniqueChecker>
     inline void post_unique(IN Message& msg, IN UniqueChecker& unique_check)
     {
@@ -96,7 +89,6 @@ public:
         raw_post(msg);
     }
 
-    /*@ pop message from this message queue.*/
     inline const bool pop(OUT Message& msg)
     {
         std::unique_lock<std::mutex> lock(m_mutex);
@@ -115,14 +107,12 @@ public:
         return true;
     }
 
-    // is message queue empty.
     inline const bool empty() const
     {
         std::unique_lock<std::mutex> lock(m_mutex);
         return m_deque.empty();
     }
 
-    // is message queue empty.
     inline const uint32_t size() const
     {
         std::unique_lock<std::mutex> lock(m_mutex);
@@ -137,7 +127,6 @@ private:
         if (m_state.is_none()) {
             return;
         }
-        // notify all thread to exit message queue.
         m_state.none();
         m_empty_cond_var.notify_all();
         m_full_cond_var.notify_all();
@@ -145,7 +134,7 @@ private:
 
     inline void raw_post(IN Message& msg)
     {
-        //m_deque.push_back(message());
+        //m_deque.push_back(Message());
         //m_deque.back().swap(msg);
         //m_deque.push_back(std::move(msg));
         m_deque.push_back(msg);
@@ -162,13 +151,8 @@ private:
         return (m_deque.size() == m_capacity);
     }
 
-    //  message queue max size.
     uint32_t m_capacity;
-
-    // message queue data.
     std::deque<Message> m_deque;
-
-    // message queue state.
     eco::atomic::State m_state;
 
     // when message queue is full and empty, synchronous notify.
@@ -177,7 +161,5 @@ private:
     std::condition_variable m_empty_cond_var;
 };
 
-
-////////////////////////////////////////////////////////////////////////////////
 }// ns.eco
 #endif

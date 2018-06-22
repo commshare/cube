@@ -160,10 +160,10 @@ bool State::operator==(IN const uint32_t v) const
 {
     return m_value == v;
 }
-bool State::operator==(IN const int v) const
-{
-    return m_value == v;
-}
+//bool State::operator==(IN const int v) const
+//{
+//    return m_value == v;
+//}
 uint32_t State::value() const
 {
     return m_value;

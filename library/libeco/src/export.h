@@ -2,7 +2,6 @@
 #define EXPORT_H_
 
 #include <cstdint>
-#include <xutility>
 #include <memory>
 
 #ifdef WIN32
@@ -390,8 +389,8 @@ inline void set(ObjectT& obj, uint32_t v, bool is)
 template<typename ObjectT>
 inline void set_v(ObjectT& obj, const uint32_t add_v, const uint32_t del_v)
 {
-    eco::add(add_v);
-    eco::del(del_v);
+    eco::add(obj, add_v);
+    eco::del(obj, del_v);
 }
 template<typename ObjectT>
 inline bool has(const ObjectT& obj, uint32_t v)

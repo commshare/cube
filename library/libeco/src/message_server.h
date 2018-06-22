@@ -1,17 +1,27 @@
+/******************************************************************************
+Copyright (c) 2016. All Rights Reserved.
+
+FileName: message_server.h
+Version: 1.0
+Date: 2018.5.4
+
+History:
+eric        2018.5.4   1.0     Create
+******************************************************************************/
+
 #ifndef MESSAGE_SERVER_H_
 #define MESSAGE_SERVER_H_
 
 #include "message_queue.h"
 #include "thread_pool.h"
 
-namespace eco{
+namespace eco{;
 
 template<
     typename Message,
-    typename Handler = std::function<void(Message&)> >
-    class MessageServer
+    typename Handler = std::function<void (Message&)> >
+class MessageServer
 {
-    ECO_OBJECT(MessageServer)
 public:
     typedef MessageServer<Message, Handler> MessageServerT;
 
@@ -118,5 +128,5 @@ protected:
     ThreadPool m_thread_pool;
 };
 
-}// ns::eco
+}
 #endif

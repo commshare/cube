@@ -1,7 +1,7 @@
 /******************************************************************************
 Copyright (c) 2020. All Rights Reserved.
 
-FileName: parse.h
+FileName: memoryex.h
 Version: 1.0
 Date: 2016.1.13
 
@@ -9,8 +9,8 @@ History:
 eric     2016.4.13   1.0     Create
 ******************************************************************************/
 
-#ifndef PARSE_H_
-#define PARSE_H_
+#ifndef MEMORYEX_H_
+#define MEMORYEX_H_
 
 #include <string>
 
