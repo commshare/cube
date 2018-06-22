@@ -2,19 +2,16 @@
 #define OBJECT_H_
 
 #include "export.h"
-#include <memory>
-#include <mutex>
-NS_BEGIN(eco);
 
-
+namespace eco {;
 ////////////////////////////////////////////////////////////////////////////////
 #define ECO_OBJECT(object_t) \
 public:\
-    typedef object_t object;\
-    typedef std::shared_ptr<object_t> value;\
-    typedef std::shared_ptr<object_t> ptr;\
-    typedef std::weak_ptr<object_t> wptr;\
-    ECO_NONCOPYABLE(object_t);
+typedef object_t object;\
+typedef std::shared_ptr<object_t> value;\
+typedef std::shared_ptr<object_t> ptr;\
+typedef std::weak_ptr<object_t> wptr;\
+ECO_NONCOPYABLE(object_t);
 
 #define ECO_NEW(object_t) object_t::ptr(new object_t)
 
@@ -35,7 +32,7 @@ protected:
 
 private:
     Object(const Object&);
-    const Object& operator=(const Object& );
+    const Object& operator=(const Object&);
 };
 
 
@@ -60,7 +57,7 @@ inline static void make(std::shared_ptr<T>& ptr) { ptr.reset(new T()); }
 template<typename T>
 inline T& object(T& obj) { return obj; }
 template<typename T>
-inline T& object(std::shared_ptr<T>& ptr) {    return *ptr; }
+inline T& object(std::shared_ptr<T>& ptr) { return *ptr; }
 template<typename T>
 inline const T& get_object(const T& obj) { return obj; }
 template<typename T>
@@ -68,7 +65,7 @@ inline const T& get_object(const std::shared_ptr<T>& ptr) { return *ptr; }
 
 // get decltype type.
 template<typename T>
-inline T& object_v() {    static T* t = nullptr;    return *t; }
+inline T& object_v() { static T* t = nullptr;    return *t; }
 template<typename T>
 inline T* object_t(T& obj) { return &obj; }
 template<typename T>
@@ -77,25 +74,19 @@ inline T* object_t(std::shared_ptr<T>& ptr) { return ptr.get(); }
 
 ////////////////////////////////////////////////////////////////////////////////
 // singleton proxy object that instantiate the object.
-template<typename T>
+template<typename ObjectType>
 class Singleton
 {
     ECO_OBJECT(Singleton)
 public:
-    inline static T& instance()
+    inline static ObjectType& instance()
     {
-        //std::unique_lock<std::mutex> lock(m_mutex_);
-        static T s_object;
+        static ObjectType s_object;
         return s_object;
     }
-private:
-    //static std::mutex m_mutex_;
 };
-//template<typename T>
-//std::mutex Singleton<T>::m_mutex_;
 
-
-/*@ singleton instance to access singleton object. */
+    /*@ singleton instance to access singleton object. */
 #define ECO_SINGLETON(ObjectType)\
     ECO_NONCOPYABLE(ObjectType);\
 public:\
@@ -107,10 +98,10 @@ private:\
 #define ECO_SINGLETON_UNINIT(ObjectType)\
     ECO_NONCOPYABLE(ObjectType);\
 private:\
-    friend class eco::Singleton<ObjectType>;
+    friend class eco::Singleton<ObjectType>;\
 
 
-/*@ singleton get function to access singleton object.*/
+    /*@ singleton get function to access singleton object.*/
 #define ECO_SINGLETON_GET(ObjectType)\
 inline ObjectType& Get##ObjectType()\
 {\
@@ -119,5 +110,6 @@ inline ObjectType& Get##ObjectType()\
 
 
 ////////////////////////////////////////////////////////////////////////////////
-NS_END(eco);
+}// ns::eco
+
 #endif

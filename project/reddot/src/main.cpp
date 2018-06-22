@@ -25,7 +25,6 @@ eric     2018.4.27   1.0     Create
 #include "libeco/file.h"
 #include "libeco/lexical_cast.h"
 #include "libeco/any.h"
-#include "libeco/memory.h"
 using namespace std;
 
 using protocal_struct = std::map<std::string, eco::Any>;
@@ -95,15 +94,21 @@ int print(T value)
     return value;
 }
 
+class Single
+{
+ECO_SINGLETON(Single)
+public:
+    void print()
+    {
+        cout << "hello singleton" << endl;
+    }
+};
+ECO_SINGLETON_GET(Single)
+
 int main(int argc, char **argv)
 {
     cout << "hello reddot" << endl;
-	std::string str = ";hello;world;haha;";
-	std::list<std::string> ret;
-	eco::StringSplit(str, ";", 5, ret);
-	for (auto val : ret) {
-		cout << val << endl;
-	}
+    GetSingle().print();
 
     eco::DispatchServer<uint32_t, protocal_struct> dispatch;
     dispatch.set_default(fun_default);

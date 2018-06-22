@@ -78,6 +78,9 @@
     <ClInclude Include="src\windows_port.h">
       <Filter>源文件</Filter>
     </ClInclude>
+    <ClInclude Include="src\parse.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\event.cpp">

@@ -6,72 +6,24 @@
 #include <assert.h>
 
 namespace eco{;
-template< class StringVector, class StringType, class DelimType>
-    inline void StringSplit(
-        IN const StringType& str,
-        IN const DelimType& delims,
-        IN unsigned int maxSplits,
-        OUT StringVector& ret) 
-{
-    if (str.empty()) {
-        return;
-    }
-
-    unsigned int numSplits = 0;
-
-    // Use STL methods
-    size_t start, pos;
-    start = 0;
-
-    do {
-        pos = str.find_first_of(delims, start);
-
-        if (pos == start) {
-            ret.push_back(StringType());
-            start = pos + 1;
-        }
-        else if (pos == StringType::npos || (maxSplits && numSplits + 1 == maxSplits)) {
-            // Copy the rest of the string
-            ret.emplace_back(StringType());
-            *(ret.rbegin()) = StringType(str.data() + start, str.size() - start);
-            break;
-        }
-        else {
-            // Copy up to delimiter
-            //ret.push_back( str.substr( start, pos - start ) );
-            ret.push_back(StringType());
-            *(ret.rbegin()) = StringType(str.data() + start, pos - start);
-            start = pos + 1;
-        }
-
-        ++numSplits;
-
-    } while (pos != StringType::npos);
-}
-
 
 ////////////////////////////////////////////////////////////////////////////////
 /*@ auto_strncpy copy like strncpy but return the length of copyed string instead
-of return the dest string. 
-1.auto_strncpy is more effective than strncpy, because strncpy will set left 
+of return the dest string.
+1.auto_strncpy is more effective than strncpy, because strncpy will set left
 memory to '\0' when dest len is max than src.
 2.auto_strncpy will auto add '\0' to dest when src len is equal or more than dest.
 but strncpy not, and it will make crash sometimes.
 */
 inline size_t auto_strncpy(OUT char* dest, IN const char* src, IN size_t len)
 {
-    assert(dest != nullptr && src != nullptr);
+    assert(dest != nullptr && src != nullptr && len != 0);
     // copy string like strncpy.
     size_t cpy_len = 0;
     char* temp = dest;
-    while (cpy_len++ < len && (*temp++ = *src++) != '\0')
-    {}
-
+    while (cpy_len++ < len && (*temp++ = *src++) != '\0') {}
     // auto add '\0' to dest.
-    if (--cpy_len == len)
-    {
-        dest[--cpy_len] = '\0';
-    }
+    if (--cpy_len == len) dest[--cpy_len] = '\0';
     return cpy_len;
 }
 
@@ -100,9 +52,11 @@ inline const char* find(IN const char* dest, IN const char* v)
 inline const char* find(
     IN const char* dest,
     IN const size_t size,
-    IN const char* v)
+    IN const char* v,
+    IN size_t v_size = 0)
 {
-    const char* end = &dest[size - strlen(v)];
+    if (v_size == 0) v_size = strlen(v);
+    const char* end = &dest[size - v_size];
     for (; dest <= end; ++dest)
     {
         if (find_cmp(dest, v))
@@ -118,7 +72,7 @@ inline uint32_t find_first(IN const char* key, IN const char flag)
 {
     uint32_t pos = 0;
     for (; *key != 0 && *key != flag; ++key, ++pos) {}
-    return (*key == 0) ? - 1 : pos;
+    return (*key == 0) ? -1 : pos;
 }
 inline uint32_t find_last(IN const char* key, IN const uint32_t end,
     IN const char flag)
@@ -167,25 +121,15 @@ inline void insert(OUT char* dest, IN uint32_t pos, IN uint32_t num, char c)
     }
 }
 
+
 ////////////////////////////////////////////////////////////////////////////////
 inline void replace(OUT char* path, IN const char c, IN const char r)
 {
-    for (char* ch = path; *ch != 0; ++ch){
+    for (char* ch = path; *ch != 0; ++ch) {
         if (*ch == c) *ch = r;
     }
 }
 
-inline void replace_all(std::string& str, const std::string& src, const std::string& dest)
-{
-    std::string::size_type pos = 0;
-    std::string::size_type srclen = src.size();
-    std::string::size_type deslen = dest.size();
-    pos = str.find(src, pos);
-    while ((pos != std::string::npos)) {
-        str.replace(pos, srclen, dest);
-        pos = str.find(src, (pos + deslen));
-    }
-}
 
 ////////////////////////////////////////////////////////////////////////////////
 inline void cpy_pos(OUT char& dest, OUT uint32_t& pos, IN  const char sour)
