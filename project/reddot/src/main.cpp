@@ -65,9 +65,9 @@ void fun_default(IN protocal_struct& msg)
 {
     std::cout << __FUNCTION__
         << " message_type:" << msg["type"].AnyCast<int>()
-        << " sessionid:" << msg["sessionid"].AnyCast<int>()
+        << " sessionid:" << msg["sessionid"].AnyCast<char>()
         << " price:" << msg["price"].AnyCast<double>()
-        << " data:" << msg["data"].AnyCast<const char*>()
+        << " data:" << msg["data"].AnyCast<std::string>()
         << std::endl;
 }
 
@@ -75,9 +75,9 @@ void fun_eco(IN protocal_struct& msg)
 {
     std::cout << __FUNCTION__
         << " message_type:" << msg["type"].AnyCast<int>()
-        << " sessionid:" << msg["sessionid"].AnyCast<int>()
+        << " sessionid:" << msg["sessionid"].AnyCast<char>()
         << " price:" << msg["price"].AnyCast<double>()
-        << " data:" << msg["data"].AnyCast<const char*>()
+        << " data:" << msg["data"].AnyCast<std::string>()
         << std::endl;
 }
 
@@ -104,10 +104,31 @@ public:
 };
 ECO_SINGLETON_GET(Single)
 
+struct ProtocalStructComp
+{
+    bool operator() (const protocal_struct& lhs,const protocal_struct& rhs) const
+    {
+        auto it_l = lhs.find("type");
+        auto it_r = rhs.find("type");
+        assert(it_l != lhs.end() && it_r != rhs.end());
+        eco::Any anyl= it_l->second;
+        eco::Any anyr = it_r->second;
+        if (anyl.AnyCast<int>() < anyr.AnyCast<int>()) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+};
+
 int main(int argc, char **argv)
 {
     cout << "hello reddot" << endl;
     GetSingle().print();
+
+    std::set<protocal_struct, ProtocalStructComp> inst;
+    
 
     eco::DispatchServer<uint32_t, protocal_struct> dispatch;
     dispatch.set_default(fun_default);
@@ -116,11 +137,12 @@ int main(int argc, char **argv)
     std::this_thread::sleep_for(std::chrono::seconds(3));
     for (int i = 0; i < 5; ++i)
     {
-        std::map<std::string, eco::Any> msg;
+        protocal_struct msg;
         msg["type"] = 10000 + i;
-        msg["sessionid"] = 100;
+        msg["sessionid"] = 'c';
         msg["price"] = 99.999;
-        msg["data"] = "hello world";
+        msg["data"] = std::string("hello world");
+        inst.insert(msg);
         dispatch.post(msg);
     }
 

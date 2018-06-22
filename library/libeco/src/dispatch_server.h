@@ -35,7 +35,7 @@ public:
 
     inline void operator()(IN Message& msg) const
     {
-        dispatch((MessageType)msg["type"].AnyCast<int>(), msg);
+        dispatch((MessageType)msg["type"].template AnyCast<int>(), msg);
     }
 
     inline void dispatch(IN const MessageType& type, IN Message& msg) const
