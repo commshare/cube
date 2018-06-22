@@ -60,9 +60,6 @@
     <ClInclude Include="src\project.h">
       <Filter>源文件</Filter>
     </ClInclude>
-    <ClInclude Include="src\protocol.h">
-      <Filter>源文件</Filter>
-    </ClInclude>
     <ClInclude Include="src\state.h">
       <Filter>源文件</Filter>
     </ClInclude>

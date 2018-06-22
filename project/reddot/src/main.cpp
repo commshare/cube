@@ -18,7 +18,6 @@ eric     2018.4.27   1.0     Create
 
 #include "libeco/project.h"
 #include "libeco/dispatch_server.h"
-#include "libeco/protocol.h"
 #include "libeco/monitor.h"
 #include "libeco/event.h"
 #include "libeco/memory_pool.h"
