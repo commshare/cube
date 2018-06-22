@@ -5,13 +5,50 @@
 #include <string>
 #include <assert.h>
 
-////////////////////////////////////////////////////////////////////////////////
-#ifdef WIN32
-#define snprintf _snprintf
-#endif
-
-
 namespace eco{;
+template< class StringVector, class StringType, class DelimType>
+    inline void StringSplit(
+        IN const StringType& str,
+        IN const DelimType& delims,
+        IN unsigned int maxSplits,
+        OUT StringVector& ret) 
+{
+    if (str.empty()) {
+        return;
+    }
+
+    unsigned int numSplits = 0;
+
+    // Use STL methods
+    size_t start, pos;
+    start = 0;
+
+    do {
+        pos = str.find_first_of(delims, start);
+
+        if (pos == start) {
+            ret.push_back(StringType());
+            start = pos + 1;
+        }
+        else if (pos == StringType::npos || (maxSplits && numSplits + 1 == maxSplits)) {
+            // Copy the rest of the string
+            ret.emplace_back(StringType());
+            *(ret.rbegin()) = StringType(str.data() + start, str.size() - start);
+            break;
+        }
+        else {
+            // Copy up to delimiter
+            //ret.push_back( str.substr( start, pos - start ) );
+            ret.push_back(StringType());
+            *(ret.rbegin()) = StringType(str.data() + start, pos - start);
+            start = pos + 1;
+        }
+
+        ++numSplits;
+
+    } while (pos != StringType::npos);
+}
+
 
 ////////////////////////////////////////////////////////////////////////////////
 /*@ auto_strncpy copy like strncpy but return the length of copyed string instead
@@ -129,7 +166,6 @@ inline void insert(OUT char* dest, IN uint32_t pos, IN uint32_t num, char c)
         *dest_move_end++ = c;
     }
 }
-
 
 ////////////////////////////////////////////////////////////////////////////////
 inline void replace(OUT char* path, IN const char c, IN const char r)

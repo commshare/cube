@@ -72,6 +72,12 @@
     <ClInclude Include="src\type.h">
       <Filter>源文件</Filter>
     </ClInclude>
+    <ClInclude Include="src\server_status.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\windows_port.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\event.cpp">

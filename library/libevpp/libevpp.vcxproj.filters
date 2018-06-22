@@ -16,6 +16,9 @@
     <Filter Include="evpp">
       <UniqueIdentifier>{7029ac98-ab2e-4ff2-a1f7-7eb045422ace}</UniqueIdentifier>
     </Filter>
+    <Filter Include="common">
+      <UniqueIdentifier>{32dba6f5-6ba0-48bd-8874-3f919cfba7d5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -24,12 +27,6 @@
     </Text>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="evpp\any.h">
-      <Filter>evpp</Filter>
-    </ClInclude>
-    <ClInclude Include="evpp\buffer.h">
-      <Filter>evpp</Filter>
-    </ClInclude>
     <ClInclude Include="evpp\connector.h">
       <Filter>evpp</Filter>
     </ClInclude>
@@ -60,31 +57,10 @@
     <ClInclude Include="evpp\gettimeofday.h">
       <Filter>evpp</Filter>
     </ClInclude>
-    <ClInclude Include="evpp\inner_pre.h">
-      <Filter>evpp</Filter>
-    </ClInclude>
     <ClInclude Include="evpp\invoke_timer.h">
       <Filter>evpp</Filter>
     </ClInclude>
-    <ClInclude Include="evpp\libevent.h">
-      <Filter>evpp</Filter>
-    </ClInclude>
     <ClInclude Include="evpp\listener.h">
-      <Filter>evpp</Filter>
-    </ClInclude>
-    <ClInclude Include="evpp\logging.h">
-      <Filter>evpp</Filter>
-    </ClInclude>
-    <ClInclude Include="evpp\memmem.h">
-      <Filter>evpp</Filter>
-    </ClInclude>
-    <ClInclude Include="evpp\platform_config.h">
-      <Filter>evpp</Filter>
-    </ClInclude>
-    <ClInclude Include="evpp\server_status.h">
-      <Filter>evpp</Filter>
-    </ClInclude>
-    <ClInclude Include="evpp\slice.h">
       <Filter>evpp</Filter>
     </ClInclude>
     <ClInclude Include="evpp\sockets.h">
@@ -108,26 +84,50 @@
     <ClInclude Include="evpp\tcp_server.h">
       <Filter>evpp</Filter>
     </ClInclude>
-    <ClInclude Include="evpp\thread_dispatch_policy.h">
-      <Filter>evpp</Filter>
-    </ClInclude>
     <ClInclude Include="evpp\timestamp.h">
       <Filter>evpp</Filter>
     </ClInclude>
     <ClInclude Include="evpp\timestamp.inl.h">
       <Filter>evpp</Filter>
     </ClInclude>
+    <ClInclude Include="evpp\any.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="evpp\buffer.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="evpp\inner_pre.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="evpp\libevent.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="evpp\logging.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="evpp\memmem.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="evpp\platform_config.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="evpp\server_status.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="evpp\slice.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="evpp\thread_dispatch_policy.h">
+      <Filter>common</Filter>
+    </ClInclude>
     <ClInclude Include="evpp\utility.h">
-      <Filter>evpp</Filter>
+      <Filter>common</Filter>
     </ClInclude>
     <ClInclude Include="evpp\windows_port.h">
-      <Filter>evpp</Filter>
+      <Filter>common</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="evpp\buffer.cc">
-      <Filter>evpp</Filter>
-    </ClCompile>
     <ClCompile Include="evpp\connector.cc">
       <Filter>evpp</Filter>
     </ClCompile>
@@ -152,13 +152,7 @@
     <ClCompile Include="evpp\fd_channel.cc">
       <Filter>evpp</Filter>
     </ClCompile>
-    <ClCompile Include="evpp\inner_pre.cc">
-      <Filter>evpp</Filter>
-    </ClCompile>
     <ClCompile Include="evpp\invoke_timer.cc">
-      <Filter>evpp</Filter>
-    </ClCompile>
-    <ClCompile Include="evpp\libevent.cc">
       <Filter>evpp</Filter>
     </ClCompile>
     <ClCompile Include="evpp\listener.cc">
@@ -175,6 +169,15 @@
     </ClCompile>
     <ClCompile Include="evpp\tcp_server.cc">
       <Filter>evpp</Filter>
+    </ClCompile>
+    <ClCompile Include="evpp\buffer.cc">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="evpp\inner_pre.cc">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="evpp\libevent.cc">
+      <Filter>common</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

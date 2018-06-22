@@ -25,7 +25,7 @@ eric     2018.4.27   1.0     Create
 #include "libeco/file.h"
 #include "libeco/lexical_cast.h"
 #include "libeco/any.h"
-
+#include "libeco/memory.h"
 using namespace std;
 
 using protocal_struct = std::map<std::string, eco::Any>;
@@ -98,12 +98,13 @@ int print(T value)
 int main(int argc, char **argv)
 {
     cout << "hello reddot" << endl;
-	std::string str = "hello'world''hehe'";
-	cout << str << endl;
-	eco::replace_all(str, "'", "''");
-	cout << str << endl;
+	std::string str = ";hello;world;haha;";
+	std::list<std::string> ret;
+	eco::StringSplit(str, ";", 5, ret);
+	for (auto val : ret) {
+		cout << val << endl;
+	}
 
-    
     eco::DispatchServer<uint32_t, protocal_struct> dispatch;
     dispatch.set_default(fun_default);
     dispatch.set_dispatch(10001, fun_eco);
