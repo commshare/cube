@@ -52,6 +52,9 @@ extern req_insert_investors_to_groupDefaultTypeInternal _req_insert_investors_to
 class req_instrument_list;
 class req_instrument_listDefaultTypeInternal;
 extern req_instrument_listDefaultTypeInternal _req_instrument_list_default_instance_;
+class req_investor_info;
+class req_investor_infoDefaultTypeInternal;
+extern req_investor_infoDefaultTypeInternal _req_investor_info_default_instance_;
 class req_margin;
 class req_marginDefaultTypeInternal;
 extern req_marginDefaultTypeInternal _req_margin_default_instance_;
@@ -3938,6 +3941,126 @@ class sub_whatif : public ::google::protobuf::Message /* @@protoc_insertion_poin
   mutable int _cached_size_;
   friend struct protobuf_riskapi_5faction_5fprotocal_2eproto::TableStruct;
 };
+// -------------------------------------------------------------------
+
+class req_investor_info : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:risk.req_investor_info) */ {
+ public:
+  req_investor_info();
+  virtual ~req_investor_info();
+
+  req_investor_info(const req_investor_info& from);
+
+  inline req_investor_info& operator=(const req_investor_info& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  req_investor_info(req_investor_info&& from) noexcept
+    : req_investor_info() {
+    *this = ::std::move(from);
+  }
+
+  inline req_investor_info& operator=(req_investor_info&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const req_investor_info& default_instance();
+
+  static inline const req_investor_info* internal_default_instance() {
+    return reinterpret_cast<const req_investor_info*>(
+               &_req_investor_info_default_instance_);
+  }
+  static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
+    32;
+
+  void Swap(req_investor_info* other);
+  friend void swap(req_investor_info& a, req_investor_info& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline req_investor_info* New() const PROTOBUF_FINAL { return New(NULL); }
+
+  req_investor_info* New(::google::protobuf::Arena* arena) const PROTOBUF_FINAL;
+  void CopyFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void MergeFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void CopyFrom(const req_investor_info& from);
+  void MergeFrom(const req_investor_info& from);
+  void Clear() PROTOBUF_FINAL;
+  bool IsInitialized() const PROTOBUF_FINAL;
+
+  size_t ByteSizeLong() const PROTOBUF_FINAL;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) PROTOBUF_FINAL;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const PROTOBUF_FINAL;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const PROTOBUF_FINAL;
+  int GetCachedSize() const PROTOBUF_FINAL { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const PROTOBUF_FINAL;
+  void InternalSwap(req_investor_info* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const PROTOBUF_FINAL;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // repeated string investor = 2;
+  int investor_size() const;
+  void clear_investor();
+  static const int kInvestorFieldNumber = 2;
+  const ::std::string& investor(int index) const;
+  ::std::string* mutable_investor(int index);
+  void set_investor(int index, const ::std::string& value);
+  #if LANG_CXX11
+  void set_investor(int index, ::std::string&& value);
+  #endif
+  void set_investor(int index, const char* value);
+  void set_investor(int index, const char* value, size_t size);
+  ::std::string* add_investor();
+  void add_investor(const ::std::string& value);
+  #if LANG_CXX11
+  void add_investor(::std::string&& value);
+  #endif
+  void add_investor(const char* value);
+  void add_investor(const char* value, size_t size);
+  const ::google::protobuf::RepeatedPtrField< ::std::string>& investor() const;
+  ::google::protobuf::RepeatedPtrField< ::std::string>* mutable_investor();
+
+  // int32 requestid = 1;
+  void clear_requestid();
+  static const int kRequestidFieldNumber = 1;
+  ::google::protobuf::int32 requestid() const;
+  void set_requestid(::google::protobuf::int32 value);
+
+  // @@protoc_insertion_point(class_scope:risk.req_investor_info)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::RepeatedPtrField< ::std::string> investor_;
+  ::google::protobuf::int32 requestid_;
+  mutable int _cached_size_;
+  friend struct protobuf_riskapi_5faction_5fprotocal_2eproto::TableStruct;
+};
 // ===================================================================
 
 
@@ -6774,10 +6897,99 @@ sub_whatif::infos() const {
   return infos_;
 }
 
+// -------------------------------------------------------------------
+
+// req_investor_info
+
+// int32 requestid = 1;
+inline void req_investor_info::clear_requestid() {
+  requestid_ = 0;
+}
+inline ::google::protobuf::int32 req_investor_info::requestid() const {
+  // @@protoc_insertion_point(field_get:risk.req_investor_info.requestid)
+  return requestid_;
+}
+inline void req_investor_info::set_requestid(::google::protobuf::int32 value) {
+  
+  requestid_ = value;
+  // @@protoc_insertion_point(field_set:risk.req_investor_info.requestid)
+}
+
+// repeated string investor = 2;
+inline int req_investor_info::investor_size() const {
+  return investor_.size();
+}
+inline void req_investor_info::clear_investor() {
+  investor_.Clear();
+}
+inline const ::std::string& req_investor_info::investor(int index) const {
+  // @@protoc_insertion_point(field_get:risk.req_investor_info.investor)
+  return investor_.Get(index);
+}
+inline ::std::string* req_investor_info::mutable_investor(int index) {
+  // @@protoc_insertion_point(field_mutable:risk.req_investor_info.investor)
+  return investor_.Mutable(index);
+}
+inline void req_investor_info::set_investor(int index, const ::std::string& value) {
+  // @@protoc_insertion_point(field_set:risk.req_investor_info.investor)
+  investor_.Mutable(index)->assign(value);
+}
+#if LANG_CXX11
+inline void req_investor_info::set_investor(int index, ::std::string&& value) {
+  // @@protoc_insertion_point(field_set:risk.req_investor_info.investor)
+  investor_.Mutable(index)->assign(std::move(value));
+}
+#endif
+inline void req_investor_info::set_investor(int index, const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  investor_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set_char:risk.req_investor_info.investor)
+}
+inline void req_investor_info::set_investor(int index, const char* value, size_t size) {
+  investor_.Mutable(index)->assign(
+    reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:risk.req_investor_info.investor)
+}
+inline ::std::string* req_investor_info::add_investor() {
+  // @@protoc_insertion_point(field_add_mutable:risk.req_investor_info.investor)
+  return investor_.Add();
+}
+inline void req_investor_info::add_investor(const ::std::string& value) {
+  investor_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add:risk.req_investor_info.investor)
+}
+#if LANG_CXX11
+inline void req_investor_info::add_investor(::std::string&& value) {
+  investor_.Add(std::move(value));
+  // @@protoc_insertion_point(field_add:risk.req_investor_info.investor)
+}
+#endif
+inline void req_investor_info::add_investor(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  investor_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add_char:risk.req_investor_info.investor)
+}
+inline void req_investor_info::add_investor(const char* value, size_t size) {
+  investor_.Add()->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_add_pointer:risk.req_investor_info.investor)
+}
+inline const ::google::protobuf::RepeatedPtrField< ::std::string>&
+req_investor_info::investor() const {
+  // @@protoc_insertion_point(field_list:risk.req_investor_info.investor)
+  return investor_;
+}
+inline ::google::protobuf::RepeatedPtrField< ::std::string>*
+req_investor_info::mutable_investor() {
+  // @@protoc_insertion_point(field_mutable_list:risk.req_investor_info.investor)
+  return &investor_;
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
 #endif  // !PROTOBUF_INLINE_NOT_IN_HEADERS
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

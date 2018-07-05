@@ -31,21 +31,36 @@
 #include <google/protobuf/unknown_field_set.h>
 // @@protoc_insertion_point(includes)
 namespace manager {
+class contract_info;
+class contract_infoDefaultTypeInternal;
+extern contract_infoDefaultTypeInternal _contract_info_default_instance_;
 class error_info;
 class error_infoDefaultTypeInternal;
 extern error_infoDefaultTypeInternal _error_info_default_instance_;
 class insmrgnrate_info;
 class insmrgnrate_infoDefaultTypeInternal;
 extern insmrgnrate_infoDefaultTypeInternal _insmrgnrate_info_default_instance_;
+class investor_info;
+class investor_infoDefaultTypeInternal;
+extern investor_infoDefaultTypeInternal _investor_info_default_instance_;
 class option_argv;
 class option_argvDefaultTypeInternal;
 extern option_argvDefaultTypeInternal _option_argv_default_instance_;
+class req_add_insmrgnrate;
+class req_add_insmrgnrateDefaultTypeInternal;
+extern req_add_insmrgnrateDefaultTypeInternal _req_add_insmrgnrate_default_instance_;
 class req_add_investors;
 class req_add_investorsDefaultTypeInternal;
 extern req_add_investorsDefaultTypeInternal _req_add_investors_default_instance_;
 class req_add_sys_user;
 class req_add_sys_userDefaultTypeInternal;
 extern req_add_sys_userDefaultTypeInternal _req_add_sys_user_default_instance_;
+class req_contract;
+class req_contractDefaultTypeInternal;
+extern req_contractDefaultTypeInternal _req_contract_default_instance_;
+class req_del_insmrgnrate;
+class req_del_insmrgnrateDefaultTypeInternal;
+extern req_del_insmrgnrateDefaultTypeInternal _req_del_insmrgnrate_default_instance_;
 class req_del_investors;
 class req_del_investorsDefaultTypeInternal;
 extern req_del_investorsDefaultTypeInternal _req_del_investors_default_instance_;
@@ -61,6 +76,9 @@ extern req_edit_sys_userDefaultTypeInternal _req_edit_sys_user_default_instance_
 class req_insmrgnrate;
 class req_insmrgnrateDefaultTypeInternal;
 extern req_insmrgnrateDefaultTypeInternal _req_insmrgnrate_default_instance_;
+class req_investor_info;
+class req_investor_infoDefaultTypeInternal;
+extern req_investor_infoDefaultTypeInternal _req_investor_info_default_instance_;
 class req_investors;
 class req_investorsDefaultTypeInternal;
 extern req_investorsDefaultTypeInternal _req_investors_default_instance_;
@@ -85,12 +103,18 @@ extern role_authDefaultTypeInternal _role_auth_default_instance_;
 class rsp_action_info;
 class rsp_action_infoDefaultTypeInternal;
 extern rsp_action_infoDefaultTypeInternal _rsp_action_info_default_instance_;
+class rsp_contract;
+class rsp_contractDefaultTypeInternal;
+extern rsp_contractDefaultTypeInternal _rsp_contract_default_instance_;
 class rsp_head_info;
 class rsp_head_infoDefaultTypeInternal;
 extern rsp_head_infoDefaultTypeInternal _rsp_head_info_default_instance_;
 class rsp_insmrgnrate;
 class rsp_insmrgnrateDefaultTypeInternal;
 extern rsp_insmrgnrateDefaultTypeInternal _rsp_insmrgnrate_default_instance_;
+class rsp_investor_info;
+class rsp_investor_infoDefaultTypeInternal;
+extern rsp_investor_infoDefaultTypeInternal _rsp_investor_info_default_instance_;
 class rsp_investors;
 class rsp_investorsDefaultTypeInternal;
 extern rsp_investorsDefaultTypeInternal _rsp_investors_default_instance_;
@@ -106,6 +130,9 @@ extern rsp_risk_investorsDefaultTypeInternal _rsp_risk_investors_default_instanc
 class rsp_sys_subs;
 class rsp_sys_subsDefaultTypeInternal;
 extern rsp_sys_subsDefaultTypeInternal _rsp_sys_subs_default_instance_;
+class rtn_add_insmrgnrate;
+class rtn_add_insmrgnrateDefaultTypeInternal;
+extern rtn_add_insmrgnrateDefaultTypeInternal _rtn_add_insmrgnrate_default_instance_;
 class rtn_change_insmrgnrate;
 class rtn_change_insmrgnrateDefaultTypeInternal;
 extern rtn_change_insmrgnrateDefaultTypeInternal _rtn_change_insmrgnrate_default_instance_;
@@ -118,6 +145,9 @@ extern rtn_change_risker_investorDefaultTypeInternal _rtn_change_risker_investor
 class rtn_change_tree;
 class rtn_change_treeDefaultTypeInternal;
 extern rtn_change_treeDefaultTypeInternal _rtn_change_tree_default_instance_;
+class rtn_del_insmrgnrate;
+class rtn_del_insmrgnrateDefaultTypeInternal;
+extern rtn_del_insmrgnrateDefaultTypeInternal _rtn_del_insmrgnrate_default_instance_;
 class sys_auth;
 class sys_authDefaultTypeInternal;
 extern sys_authDefaultTypeInternal _sys_auth_default_instance_;
@@ -3504,6 +3534,420 @@ class rtn_change_insmrgnrate : public ::google::protobuf::Message /* @@protoc_in
 };
 // -------------------------------------------------------------------
 
+class req_add_insmrgnrate : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:manager.req_add_insmrgnrate) */ {
+ public:
+  req_add_insmrgnrate();
+  virtual ~req_add_insmrgnrate();
+
+  req_add_insmrgnrate(const req_add_insmrgnrate& from);
+
+  inline req_add_insmrgnrate& operator=(const req_add_insmrgnrate& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  req_add_insmrgnrate(req_add_insmrgnrate&& from) noexcept
+    : req_add_insmrgnrate() {
+    *this = ::std::move(from);
+  }
+
+  inline req_add_insmrgnrate& operator=(req_add_insmrgnrate&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const req_add_insmrgnrate& default_instance();
+
+  static inline const req_add_insmrgnrate* internal_default_instance() {
+    return reinterpret_cast<const req_add_insmrgnrate*>(
+               &_req_add_insmrgnrate_default_instance_);
+  }
+  static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
+    28;
+
+  void Swap(req_add_insmrgnrate* other);
+  friend void swap(req_add_insmrgnrate& a, req_add_insmrgnrate& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline req_add_insmrgnrate* New() const PROTOBUF_FINAL { return New(NULL); }
+
+  req_add_insmrgnrate* New(::google::protobuf::Arena* arena) const PROTOBUF_FINAL;
+  void CopyFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void MergeFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void CopyFrom(const req_add_insmrgnrate& from);
+  void MergeFrom(const req_add_insmrgnrate& from);
+  void Clear() PROTOBUF_FINAL;
+  bool IsInitialized() const PROTOBUF_FINAL;
+
+  size_t ByteSizeLong() const PROTOBUF_FINAL;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) PROTOBUF_FINAL;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const PROTOBUF_FINAL;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const PROTOBUF_FINAL;
+  int GetCachedSize() const PROTOBUF_FINAL { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const PROTOBUF_FINAL;
+  void InternalSwap(req_add_insmrgnrate* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const PROTOBUF_FINAL;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // .manager.insmrgnrate_info info = 2;
+  bool has_info() const;
+  void clear_info();
+  static const int kInfoFieldNumber = 2;
+  const ::manager::insmrgnrate_info& info() const;
+  ::manager::insmrgnrate_info* mutable_info();
+  ::manager::insmrgnrate_info* release_info();
+  void set_allocated_info(::manager::insmrgnrate_info* info);
+
+  // int32 requestid = 1;
+  void clear_requestid();
+  static const int kRequestidFieldNumber = 1;
+  ::google::protobuf::int32 requestid() const;
+  void set_requestid(::google::protobuf::int32 value);
+
+  // @@protoc_insertion_point(class_scope:manager.req_add_insmrgnrate)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::manager::insmrgnrate_info* info_;
+  ::google::protobuf::int32 requestid_;
+  mutable int _cached_size_;
+  friend struct protobuf_manager_5fprotocal_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
+class rtn_add_insmrgnrate : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:manager.rtn_add_insmrgnrate) */ {
+ public:
+  rtn_add_insmrgnrate();
+  virtual ~rtn_add_insmrgnrate();
+
+  rtn_add_insmrgnrate(const rtn_add_insmrgnrate& from);
+
+  inline rtn_add_insmrgnrate& operator=(const rtn_add_insmrgnrate& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  rtn_add_insmrgnrate(rtn_add_insmrgnrate&& from) noexcept
+    : rtn_add_insmrgnrate() {
+    *this = ::std::move(from);
+  }
+
+  inline rtn_add_insmrgnrate& operator=(rtn_add_insmrgnrate&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const rtn_add_insmrgnrate& default_instance();
+
+  static inline const rtn_add_insmrgnrate* internal_default_instance() {
+    return reinterpret_cast<const rtn_add_insmrgnrate*>(
+               &_rtn_add_insmrgnrate_default_instance_);
+  }
+  static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
+    29;
+
+  void Swap(rtn_add_insmrgnrate* other);
+  friend void swap(rtn_add_insmrgnrate& a, rtn_add_insmrgnrate& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline rtn_add_insmrgnrate* New() const PROTOBUF_FINAL { return New(NULL); }
+
+  rtn_add_insmrgnrate* New(::google::protobuf::Arena* arena) const PROTOBUF_FINAL;
+  void CopyFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void MergeFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void CopyFrom(const rtn_add_insmrgnrate& from);
+  void MergeFrom(const rtn_add_insmrgnrate& from);
+  void Clear() PROTOBUF_FINAL;
+  bool IsInitialized() const PROTOBUF_FINAL;
+
+  size_t ByteSizeLong() const PROTOBUF_FINAL;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) PROTOBUF_FINAL;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const PROTOBUF_FINAL;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const PROTOBUF_FINAL;
+  int GetCachedSize() const PROTOBUF_FINAL { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const PROTOBUF_FINAL;
+  void InternalSwap(rtn_add_insmrgnrate* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const PROTOBUF_FINAL;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // .manager.insmrgnrate_info info = 1;
+  bool has_info() const;
+  void clear_info();
+  static const int kInfoFieldNumber = 1;
+  const ::manager::insmrgnrate_info& info() const;
+  ::manager::insmrgnrate_info* mutable_info();
+  ::manager::insmrgnrate_info* release_info();
+  void set_allocated_info(::manager::insmrgnrate_info* info);
+
+  // @@protoc_insertion_point(class_scope:manager.rtn_add_insmrgnrate)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::manager::insmrgnrate_info* info_;
+  mutable int _cached_size_;
+  friend struct protobuf_manager_5fprotocal_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
+class req_del_insmrgnrate : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:manager.req_del_insmrgnrate) */ {
+ public:
+  req_del_insmrgnrate();
+  virtual ~req_del_insmrgnrate();
+
+  req_del_insmrgnrate(const req_del_insmrgnrate& from);
+
+  inline req_del_insmrgnrate& operator=(const req_del_insmrgnrate& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  req_del_insmrgnrate(req_del_insmrgnrate&& from) noexcept
+    : req_del_insmrgnrate() {
+    *this = ::std::move(from);
+  }
+
+  inline req_del_insmrgnrate& operator=(req_del_insmrgnrate&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const req_del_insmrgnrate& default_instance();
+
+  static inline const req_del_insmrgnrate* internal_default_instance() {
+    return reinterpret_cast<const req_del_insmrgnrate*>(
+               &_req_del_insmrgnrate_default_instance_);
+  }
+  static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
+    30;
+
+  void Swap(req_del_insmrgnrate* other);
+  friend void swap(req_del_insmrgnrate& a, req_del_insmrgnrate& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline req_del_insmrgnrate* New() const PROTOBUF_FINAL { return New(NULL); }
+
+  req_del_insmrgnrate* New(::google::protobuf::Arena* arena) const PROTOBUF_FINAL;
+  void CopyFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void MergeFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void CopyFrom(const req_del_insmrgnrate& from);
+  void MergeFrom(const req_del_insmrgnrate& from);
+  void Clear() PROTOBUF_FINAL;
+  bool IsInitialized() const PROTOBUF_FINAL;
+
+  size_t ByteSizeLong() const PROTOBUF_FINAL;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) PROTOBUF_FINAL;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const PROTOBUF_FINAL;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const PROTOBUF_FINAL;
+  int GetCachedSize() const PROTOBUF_FINAL { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const PROTOBUF_FINAL;
+  void InternalSwap(req_del_insmrgnrate* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const PROTOBUF_FINAL;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // .manager.insmrgnrate_info info = 2;
+  bool has_info() const;
+  void clear_info();
+  static const int kInfoFieldNumber = 2;
+  const ::manager::insmrgnrate_info& info() const;
+  ::manager::insmrgnrate_info* mutable_info();
+  ::manager::insmrgnrate_info* release_info();
+  void set_allocated_info(::manager::insmrgnrate_info* info);
+
+  // int32 requestid = 1;
+  void clear_requestid();
+  static const int kRequestidFieldNumber = 1;
+  ::google::protobuf::int32 requestid() const;
+  void set_requestid(::google::protobuf::int32 value);
+
+  // @@protoc_insertion_point(class_scope:manager.req_del_insmrgnrate)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::manager::insmrgnrate_info* info_;
+  ::google::protobuf::int32 requestid_;
+  mutable int _cached_size_;
+  friend struct protobuf_manager_5fprotocal_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
+class rtn_del_insmrgnrate : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:manager.rtn_del_insmrgnrate) */ {
+ public:
+  rtn_del_insmrgnrate();
+  virtual ~rtn_del_insmrgnrate();
+
+  rtn_del_insmrgnrate(const rtn_del_insmrgnrate& from);
+
+  inline rtn_del_insmrgnrate& operator=(const rtn_del_insmrgnrate& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  rtn_del_insmrgnrate(rtn_del_insmrgnrate&& from) noexcept
+    : rtn_del_insmrgnrate() {
+    *this = ::std::move(from);
+  }
+
+  inline rtn_del_insmrgnrate& operator=(rtn_del_insmrgnrate&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const rtn_del_insmrgnrate& default_instance();
+
+  static inline const rtn_del_insmrgnrate* internal_default_instance() {
+    return reinterpret_cast<const rtn_del_insmrgnrate*>(
+               &_rtn_del_insmrgnrate_default_instance_);
+  }
+  static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
+    31;
+
+  void Swap(rtn_del_insmrgnrate* other);
+  friend void swap(rtn_del_insmrgnrate& a, rtn_del_insmrgnrate& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline rtn_del_insmrgnrate* New() const PROTOBUF_FINAL { return New(NULL); }
+
+  rtn_del_insmrgnrate* New(::google::protobuf::Arena* arena) const PROTOBUF_FINAL;
+  void CopyFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void MergeFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void CopyFrom(const rtn_del_insmrgnrate& from);
+  void MergeFrom(const rtn_del_insmrgnrate& from);
+  void Clear() PROTOBUF_FINAL;
+  bool IsInitialized() const PROTOBUF_FINAL;
+
+  size_t ByteSizeLong() const PROTOBUF_FINAL;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) PROTOBUF_FINAL;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const PROTOBUF_FINAL;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const PROTOBUF_FINAL;
+  int GetCachedSize() const PROTOBUF_FINAL { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const PROTOBUF_FINAL;
+  void InternalSwap(rtn_del_insmrgnrate* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const PROTOBUF_FINAL;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // .manager.insmrgnrate_info info = 1;
+  bool has_info() const;
+  void clear_info();
+  static const int kInfoFieldNumber = 1;
+  const ::manager::insmrgnrate_info& info() const;
+  ::manager::insmrgnrate_info* mutable_info();
+  ::manager::insmrgnrate_info* release_info();
+  void set_allocated_info(::manager::insmrgnrate_info* info);
+
+  // @@protoc_insertion_point(class_scope:manager.rtn_del_insmrgnrate)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::manager::insmrgnrate_info* info_;
+  mutable int _cached_size_;
+  friend struct protobuf_manager_5fprotocal_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
 class req_option_argv : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:manager.req_option_argv) */ {
  public:
   req_option_argv();
@@ -3538,7 +3982,7 @@ class req_option_argv : public ::google::protobuf::Message /* @@protoc_insertion
                &_req_option_argv_default_instance_);
   }
   static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
-    28;
+    32;
 
   void Swap(req_option_argv* other);
   friend void swap(req_option_argv& a, req_option_argv& b) {
@@ -3635,7 +4079,7 @@ class option_argv : public ::google::protobuf::Message /* @@protoc_insertion_poi
                &_option_argv_default_instance_);
   }
   static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
-    29;
+    33;
 
   void Swap(option_argv* other);
   friend void swap(option_argv& a, option_argv& b) {
@@ -3760,7 +4204,7 @@ class rsp_option_argv : public ::google::protobuf::Message /* @@protoc_insertion
                &_rsp_option_argv_default_instance_);
   }
   static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
-    30;
+    34;
 
   void Swap(rsp_option_argv* other);
   friend void swap(rsp_option_argv& a, rsp_option_argv& b) {
@@ -3870,7 +4314,7 @@ class req_option_argv_adj : public ::google::protobuf::Message /* @@protoc_inser
                &_req_option_argv_adj_default_instance_);
   }
   static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
-    31;
+    35;
 
   void Swap(req_option_argv_adj* other);
   friend void swap(req_option_argv_adj& a, req_option_argv_adj& b) {
@@ -3938,6 +4382,1359 @@ class req_option_argv_adj : public ::google::protobuf::Message /* @@protoc_inser
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
   ::manager::option_argv* info_;
   ::google::protobuf::int32 requestid_;
+  mutable int _cached_size_;
+  friend struct protobuf_manager_5fprotocal_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
+class req_contract : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:manager.req_contract) */ {
+ public:
+  req_contract();
+  virtual ~req_contract();
+
+  req_contract(const req_contract& from);
+
+  inline req_contract& operator=(const req_contract& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  req_contract(req_contract&& from) noexcept
+    : req_contract() {
+    *this = ::std::move(from);
+  }
+
+  inline req_contract& operator=(req_contract&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const req_contract& default_instance();
+
+  static inline const req_contract* internal_default_instance() {
+    return reinterpret_cast<const req_contract*>(
+               &_req_contract_default_instance_);
+  }
+  static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
+    36;
+
+  void Swap(req_contract* other);
+  friend void swap(req_contract& a, req_contract& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline req_contract* New() const PROTOBUF_FINAL { return New(NULL); }
+
+  req_contract* New(::google::protobuf::Arena* arena) const PROTOBUF_FINAL;
+  void CopyFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void MergeFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void CopyFrom(const req_contract& from);
+  void MergeFrom(const req_contract& from);
+  void Clear() PROTOBUF_FINAL;
+  bool IsInitialized() const PROTOBUF_FINAL;
+
+  size_t ByteSizeLong() const PROTOBUF_FINAL;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) PROTOBUF_FINAL;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const PROTOBUF_FINAL;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const PROTOBUF_FINAL;
+  int GetCachedSize() const PROTOBUF_FINAL { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const PROTOBUF_FINAL;
+  void InternalSwap(req_contract* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const PROTOBUF_FINAL;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // int32 requestid = 1;
+  void clear_requestid();
+  static const int kRequestidFieldNumber = 1;
+  ::google::protobuf::int32 requestid() const;
+  void set_requestid(::google::protobuf::int32 value);
+
+  // @@protoc_insertion_point(class_scope:manager.req_contract)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::int32 requestid_;
+  mutable int _cached_size_;
+  friend struct protobuf_manager_5fprotocal_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
+class contract_info : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:manager.contract_info) */ {
+ public:
+  contract_info();
+  virtual ~contract_info();
+
+  contract_info(const contract_info& from);
+
+  inline contract_info& operator=(const contract_info& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  contract_info(contract_info&& from) noexcept
+    : contract_info() {
+    *this = ::std::move(from);
+  }
+
+  inline contract_info& operator=(contract_info&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const contract_info& default_instance();
+
+  static inline const contract_info* internal_default_instance() {
+    return reinterpret_cast<const contract_info*>(
+               &_contract_info_default_instance_);
+  }
+  static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
+    37;
+
+  void Swap(contract_info* other);
+  friend void swap(contract_info& a, contract_info& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline contract_info* New() const PROTOBUF_FINAL { return New(NULL); }
+
+  contract_info* New(::google::protobuf::Arena* arena) const PROTOBUF_FINAL;
+  void CopyFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void MergeFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void CopyFrom(const contract_info& from);
+  void MergeFrom(const contract_info& from);
+  void Clear() PROTOBUF_FINAL;
+  bool IsInitialized() const PROTOBUF_FINAL;
+
+  size_t ByteSizeLong() const PROTOBUF_FINAL;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) PROTOBUF_FINAL;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const PROTOBUF_FINAL;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const PROTOBUF_FINAL;
+  int GetCachedSize() const PROTOBUF_FINAL { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const PROTOBUF_FINAL;
+  void InternalSwap(contract_info* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const PROTOBUF_FINAL;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // string contractcode = 1;
+  void clear_contractcode();
+  static const int kContractcodeFieldNumber = 1;
+  const ::std::string& contractcode() const;
+  void set_contractcode(const ::std::string& value);
+  #if LANG_CXX11
+  void set_contractcode(::std::string&& value);
+  #endif
+  void set_contractcode(const char* value);
+  void set_contractcode(const char* value, size_t size);
+  ::std::string* mutable_contractcode();
+  ::std::string* release_contractcode();
+  void set_allocated_contractcode(::std::string* contractcode);
+
+  // string productcode = 2;
+  void clear_productcode();
+  static const int kProductcodeFieldNumber = 2;
+  const ::std::string& productcode() const;
+  void set_productcode(const ::std::string& value);
+  #if LANG_CXX11
+  void set_productcode(::std::string&& value);
+  #endif
+  void set_productcode(const char* value);
+  void set_productcode(const char* value, size_t size);
+  ::std::string* mutable_productcode();
+  ::std::string* release_productcode();
+  void set_allocated_productcode(::std::string* productcode);
+
+  // string productkind = 3;
+  void clear_productkind();
+  static const int kProductkindFieldNumber = 3;
+  const ::std::string& productkind() const;
+  void set_productkind(const ::std::string& value);
+  #if LANG_CXX11
+  void set_productkind(::std::string&& value);
+  #endif
+  void set_productkind(const char* value);
+  void set_productkind(const char* value, size_t size);
+  ::std::string* mutable_productkind();
+  ::std::string* release_productkind();
+  void set_allocated_productkind(::std::string* productkind);
+
+  // string exchangecode = 4;
+  void clear_exchangecode();
+  static const int kExchangecodeFieldNumber = 4;
+  const ::std::string& exchangecode() const;
+  void set_exchangecode(const ::std::string& value);
+  #if LANG_CXX11
+  void set_exchangecode(::std::string&& value);
+  #endif
+  void set_exchangecode(const char* value);
+  void set_exchangecode(const char* value, size_t size);
+  ::std::string* mutable_exchangecode();
+  ::std::string* release_exchangecode();
+  void set_allocated_exchangecode(::std::string* exchangecode);
+
+  // string marketcode = 5;
+  void clear_marketcode();
+  static const int kMarketcodeFieldNumber = 5;
+  const ::std::string& marketcode() const;
+  void set_marketcode(const ::std::string& value);
+  #if LANG_CXX11
+  void set_marketcode(::std::string&& value);
+  #endif
+  void set_marketcode(const char* value);
+  void set_marketcode(const char* value, size_t size);
+  ::std::string* mutable_marketcode();
+  ::std::string* release_marketcode();
+  void set_allocated_marketcode(::std::string* marketcode);
+
+  // string createdate = 6;
+  void clear_createdate();
+  static const int kCreatedateFieldNumber = 6;
+  const ::std::string& createdate() const;
+  void set_createdate(const ::std::string& value);
+  #if LANG_CXX11
+  void set_createdate(::std::string&& value);
+  #endif
+  void set_createdate(const char* value);
+  void set_createdate(const char* value, size_t size);
+  ::std::string* mutable_createdate();
+  ::std::string* release_createdate();
+  void set_allocated_createdate(::std::string* createdate);
+
+  // string opendate = 7;
+  void clear_opendate();
+  static const int kOpendateFieldNumber = 7;
+  const ::std::string& opendate() const;
+  void set_opendate(const ::std::string& value);
+  #if LANG_CXX11
+  void set_opendate(::std::string&& value);
+  #endif
+  void set_opendate(const char* value);
+  void set_opendate(const char* value, size_t size);
+  ::std::string* mutable_opendate();
+  ::std::string* release_opendate();
+  void set_allocated_opendate(::std::string* opendate);
+
+  // string expiredate = 8;
+  void clear_expiredate();
+  static const int kExpiredateFieldNumber = 8;
+  const ::std::string& expiredate() const;
+  void set_expiredate(const ::std::string& value);
+  #if LANG_CXX11
+  void set_expiredate(::std::string&& value);
+  #endif
+  void set_expiredate(const char* value);
+  void set_expiredate(const char* value, size_t size);
+  ::std::string* mutable_expiredate();
+  ::std::string* release_expiredate();
+  void set_allocated_expiredate(::std::string* expiredate);
+
+  // string contractname = 11;
+  void clear_contractname();
+  static const int kContractnameFieldNumber = 11;
+  const ::std::string& contractname() const;
+  void set_contractname(const ::std::string& value);
+  #if LANG_CXX11
+  void set_contractname(::std::string&& value);
+  #endif
+  void set_contractname(const char* value);
+  void set_contractname(const char* value, size_t size);
+  ::std::string* mutable_contractname();
+  ::std::string* release_contractname();
+  void set_allocated_contractname(::std::string* contractname);
+
+  // string delivbegindate = 12;
+  void clear_delivbegindate();
+  static const int kDelivbegindateFieldNumber = 12;
+  const ::std::string& delivbegindate() const;
+  void set_delivbegindate(const ::std::string& value);
+  #if LANG_CXX11
+  void set_delivbegindate(::std::string&& value);
+  #endif
+  void set_delivbegindate(const char* value);
+  void set_delivbegindate(const char* value, size_t size);
+  ::std::string* mutable_delivbegindate();
+  ::std::string* release_delivbegindate();
+  void set_allocated_delivbegindate(::std::string* delivbegindate);
+
+  // string delivenddate = 13;
+  void clear_delivenddate();
+  static const int kDelivenddateFieldNumber = 13;
+  const ::std::string& delivenddate() const;
+  void set_delivenddate(const ::std::string& value);
+  #if LANG_CXX11
+  void set_delivenddate(::std::string&& value);
+  #endif
+  void set_delivenddate(const char* value);
+  void set_delivenddate(const char* value, size_t size);
+  ::std::string* mutable_delivenddate();
+  ::std::string* release_delivenddate();
+  void set_allocated_delivenddate(::std::string* delivenddate);
+
+  // string excontractname = 14;
+  void clear_excontractname();
+  static const int kExcontractnameFieldNumber = 14;
+  const ::std::string& excontractname() const;
+  void set_excontractname(const ::std::string& value);
+  #if LANG_CXX11
+  void set_excontractname(::std::string&& value);
+  #endif
+  void set_excontractname(const char* value);
+  void set_excontractname(const char* value, size_t size);
+  ::std::string* mutable_excontractname();
+  ::std::string* release_excontractname();
+  void set_allocated_excontractname(::std::string* excontractname);
+
+  // string exproductname = 15;
+  void clear_exproductname();
+  static const int kExproductnameFieldNumber = 15;
+  const ::std::string& exproductname() const;
+  void set_exproductname(const ::std::string& value);
+  #if LANG_CXX11
+  void set_exproductname(::std::string&& value);
+  #endif
+  void set_exproductname(const char* value);
+  void set_exproductname(const char* value, size_t size);
+  ::std::string* mutable_exproductname();
+  ::std::string* release_exproductname();
+  void set_allocated_exproductname(::std::string* exproductname);
+
+  // string ismrgndisc = 16;
+  void clear_ismrgndisc();
+  static const int kIsmrgndiscFieldNumber = 16;
+  const ::std::string& ismrgndisc() const;
+  void set_ismrgndisc(const ::std::string& value);
+  #if LANG_CXX11
+  void set_ismrgndisc(::std::string&& value);
+  #endif
+  void set_ismrgndisc(const char* value);
+  void set_ismrgndisc(const char* value, size_t size);
+  ::std::string* mutable_ismrgndisc();
+  ::std::string* release_ismrgndisc();
+  void set_allocated_ismrgndisc(::std::string* ismrgndisc);
+
+  // string productclass = 17;
+  void clear_productclass();
+  static const int kProductclassFieldNumber = 17;
+  const ::std::string& productclass() const;
+  void set_productclass(const ::std::string& value);
+  #if LANG_CXX11
+  void set_productclass(::std::string&& value);
+  #endif
+  void set_productclass(const char* value);
+  void set_productclass(const char* value, size_t size);
+  ::std::string* mutable_productclass();
+  ::std::string* release_productclass();
+  void set_allocated_productclass(::std::string* productclass);
+
+  // string optionstype = 19;
+  void clear_optionstype();
+  static const int kOptionstypeFieldNumber = 19;
+  const ::std::string& optionstype() const;
+  void set_optionstype(const ::std::string& value);
+  #if LANG_CXX11
+  void set_optionstype(::std::string&& value);
+  #endif
+  void set_optionstype(const char* value);
+  void set_optionstype(const char* value, size_t size);
+  ::std::string* mutable_optionstype();
+  ::std::string* release_optionstype();
+  void set_allocated_optionstype(::std::string* optionstype);
+
+  // string underlyinginstrid = 21;
+  void clear_underlyinginstrid();
+  static const int kUnderlyinginstridFieldNumber = 21;
+  const ::std::string& underlyinginstrid() const;
+  void set_underlyinginstrid(const ::std::string& value);
+  #if LANG_CXX11
+  void set_underlyinginstrid(::std::string&& value);
+  #endif
+  void set_underlyinginstrid(const char* value);
+  void set_underlyinginstrid(const char* value, size_t size);
+  ::std::string* mutable_underlyinginstrid();
+  ::std::string* release_underlyinginstrid();
+  void set_allocated_underlyinginstrid(::std::string* underlyinginstrid);
+
+  // string strikemode = 22;
+  void clear_strikemode();
+  static const int kStrikemodeFieldNumber = 22;
+  const ::std::string& strikemode() const;
+  void set_strikemode(const ::std::string& value);
+  #if LANG_CXX11
+  void set_strikemode(::std::string&& value);
+  #endif
+  void set_strikemode(const char* value);
+  void set_strikemode(const char* value, size_t size);
+  ::std::string* mutable_strikemode();
+  ::std::string* release_strikemode();
+  void set_allocated_strikemode(::std::string* strikemode);
+
+  // double pricetick = 10;
+  void clear_pricetick();
+  static const int kPricetickFieldNumber = 10;
+  double pricetick() const;
+  void set_pricetick(double value);
+
+  // double baseprice = 18;
+  void clear_baseprice();
+  static const int kBasepriceFieldNumber = 18;
+  double baseprice() const;
+  void set_baseprice(double value);
+
+  // double strikeprice = 20;
+  void clear_strikeprice();
+  static const int kStrikepriceFieldNumber = 20;
+  double strikeprice() const;
+  void set_strikeprice(double value);
+
+  // double underlyingmultiple = 23;
+  void clear_underlyingmultiple();
+  static const int kUnderlyingmultipleFieldNumber = 23;
+  double underlyingmultiple() const;
+  void set_underlyingmultiple(double value);
+
+  // int32 multiplier = 9;
+  void clear_multiplier();
+  static const int kMultiplierFieldNumber = 9;
+  ::google::protobuf::int32 multiplier() const;
+  void set_multiplier(::google::protobuf::int32 value);
+
+  // @@protoc_insertion_point(class_scope:manager.contract_info)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr contractcode_;
+  ::google::protobuf::internal::ArenaStringPtr productcode_;
+  ::google::protobuf::internal::ArenaStringPtr productkind_;
+  ::google::protobuf::internal::ArenaStringPtr exchangecode_;
+  ::google::protobuf::internal::ArenaStringPtr marketcode_;
+  ::google::protobuf::internal::ArenaStringPtr createdate_;
+  ::google::protobuf::internal::ArenaStringPtr opendate_;
+  ::google::protobuf::internal::ArenaStringPtr expiredate_;
+  ::google::protobuf::internal::ArenaStringPtr contractname_;
+  ::google::protobuf::internal::ArenaStringPtr delivbegindate_;
+  ::google::protobuf::internal::ArenaStringPtr delivenddate_;
+  ::google::protobuf::internal::ArenaStringPtr excontractname_;
+  ::google::protobuf::internal::ArenaStringPtr exproductname_;
+  ::google::protobuf::internal::ArenaStringPtr ismrgndisc_;
+  ::google::protobuf::internal::ArenaStringPtr productclass_;
+  ::google::protobuf::internal::ArenaStringPtr optionstype_;
+  ::google::protobuf::internal::ArenaStringPtr underlyinginstrid_;
+  ::google::protobuf::internal::ArenaStringPtr strikemode_;
+  double pricetick_;
+  double baseprice_;
+  double strikeprice_;
+  double underlyingmultiple_;
+  ::google::protobuf::int32 multiplier_;
+  mutable int _cached_size_;
+  friend struct protobuf_manager_5fprotocal_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
+class rsp_contract : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:manager.rsp_contract) */ {
+ public:
+  rsp_contract();
+  virtual ~rsp_contract();
+
+  rsp_contract(const rsp_contract& from);
+
+  inline rsp_contract& operator=(const rsp_contract& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  rsp_contract(rsp_contract&& from) noexcept
+    : rsp_contract() {
+    *this = ::std::move(from);
+  }
+
+  inline rsp_contract& operator=(rsp_contract&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const rsp_contract& default_instance();
+
+  static inline const rsp_contract* internal_default_instance() {
+    return reinterpret_cast<const rsp_contract*>(
+               &_rsp_contract_default_instance_);
+  }
+  static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
+    38;
+
+  void Swap(rsp_contract* other);
+  friend void swap(rsp_contract& a, rsp_contract& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline rsp_contract* New() const PROTOBUF_FINAL { return New(NULL); }
+
+  rsp_contract* New(::google::protobuf::Arena* arena) const PROTOBUF_FINAL;
+  void CopyFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void MergeFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void CopyFrom(const rsp_contract& from);
+  void MergeFrom(const rsp_contract& from);
+  void Clear() PROTOBUF_FINAL;
+  bool IsInitialized() const PROTOBUF_FINAL;
+
+  size_t ByteSizeLong() const PROTOBUF_FINAL;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) PROTOBUF_FINAL;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const PROTOBUF_FINAL;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const PROTOBUF_FINAL;
+  int GetCachedSize() const PROTOBUF_FINAL { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const PROTOBUF_FINAL;
+  void InternalSwap(rsp_contract* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const PROTOBUF_FINAL;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // repeated .manager.contract_info infos = 2;
+  int infos_size() const;
+  void clear_infos();
+  static const int kInfosFieldNumber = 2;
+  const ::manager::contract_info& infos(int index) const;
+  ::manager::contract_info* mutable_infos(int index);
+  ::manager::contract_info* add_infos();
+  ::google::protobuf::RepeatedPtrField< ::manager::contract_info >*
+      mutable_infos();
+  const ::google::protobuf::RepeatedPtrField< ::manager::contract_info >&
+      infos() const;
+
+  // .manager.rsp_head_info header = 1;
+  bool has_header() const;
+  void clear_header();
+  static const int kHeaderFieldNumber = 1;
+  const ::manager::rsp_head_info& header() const;
+  ::manager::rsp_head_info* mutable_header();
+  ::manager::rsp_head_info* release_header();
+  void set_allocated_header(::manager::rsp_head_info* header);
+
+  // @@protoc_insertion_point(class_scope:manager.rsp_contract)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::RepeatedPtrField< ::manager::contract_info > infos_;
+  ::manager::rsp_head_info* header_;
+  mutable int _cached_size_;
+  friend struct protobuf_manager_5fprotocal_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
+class req_investor_info : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:manager.req_investor_info) */ {
+ public:
+  req_investor_info();
+  virtual ~req_investor_info();
+
+  req_investor_info(const req_investor_info& from);
+
+  inline req_investor_info& operator=(const req_investor_info& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  req_investor_info(req_investor_info&& from) noexcept
+    : req_investor_info() {
+    *this = ::std::move(from);
+  }
+
+  inline req_investor_info& operator=(req_investor_info&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const req_investor_info& default_instance();
+
+  static inline const req_investor_info* internal_default_instance() {
+    return reinterpret_cast<const req_investor_info*>(
+               &_req_investor_info_default_instance_);
+  }
+  static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
+    39;
+
+  void Swap(req_investor_info* other);
+  friend void swap(req_investor_info& a, req_investor_info& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline req_investor_info* New() const PROTOBUF_FINAL { return New(NULL); }
+
+  req_investor_info* New(::google::protobuf::Arena* arena) const PROTOBUF_FINAL;
+  void CopyFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void MergeFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void CopyFrom(const req_investor_info& from);
+  void MergeFrom(const req_investor_info& from);
+  void Clear() PROTOBUF_FINAL;
+  bool IsInitialized() const PROTOBUF_FINAL;
+
+  size_t ByteSizeLong() const PROTOBUF_FINAL;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) PROTOBUF_FINAL;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const PROTOBUF_FINAL;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const PROTOBUF_FINAL;
+  int GetCachedSize() const PROTOBUF_FINAL { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const PROTOBUF_FINAL;
+  void InternalSwap(req_investor_info* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const PROTOBUF_FINAL;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // repeated string investor = 2;
+  int investor_size() const;
+  void clear_investor();
+  static const int kInvestorFieldNumber = 2;
+  const ::std::string& investor(int index) const;
+  ::std::string* mutable_investor(int index);
+  void set_investor(int index, const ::std::string& value);
+  #if LANG_CXX11
+  void set_investor(int index, ::std::string&& value);
+  #endif
+  void set_investor(int index, const char* value);
+  void set_investor(int index, const char* value, size_t size);
+  ::std::string* add_investor();
+  void add_investor(const ::std::string& value);
+  #if LANG_CXX11
+  void add_investor(::std::string&& value);
+  #endif
+  void add_investor(const char* value);
+  void add_investor(const char* value, size_t size);
+  const ::google::protobuf::RepeatedPtrField< ::std::string>& investor() const;
+  ::google::protobuf::RepeatedPtrField< ::std::string>* mutable_investor();
+
+  // int32 requestid = 1;
+  void clear_requestid();
+  static const int kRequestidFieldNumber = 1;
+  ::google::protobuf::int32 requestid() const;
+  void set_requestid(::google::protobuf::int32 value);
+
+  // @@protoc_insertion_point(class_scope:manager.req_investor_info)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::RepeatedPtrField< ::std::string> investor_;
+  ::google::protobuf::int32 requestid_;
+  mutable int _cached_size_;
+  friend struct protobuf_manager_5fprotocal_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
+class investor_info : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:manager.investor_info) */ {
+ public:
+  investor_info();
+  virtual ~investor_info();
+
+  investor_info(const investor_info& from);
+
+  inline investor_info& operator=(const investor_info& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  investor_info(investor_info&& from) noexcept
+    : investor_info() {
+    *this = ::std::move(from);
+  }
+
+  inline investor_info& operator=(investor_info&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const investor_info& default_instance();
+
+  static inline const investor_info* internal_default_instance() {
+    return reinterpret_cast<const investor_info*>(
+               &_investor_info_default_instance_);
+  }
+  static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
+    40;
+
+  void Swap(investor_info* other);
+  friend void swap(investor_info& a, investor_info& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline investor_info* New() const PROTOBUF_FINAL { return New(NULL); }
+
+  investor_info* New(::google::protobuf::Arena* arena) const PROTOBUF_FINAL;
+  void CopyFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void MergeFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void CopyFrom(const investor_info& from);
+  void MergeFrom(const investor_info& from);
+  void Clear() PROTOBUF_FINAL;
+  bool IsInitialized() const PROTOBUF_FINAL;
+
+  size_t ByteSizeLong() const PROTOBUF_FINAL;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) PROTOBUF_FINAL;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const PROTOBUF_FINAL;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const PROTOBUF_FINAL;
+  int GetCachedSize() const PROTOBUF_FINAL { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const PROTOBUF_FINAL;
+  void InternalSwap(investor_info* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const PROTOBUF_FINAL;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // string investorid = 1;
+  void clear_investorid();
+  static const int kInvestoridFieldNumber = 1;
+  const ::std::string& investorid() const;
+  void set_investorid(const ::std::string& value);
+  #if LANG_CXX11
+  void set_investorid(::std::string&& value);
+  #endif
+  void set_investorid(const char* value);
+  void set_investorid(const char* value, size_t size);
+  ::std::string* mutable_investorid();
+  ::std::string* release_investorid();
+  void set_allocated_investorid(::std::string* investorid);
+
+  // string brokerid = 2;
+  void clear_brokerid();
+  static const int kBrokeridFieldNumber = 2;
+  const ::std::string& brokerid() const;
+  void set_brokerid(const ::std::string& value);
+  #if LANG_CXX11
+  void set_brokerid(::std::string&& value);
+  #endif
+  void set_brokerid(const char* value);
+  void set_brokerid(const char* value, size_t size);
+  ::std::string* mutable_brokerid();
+  ::std::string* release_brokerid();
+  void set_allocated_brokerid(::std::string* brokerid);
+
+  // string investortype = 3;
+  void clear_investortype();
+  static const int kInvestortypeFieldNumber = 3;
+  const ::std::string& investortype() const;
+  void set_investortype(const ::std::string& value);
+  #if LANG_CXX11
+  void set_investortype(::std::string&& value);
+  #endif
+  void set_investortype(const char* value);
+  void set_investortype(const char* value, size_t size);
+  ::std::string* mutable_investortype();
+  ::std::string* release_investortype();
+  void set_allocated_investortype(::std::string* investortype);
+
+  // string investorname = 4;
+  void clear_investorname();
+  static const int kInvestornameFieldNumber = 4;
+  const ::std::string& investorname() const;
+  void set_investorname(const ::std::string& value);
+  #if LANG_CXX11
+  void set_investorname(::std::string&& value);
+  #endif
+  void set_investorname(const char* value);
+  void set_investorname(const char* value, size_t size);
+  ::std::string* mutable_investorname();
+  ::std::string* release_investorname();
+  void set_allocated_investorname(::std::string* investorname);
+
+  // string identifiedcardtype = 5;
+  void clear_identifiedcardtype();
+  static const int kIdentifiedcardtypeFieldNumber = 5;
+  const ::std::string& identifiedcardtype() const;
+  void set_identifiedcardtype(const ::std::string& value);
+  #if LANG_CXX11
+  void set_identifiedcardtype(::std::string&& value);
+  #endif
+  void set_identifiedcardtype(const char* value);
+  void set_identifiedcardtype(const char* value, size_t size);
+  ::std::string* mutable_identifiedcardtype();
+  ::std::string* release_identifiedcardtype();
+  void set_allocated_identifiedcardtype(::std::string* identifiedcardtype);
+
+  // string identifiedcardno = 6;
+  void clear_identifiedcardno();
+  static const int kIdentifiedcardnoFieldNumber = 6;
+  const ::std::string& identifiedcardno() const;
+  void set_identifiedcardno(const ::std::string& value);
+  #if LANG_CXX11
+  void set_identifiedcardno(::std::string&& value);
+  #endif
+  void set_identifiedcardno(const char* value);
+  void set_identifiedcardno(const char* value, size_t size);
+  ::std::string* mutable_identifiedcardno();
+  ::std::string* release_identifiedcardno();
+  void set_allocated_identifiedcardno(::std::string* identifiedcardno);
+
+  // string country = 7;
+  void clear_country();
+  static const int kCountryFieldNumber = 7;
+  const ::std::string& country() const;
+  void set_country(const ::std::string& value);
+  #if LANG_CXX11
+  void set_country(::std::string&& value);
+  #endif
+  void set_country(const char* value);
+  void set_country(const char* value, size_t size);
+  ::std::string* mutable_country();
+  ::std::string* release_country();
+  void set_allocated_country(::std::string* country);
+
+  // string province = 8;
+  void clear_province();
+  static const int kProvinceFieldNumber = 8;
+  const ::std::string& province() const;
+  void set_province(const ::std::string& value);
+  #if LANG_CXX11
+  void set_province(::std::string&& value);
+  #endif
+  void set_province(const char* value);
+  void set_province(const char* value, size_t size);
+  ::std::string* mutable_province();
+  ::std::string* release_province();
+  void set_allocated_province(::std::string* province);
+
+  // string city = 9;
+  void clear_city();
+  static const int kCityFieldNumber = 9;
+  const ::std::string& city() const;
+  void set_city(const ::std::string& value);
+  #if LANG_CXX11
+  void set_city(::std::string&& value);
+  #endif
+  void set_city(const char* value);
+  void set_city(const char* value, size_t size);
+  ::std::string* mutable_city();
+  ::std::string* release_city();
+  void set_allocated_city(::std::string* city);
+
+  // string birthday = 10;
+  void clear_birthday();
+  static const int kBirthdayFieldNumber = 10;
+  const ::std::string& birthday() const;
+  void set_birthday(const ::std::string& value);
+  #if LANG_CXX11
+  void set_birthday(::std::string&& value);
+  #endif
+  void set_birthday(const char* value);
+  void set_birthday(const char* value, size_t size);
+  ::std::string* mutable_birthday();
+  ::std::string* release_birthday();
+  void set_allocated_birthday(::std::string* birthday);
+
+  // string sex = 11;
+  void clear_sex();
+  static const int kSexFieldNumber = 11;
+  const ::std::string& sex() const;
+  void set_sex(const ::std::string& value);
+  #if LANG_CXX11
+  void set_sex(::std::string&& value);
+  #endif
+  void set_sex(const char* value);
+  void set_sex(const char* value, size_t size);
+  ::std::string* mutable_sex();
+  ::std::string* release_sex();
+  void set_allocated_sex(::std::string* sex);
+
+  // string profession = 12;
+  void clear_profession();
+  static const int kProfessionFieldNumber = 12;
+  const ::std::string& profession() const;
+  void set_profession(const ::std::string& value);
+  #if LANG_CXX11
+  void set_profession(::std::string&& value);
+  #endif
+  void set_profession(const char* value);
+  void set_profession(const char* value, size_t size);
+  ::std::string* mutable_profession();
+  ::std::string* release_profession();
+  void set_allocated_profession(::std::string* profession);
+
+  // string national = 13;
+  void clear_national();
+  static const int kNationalFieldNumber = 13;
+  const ::std::string& national() const;
+  void set_national(const ::std::string& value);
+  #if LANG_CXX11
+  void set_national(::std::string&& value);
+  #endif
+  void set_national(const char* value);
+  void set_national(const char* value, size_t size);
+  ::std::string* mutable_national();
+  ::std::string* release_national();
+  void set_allocated_national(::std::string* national);
+
+  // string capitalcurrency = 15;
+  void clear_capitalcurrency();
+  static const int kCapitalcurrencyFieldNumber = 15;
+  const ::std::string& capitalcurrency() const;
+  void set_capitalcurrency(const ::std::string& value);
+  #if LANG_CXX11
+  void set_capitalcurrency(::std::string&& value);
+  #endif
+  void set_capitalcurrency(const char* value);
+  void set_capitalcurrency(const char* value, size_t size);
+  ::std::string* mutable_capitalcurrency();
+  ::std::string* release_capitalcurrency();
+  void set_allocated_capitalcurrency(::std::string* capitalcurrency);
+
+  // string telephone = 16;
+  void clear_telephone();
+  static const int kTelephoneFieldNumber = 16;
+  const ::std::string& telephone() const;
+  void set_telephone(const ::std::string& value);
+  #if LANG_CXX11
+  void set_telephone(::std::string&& value);
+  #endif
+  void set_telephone(const char* value);
+  void set_telephone(const char* value, size_t size);
+  ::std::string* mutable_telephone();
+  ::std::string* release_telephone();
+  void set_allocated_telephone(::std::string* telephone);
+
+  // string address = 17;
+  void clear_address();
+  static const int kAddressFieldNumber = 17;
+  const ::std::string& address() const;
+  void set_address(const ::std::string& value);
+  #if LANG_CXX11
+  void set_address(::std::string&& value);
+  #endif
+  void set_address(const char* value);
+  void set_address(const char* value, size_t size);
+  ::std::string* mutable_address();
+  ::std::string* release_address();
+  void set_allocated_address(::std::string* address);
+
+  // string zipcode = 18;
+  void clear_zipcode();
+  static const int kZipcodeFieldNumber = 18;
+  const ::std::string& zipcode() const;
+  void set_zipcode(const ::std::string& value);
+  #if LANG_CXX11
+  void set_zipcode(::std::string&& value);
+  #endif
+  void set_zipcode(const char* value);
+  void set_zipcode(const char* value, size_t size);
+  ::std::string* mutable_zipcode();
+  ::std::string* release_zipcode();
+  void set_allocated_zipcode(::std::string* zipcode);
+
+  // string email = 19;
+  void clear_email();
+  static const int kEmailFieldNumber = 19;
+  const ::std::string& email() const;
+  void set_email(const ::std::string& value);
+  #if LANG_CXX11
+  void set_email(::std::string&& value);
+  #endif
+  void set_email(const char* value);
+  void set_email(const char* value, size_t size);
+  ::std::string* mutable_email();
+  ::std::string* release_email();
+  void set_allocated_email(::std::string* email);
+
+  // string memo = 20;
+  void clear_memo();
+  static const int kMemoFieldNumber = 20;
+  const ::std::string& memo() const;
+  void set_memo(const ::std::string& value);
+  #if LANG_CXX11
+  void set_memo(::std::string&& value);
+  #endif
+  void set_memo(const char* value);
+  void set_memo(const char* value, size_t size);
+  ::std::string* mutable_memo();
+  ::std::string* release_memo();
+  void set_allocated_memo(::std::string* memo);
+
+  // string openinvestorname = 21;
+  void clear_openinvestorname();
+  static const int kOpeninvestornameFieldNumber = 21;
+  const ::std::string& openinvestorname() const;
+  void set_openinvestorname(const ::std::string& value);
+  #if LANG_CXX11
+  void set_openinvestorname(::std::string&& value);
+  #endif
+  void set_openinvestorname(const char* value);
+  void set_openinvestorname(const char* value, size_t size);
+  ::std::string* mutable_openinvestorname();
+  ::std::string* release_openinvestorname();
+  void set_allocated_openinvestorname(::std::string* openinvestorname);
+
+  // string orderinvestorname = 22;
+  void clear_orderinvestorname();
+  static const int kOrderinvestornameFieldNumber = 22;
+  const ::std::string& orderinvestorname() const;
+  void set_orderinvestorname(const ::std::string& value);
+  #if LANG_CXX11
+  void set_orderinvestorname(::std::string&& value);
+  #endif
+  void set_orderinvestorname(const char* value);
+  void set_orderinvestorname(const char* value, size_t size);
+  ::std::string* mutable_orderinvestorname();
+  ::std::string* release_orderinvestorname();
+  void set_allocated_orderinvestorname(::std::string* orderinvestorname);
+
+  // string fundinvestorname = 23;
+  void clear_fundinvestorname();
+  static const int kFundinvestornameFieldNumber = 23;
+  const ::std::string& fundinvestorname() const;
+  void set_fundinvestorname(const ::std::string& value);
+  #if LANG_CXX11
+  void set_fundinvestorname(::std::string&& value);
+  #endif
+  void set_fundinvestorname(const char* value);
+  void set_fundinvestorname(const char* value, size_t size);
+  ::std::string* mutable_fundinvestorname();
+  ::std::string* release_fundinvestorname();
+  void set_allocated_fundinvestorname(::std::string* fundinvestorname);
+
+  // string settleinvestorname = 24;
+  void clear_settleinvestorname();
+  static const int kSettleinvestornameFieldNumber = 24;
+  const ::std::string& settleinvestorname() const;
+  void set_settleinvestorname(const ::std::string& value);
+  #if LANG_CXX11
+  void set_settleinvestorname(::std::string&& value);
+  #endif
+  void set_settleinvestorname(const char* value);
+  void set_settleinvestorname(const char* value, size_t size);
+  ::std::string* mutable_settleinvestorname();
+  ::std::string* release_settleinvestorname();
+  void set_allocated_settleinvestorname(::std::string* settleinvestorname);
+
+  // string departmentid = 26;
+  void clear_departmentid();
+  static const int kDepartmentidFieldNumber = 26;
+  const ::std::string& departmentid() const;
+  void set_departmentid(const ::std::string& value);
+  #if LANG_CXX11
+  void set_departmentid(::std::string&& value);
+  #endif
+  void set_departmentid(const char* value);
+  void set_departmentid(const char* value, size_t size);
+  ::std::string* mutable_departmentid();
+  ::std::string* release_departmentid();
+  void set_allocated_departmentid(::std::string* departmentid);
+
+  // string investorfullname = 27;
+  void clear_investorfullname();
+  static const int kInvestorfullnameFieldNumber = 27;
+  const ::std::string& investorfullname() const;
+  void set_investorfullname(const ::std::string& value);
+  #if LANG_CXX11
+  void set_investorfullname(::std::string&& value);
+  #endif
+  void set_investorfullname(const char* value);
+  void set_investorfullname(const char* value, size_t size);
+  ::std::string* mutable_investorfullname();
+  ::std::string* release_investorfullname();
+  void set_allocated_investorfullname(::std::string* investorfullname);
+
+  // string clientregion = 31;
+  void clear_clientregion();
+  static const int kClientregionFieldNumber = 31;
+  const ::std::string& clientregion() const;
+  void set_clientregion(const ::std::string& value);
+  #if LANG_CXX11
+  void set_clientregion(::std::string&& value);
+  #endif
+  void set_clientregion(const char* value);
+  void set_clientregion(const char* value, size_t size);
+  ::std::string* mutable_clientregion();
+  ::std::string* release_clientregion();
+  void set_allocated_clientregion(::std::string* clientregion);
+
+  // double capital = 14;
+  void clear_capital();
+  static const int kCapitalFieldNumber = 14;
+  double capital() const;
+  void set_capital(double value);
+
+  // int32 isactive = 25;
+  void clear_isactive();
+  static const int kIsactiveFieldNumber = 25;
+  ::google::protobuf::int32 isactive() const;
+  void set_isactive(::google::protobuf::int32 value);
+
+  // int32 isemail = 28;
+  void clear_isemail();
+  static const int kIsemailFieldNumber = 28;
+  ::google::protobuf::int32 isemail() const;
+  void set_isemail(::google::protobuf::int32 value);
+
+  // int32 issms = 29;
+  void clear_issms();
+  static const int kIssmsFieldNumber = 29;
+  ::google::protobuf::int32 issms() const;
+  void set_issms(::google::protobuf::int32 value);
+
+  // int32 isusingotp = 30;
+  void clear_isusingotp();
+  static const int kIsusingotpFieldNumber = 30;
+  ::google::protobuf::int32 isusingotp() const;
+  void set_isusingotp(::google::protobuf::int32 value);
+
+  // @@protoc_insertion_point(class_scope:manager.investor_info)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr investorid_;
+  ::google::protobuf::internal::ArenaStringPtr brokerid_;
+  ::google::protobuf::internal::ArenaStringPtr investortype_;
+  ::google::protobuf::internal::ArenaStringPtr investorname_;
+  ::google::protobuf::internal::ArenaStringPtr identifiedcardtype_;
+  ::google::protobuf::internal::ArenaStringPtr identifiedcardno_;
+  ::google::protobuf::internal::ArenaStringPtr country_;
+  ::google::protobuf::internal::ArenaStringPtr province_;
+  ::google::protobuf::internal::ArenaStringPtr city_;
+  ::google::protobuf::internal::ArenaStringPtr birthday_;
+  ::google::protobuf::internal::ArenaStringPtr sex_;
+  ::google::protobuf::internal::ArenaStringPtr profession_;
+  ::google::protobuf::internal::ArenaStringPtr national_;
+  ::google::protobuf::internal::ArenaStringPtr capitalcurrency_;
+  ::google::protobuf::internal::ArenaStringPtr telephone_;
+  ::google::protobuf::internal::ArenaStringPtr address_;
+  ::google::protobuf::internal::ArenaStringPtr zipcode_;
+  ::google::protobuf::internal::ArenaStringPtr email_;
+  ::google::protobuf::internal::ArenaStringPtr memo_;
+  ::google::protobuf::internal::ArenaStringPtr openinvestorname_;
+  ::google::protobuf::internal::ArenaStringPtr orderinvestorname_;
+  ::google::protobuf::internal::ArenaStringPtr fundinvestorname_;
+  ::google::protobuf::internal::ArenaStringPtr settleinvestorname_;
+  ::google::protobuf::internal::ArenaStringPtr departmentid_;
+  ::google::protobuf::internal::ArenaStringPtr investorfullname_;
+  ::google::protobuf::internal::ArenaStringPtr clientregion_;
+  double capital_;
+  ::google::protobuf::int32 isactive_;
+  ::google::protobuf::int32 isemail_;
+  ::google::protobuf::int32 issms_;
+  ::google::protobuf::int32 isusingotp_;
+  mutable int _cached_size_;
+  friend struct protobuf_manager_5fprotocal_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
+class rsp_investor_info : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:manager.rsp_investor_info) */ {
+ public:
+  rsp_investor_info();
+  virtual ~rsp_investor_info();
+
+  rsp_investor_info(const rsp_investor_info& from);
+
+  inline rsp_investor_info& operator=(const rsp_investor_info& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  rsp_investor_info(rsp_investor_info&& from) noexcept
+    : rsp_investor_info() {
+    *this = ::std::move(from);
+  }
+
+  inline rsp_investor_info& operator=(rsp_investor_info&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const rsp_investor_info& default_instance();
+
+  static inline const rsp_investor_info* internal_default_instance() {
+    return reinterpret_cast<const rsp_investor_info*>(
+               &_rsp_investor_info_default_instance_);
+  }
+  static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
+    41;
+
+  void Swap(rsp_investor_info* other);
+  friend void swap(rsp_investor_info& a, rsp_investor_info& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline rsp_investor_info* New() const PROTOBUF_FINAL { return New(NULL); }
+
+  rsp_investor_info* New(::google::protobuf::Arena* arena) const PROTOBUF_FINAL;
+  void CopyFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void MergeFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void CopyFrom(const rsp_investor_info& from);
+  void MergeFrom(const rsp_investor_info& from);
+  void Clear() PROTOBUF_FINAL;
+  bool IsInitialized() const PROTOBUF_FINAL;
+
+  size_t ByteSizeLong() const PROTOBUF_FINAL;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) PROTOBUF_FINAL;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const PROTOBUF_FINAL;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const PROTOBUF_FINAL;
+  int GetCachedSize() const PROTOBUF_FINAL { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const PROTOBUF_FINAL;
+  void InternalSwap(rsp_investor_info* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const PROTOBUF_FINAL;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // repeated .manager.investor_info infos = 2;
+  int infos_size() const;
+  void clear_infos();
+  static const int kInfosFieldNumber = 2;
+  const ::manager::investor_info& infos(int index) const;
+  ::manager::investor_info* mutable_infos(int index);
+  ::manager::investor_info* add_infos();
+  ::google::protobuf::RepeatedPtrField< ::manager::investor_info >*
+      mutable_infos();
+  const ::google::protobuf::RepeatedPtrField< ::manager::investor_info >&
+      infos() const;
+
+  // .manager.rsp_head_info header = 1;
+  bool has_header() const;
+  void clear_header();
+  static const int kHeaderFieldNumber = 1;
+  const ::manager::rsp_head_info& header() const;
+  ::manager::rsp_head_info* mutable_header();
+  ::manager::rsp_head_info* release_header();
+  void set_allocated_header(::manager::rsp_head_info* header);
+
+  // @@protoc_insertion_point(class_scope:manager.rsp_investor_info)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::RepeatedPtrField< ::manager::investor_info > infos_;
+  ::manager::rsp_head_info* header_;
   mutable int _cached_size_;
   friend struct protobuf_manager_5fprotocal_2eproto::TableStruct;
 };
@@ -6592,6 +8389,210 @@ rtn_change_insmrgnrate::infos() const {
 
 // -------------------------------------------------------------------
 
+// req_add_insmrgnrate
+
+// int32 requestid = 1;
+inline void req_add_insmrgnrate::clear_requestid() {
+  requestid_ = 0;
+}
+inline ::google::protobuf::int32 req_add_insmrgnrate::requestid() const {
+  // @@protoc_insertion_point(field_get:manager.req_add_insmrgnrate.requestid)
+  return requestid_;
+}
+inline void req_add_insmrgnrate::set_requestid(::google::protobuf::int32 value) {
+  
+  requestid_ = value;
+  // @@protoc_insertion_point(field_set:manager.req_add_insmrgnrate.requestid)
+}
+
+// .manager.insmrgnrate_info info = 2;
+inline bool req_add_insmrgnrate::has_info() const {
+  return this != internal_default_instance() && info_ != NULL;
+}
+inline void req_add_insmrgnrate::clear_info() {
+  if (GetArenaNoVirtual() == NULL && info_ != NULL) delete info_;
+  info_ = NULL;
+}
+inline const ::manager::insmrgnrate_info& req_add_insmrgnrate::info() const {
+  const ::manager::insmrgnrate_info* p = info_;
+  // @@protoc_insertion_point(field_get:manager.req_add_insmrgnrate.info)
+  return p != NULL ? *p : *reinterpret_cast<const ::manager::insmrgnrate_info*>(
+      &::manager::_insmrgnrate_info_default_instance_);
+}
+inline ::manager::insmrgnrate_info* req_add_insmrgnrate::mutable_info() {
+  
+  if (info_ == NULL) {
+    info_ = new ::manager::insmrgnrate_info;
+  }
+  // @@protoc_insertion_point(field_mutable:manager.req_add_insmrgnrate.info)
+  return info_;
+}
+inline ::manager::insmrgnrate_info* req_add_insmrgnrate::release_info() {
+  // @@protoc_insertion_point(field_release:manager.req_add_insmrgnrate.info)
+  
+  ::manager::insmrgnrate_info* temp = info_;
+  info_ = NULL;
+  return temp;
+}
+inline void req_add_insmrgnrate::set_allocated_info(::manager::insmrgnrate_info* info) {
+  delete info_;
+  info_ = info;
+  if (info) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_set_allocated:manager.req_add_insmrgnrate.info)
+}
+
+// -------------------------------------------------------------------
+
+// rtn_add_insmrgnrate
+
+// .manager.insmrgnrate_info info = 1;
+inline bool rtn_add_insmrgnrate::has_info() const {
+  return this != internal_default_instance() && info_ != NULL;
+}
+inline void rtn_add_insmrgnrate::clear_info() {
+  if (GetArenaNoVirtual() == NULL && info_ != NULL) delete info_;
+  info_ = NULL;
+}
+inline const ::manager::insmrgnrate_info& rtn_add_insmrgnrate::info() const {
+  const ::manager::insmrgnrate_info* p = info_;
+  // @@protoc_insertion_point(field_get:manager.rtn_add_insmrgnrate.info)
+  return p != NULL ? *p : *reinterpret_cast<const ::manager::insmrgnrate_info*>(
+      &::manager::_insmrgnrate_info_default_instance_);
+}
+inline ::manager::insmrgnrate_info* rtn_add_insmrgnrate::mutable_info() {
+  
+  if (info_ == NULL) {
+    info_ = new ::manager::insmrgnrate_info;
+  }
+  // @@protoc_insertion_point(field_mutable:manager.rtn_add_insmrgnrate.info)
+  return info_;
+}
+inline ::manager::insmrgnrate_info* rtn_add_insmrgnrate::release_info() {
+  // @@protoc_insertion_point(field_release:manager.rtn_add_insmrgnrate.info)
+  
+  ::manager::insmrgnrate_info* temp = info_;
+  info_ = NULL;
+  return temp;
+}
+inline void rtn_add_insmrgnrate::set_allocated_info(::manager::insmrgnrate_info* info) {
+  delete info_;
+  info_ = info;
+  if (info) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_set_allocated:manager.rtn_add_insmrgnrate.info)
+}
+
+// -------------------------------------------------------------------
+
+// req_del_insmrgnrate
+
+// int32 requestid = 1;
+inline void req_del_insmrgnrate::clear_requestid() {
+  requestid_ = 0;
+}
+inline ::google::protobuf::int32 req_del_insmrgnrate::requestid() const {
+  // @@protoc_insertion_point(field_get:manager.req_del_insmrgnrate.requestid)
+  return requestid_;
+}
+inline void req_del_insmrgnrate::set_requestid(::google::protobuf::int32 value) {
+  
+  requestid_ = value;
+  // @@protoc_insertion_point(field_set:manager.req_del_insmrgnrate.requestid)
+}
+
+// .manager.insmrgnrate_info info = 2;
+inline bool req_del_insmrgnrate::has_info() const {
+  return this != internal_default_instance() && info_ != NULL;
+}
+inline void req_del_insmrgnrate::clear_info() {
+  if (GetArenaNoVirtual() == NULL && info_ != NULL) delete info_;
+  info_ = NULL;
+}
+inline const ::manager::insmrgnrate_info& req_del_insmrgnrate::info() const {
+  const ::manager::insmrgnrate_info* p = info_;
+  // @@protoc_insertion_point(field_get:manager.req_del_insmrgnrate.info)
+  return p != NULL ? *p : *reinterpret_cast<const ::manager::insmrgnrate_info*>(
+      &::manager::_insmrgnrate_info_default_instance_);
+}
+inline ::manager::insmrgnrate_info* req_del_insmrgnrate::mutable_info() {
+  
+  if (info_ == NULL) {
+    info_ = new ::manager::insmrgnrate_info;
+  }
+  // @@protoc_insertion_point(field_mutable:manager.req_del_insmrgnrate.info)
+  return info_;
+}
+inline ::manager::insmrgnrate_info* req_del_insmrgnrate::release_info() {
+  // @@protoc_insertion_point(field_release:manager.req_del_insmrgnrate.info)
+  
+  ::manager::insmrgnrate_info* temp = info_;
+  info_ = NULL;
+  return temp;
+}
+inline void req_del_insmrgnrate::set_allocated_info(::manager::insmrgnrate_info* info) {
+  delete info_;
+  info_ = info;
+  if (info) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_set_allocated:manager.req_del_insmrgnrate.info)
+}
+
+// -------------------------------------------------------------------
+
+// rtn_del_insmrgnrate
+
+// .manager.insmrgnrate_info info = 1;
+inline bool rtn_del_insmrgnrate::has_info() const {
+  return this != internal_default_instance() && info_ != NULL;
+}
+inline void rtn_del_insmrgnrate::clear_info() {
+  if (GetArenaNoVirtual() == NULL && info_ != NULL) delete info_;
+  info_ = NULL;
+}
+inline const ::manager::insmrgnrate_info& rtn_del_insmrgnrate::info() const {
+  const ::manager::insmrgnrate_info* p = info_;
+  // @@protoc_insertion_point(field_get:manager.rtn_del_insmrgnrate.info)
+  return p != NULL ? *p : *reinterpret_cast<const ::manager::insmrgnrate_info*>(
+      &::manager::_insmrgnrate_info_default_instance_);
+}
+inline ::manager::insmrgnrate_info* rtn_del_insmrgnrate::mutable_info() {
+  
+  if (info_ == NULL) {
+    info_ = new ::manager::insmrgnrate_info;
+  }
+  // @@protoc_insertion_point(field_mutable:manager.rtn_del_insmrgnrate.info)
+  return info_;
+}
+inline ::manager::insmrgnrate_info* rtn_del_insmrgnrate::release_info() {
+  // @@protoc_insertion_point(field_release:manager.rtn_del_insmrgnrate.info)
+  
+  ::manager::insmrgnrate_info* temp = info_;
+  info_ = NULL;
+  return temp;
+}
+inline void rtn_del_insmrgnrate::set_allocated_info(::manager::insmrgnrate_info* info) {
+  delete info_;
+  info_ = info;
+  if (info) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_set_allocated:manager.rtn_del_insmrgnrate.info)
+}
+
+// -------------------------------------------------------------------
+
 // req_option_argv
 
 // int32 requestid = 1;
@@ -6824,10 +8825,2763 @@ inline void req_option_argv_adj::set_allocated_info(::manager::option_argv* info
   // @@protoc_insertion_point(field_set_allocated:manager.req_option_argv_adj.info)
 }
 
+// -------------------------------------------------------------------
+
+// req_contract
+
+// int32 requestid = 1;
+inline void req_contract::clear_requestid() {
+  requestid_ = 0;
+}
+inline ::google::protobuf::int32 req_contract::requestid() const {
+  // @@protoc_insertion_point(field_get:manager.req_contract.requestid)
+  return requestid_;
+}
+inline void req_contract::set_requestid(::google::protobuf::int32 value) {
+  
+  requestid_ = value;
+  // @@protoc_insertion_point(field_set:manager.req_contract.requestid)
+}
+
+// -------------------------------------------------------------------
+
+// contract_info
+
+// string contractcode = 1;
+inline void contract_info::clear_contractcode() {
+  contractcode_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& contract_info::contractcode() const {
+  // @@protoc_insertion_point(field_get:manager.contract_info.contractcode)
+  return contractcode_.GetNoArena();
+}
+inline void contract_info::set_contractcode(const ::std::string& value) {
+  
+  contractcode_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:manager.contract_info.contractcode)
+}
+#if LANG_CXX11
+inline void contract_info::set_contractcode(::std::string&& value) {
+  
+  contractcode_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:manager.contract_info.contractcode)
+}
+#endif
+inline void contract_info::set_contractcode(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  contractcode_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:manager.contract_info.contractcode)
+}
+inline void contract_info::set_contractcode(const char* value, size_t size) {
+  
+  contractcode_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:manager.contract_info.contractcode)
+}
+inline ::std::string* contract_info::mutable_contractcode() {
+  
+  // @@protoc_insertion_point(field_mutable:manager.contract_info.contractcode)
+  return contractcode_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* contract_info::release_contractcode() {
+  // @@protoc_insertion_point(field_release:manager.contract_info.contractcode)
+  
+  return contractcode_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void contract_info::set_allocated_contractcode(::std::string* contractcode) {
+  if (contractcode != NULL) {
+    
+  } else {
+    
+  }
+  contractcode_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), contractcode);
+  // @@protoc_insertion_point(field_set_allocated:manager.contract_info.contractcode)
+}
+
+// string productcode = 2;
+inline void contract_info::clear_productcode() {
+  productcode_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& contract_info::productcode() const {
+  // @@protoc_insertion_point(field_get:manager.contract_info.productcode)
+  return productcode_.GetNoArena();
+}
+inline void contract_info::set_productcode(const ::std::string& value) {
+  
+  productcode_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:manager.contract_info.productcode)
+}
+#if LANG_CXX11
+inline void contract_info::set_productcode(::std::string&& value) {
+  
+  productcode_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:manager.contract_info.productcode)
+}
+#endif
+inline void contract_info::set_productcode(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  productcode_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:manager.contract_info.productcode)
+}
+inline void contract_info::set_productcode(const char* value, size_t size) {
+  
+  productcode_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:manager.contract_info.productcode)
+}
+inline ::std::string* contract_info::mutable_productcode() {
+  
+  // @@protoc_insertion_point(field_mutable:manager.contract_info.productcode)
+  return productcode_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* contract_info::release_productcode() {
+  // @@protoc_insertion_point(field_release:manager.contract_info.productcode)
+  
+  return productcode_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void contract_info::set_allocated_productcode(::std::string* productcode) {
+  if (productcode != NULL) {
+    
+  } else {
+    
+  }
+  productcode_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), productcode);
+  // @@protoc_insertion_point(field_set_allocated:manager.contract_info.productcode)
+}
+
+// string productkind = 3;
+inline void contract_info::clear_productkind() {
+  productkind_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& contract_info::productkind() const {
+  // @@protoc_insertion_point(field_get:manager.contract_info.productkind)
+  return productkind_.GetNoArena();
+}
+inline void contract_info::set_productkind(const ::std::string& value) {
+  
+  productkind_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:manager.contract_info.productkind)
+}
+#if LANG_CXX11
+inline void contract_info::set_productkind(::std::string&& value) {
+  
+  productkind_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:manager.contract_info.productkind)
+}
+#endif
+inline void contract_info::set_productkind(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  productkind_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:manager.contract_info.productkind)
+}
+inline void contract_info::set_productkind(const char* value, size_t size) {
+  
+  productkind_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:manager.contract_info.productkind)
+}
+inline ::std::string* contract_info::mutable_productkind() {
+  
+  // @@protoc_insertion_point(field_mutable:manager.contract_info.productkind)
+  return productkind_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* contract_info::release_productkind() {
+  // @@protoc_insertion_point(field_release:manager.contract_info.productkind)
+  
+  return productkind_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void contract_info::set_allocated_productkind(::std::string* productkind) {
+  if (productkind != NULL) {
+    
+  } else {
+    
+  }
+  productkind_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), productkind);
+  // @@protoc_insertion_point(field_set_allocated:manager.contract_info.productkind)
+}
+
+// string exchangecode = 4;
+inline void contract_info::clear_exchangecode() {
+  exchangecode_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& contract_info::exchangecode() const {
+  // @@protoc_insertion_point(field_get:manager.contract_info.exchangecode)
+  return exchangecode_.GetNoArena();
+}
+inline void contract_info::set_exchangecode(const ::std::string& value) {
+  
+  exchangecode_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:manager.contract_info.exchangecode)
+}
+#if LANG_CXX11
+inline void contract_info::set_exchangecode(::std::string&& value) {
+  
+  exchangecode_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:manager.contract_info.exchangecode)
+}
+#endif
+inline void contract_info::set_exchangecode(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  exchangecode_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:manager.contract_info.exchangecode)
+}
+inline void contract_info::set_exchangecode(const char* value, size_t size) {
+  
+  exchangecode_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:manager.contract_info.exchangecode)
+}
+inline ::std::string* contract_info::mutable_exchangecode() {
+  
+  // @@protoc_insertion_point(field_mutable:manager.contract_info.exchangecode)
+  return exchangecode_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* contract_info::release_exchangecode() {
+  // @@protoc_insertion_point(field_release:manager.contract_info.exchangecode)
+  
+  return exchangecode_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void contract_info::set_allocated_exchangecode(::std::string* exchangecode) {
+  if (exchangecode != NULL) {
+    
+  } else {
+    
+  }
+  exchangecode_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), exchangecode);
+  // @@protoc_insertion_point(field_set_allocated:manager.contract_info.exchangecode)
+}
+
+// string marketcode = 5;
+inline void contract_info::clear_marketcode() {
+  marketcode_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& contract_info::marketcode() const {
+  // @@protoc_insertion_point(field_get:manager.contract_info.marketcode)
+  return marketcode_.GetNoArena();
+}
+inline void contract_info::set_marketcode(const ::std::string& value) {
+  
+  marketcode_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:manager.contract_info.marketcode)
+}
+#if LANG_CXX11
+inline void contract_info::set_marketcode(::std::string&& value) {
+  
+  marketcode_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:manager.contract_info.marketcode)
+}
+#endif
+inline void contract_info::set_marketcode(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  marketcode_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:manager.contract_info.marketcode)
+}
+inline void contract_info::set_marketcode(const char* value, size_t size) {
+  
+  marketcode_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:manager.contract_info.marketcode)
+}
+inline ::std::string* contract_info::mutable_marketcode() {
+  
+  // @@protoc_insertion_point(field_mutable:manager.contract_info.marketcode)
+  return marketcode_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* contract_info::release_marketcode() {
+  // @@protoc_insertion_point(field_release:manager.contract_info.marketcode)
+  
+  return marketcode_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void contract_info::set_allocated_marketcode(::std::string* marketcode) {
+  if (marketcode != NULL) {
+    
+  } else {
+    
+  }
+  marketcode_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), marketcode);
+  // @@protoc_insertion_point(field_set_allocated:manager.contract_info.marketcode)
+}
+
+// string createdate = 6;
+inline void contract_info::clear_createdate() {
+  createdate_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& contract_info::createdate() const {
+  // @@protoc_insertion_point(field_get:manager.contract_info.createdate)
+  return createdate_.GetNoArena();
+}
+inline void contract_info::set_createdate(const ::std::string& value) {
+  
+  createdate_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:manager.contract_info.createdate)
+}
+#if LANG_CXX11
+inline void contract_info::set_createdate(::std::string&& value) {
+  
+  createdate_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:manager.contract_info.createdate)
+}
+#endif
+inline void contract_info::set_createdate(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  createdate_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:manager.contract_info.createdate)
+}
+inline void contract_info::set_createdate(const char* value, size_t size) {
+  
+  createdate_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:manager.contract_info.createdate)
+}
+inline ::std::string* contract_info::mutable_createdate() {
+  
+  // @@protoc_insertion_point(field_mutable:manager.contract_info.createdate)
+  return createdate_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* contract_info::release_createdate() {
+  // @@protoc_insertion_point(field_release:manager.contract_info.createdate)
+  
+  return createdate_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void contract_info::set_allocated_createdate(::std::string* createdate) {
+  if (createdate != NULL) {
+    
+  } else {
+    
+  }
+  createdate_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), createdate);
+  // @@protoc_insertion_point(field_set_allocated:manager.contract_info.createdate)
+}
+
+// string opendate = 7;
+inline void contract_info::clear_opendate() {
+  opendate_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& contract_info::opendate() const {
+  // @@protoc_insertion_point(field_get:manager.contract_info.opendate)
+  return opendate_.GetNoArena();
+}
+inline void contract_info::set_opendate(const ::std::string& value) {
+  
+  opendate_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:manager.contract_info.opendate)
+}
+#if LANG_CXX11
+inline void contract_info::set_opendate(::std::string&& value) {
+  
+  opendate_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:manager.contract_info.opendate)
+}
+#endif
+inline void contract_info::set_opendate(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  opendate_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:manager.contract_info.opendate)
+}
+inline void contract_info::set_opendate(const char* value, size_t size) {
+  
+  opendate_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:manager.contract_info.opendate)
+}
+inline ::std::string* contract_info::mutable_opendate() {
+  
+  // @@protoc_insertion_point(field_mutable:manager.contract_info.opendate)
+  return opendate_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* contract_info::release_opendate() {
+  // @@protoc_insertion_point(field_release:manager.contract_info.opendate)
+  
+  return opendate_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void contract_info::set_allocated_opendate(::std::string* opendate) {
+  if (opendate != NULL) {
+    
+  } else {
+    
+  }
+  opendate_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), opendate);
+  // @@protoc_insertion_point(field_set_allocated:manager.contract_info.opendate)
+}
+
+// string expiredate = 8;
+inline void contract_info::clear_expiredate() {
+  expiredate_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& contract_info::expiredate() const {
+  // @@protoc_insertion_point(field_get:manager.contract_info.expiredate)
+  return expiredate_.GetNoArena();
+}
+inline void contract_info::set_expiredate(const ::std::string& value) {
+  
+  expiredate_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:manager.contract_info.expiredate)
+}
+#if LANG_CXX11
+inline void contract_info::set_expiredate(::std::string&& value) {
+  
+  expiredate_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:manager.contract_info.expiredate)
+}
+#endif
+inline void contract_info::set_expiredate(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  expiredate_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:manager.contract_info.expiredate)
+}
+inline void contract_info::set_expiredate(const char* value, size_t size) {
+  
+  expiredate_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:manager.contract_info.expiredate)
+}
+inline ::std::string* contract_info::mutable_expiredate() {
+  
+  // @@protoc_insertion_point(field_mutable:manager.contract_info.expiredate)
+  return expiredate_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* contract_info::release_expiredate() {
+  // @@protoc_insertion_point(field_release:manager.contract_info.expiredate)
+  
+  return expiredate_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void contract_info::set_allocated_expiredate(::std::string* expiredate) {
+  if (expiredate != NULL) {
+    
+  } else {
+    
+  }
+  expiredate_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), expiredate);
+  // @@protoc_insertion_point(field_set_allocated:manager.contract_info.expiredate)
+}
+
+// int32 multiplier = 9;
+inline void contract_info::clear_multiplier() {
+  multiplier_ = 0;
+}
+inline ::google::protobuf::int32 contract_info::multiplier() const {
+  // @@protoc_insertion_point(field_get:manager.contract_info.multiplier)
+  return multiplier_;
+}
+inline void contract_info::set_multiplier(::google::protobuf::int32 value) {
+  
+  multiplier_ = value;
+  // @@protoc_insertion_point(field_set:manager.contract_info.multiplier)
+}
+
+// double pricetick = 10;
+inline void contract_info::clear_pricetick() {
+  pricetick_ = 0;
+}
+inline double contract_info::pricetick() const {
+  // @@protoc_insertion_point(field_get:manager.contract_info.pricetick)
+  return pricetick_;
+}
+inline void contract_info::set_pricetick(double value) {
+  
+  pricetick_ = value;
+  // @@protoc_insertion_point(field_set:manager.contract_info.pricetick)
+}
+
+// string contractname = 11;
+inline void contract_info::clear_contractname() {
+  contractname_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& contract_info::contractname() const {
+  // @@protoc_insertion_point(field_get:manager.contract_info.contractname)
+  return contractname_.GetNoArena();
+}
+inline void contract_info::set_contractname(const ::std::string& value) {
+  
+  contractname_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:manager.contract_info.contractname)
+}
+#if LANG_CXX11
+inline void contract_info::set_contractname(::std::string&& value) {
+  
+  contractname_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:manager.contract_info.contractname)
+}
+#endif
+inline void contract_info::set_contractname(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  contractname_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:manager.contract_info.contractname)
+}
+inline void contract_info::set_contractname(const char* value, size_t size) {
+  
+  contractname_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:manager.contract_info.contractname)
+}
+inline ::std::string* contract_info::mutable_contractname() {
+  
+  // @@protoc_insertion_point(field_mutable:manager.contract_info.contractname)
+  return contractname_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* contract_info::release_contractname() {
+  // @@protoc_insertion_point(field_release:manager.contract_info.contractname)
+  
+  return contractname_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void contract_info::set_allocated_contractname(::std::string* contractname) {
+  if (contractname != NULL) {
+    
+  } else {
+    
+  }
+  contractname_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), contractname);
+  // @@protoc_insertion_point(field_set_allocated:manager.contract_info.contractname)
+}
+
+// string delivbegindate = 12;
+inline void contract_info::clear_delivbegindate() {
+  delivbegindate_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& contract_info::delivbegindate() const {
+  // @@protoc_insertion_point(field_get:manager.contract_info.delivbegindate)
+  return delivbegindate_.GetNoArena();
+}
+inline void contract_info::set_delivbegindate(const ::std::string& value) {
+  
+  delivbegindate_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:manager.contract_info.delivbegindate)
+}
+#if LANG_CXX11
+inline void contract_info::set_delivbegindate(::std::string&& value) {
+  
+  delivbegindate_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:manager.contract_info.delivbegindate)
+}
+#endif
+inline void contract_info::set_delivbegindate(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  delivbegindate_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:manager.contract_info.delivbegindate)
+}
+inline void contract_info::set_delivbegindate(const char* value, size_t size) {
+  
+  delivbegindate_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:manager.contract_info.delivbegindate)
+}
+inline ::std::string* contract_info::mutable_delivbegindate() {
+  
+  // @@protoc_insertion_point(field_mutable:manager.contract_info.delivbegindate)
+  return delivbegindate_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* contract_info::release_delivbegindate() {
+  // @@protoc_insertion_point(field_release:manager.contract_info.delivbegindate)
+  
+  return delivbegindate_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void contract_info::set_allocated_delivbegindate(::std::string* delivbegindate) {
+  if (delivbegindate != NULL) {
+    
+  } else {
+    
+  }
+  delivbegindate_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), delivbegindate);
+  // @@protoc_insertion_point(field_set_allocated:manager.contract_info.delivbegindate)
+}
+
+// string delivenddate = 13;
+inline void contract_info::clear_delivenddate() {
+  delivenddate_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& contract_info::delivenddate() const {
+  // @@protoc_insertion_point(field_get:manager.contract_info.delivenddate)
+  return delivenddate_.GetNoArena();
+}
+inline void contract_info::set_delivenddate(const ::std::string& value) {
+  
+  delivenddate_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:manager.contract_info.delivenddate)
+}
+#if LANG_CXX11
+inline void contract_info::set_delivenddate(::std::string&& value) {
+  
+  delivenddate_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:manager.contract_info.delivenddate)
+}
+#endif
+inline void contract_info::set_delivenddate(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  delivenddate_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:manager.contract_info.delivenddate)
+}
+inline void contract_info::set_delivenddate(const char* value, size_t size) {
+  
+  delivenddate_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:manager.contract_info.delivenddate)
+}
+inline ::std::string* contract_info::mutable_delivenddate() {
+  
+  // @@protoc_insertion_point(field_mutable:manager.contract_info.delivenddate)
+  return delivenddate_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* contract_info::release_delivenddate() {
+  // @@protoc_insertion_point(field_release:manager.contract_info.delivenddate)
+  
+  return delivenddate_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void contract_info::set_allocated_delivenddate(::std::string* delivenddate) {
+  if (delivenddate != NULL) {
+    
+  } else {
+    
+  }
+  delivenddate_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), delivenddate);
+  // @@protoc_insertion_point(field_set_allocated:manager.contract_info.delivenddate)
+}
+
+// string excontractname = 14;
+inline void contract_info::clear_excontractname() {
+  excontractname_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& contract_info::excontractname() const {
+  // @@protoc_insertion_point(field_get:manager.contract_info.excontractname)
+  return excontractname_.GetNoArena();
+}
+inline void contract_info::set_excontractname(const ::std::string& value) {
+  
+  excontractname_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:manager.contract_info.excontractname)
+}
+#if LANG_CXX11
+inline void contract_info::set_excontractname(::std::string&& value) {
+  
+  excontractname_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:manager.contract_info.excontractname)
+}
+#endif
+inline void contract_info::set_excontractname(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  excontractname_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:manager.contract_info.excontractname)
+}
+inline void contract_info::set_excontractname(const char* value, size_t size) {
+  
+  excontractname_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:manager.contract_info.excontractname)
+}
+inline ::std::string* contract_info::mutable_excontractname() {
+  
+  // @@protoc_insertion_point(field_mutable:manager.contract_info.excontractname)
+  return excontractname_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* contract_info::release_excontractname() {
+  // @@protoc_insertion_point(field_release:manager.contract_info.excontractname)
+  
+  return excontractname_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void contract_info::set_allocated_excontractname(::std::string* excontractname) {
+  if (excontractname != NULL) {
+    
+  } else {
+    
+  }
+  excontractname_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), excontractname);
+  // @@protoc_insertion_point(field_set_allocated:manager.contract_info.excontractname)
+}
+
+// string exproductname = 15;
+inline void contract_info::clear_exproductname() {
+  exproductname_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& contract_info::exproductname() const {
+  // @@protoc_insertion_point(field_get:manager.contract_info.exproductname)
+  return exproductname_.GetNoArena();
+}
+inline void contract_info::set_exproductname(const ::std::string& value) {
+  
+  exproductname_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:manager.contract_info.exproductname)
+}
+#if LANG_CXX11
+inline void contract_info::set_exproductname(::std::string&& value) {
+  
+  exproductname_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:manager.contract_info.exproductname)
+}
+#endif
+inline void contract_info::set_exproductname(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  exproductname_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:manager.contract_info.exproductname)
+}
+inline void contract_info::set_exproductname(const char* value, size_t size) {
+  
+  exproductname_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:manager.contract_info.exproductname)
+}
+inline ::std::string* contract_info::mutable_exproductname() {
+  
+  // @@protoc_insertion_point(field_mutable:manager.contract_info.exproductname)
+  return exproductname_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* contract_info::release_exproductname() {
+  // @@protoc_insertion_point(field_release:manager.contract_info.exproductname)
+  
+  return exproductname_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void contract_info::set_allocated_exproductname(::std::string* exproductname) {
+  if (exproductname != NULL) {
+    
+  } else {
+    
+  }
+  exproductname_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), exproductname);
+  // @@protoc_insertion_point(field_set_allocated:manager.contract_info.exproductname)
+}
+
+// string ismrgndisc = 16;
+inline void contract_info::clear_ismrgndisc() {
+  ismrgndisc_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& contract_info::ismrgndisc() const {
+  // @@protoc_insertion_point(field_get:manager.contract_info.ismrgndisc)
+  return ismrgndisc_.GetNoArena();
+}
+inline void contract_info::set_ismrgndisc(const ::std::string& value) {
+  
+  ismrgndisc_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:manager.contract_info.ismrgndisc)
+}
+#if LANG_CXX11
+inline void contract_info::set_ismrgndisc(::std::string&& value) {
+  
+  ismrgndisc_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:manager.contract_info.ismrgndisc)
+}
+#endif
+inline void contract_info::set_ismrgndisc(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  ismrgndisc_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:manager.contract_info.ismrgndisc)
+}
+inline void contract_info::set_ismrgndisc(const char* value, size_t size) {
+  
+  ismrgndisc_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:manager.contract_info.ismrgndisc)
+}
+inline ::std::string* contract_info::mutable_ismrgndisc() {
+  
+  // @@protoc_insertion_point(field_mutable:manager.contract_info.ismrgndisc)
+  return ismrgndisc_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* contract_info::release_ismrgndisc() {
+  // @@protoc_insertion_point(field_release:manager.contract_info.ismrgndisc)
+  
+  return ismrgndisc_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void contract_info::set_allocated_ismrgndisc(::std::string* ismrgndisc) {
+  if (ismrgndisc != NULL) {
+    
+  } else {
+    
+  }
+  ismrgndisc_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ismrgndisc);
+  // @@protoc_insertion_point(field_set_allocated:manager.contract_info.ismrgndisc)
+}
+
+// string productclass = 17;
+inline void contract_info::clear_productclass() {
+  productclass_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& contract_info::productclass() const {
+  // @@protoc_insertion_point(field_get:manager.contract_info.productclass)
+  return productclass_.GetNoArena();
+}
+inline void contract_info::set_productclass(const ::std::string& value) {
+  
+  productclass_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:manager.contract_info.productclass)
+}
+#if LANG_CXX11
+inline void contract_info::set_productclass(::std::string&& value) {
+  
+  productclass_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:manager.contract_info.productclass)
+}
+#endif
+inline void contract_info::set_productclass(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  productclass_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:manager.contract_info.productclass)
+}
+inline void contract_info::set_productclass(const char* value, size_t size) {
+  
+  productclass_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:manager.contract_info.productclass)
+}
+inline ::std::string* contract_info::mutable_productclass() {
+  
+  // @@protoc_insertion_point(field_mutable:manager.contract_info.productclass)
+  return productclass_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* contract_info::release_productclass() {
+  // @@protoc_insertion_point(field_release:manager.contract_info.productclass)
+  
+  return productclass_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void contract_info::set_allocated_productclass(::std::string* productclass) {
+  if (productclass != NULL) {
+    
+  } else {
+    
+  }
+  productclass_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), productclass);
+  // @@protoc_insertion_point(field_set_allocated:manager.contract_info.productclass)
+}
+
+// double baseprice = 18;
+inline void contract_info::clear_baseprice() {
+  baseprice_ = 0;
+}
+inline double contract_info::baseprice() const {
+  // @@protoc_insertion_point(field_get:manager.contract_info.baseprice)
+  return baseprice_;
+}
+inline void contract_info::set_baseprice(double value) {
+  
+  baseprice_ = value;
+  // @@protoc_insertion_point(field_set:manager.contract_info.baseprice)
+}
+
+// string optionstype = 19;
+inline void contract_info::clear_optionstype() {
+  optionstype_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& contract_info::optionstype() const {
+  // @@protoc_insertion_point(field_get:manager.contract_info.optionstype)
+  return optionstype_.GetNoArena();
+}
+inline void contract_info::set_optionstype(const ::std::string& value) {
+  
+  optionstype_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:manager.contract_info.optionstype)
+}
+#if LANG_CXX11
+inline void contract_info::set_optionstype(::std::string&& value) {
+  
+  optionstype_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:manager.contract_info.optionstype)
+}
+#endif
+inline void contract_info::set_optionstype(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  optionstype_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:manager.contract_info.optionstype)
+}
+inline void contract_info::set_optionstype(const char* value, size_t size) {
+  
+  optionstype_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:manager.contract_info.optionstype)
+}
+inline ::std::string* contract_info::mutable_optionstype() {
+  
+  // @@protoc_insertion_point(field_mutable:manager.contract_info.optionstype)
+  return optionstype_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* contract_info::release_optionstype() {
+  // @@protoc_insertion_point(field_release:manager.contract_info.optionstype)
+  
+  return optionstype_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void contract_info::set_allocated_optionstype(::std::string* optionstype) {
+  if (optionstype != NULL) {
+    
+  } else {
+    
+  }
+  optionstype_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), optionstype);
+  // @@protoc_insertion_point(field_set_allocated:manager.contract_info.optionstype)
+}
+
+// double strikeprice = 20;
+inline void contract_info::clear_strikeprice() {
+  strikeprice_ = 0;
+}
+inline double contract_info::strikeprice() const {
+  // @@protoc_insertion_point(field_get:manager.contract_info.strikeprice)
+  return strikeprice_;
+}
+inline void contract_info::set_strikeprice(double value) {
+  
+  strikeprice_ = value;
+  // @@protoc_insertion_point(field_set:manager.contract_info.strikeprice)
+}
+
+// string underlyinginstrid = 21;
+inline void contract_info::clear_underlyinginstrid() {
+  underlyinginstrid_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& contract_info::underlyinginstrid() const {
+  // @@protoc_insertion_point(field_get:manager.contract_info.underlyinginstrid)
+  return underlyinginstrid_.GetNoArena();
+}
+inline void contract_info::set_underlyinginstrid(const ::std::string& value) {
+  
+  underlyinginstrid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:manager.contract_info.underlyinginstrid)
+}
+#if LANG_CXX11
+inline void contract_info::set_underlyinginstrid(::std::string&& value) {
+  
+  underlyinginstrid_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:manager.contract_info.underlyinginstrid)
+}
+#endif
+inline void contract_info::set_underlyinginstrid(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  underlyinginstrid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:manager.contract_info.underlyinginstrid)
+}
+inline void contract_info::set_underlyinginstrid(const char* value, size_t size) {
+  
+  underlyinginstrid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:manager.contract_info.underlyinginstrid)
+}
+inline ::std::string* contract_info::mutable_underlyinginstrid() {
+  
+  // @@protoc_insertion_point(field_mutable:manager.contract_info.underlyinginstrid)
+  return underlyinginstrid_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* contract_info::release_underlyinginstrid() {
+  // @@protoc_insertion_point(field_release:manager.contract_info.underlyinginstrid)
+  
+  return underlyinginstrid_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void contract_info::set_allocated_underlyinginstrid(::std::string* underlyinginstrid) {
+  if (underlyinginstrid != NULL) {
+    
+  } else {
+    
+  }
+  underlyinginstrid_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), underlyinginstrid);
+  // @@protoc_insertion_point(field_set_allocated:manager.contract_info.underlyinginstrid)
+}
+
+// string strikemode = 22;
+inline void contract_info::clear_strikemode() {
+  strikemode_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& contract_info::strikemode() const {
+  // @@protoc_insertion_point(field_get:manager.contract_info.strikemode)
+  return strikemode_.GetNoArena();
+}
+inline void contract_info::set_strikemode(const ::std::string& value) {
+  
+  strikemode_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:manager.contract_info.strikemode)
+}
+#if LANG_CXX11
+inline void contract_info::set_strikemode(::std::string&& value) {
+  
+  strikemode_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:manager.contract_info.strikemode)
+}
+#endif
+inline void contract_info::set_strikemode(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  strikemode_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:manager.contract_info.strikemode)
+}
+inline void contract_info::set_strikemode(const char* value, size_t size) {
+  
+  strikemode_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:manager.contract_info.strikemode)
+}
+inline ::std::string* contract_info::mutable_strikemode() {
+  
+  // @@protoc_insertion_point(field_mutable:manager.contract_info.strikemode)
+  return strikemode_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* contract_info::release_strikemode() {
+  // @@protoc_insertion_point(field_release:manager.contract_info.strikemode)
+  
+  return strikemode_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void contract_info::set_allocated_strikemode(::std::string* strikemode) {
+  if (strikemode != NULL) {
+    
+  } else {
+    
+  }
+  strikemode_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), strikemode);
+  // @@protoc_insertion_point(field_set_allocated:manager.contract_info.strikemode)
+}
+
+// double underlyingmultiple = 23;
+inline void contract_info::clear_underlyingmultiple() {
+  underlyingmultiple_ = 0;
+}
+inline double contract_info::underlyingmultiple() const {
+  // @@protoc_insertion_point(field_get:manager.contract_info.underlyingmultiple)
+  return underlyingmultiple_;
+}
+inline void contract_info::set_underlyingmultiple(double value) {
+  
+  underlyingmultiple_ = value;
+  // @@protoc_insertion_point(field_set:manager.contract_info.underlyingmultiple)
+}
+
+// -------------------------------------------------------------------
+
+// rsp_contract
+
+// .manager.rsp_head_info header = 1;
+inline bool rsp_contract::has_header() const {
+  return this != internal_default_instance() && header_ != NULL;
+}
+inline void rsp_contract::clear_header() {
+  if (GetArenaNoVirtual() == NULL && header_ != NULL) delete header_;
+  header_ = NULL;
+}
+inline const ::manager::rsp_head_info& rsp_contract::header() const {
+  const ::manager::rsp_head_info* p = header_;
+  // @@protoc_insertion_point(field_get:manager.rsp_contract.header)
+  return p != NULL ? *p : *reinterpret_cast<const ::manager::rsp_head_info*>(
+      &::manager::_rsp_head_info_default_instance_);
+}
+inline ::manager::rsp_head_info* rsp_contract::mutable_header() {
+  
+  if (header_ == NULL) {
+    header_ = new ::manager::rsp_head_info;
+  }
+  // @@protoc_insertion_point(field_mutable:manager.rsp_contract.header)
+  return header_;
+}
+inline ::manager::rsp_head_info* rsp_contract::release_header() {
+  // @@protoc_insertion_point(field_release:manager.rsp_contract.header)
+  
+  ::manager::rsp_head_info* temp = header_;
+  header_ = NULL;
+  return temp;
+}
+inline void rsp_contract::set_allocated_header(::manager::rsp_head_info* header) {
+  delete header_;
+  header_ = header;
+  if (header) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_set_allocated:manager.rsp_contract.header)
+}
+
+// repeated .manager.contract_info infos = 2;
+inline int rsp_contract::infos_size() const {
+  return infos_.size();
+}
+inline void rsp_contract::clear_infos() {
+  infos_.Clear();
+}
+inline const ::manager::contract_info& rsp_contract::infos(int index) const {
+  // @@protoc_insertion_point(field_get:manager.rsp_contract.infos)
+  return infos_.Get(index);
+}
+inline ::manager::contract_info* rsp_contract::mutable_infos(int index) {
+  // @@protoc_insertion_point(field_mutable:manager.rsp_contract.infos)
+  return infos_.Mutable(index);
+}
+inline ::manager::contract_info* rsp_contract::add_infos() {
+  // @@protoc_insertion_point(field_add:manager.rsp_contract.infos)
+  return infos_.Add();
+}
+inline ::google::protobuf::RepeatedPtrField< ::manager::contract_info >*
+rsp_contract::mutable_infos() {
+  // @@protoc_insertion_point(field_mutable_list:manager.rsp_contract.infos)
+  return &infos_;
+}
+inline const ::google::protobuf::RepeatedPtrField< ::manager::contract_info >&
+rsp_contract::infos() const {
+  // @@protoc_insertion_point(field_list:manager.rsp_contract.infos)
+  return infos_;
+}
+
+// -------------------------------------------------------------------
+
+// req_investor_info
+
+// int32 requestid = 1;
+inline void req_investor_info::clear_requestid() {
+  requestid_ = 0;
+}
+inline ::google::protobuf::int32 req_investor_info::requestid() const {
+  // @@protoc_insertion_point(field_get:manager.req_investor_info.requestid)
+  return requestid_;
+}
+inline void req_investor_info::set_requestid(::google::protobuf::int32 value) {
+  
+  requestid_ = value;
+  // @@protoc_insertion_point(field_set:manager.req_investor_info.requestid)
+}
+
+// repeated string investor = 2;
+inline int req_investor_info::investor_size() const {
+  return investor_.size();
+}
+inline void req_investor_info::clear_investor() {
+  investor_.Clear();
+}
+inline const ::std::string& req_investor_info::investor(int index) const {
+  // @@protoc_insertion_point(field_get:manager.req_investor_info.investor)
+  return investor_.Get(index);
+}
+inline ::std::string* req_investor_info::mutable_investor(int index) {
+  // @@protoc_insertion_point(field_mutable:manager.req_investor_info.investor)
+  return investor_.Mutable(index);
+}
+inline void req_investor_info::set_investor(int index, const ::std::string& value) {
+  // @@protoc_insertion_point(field_set:manager.req_investor_info.investor)
+  investor_.Mutable(index)->assign(value);
+}
+#if LANG_CXX11
+inline void req_investor_info::set_investor(int index, ::std::string&& value) {
+  // @@protoc_insertion_point(field_set:manager.req_investor_info.investor)
+  investor_.Mutable(index)->assign(std::move(value));
+}
+#endif
+inline void req_investor_info::set_investor(int index, const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  investor_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set_char:manager.req_investor_info.investor)
+}
+inline void req_investor_info::set_investor(int index, const char* value, size_t size) {
+  investor_.Mutable(index)->assign(
+    reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:manager.req_investor_info.investor)
+}
+inline ::std::string* req_investor_info::add_investor() {
+  // @@protoc_insertion_point(field_add_mutable:manager.req_investor_info.investor)
+  return investor_.Add();
+}
+inline void req_investor_info::add_investor(const ::std::string& value) {
+  investor_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add:manager.req_investor_info.investor)
+}
+#if LANG_CXX11
+inline void req_investor_info::add_investor(::std::string&& value) {
+  investor_.Add(std::move(value));
+  // @@protoc_insertion_point(field_add:manager.req_investor_info.investor)
+}
+#endif
+inline void req_investor_info::add_investor(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  investor_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add_char:manager.req_investor_info.investor)
+}
+inline void req_investor_info::add_investor(const char* value, size_t size) {
+  investor_.Add()->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_add_pointer:manager.req_investor_info.investor)
+}
+inline const ::google::protobuf::RepeatedPtrField< ::std::string>&
+req_investor_info::investor() const {
+  // @@protoc_insertion_point(field_list:manager.req_investor_info.investor)
+  return investor_;
+}
+inline ::google::protobuf::RepeatedPtrField< ::std::string>*
+req_investor_info::mutable_investor() {
+  // @@protoc_insertion_point(field_mutable_list:manager.req_investor_info.investor)
+  return &investor_;
+}
+
+// -------------------------------------------------------------------
+
+// investor_info
+
+// string investorid = 1;
+inline void investor_info::clear_investorid() {
+  investorid_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& investor_info::investorid() const {
+  // @@protoc_insertion_point(field_get:manager.investor_info.investorid)
+  return investorid_.GetNoArena();
+}
+inline void investor_info::set_investorid(const ::std::string& value) {
+  
+  investorid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:manager.investor_info.investorid)
+}
+#if LANG_CXX11
+inline void investor_info::set_investorid(::std::string&& value) {
+  
+  investorid_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:manager.investor_info.investorid)
+}
+#endif
+inline void investor_info::set_investorid(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  investorid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:manager.investor_info.investorid)
+}
+inline void investor_info::set_investorid(const char* value, size_t size) {
+  
+  investorid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:manager.investor_info.investorid)
+}
+inline ::std::string* investor_info::mutable_investorid() {
+  
+  // @@protoc_insertion_point(field_mutable:manager.investor_info.investorid)
+  return investorid_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* investor_info::release_investorid() {
+  // @@protoc_insertion_point(field_release:manager.investor_info.investorid)
+  
+  return investorid_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void investor_info::set_allocated_investorid(::std::string* investorid) {
+  if (investorid != NULL) {
+    
+  } else {
+    
+  }
+  investorid_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), investorid);
+  // @@protoc_insertion_point(field_set_allocated:manager.investor_info.investorid)
+}
+
+// string brokerid = 2;
+inline void investor_info::clear_brokerid() {
+  brokerid_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& investor_info::brokerid() const {
+  // @@protoc_insertion_point(field_get:manager.investor_info.brokerid)
+  return brokerid_.GetNoArena();
+}
+inline void investor_info::set_brokerid(const ::std::string& value) {
+  
+  brokerid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:manager.investor_info.brokerid)
+}
+#if LANG_CXX11
+inline void investor_info::set_brokerid(::std::string&& value) {
+  
+  brokerid_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:manager.investor_info.brokerid)
+}
+#endif
+inline void investor_info::set_brokerid(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  brokerid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:manager.investor_info.brokerid)
+}
+inline void investor_info::set_brokerid(const char* value, size_t size) {
+  
+  brokerid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:manager.investor_info.brokerid)
+}
+inline ::std::string* investor_info::mutable_brokerid() {
+  
+  // @@protoc_insertion_point(field_mutable:manager.investor_info.brokerid)
+  return brokerid_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* investor_info::release_brokerid() {
+  // @@protoc_insertion_point(field_release:manager.investor_info.brokerid)
+  
+  return brokerid_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void investor_info::set_allocated_brokerid(::std::string* brokerid) {
+  if (brokerid != NULL) {
+    
+  } else {
+    
+  }
+  brokerid_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), brokerid);
+  // @@protoc_insertion_point(field_set_allocated:manager.investor_info.brokerid)
+}
+
+// string investortype = 3;
+inline void investor_info::clear_investortype() {
+  investortype_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& investor_info::investortype() const {
+  // @@protoc_insertion_point(field_get:manager.investor_info.investortype)
+  return investortype_.GetNoArena();
+}
+inline void investor_info::set_investortype(const ::std::string& value) {
+  
+  investortype_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:manager.investor_info.investortype)
+}
+#if LANG_CXX11
+inline void investor_info::set_investortype(::std::string&& value) {
+  
+  investortype_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:manager.investor_info.investortype)
+}
+#endif
+inline void investor_info::set_investortype(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  investortype_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:manager.investor_info.investortype)
+}
+inline void investor_info::set_investortype(const char* value, size_t size) {
+  
+  investortype_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:manager.investor_info.investortype)
+}
+inline ::std::string* investor_info::mutable_investortype() {
+  
+  // @@protoc_insertion_point(field_mutable:manager.investor_info.investortype)
+  return investortype_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* investor_info::release_investortype() {
+  // @@protoc_insertion_point(field_release:manager.investor_info.investortype)
+  
+  return investortype_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void investor_info::set_allocated_investortype(::std::string* investortype) {
+  if (investortype != NULL) {
+    
+  } else {
+    
+  }
+  investortype_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), investortype);
+  // @@protoc_insertion_point(field_set_allocated:manager.investor_info.investortype)
+}
+
+// string investorname = 4;
+inline void investor_info::clear_investorname() {
+  investorname_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& investor_info::investorname() const {
+  // @@protoc_insertion_point(field_get:manager.investor_info.investorname)
+  return investorname_.GetNoArena();
+}
+inline void investor_info::set_investorname(const ::std::string& value) {
+  
+  investorname_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:manager.investor_info.investorname)
+}
+#if LANG_CXX11
+inline void investor_info::set_investorname(::std::string&& value) {
+  
+  investorname_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:manager.investor_info.investorname)
+}
+#endif
+inline void investor_info::set_investorname(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  investorname_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:manager.investor_info.investorname)
+}
+inline void investor_info::set_investorname(const char* value, size_t size) {
+  
+  investorname_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:manager.investor_info.investorname)
+}
+inline ::std::string* investor_info::mutable_investorname() {
+  
+  // @@protoc_insertion_point(field_mutable:manager.investor_info.investorname)
+  return investorname_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* investor_info::release_investorname() {
+  // @@protoc_insertion_point(field_release:manager.investor_info.investorname)
+  
+  return investorname_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void investor_info::set_allocated_investorname(::std::string* investorname) {
+  if (investorname != NULL) {
+    
+  } else {
+    
+  }
+  investorname_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), investorname);
+  // @@protoc_insertion_point(field_set_allocated:manager.investor_info.investorname)
+}
+
+// string identifiedcardtype = 5;
+inline void investor_info::clear_identifiedcardtype() {
+  identifiedcardtype_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& investor_info::identifiedcardtype() const {
+  // @@protoc_insertion_point(field_get:manager.investor_info.identifiedcardtype)
+  return identifiedcardtype_.GetNoArena();
+}
+inline void investor_info::set_identifiedcardtype(const ::std::string& value) {
+  
+  identifiedcardtype_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:manager.investor_info.identifiedcardtype)
+}
+#if LANG_CXX11
+inline void investor_info::set_identifiedcardtype(::std::string&& value) {
+  
+  identifiedcardtype_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:manager.investor_info.identifiedcardtype)
+}
+#endif
+inline void investor_info::set_identifiedcardtype(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  identifiedcardtype_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:manager.investor_info.identifiedcardtype)
+}
+inline void investor_info::set_identifiedcardtype(const char* value, size_t size) {
+  
+  identifiedcardtype_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:manager.investor_info.identifiedcardtype)
+}
+inline ::std::string* investor_info::mutable_identifiedcardtype() {
+  
+  // @@protoc_insertion_point(field_mutable:manager.investor_info.identifiedcardtype)
+  return identifiedcardtype_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* investor_info::release_identifiedcardtype() {
+  // @@protoc_insertion_point(field_release:manager.investor_info.identifiedcardtype)
+  
+  return identifiedcardtype_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void investor_info::set_allocated_identifiedcardtype(::std::string* identifiedcardtype) {
+  if (identifiedcardtype != NULL) {
+    
+  } else {
+    
+  }
+  identifiedcardtype_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), identifiedcardtype);
+  // @@protoc_insertion_point(field_set_allocated:manager.investor_info.identifiedcardtype)
+}
+
+// string identifiedcardno = 6;
+inline void investor_info::clear_identifiedcardno() {
+  identifiedcardno_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& investor_info::identifiedcardno() const {
+  // @@protoc_insertion_point(field_get:manager.investor_info.identifiedcardno)
+  return identifiedcardno_.GetNoArena();
+}
+inline void investor_info::set_identifiedcardno(const ::std::string& value) {
+  
+  identifiedcardno_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:manager.investor_info.identifiedcardno)
+}
+#if LANG_CXX11
+inline void investor_info::set_identifiedcardno(::std::string&& value) {
+  
+  identifiedcardno_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:manager.investor_info.identifiedcardno)
+}
+#endif
+inline void investor_info::set_identifiedcardno(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  identifiedcardno_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:manager.investor_info.identifiedcardno)
+}
+inline void investor_info::set_identifiedcardno(const char* value, size_t size) {
+  
+  identifiedcardno_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:manager.investor_info.identifiedcardno)
+}
+inline ::std::string* investor_info::mutable_identifiedcardno() {
+  
+  // @@protoc_insertion_point(field_mutable:manager.investor_info.identifiedcardno)
+  return identifiedcardno_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* investor_info::release_identifiedcardno() {
+  // @@protoc_insertion_point(field_release:manager.investor_info.identifiedcardno)
+  
+  return identifiedcardno_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void investor_info::set_allocated_identifiedcardno(::std::string* identifiedcardno) {
+  if (identifiedcardno != NULL) {
+    
+  } else {
+    
+  }
+  identifiedcardno_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), identifiedcardno);
+  // @@protoc_insertion_point(field_set_allocated:manager.investor_info.identifiedcardno)
+}
+
+// string country = 7;
+inline void investor_info::clear_country() {
+  country_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& investor_info::country() const {
+  // @@protoc_insertion_point(field_get:manager.investor_info.country)
+  return country_.GetNoArena();
+}
+inline void investor_info::set_country(const ::std::string& value) {
+  
+  country_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:manager.investor_info.country)
+}
+#if LANG_CXX11
+inline void investor_info::set_country(::std::string&& value) {
+  
+  country_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:manager.investor_info.country)
+}
+#endif
+inline void investor_info::set_country(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  country_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:manager.investor_info.country)
+}
+inline void investor_info::set_country(const char* value, size_t size) {
+  
+  country_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:manager.investor_info.country)
+}
+inline ::std::string* investor_info::mutable_country() {
+  
+  // @@protoc_insertion_point(field_mutable:manager.investor_info.country)
+  return country_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* investor_info::release_country() {
+  // @@protoc_insertion_point(field_release:manager.investor_info.country)
+  
+  return country_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void investor_info::set_allocated_country(::std::string* country) {
+  if (country != NULL) {
+    
+  } else {
+    
+  }
+  country_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), country);
+  // @@protoc_insertion_point(field_set_allocated:manager.investor_info.country)
+}
+
+// string province = 8;
+inline void investor_info::clear_province() {
+  province_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& investor_info::province() const {
+  // @@protoc_insertion_point(field_get:manager.investor_info.province)
+  return province_.GetNoArena();
+}
+inline void investor_info::set_province(const ::std::string& value) {
+  
+  province_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:manager.investor_info.province)
+}
+#if LANG_CXX11
+inline void investor_info::set_province(::std::string&& value) {
+  
+  province_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:manager.investor_info.province)
+}
+#endif
+inline void investor_info::set_province(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  province_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:manager.investor_info.province)
+}
+inline void investor_info::set_province(const char* value, size_t size) {
+  
+  province_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:manager.investor_info.province)
+}
+inline ::std::string* investor_info::mutable_province() {
+  
+  // @@protoc_insertion_point(field_mutable:manager.investor_info.province)
+  return province_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* investor_info::release_province() {
+  // @@protoc_insertion_point(field_release:manager.investor_info.province)
+  
+  return province_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void investor_info::set_allocated_province(::std::string* province) {
+  if (province != NULL) {
+    
+  } else {
+    
+  }
+  province_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), province);
+  // @@protoc_insertion_point(field_set_allocated:manager.investor_info.province)
+}
+
+// string city = 9;
+inline void investor_info::clear_city() {
+  city_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& investor_info::city() const {
+  // @@protoc_insertion_point(field_get:manager.investor_info.city)
+  return city_.GetNoArena();
+}
+inline void investor_info::set_city(const ::std::string& value) {
+  
+  city_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:manager.investor_info.city)
+}
+#if LANG_CXX11
+inline void investor_info::set_city(::std::string&& value) {
+  
+  city_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:manager.investor_info.city)
+}
+#endif
+inline void investor_info::set_city(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  city_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:manager.investor_info.city)
+}
+inline void investor_info::set_city(const char* value, size_t size) {
+  
+  city_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:manager.investor_info.city)
+}
+inline ::std::string* investor_info::mutable_city() {
+  
+  // @@protoc_insertion_point(field_mutable:manager.investor_info.city)
+  return city_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* investor_info::release_city() {
+  // @@protoc_insertion_point(field_release:manager.investor_info.city)
+  
+  return city_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void investor_info::set_allocated_city(::std::string* city) {
+  if (city != NULL) {
+    
+  } else {
+    
+  }
+  city_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), city);
+  // @@protoc_insertion_point(field_set_allocated:manager.investor_info.city)
+}
+
+// string birthday = 10;
+inline void investor_info::clear_birthday() {
+  birthday_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& investor_info::birthday() const {
+  // @@protoc_insertion_point(field_get:manager.investor_info.birthday)
+  return birthday_.GetNoArena();
+}
+inline void investor_info::set_birthday(const ::std::string& value) {
+  
+  birthday_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:manager.investor_info.birthday)
+}
+#if LANG_CXX11
+inline void investor_info::set_birthday(::std::string&& value) {
+  
+  birthday_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:manager.investor_info.birthday)
+}
+#endif
+inline void investor_info::set_birthday(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  birthday_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:manager.investor_info.birthday)
+}
+inline void investor_info::set_birthday(const char* value, size_t size) {
+  
+  birthday_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:manager.investor_info.birthday)
+}
+inline ::std::string* investor_info::mutable_birthday() {
+  
+  // @@protoc_insertion_point(field_mutable:manager.investor_info.birthday)
+  return birthday_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* investor_info::release_birthday() {
+  // @@protoc_insertion_point(field_release:manager.investor_info.birthday)
+  
+  return birthday_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void investor_info::set_allocated_birthday(::std::string* birthday) {
+  if (birthday != NULL) {
+    
+  } else {
+    
+  }
+  birthday_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), birthday);
+  // @@protoc_insertion_point(field_set_allocated:manager.investor_info.birthday)
+}
+
+// string sex = 11;
+inline void investor_info::clear_sex() {
+  sex_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& investor_info::sex() const {
+  // @@protoc_insertion_point(field_get:manager.investor_info.sex)
+  return sex_.GetNoArena();
+}
+inline void investor_info::set_sex(const ::std::string& value) {
+  
+  sex_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:manager.investor_info.sex)
+}
+#if LANG_CXX11
+inline void investor_info::set_sex(::std::string&& value) {
+  
+  sex_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:manager.investor_info.sex)
+}
+#endif
+inline void investor_info::set_sex(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  sex_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:manager.investor_info.sex)
+}
+inline void investor_info::set_sex(const char* value, size_t size) {
+  
+  sex_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:manager.investor_info.sex)
+}
+inline ::std::string* investor_info::mutable_sex() {
+  
+  // @@protoc_insertion_point(field_mutable:manager.investor_info.sex)
+  return sex_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* investor_info::release_sex() {
+  // @@protoc_insertion_point(field_release:manager.investor_info.sex)
+  
+  return sex_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void investor_info::set_allocated_sex(::std::string* sex) {
+  if (sex != NULL) {
+    
+  } else {
+    
+  }
+  sex_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), sex);
+  // @@protoc_insertion_point(field_set_allocated:manager.investor_info.sex)
+}
+
+// string profession = 12;
+inline void investor_info::clear_profession() {
+  profession_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& investor_info::profession() const {
+  // @@protoc_insertion_point(field_get:manager.investor_info.profession)
+  return profession_.GetNoArena();
+}
+inline void investor_info::set_profession(const ::std::string& value) {
+  
+  profession_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:manager.investor_info.profession)
+}
+#if LANG_CXX11
+inline void investor_info::set_profession(::std::string&& value) {
+  
+  profession_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:manager.investor_info.profession)
+}
+#endif
+inline void investor_info::set_profession(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  profession_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:manager.investor_info.profession)
+}
+inline void investor_info::set_profession(const char* value, size_t size) {
+  
+  profession_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:manager.investor_info.profession)
+}
+inline ::std::string* investor_info::mutable_profession() {
+  
+  // @@protoc_insertion_point(field_mutable:manager.investor_info.profession)
+  return profession_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* investor_info::release_profession() {
+  // @@protoc_insertion_point(field_release:manager.investor_info.profession)
+  
+  return profession_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void investor_info::set_allocated_profession(::std::string* profession) {
+  if (profession != NULL) {
+    
+  } else {
+    
+  }
+  profession_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), profession);
+  // @@protoc_insertion_point(field_set_allocated:manager.investor_info.profession)
+}
+
+// string national = 13;
+inline void investor_info::clear_national() {
+  national_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& investor_info::national() const {
+  // @@protoc_insertion_point(field_get:manager.investor_info.national)
+  return national_.GetNoArena();
+}
+inline void investor_info::set_national(const ::std::string& value) {
+  
+  national_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:manager.investor_info.national)
+}
+#if LANG_CXX11
+inline void investor_info::set_national(::std::string&& value) {
+  
+  national_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:manager.investor_info.national)
+}
+#endif
+inline void investor_info::set_national(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  national_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:manager.investor_info.national)
+}
+inline void investor_info::set_national(const char* value, size_t size) {
+  
+  national_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:manager.investor_info.national)
+}
+inline ::std::string* investor_info::mutable_national() {
+  
+  // @@protoc_insertion_point(field_mutable:manager.investor_info.national)
+  return national_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* investor_info::release_national() {
+  // @@protoc_insertion_point(field_release:manager.investor_info.national)
+  
+  return national_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void investor_info::set_allocated_national(::std::string* national) {
+  if (national != NULL) {
+    
+  } else {
+    
+  }
+  national_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), national);
+  // @@protoc_insertion_point(field_set_allocated:manager.investor_info.national)
+}
+
+// double capital = 14;
+inline void investor_info::clear_capital() {
+  capital_ = 0;
+}
+inline double investor_info::capital() const {
+  // @@protoc_insertion_point(field_get:manager.investor_info.capital)
+  return capital_;
+}
+inline void investor_info::set_capital(double value) {
+  
+  capital_ = value;
+  // @@protoc_insertion_point(field_set:manager.investor_info.capital)
+}
+
+// string capitalcurrency = 15;
+inline void investor_info::clear_capitalcurrency() {
+  capitalcurrency_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& investor_info::capitalcurrency() const {
+  // @@protoc_insertion_point(field_get:manager.investor_info.capitalcurrency)
+  return capitalcurrency_.GetNoArena();
+}
+inline void investor_info::set_capitalcurrency(const ::std::string& value) {
+  
+  capitalcurrency_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:manager.investor_info.capitalcurrency)
+}
+#if LANG_CXX11
+inline void investor_info::set_capitalcurrency(::std::string&& value) {
+  
+  capitalcurrency_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:manager.investor_info.capitalcurrency)
+}
+#endif
+inline void investor_info::set_capitalcurrency(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  capitalcurrency_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:manager.investor_info.capitalcurrency)
+}
+inline void investor_info::set_capitalcurrency(const char* value, size_t size) {
+  
+  capitalcurrency_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:manager.investor_info.capitalcurrency)
+}
+inline ::std::string* investor_info::mutable_capitalcurrency() {
+  
+  // @@protoc_insertion_point(field_mutable:manager.investor_info.capitalcurrency)
+  return capitalcurrency_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* investor_info::release_capitalcurrency() {
+  // @@protoc_insertion_point(field_release:manager.investor_info.capitalcurrency)
+  
+  return capitalcurrency_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void investor_info::set_allocated_capitalcurrency(::std::string* capitalcurrency) {
+  if (capitalcurrency != NULL) {
+    
+  } else {
+    
+  }
+  capitalcurrency_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), capitalcurrency);
+  // @@protoc_insertion_point(field_set_allocated:manager.investor_info.capitalcurrency)
+}
+
+// string telephone = 16;
+inline void investor_info::clear_telephone() {
+  telephone_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& investor_info::telephone() const {
+  // @@protoc_insertion_point(field_get:manager.investor_info.telephone)
+  return telephone_.GetNoArena();
+}
+inline void investor_info::set_telephone(const ::std::string& value) {
+  
+  telephone_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:manager.investor_info.telephone)
+}
+#if LANG_CXX11
+inline void investor_info::set_telephone(::std::string&& value) {
+  
+  telephone_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:manager.investor_info.telephone)
+}
+#endif
+inline void investor_info::set_telephone(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  telephone_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:manager.investor_info.telephone)
+}
+inline void investor_info::set_telephone(const char* value, size_t size) {
+  
+  telephone_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:manager.investor_info.telephone)
+}
+inline ::std::string* investor_info::mutable_telephone() {
+  
+  // @@protoc_insertion_point(field_mutable:manager.investor_info.telephone)
+  return telephone_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* investor_info::release_telephone() {
+  // @@protoc_insertion_point(field_release:manager.investor_info.telephone)
+  
+  return telephone_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void investor_info::set_allocated_telephone(::std::string* telephone) {
+  if (telephone != NULL) {
+    
+  } else {
+    
+  }
+  telephone_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), telephone);
+  // @@protoc_insertion_point(field_set_allocated:manager.investor_info.telephone)
+}
+
+// string address = 17;
+inline void investor_info::clear_address() {
+  address_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& investor_info::address() const {
+  // @@protoc_insertion_point(field_get:manager.investor_info.address)
+  return address_.GetNoArena();
+}
+inline void investor_info::set_address(const ::std::string& value) {
+  
+  address_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:manager.investor_info.address)
+}
+#if LANG_CXX11
+inline void investor_info::set_address(::std::string&& value) {
+  
+  address_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:manager.investor_info.address)
+}
+#endif
+inline void investor_info::set_address(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  address_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:manager.investor_info.address)
+}
+inline void investor_info::set_address(const char* value, size_t size) {
+  
+  address_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:manager.investor_info.address)
+}
+inline ::std::string* investor_info::mutable_address() {
+  
+  // @@protoc_insertion_point(field_mutable:manager.investor_info.address)
+  return address_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* investor_info::release_address() {
+  // @@protoc_insertion_point(field_release:manager.investor_info.address)
+  
+  return address_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void investor_info::set_allocated_address(::std::string* address) {
+  if (address != NULL) {
+    
+  } else {
+    
+  }
+  address_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), address);
+  // @@protoc_insertion_point(field_set_allocated:manager.investor_info.address)
+}
+
+// string zipcode = 18;
+inline void investor_info::clear_zipcode() {
+  zipcode_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& investor_info::zipcode() const {
+  // @@protoc_insertion_point(field_get:manager.investor_info.zipcode)
+  return zipcode_.GetNoArena();
+}
+inline void investor_info::set_zipcode(const ::std::string& value) {
+  
+  zipcode_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:manager.investor_info.zipcode)
+}
+#if LANG_CXX11
+inline void investor_info::set_zipcode(::std::string&& value) {
+  
+  zipcode_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:manager.investor_info.zipcode)
+}
+#endif
+inline void investor_info::set_zipcode(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  zipcode_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:manager.investor_info.zipcode)
+}
+inline void investor_info::set_zipcode(const char* value, size_t size) {
+  
+  zipcode_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:manager.investor_info.zipcode)
+}
+inline ::std::string* investor_info::mutable_zipcode() {
+  
+  // @@protoc_insertion_point(field_mutable:manager.investor_info.zipcode)
+  return zipcode_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* investor_info::release_zipcode() {
+  // @@protoc_insertion_point(field_release:manager.investor_info.zipcode)
+  
+  return zipcode_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void investor_info::set_allocated_zipcode(::std::string* zipcode) {
+  if (zipcode != NULL) {
+    
+  } else {
+    
+  }
+  zipcode_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), zipcode);
+  // @@protoc_insertion_point(field_set_allocated:manager.investor_info.zipcode)
+}
+
+// string email = 19;
+inline void investor_info::clear_email() {
+  email_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& investor_info::email() const {
+  // @@protoc_insertion_point(field_get:manager.investor_info.email)
+  return email_.GetNoArena();
+}
+inline void investor_info::set_email(const ::std::string& value) {
+  
+  email_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:manager.investor_info.email)
+}
+#if LANG_CXX11
+inline void investor_info::set_email(::std::string&& value) {
+  
+  email_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:manager.investor_info.email)
+}
+#endif
+inline void investor_info::set_email(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  email_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:manager.investor_info.email)
+}
+inline void investor_info::set_email(const char* value, size_t size) {
+  
+  email_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:manager.investor_info.email)
+}
+inline ::std::string* investor_info::mutable_email() {
+  
+  // @@protoc_insertion_point(field_mutable:manager.investor_info.email)
+  return email_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* investor_info::release_email() {
+  // @@protoc_insertion_point(field_release:manager.investor_info.email)
+  
+  return email_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void investor_info::set_allocated_email(::std::string* email) {
+  if (email != NULL) {
+    
+  } else {
+    
+  }
+  email_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), email);
+  // @@protoc_insertion_point(field_set_allocated:manager.investor_info.email)
+}
+
+// string memo = 20;
+inline void investor_info::clear_memo() {
+  memo_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& investor_info::memo() const {
+  // @@protoc_insertion_point(field_get:manager.investor_info.memo)
+  return memo_.GetNoArena();
+}
+inline void investor_info::set_memo(const ::std::string& value) {
+  
+  memo_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:manager.investor_info.memo)
+}
+#if LANG_CXX11
+inline void investor_info::set_memo(::std::string&& value) {
+  
+  memo_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:manager.investor_info.memo)
+}
+#endif
+inline void investor_info::set_memo(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  memo_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:manager.investor_info.memo)
+}
+inline void investor_info::set_memo(const char* value, size_t size) {
+  
+  memo_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:manager.investor_info.memo)
+}
+inline ::std::string* investor_info::mutable_memo() {
+  
+  // @@protoc_insertion_point(field_mutable:manager.investor_info.memo)
+  return memo_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* investor_info::release_memo() {
+  // @@protoc_insertion_point(field_release:manager.investor_info.memo)
+  
+  return memo_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void investor_info::set_allocated_memo(::std::string* memo) {
+  if (memo != NULL) {
+    
+  } else {
+    
+  }
+  memo_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), memo);
+  // @@protoc_insertion_point(field_set_allocated:manager.investor_info.memo)
+}
+
+// string openinvestorname = 21;
+inline void investor_info::clear_openinvestorname() {
+  openinvestorname_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& investor_info::openinvestorname() const {
+  // @@protoc_insertion_point(field_get:manager.investor_info.openinvestorname)
+  return openinvestorname_.GetNoArena();
+}
+inline void investor_info::set_openinvestorname(const ::std::string& value) {
+  
+  openinvestorname_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:manager.investor_info.openinvestorname)
+}
+#if LANG_CXX11
+inline void investor_info::set_openinvestorname(::std::string&& value) {
+  
+  openinvestorname_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:manager.investor_info.openinvestorname)
+}
+#endif
+inline void investor_info::set_openinvestorname(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  openinvestorname_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:manager.investor_info.openinvestorname)
+}
+inline void investor_info::set_openinvestorname(const char* value, size_t size) {
+  
+  openinvestorname_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:manager.investor_info.openinvestorname)
+}
+inline ::std::string* investor_info::mutable_openinvestorname() {
+  
+  // @@protoc_insertion_point(field_mutable:manager.investor_info.openinvestorname)
+  return openinvestorname_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* investor_info::release_openinvestorname() {
+  // @@protoc_insertion_point(field_release:manager.investor_info.openinvestorname)
+  
+  return openinvestorname_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void investor_info::set_allocated_openinvestorname(::std::string* openinvestorname) {
+  if (openinvestorname != NULL) {
+    
+  } else {
+    
+  }
+  openinvestorname_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), openinvestorname);
+  // @@protoc_insertion_point(field_set_allocated:manager.investor_info.openinvestorname)
+}
+
+// string orderinvestorname = 22;
+inline void investor_info::clear_orderinvestorname() {
+  orderinvestorname_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& investor_info::orderinvestorname() const {
+  // @@protoc_insertion_point(field_get:manager.investor_info.orderinvestorname)
+  return orderinvestorname_.GetNoArena();
+}
+inline void investor_info::set_orderinvestorname(const ::std::string& value) {
+  
+  orderinvestorname_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:manager.investor_info.orderinvestorname)
+}
+#if LANG_CXX11
+inline void investor_info::set_orderinvestorname(::std::string&& value) {
+  
+  orderinvestorname_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:manager.investor_info.orderinvestorname)
+}
+#endif
+inline void investor_info::set_orderinvestorname(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  orderinvestorname_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:manager.investor_info.orderinvestorname)
+}
+inline void investor_info::set_orderinvestorname(const char* value, size_t size) {
+  
+  orderinvestorname_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:manager.investor_info.orderinvestorname)
+}
+inline ::std::string* investor_info::mutable_orderinvestorname() {
+  
+  // @@protoc_insertion_point(field_mutable:manager.investor_info.orderinvestorname)
+  return orderinvestorname_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* investor_info::release_orderinvestorname() {
+  // @@protoc_insertion_point(field_release:manager.investor_info.orderinvestorname)
+  
+  return orderinvestorname_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void investor_info::set_allocated_orderinvestorname(::std::string* orderinvestorname) {
+  if (orderinvestorname != NULL) {
+    
+  } else {
+    
+  }
+  orderinvestorname_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), orderinvestorname);
+  // @@protoc_insertion_point(field_set_allocated:manager.investor_info.orderinvestorname)
+}
+
+// string fundinvestorname = 23;
+inline void investor_info::clear_fundinvestorname() {
+  fundinvestorname_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& investor_info::fundinvestorname() const {
+  // @@protoc_insertion_point(field_get:manager.investor_info.fundinvestorname)
+  return fundinvestorname_.GetNoArena();
+}
+inline void investor_info::set_fundinvestorname(const ::std::string& value) {
+  
+  fundinvestorname_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:manager.investor_info.fundinvestorname)
+}
+#if LANG_CXX11
+inline void investor_info::set_fundinvestorname(::std::string&& value) {
+  
+  fundinvestorname_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:manager.investor_info.fundinvestorname)
+}
+#endif
+inline void investor_info::set_fundinvestorname(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  fundinvestorname_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:manager.investor_info.fundinvestorname)
+}
+inline void investor_info::set_fundinvestorname(const char* value, size_t size) {
+  
+  fundinvestorname_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:manager.investor_info.fundinvestorname)
+}
+inline ::std::string* investor_info::mutable_fundinvestorname() {
+  
+  // @@protoc_insertion_point(field_mutable:manager.investor_info.fundinvestorname)
+  return fundinvestorname_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* investor_info::release_fundinvestorname() {
+  // @@protoc_insertion_point(field_release:manager.investor_info.fundinvestorname)
+  
+  return fundinvestorname_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void investor_info::set_allocated_fundinvestorname(::std::string* fundinvestorname) {
+  if (fundinvestorname != NULL) {
+    
+  } else {
+    
+  }
+  fundinvestorname_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), fundinvestorname);
+  // @@protoc_insertion_point(field_set_allocated:manager.investor_info.fundinvestorname)
+}
+
+// string settleinvestorname = 24;
+inline void investor_info::clear_settleinvestorname() {
+  settleinvestorname_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& investor_info::settleinvestorname() const {
+  // @@protoc_insertion_point(field_get:manager.investor_info.settleinvestorname)
+  return settleinvestorname_.GetNoArena();
+}
+inline void investor_info::set_settleinvestorname(const ::std::string& value) {
+  
+  settleinvestorname_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:manager.investor_info.settleinvestorname)
+}
+#if LANG_CXX11
+inline void investor_info::set_settleinvestorname(::std::string&& value) {
+  
+  settleinvestorname_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:manager.investor_info.settleinvestorname)
+}
+#endif
+inline void investor_info::set_settleinvestorname(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  settleinvestorname_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:manager.investor_info.settleinvestorname)
+}
+inline void investor_info::set_settleinvestorname(const char* value, size_t size) {
+  
+  settleinvestorname_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:manager.investor_info.settleinvestorname)
+}
+inline ::std::string* investor_info::mutable_settleinvestorname() {
+  
+  // @@protoc_insertion_point(field_mutable:manager.investor_info.settleinvestorname)
+  return settleinvestorname_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* investor_info::release_settleinvestorname() {
+  // @@protoc_insertion_point(field_release:manager.investor_info.settleinvestorname)
+  
+  return settleinvestorname_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void investor_info::set_allocated_settleinvestorname(::std::string* settleinvestorname) {
+  if (settleinvestorname != NULL) {
+    
+  } else {
+    
+  }
+  settleinvestorname_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), settleinvestorname);
+  // @@protoc_insertion_point(field_set_allocated:manager.investor_info.settleinvestorname)
+}
+
+// int32 isactive = 25;
+inline void investor_info::clear_isactive() {
+  isactive_ = 0;
+}
+inline ::google::protobuf::int32 investor_info::isactive() const {
+  // @@protoc_insertion_point(field_get:manager.investor_info.isactive)
+  return isactive_;
+}
+inline void investor_info::set_isactive(::google::protobuf::int32 value) {
+  
+  isactive_ = value;
+  // @@protoc_insertion_point(field_set:manager.investor_info.isactive)
+}
+
+// string departmentid = 26;
+inline void investor_info::clear_departmentid() {
+  departmentid_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& investor_info::departmentid() const {
+  // @@protoc_insertion_point(field_get:manager.investor_info.departmentid)
+  return departmentid_.GetNoArena();
+}
+inline void investor_info::set_departmentid(const ::std::string& value) {
+  
+  departmentid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:manager.investor_info.departmentid)
+}
+#if LANG_CXX11
+inline void investor_info::set_departmentid(::std::string&& value) {
+  
+  departmentid_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:manager.investor_info.departmentid)
+}
+#endif
+inline void investor_info::set_departmentid(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  departmentid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:manager.investor_info.departmentid)
+}
+inline void investor_info::set_departmentid(const char* value, size_t size) {
+  
+  departmentid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:manager.investor_info.departmentid)
+}
+inline ::std::string* investor_info::mutable_departmentid() {
+  
+  // @@protoc_insertion_point(field_mutable:manager.investor_info.departmentid)
+  return departmentid_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* investor_info::release_departmentid() {
+  // @@protoc_insertion_point(field_release:manager.investor_info.departmentid)
+  
+  return departmentid_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void investor_info::set_allocated_departmentid(::std::string* departmentid) {
+  if (departmentid != NULL) {
+    
+  } else {
+    
+  }
+  departmentid_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), departmentid);
+  // @@protoc_insertion_point(field_set_allocated:manager.investor_info.departmentid)
+}
+
+// string investorfullname = 27;
+inline void investor_info::clear_investorfullname() {
+  investorfullname_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& investor_info::investorfullname() const {
+  // @@protoc_insertion_point(field_get:manager.investor_info.investorfullname)
+  return investorfullname_.GetNoArena();
+}
+inline void investor_info::set_investorfullname(const ::std::string& value) {
+  
+  investorfullname_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:manager.investor_info.investorfullname)
+}
+#if LANG_CXX11
+inline void investor_info::set_investorfullname(::std::string&& value) {
+  
+  investorfullname_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:manager.investor_info.investorfullname)
+}
+#endif
+inline void investor_info::set_investorfullname(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  investorfullname_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:manager.investor_info.investorfullname)
+}
+inline void investor_info::set_investorfullname(const char* value, size_t size) {
+  
+  investorfullname_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:manager.investor_info.investorfullname)
+}
+inline ::std::string* investor_info::mutable_investorfullname() {
+  
+  // @@protoc_insertion_point(field_mutable:manager.investor_info.investorfullname)
+  return investorfullname_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* investor_info::release_investorfullname() {
+  // @@protoc_insertion_point(field_release:manager.investor_info.investorfullname)
+  
+  return investorfullname_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void investor_info::set_allocated_investorfullname(::std::string* investorfullname) {
+  if (investorfullname != NULL) {
+    
+  } else {
+    
+  }
+  investorfullname_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), investorfullname);
+  // @@protoc_insertion_point(field_set_allocated:manager.investor_info.investorfullname)
+}
+
+// int32 isemail = 28;
+inline void investor_info::clear_isemail() {
+  isemail_ = 0;
+}
+inline ::google::protobuf::int32 investor_info::isemail() const {
+  // @@protoc_insertion_point(field_get:manager.investor_info.isemail)
+  return isemail_;
+}
+inline void investor_info::set_isemail(::google::protobuf::int32 value) {
+  
+  isemail_ = value;
+  // @@protoc_insertion_point(field_set:manager.investor_info.isemail)
+}
+
+// int32 issms = 29;
+inline void investor_info::clear_issms() {
+  issms_ = 0;
+}
+inline ::google::protobuf::int32 investor_info::issms() const {
+  // @@protoc_insertion_point(field_get:manager.investor_info.issms)
+  return issms_;
+}
+inline void investor_info::set_issms(::google::protobuf::int32 value) {
+  
+  issms_ = value;
+  // @@protoc_insertion_point(field_set:manager.investor_info.issms)
+}
+
+// int32 isusingotp = 30;
+inline void investor_info::clear_isusingotp() {
+  isusingotp_ = 0;
+}
+inline ::google::protobuf::int32 investor_info::isusingotp() const {
+  // @@protoc_insertion_point(field_get:manager.investor_info.isusingotp)
+  return isusingotp_;
+}
+inline void investor_info::set_isusingotp(::google::protobuf::int32 value) {
+  
+  isusingotp_ = value;
+  // @@protoc_insertion_point(field_set:manager.investor_info.isusingotp)
+}
+
+// string clientregion = 31;
+inline void investor_info::clear_clientregion() {
+  clientregion_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& investor_info::clientregion() const {
+  // @@protoc_insertion_point(field_get:manager.investor_info.clientregion)
+  return clientregion_.GetNoArena();
+}
+inline void investor_info::set_clientregion(const ::std::string& value) {
+  
+  clientregion_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:manager.investor_info.clientregion)
+}
+#if LANG_CXX11
+inline void investor_info::set_clientregion(::std::string&& value) {
+  
+  clientregion_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:manager.investor_info.clientregion)
+}
+#endif
+inline void investor_info::set_clientregion(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  clientregion_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:manager.investor_info.clientregion)
+}
+inline void investor_info::set_clientregion(const char* value, size_t size) {
+  
+  clientregion_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:manager.investor_info.clientregion)
+}
+inline ::std::string* investor_info::mutable_clientregion() {
+  
+  // @@protoc_insertion_point(field_mutable:manager.investor_info.clientregion)
+  return clientregion_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* investor_info::release_clientregion() {
+  // @@protoc_insertion_point(field_release:manager.investor_info.clientregion)
+  
+  return clientregion_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void investor_info::set_allocated_clientregion(::std::string* clientregion) {
+  if (clientregion != NULL) {
+    
+  } else {
+    
+  }
+  clientregion_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), clientregion);
+  // @@protoc_insertion_point(field_set_allocated:manager.investor_info.clientregion)
+}
+
+// -------------------------------------------------------------------
+
+// rsp_investor_info
+
+// .manager.rsp_head_info header = 1;
+inline bool rsp_investor_info::has_header() const {
+  return this != internal_default_instance() && header_ != NULL;
+}
+inline void rsp_investor_info::clear_header() {
+  if (GetArenaNoVirtual() == NULL && header_ != NULL) delete header_;
+  header_ = NULL;
+}
+inline const ::manager::rsp_head_info& rsp_investor_info::header() const {
+  const ::manager::rsp_head_info* p = header_;
+  // @@protoc_insertion_point(field_get:manager.rsp_investor_info.header)
+  return p != NULL ? *p : *reinterpret_cast<const ::manager::rsp_head_info*>(
+      &::manager::_rsp_head_info_default_instance_);
+}
+inline ::manager::rsp_head_info* rsp_investor_info::mutable_header() {
+  
+  if (header_ == NULL) {
+    header_ = new ::manager::rsp_head_info;
+  }
+  // @@protoc_insertion_point(field_mutable:manager.rsp_investor_info.header)
+  return header_;
+}
+inline ::manager::rsp_head_info* rsp_investor_info::release_header() {
+  // @@protoc_insertion_point(field_release:manager.rsp_investor_info.header)
+  
+  ::manager::rsp_head_info* temp = header_;
+  header_ = NULL;
+  return temp;
+}
+inline void rsp_investor_info::set_allocated_header(::manager::rsp_head_info* header) {
+  delete header_;
+  header_ = header;
+  if (header) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_set_allocated:manager.rsp_investor_info.header)
+}
+
+// repeated .manager.investor_info infos = 2;
+inline int rsp_investor_info::infos_size() const {
+  return infos_.size();
+}
+inline void rsp_investor_info::clear_infos() {
+  infos_.Clear();
+}
+inline const ::manager::investor_info& rsp_investor_info::infos(int index) const {
+  // @@protoc_insertion_point(field_get:manager.rsp_investor_info.infos)
+  return infos_.Get(index);
+}
+inline ::manager::investor_info* rsp_investor_info::mutable_infos(int index) {
+  // @@protoc_insertion_point(field_mutable:manager.rsp_investor_info.infos)
+  return infos_.Mutable(index);
+}
+inline ::manager::investor_info* rsp_investor_info::add_infos() {
+  // @@protoc_insertion_point(field_add:manager.rsp_investor_info.infos)
+  return infos_.Add();
+}
+inline ::google::protobuf::RepeatedPtrField< ::manager::investor_info >*
+rsp_investor_info::mutable_infos() {
+  // @@protoc_insertion_point(field_mutable_list:manager.rsp_investor_info.infos)
+  return &infos_;
+}
+inline const ::google::protobuf::RepeatedPtrField< ::manager::investor_info >&
+rsp_investor_info::infos() const {
+  // @@protoc_insertion_point(field_list:manager.rsp_investor_info.infos)
+  return infos_;
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
 #endif  // !PROTOBUF_INLINE_NOT_IN_HEADERS
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

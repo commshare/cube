@@ -67,8 +67,8 @@ void test_eco(int argc, char* argv[])
 void TestTimer(int argc, char* argv[])
 {
     alarm inst(9, 14, 0);
-    //TimerManager::get_timer_manager().Register(5000, test);
-    TimerManager::get_timer_manager().Register("11:11:00", test);
+    TimerManager::get_timer_manager().Register(5000, test);
+    TimerManager::get_timer_manager().Register("11:21:00", test);
     TimerManager::get_timer_manager().start();
     getchar();
     getchar();
@@ -79,7 +79,11 @@ int main(int argc, char* argv[])
     //simple test
     cout << "现在时间：" 
         << boost::posix_time::to_iso_string(boost::posix_time::microsec_clock::local_time()) << endl;
-
+	std::string time_point_ = "8:30:0";
+	boost::gregorian::date d1 = boost::gregorian::day_clock::local_day();
+	std::string ptime_str = boost::gregorian::to_iso_extended_string(d1) + ' ' + time_point_;
+	boost::posix_time::ptime p1 = boost::posix_time::time_from_string(ptime_str);
+	cout << boost::posix_time::to_iso_string(p1) << endl;
     int ch = '1';
     do{
         printf("the list: \n");

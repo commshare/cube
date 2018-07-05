@@ -33,8 +33,8 @@ struct transaction_additional
         memset(userdata_, 0x0, sizeof(userdata_));
     }
     short serialnumber_;
-    short hasnext_;
-    short totallength_;
+    int hasnext_;
+    int totallength_;
     char  userdata_[2];
 };
 #pragma pack()

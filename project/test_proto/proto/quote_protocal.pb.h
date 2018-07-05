@@ -31,6 +31,9 @@
 #include <google/protobuf/unknown_field_set.h>
 // @@protoc_insertion_point(includes)
 namespace risk {
+class ctp_depth_market_field;
+class ctp_depth_market_fieldDefaultTypeInternal;
+extern ctp_depth_market_fieldDefaultTypeInternal _ctp_depth_market_field_default_instance_;
 class quote_gateway_market_field;
 class quote_gateway_market_fieldDefaultTypeInternal;
 extern quote_gateway_market_fieldDefaultTypeInternal _quote_gateway_market_field_default_instance_;
@@ -511,6 +514,452 @@ class quote_gateway_market_field : public ::google::protobuf::Message /* @@proto
 };
 // -------------------------------------------------------------------
 
+class ctp_depth_market_field : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:risk.ctp_depth_market_field) */ {
+ public:
+  ctp_depth_market_field();
+  virtual ~ctp_depth_market_field();
+
+  ctp_depth_market_field(const ctp_depth_market_field& from);
+
+  inline ctp_depth_market_field& operator=(const ctp_depth_market_field& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  ctp_depth_market_field(ctp_depth_market_field&& from) noexcept
+    : ctp_depth_market_field() {
+    *this = ::std::move(from);
+  }
+
+  inline ctp_depth_market_field& operator=(ctp_depth_market_field&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const ctp_depth_market_field& default_instance();
+
+  static inline const ctp_depth_market_field* internal_default_instance() {
+    return reinterpret_cast<const ctp_depth_market_field*>(
+               &_ctp_depth_market_field_default_instance_);
+  }
+  static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
+    1;
+
+  void Swap(ctp_depth_market_field* other);
+  friend void swap(ctp_depth_market_field& a, ctp_depth_market_field& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline ctp_depth_market_field* New() const PROTOBUF_FINAL { return New(NULL); }
+
+  ctp_depth_market_field* New(::google::protobuf::Arena* arena) const PROTOBUF_FINAL;
+  void CopyFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void MergeFrom(const ::google::protobuf::Message& from) PROTOBUF_FINAL;
+  void CopyFrom(const ctp_depth_market_field& from);
+  void MergeFrom(const ctp_depth_market_field& from);
+  void Clear() PROTOBUF_FINAL;
+  bool IsInitialized() const PROTOBUF_FINAL;
+
+  size_t ByteSizeLong() const PROTOBUF_FINAL;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) PROTOBUF_FINAL;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const PROTOBUF_FINAL;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const PROTOBUF_FINAL;
+  int GetCachedSize() const PROTOBUF_FINAL { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const PROTOBUF_FINAL;
+  void InternalSwap(ctp_depth_market_field* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const PROTOBUF_FINAL;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // string TradingDay = 1;
+  void clear_tradingday();
+  static const int kTradingDayFieldNumber = 1;
+  const ::std::string& tradingday() const;
+  void set_tradingday(const ::std::string& value);
+  #if LANG_CXX11
+  void set_tradingday(::std::string&& value);
+  #endif
+  void set_tradingday(const char* value);
+  void set_tradingday(const char* value, size_t size);
+  ::std::string* mutable_tradingday();
+  ::std::string* release_tradingday();
+  void set_allocated_tradingday(::std::string* tradingday);
+
+  // string InstrumentID = 2;
+  void clear_instrumentid();
+  static const int kInstrumentIDFieldNumber = 2;
+  const ::std::string& instrumentid() const;
+  void set_instrumentid(const ::std::string& value);
+  #if LANG_CXX11
+  void set_instrumentid(::std::string&& value);
+  #endif
+  void set_instrumentid(const char* value);
+  void set_instrumentid(const char* value, size_t size);
+  ::std::string* mutable_instrumentid();
+  ::std::string* release_instrumentid();
+  void set_allocated_instrumentid(::std::string* instrumentid);
+
+  // string ExchangeID = 3;
+  void clear_exchangeid();
+  static const int kExchangeIDFieldNumber = 3;
+  const ::std::string& exchangeid() const;
+  void set_exchangeid(const ::std::string& value);
+  #if LANG_CXX11
+  void set_exchangeid(::std::string&& value);
+  #endif
+  void set_exchangeid(const char* value);
+  void set_exchangeid(const char* value, size_t size);
+  ::std::string* mutable_exchangeid();
+  ::std::string* release_exchangeid();
+  void set_allocated_exchangeid(::std::string* exchangeid);
+
+  // string ExchangeInstID = 4;
+  void clear_exchangeinstid();
+  static const int kExchangeInstIDFieldNumber = 4;
+  const ::std::string& exchangeinstid() const;
+  void set_exchangeinstid(const ::std::string& value);
+  #if LANG_CXX11
+  void set_exchangeinstid(::std::string&& value);
+  #endif
+  void set_exchangeinstid(const char* value);
+  void set_exchangeinstid(const char* value, size_t size);
+  ::std::string* mutable_exchangeinstid();
+  ::std::string* release_exchangeinstid();
+  void set_allocated_exchangeinstid(::std::string* exchangeinstid);
+
+  // string UpdateTime = 21;
+  void clear_updatetime();
+  static const int kUpdateTimeFieldNumber = 21;
+  const ::std::string& updatetime() const;
+  void set_updatetime(const ::std::string& value);
+  #if LANG_CXX11
+  void set_updatetime(::std::string&& value);
+  #endif
+  void set_updatetime(const char* value);
+  void set_updatetime(const char* value, size_t size);
+  ::std::string* mutable_updatetime();
+  ::std::string* release_updatetime();
+  void set_allocated_updatetime(::std::string* updatetime);
+
+  // string ActionDay = 44;
+  void clear_actionday();
+  static const int kActionDayFieldNumber = 44;
+  const ::std::string& actionday() const;
+  void set_actionday(const ::std::string& value);
+  #if LANG_CXX11
+  void set_actionday(::std::string&& value);
+  #endif
+  void set_actionday(const char* value);
+  void set_actionday(const char* value, size_t size);
+  ::std::string* mutable_actionday();
+  ::std::string* release_actionday();
+  void set_allocated_actionday(::std::string* actionday);
+
+  // double LastPrice = 5;
+  void clear_lastprice();
+  static const int kLastPriceFieldNumber = 5;
+  double lastprice() const;
+  void set_lastprice(double value);
+
+  // double PreSettlementPrice = 6;
+  void clear_presettlementprice();
+  static const int kPreSettlementPriceFieldNumber = 6;
+  double presettlementprice() const;
+  void set_presettlementprice(double value);
+
+  // double PreClosePrice = 7;
+  void clear_precloseprice();
+  static const int kPreClosePriceFieldNumber = 7;
+  double precloseprice() const;
+  void set_precloseprice(double value);
+
+  // double PreOpenInterest = 8;
+  void clear_preopeninterest();
+  static const int kPreOpenInterestFieldNumber = 8;
+  double preopeninterest() const;
+  void set_preopeninterest(double value);
+
+  // double OpenPrice = 9;
+  void clear_openprice();
+  static const int kOpenPriceFieldNumber = 9;
+  double openprice() const;
+  void set_openprice(double value);
+
+  // double HighestPrice = 10;
+  void clear_highestprice();
+  static const int kHighestPriceFieldNumber = 10;
+  double highestprice() const;
+  void set_highestprice(double value);
+
+  // double LowestPrice = 11;
+  void clear_lowestprice();
+  static const int kLowestPriceFieldNumber = 11;
+  double lowestprice() const;
+  void set_lowestprice(double value);
+
+  // double Turnover = 13;
+  void clear_turnover();
+  static const int kTurnoverFieldNumber = 13;
+  double turnover() const;
+  void set_turnover(double value);
+
+  // double OpenInterest = 14;
+  void clear_openinterest();
+  static const int kOpenInterestFieldNumber = 14;
+  double openinterest() const;
+  void set_openinterest(double value);
+
+  // double ClosePrice = 15;
+  void clear_closeprice();
+  static const int kClosePriceFieldNumber = 15;
+  double closeprice() const;
+  void set_closeprice(double value);
+
+  // double SettlementPrice = 16;
+  void clear_settlementprice();
+  static const int kSettlementPriceFieldNumber = 16;
+  double settlementprice() const;
+  void set_settlementprice(double value);
+
+  // double UpperLimitPrice = 17;
+  void clear_upperlimitprice();
+  static const int kUpperLimitPriceFieldNumber = 17;
+  double upperlimitprice() const;
+  void set_upperlimitprice(double value);
+
+  // int32 Volume = 12;
+  void clear_volume();
+  static const int kVolumeFieldNumber = 12;
+  ::google::protobuf::int32 volume() const;
+  void set_volume(::google::protobuf::int32 value);
+
+  // int32 UpdateMillisec = 22;
+  void clear_updatemillisec();
+  static const int kUpdateMillisecFieldNumber = 22;
+  ::google::protobuf::int32 updatemillisec() const;
+  void set_updatemillisec(::google::protobuf::int32 value);
+
+  // double LowerLimitPrice = 18;
+  void clear_lowerlimitprice();
+  static const int kLowerLimitPriceFieldNumber = 18;
+  double lowerlimitprice() const;
+  void set_lowerlimitprice(double value);
+
+  // double PreDelta = 19;
+  void clear_predelta();
+  static const int kPreDeltaFieldNumber = 19;
+  double predelta() const;
+  void set_predelta(double value);
+
+  // double CurrDelta = 20;
+  void clear_currdelta();
+  static const int kCurrDeltaFieldNumber = 20;
+  double currdelta() const;
+  void set_currdelta(double value);
+
+  // double BidPrice1 = 23;
+  void clear_bidprice1();
+  static const int kBidPrice1FieldNumber = 23;
+  double bidprice1() const;
+  void set_bidprice1(double value);
+
+  // double AskPrice1 = 25;
+  void clear_askprice1();
+  static const int kAskPrice1FieldNumber = 25;
+  double askprice1() const;
+  void set_askprice1(double value);
+
+  // int32 BidVolume1 = 24;
+  void clear_bidvolume1();
+  static const int kBidVolume1FieldNumber = 24;
+  ::google::protobuf::int32 bidvolume1() const;
+  void set_bidvolume1(::google::protobuf::int32 value);
+
+  // int32 AskVolume1 = 26;
+  void clear_askvolume1();
+  static const int kAskVolume1FieldNumber = 26;
+  ::google::protobuf::int32 askvolume1() const;
+  void set_askvolume1(::google::protobuf::int32 value);
+
+  // double BidPrice2 = 27;
+  void clear_bidprice2();
+  static const int kBidPrice2FieldNumber = 27;
+  double bidprice2() const;
+  void set_bidprice2(double value);
+
+  // double AskPrice2 = 29;
+  void clear_askprice2();
+  static const int kAskPrice2FieldNumber = 29;
+  double askprice2() const;
+  void set_askprice2(double value);
+
+  // int32 BidVolume2 = 28;
+  void clear_bidvolume2();
+  static const int kBidVolume2FieldNumber = 28;
+  ::google::protobuf::int32 bidvolume2() const;
+  void set_bidvolume2(::google::protobuf::int32 value);
+
+  // int32 AskVolume2 = 30;
+  void clear_askvolume2();
+  static const int kAskVolume2FieldNumber = 30;
+  ::google::protobuf::int32 askvolume2() const;
+  void set_askvolume2(::google::protobuf::int32 value);
+
+  // double BidPrice3 = 31;
+  void clear_bidprice3();
+  static const int kBidPrice3FieldNumber = 31;
+  double bidprice3() const;
+  void set_bidprice3(double value);
+
+  // double AskPrice3 = 33;
+  void clear_askprice3();
+  static const int kAskPrice3FieldNumber = 33;
+  double askprice3() const;
+  void set_askprice3(double value);
+
+  // int32 BidVolume3 = 32;
+  void clear_bidvolume3();
+  static const int kBidVolume3FieldNumber = 32;
+  ::google::protobuf::int32 bidvolume3() const;
+  void set_bidvolume3(::google::protobuf::int32 value);
+
+  // int32 AskVolume3 = 34;
+  void clear_askvolume3();
+  static const int kAskVolume3FieldNumber = 34;
+  ::google::protobuf::int32 askvolume3() const;
+  void set_askvolume3(::google::protobuf::int32 value);
+
+  // double BidPrice4 = 35;
+  void clear_bidprice4();
+  static const int kBidPrice4FieldNumber = 35;
+  double bidprice4() const;
+  void set_bidprice4(double value);
+
+  // double AskPrice4 = 37;
+  void clear_askprice4();
+  static const int kAskPrice4FieldNumber = 37;
+  double askprice4() const;
+  void set_askprice4(double value);
+
+  // int32 BidVolume4 = 36;
+  void clear_bidvolume4();
+  static const int kBidVolume4FieldNumber = 36;
+  ::google::protobuf::int32 bidvolume4() const;
+  void set_bidvolume4(::google::protobuf::int32 value);
+
+  // int32 AskVolume4 = 38;
+  void clear_askvolume4();
+  static const int kAskVolume4FieldNumber = 38;
+  ::google::protobuf::int32 askvolume4() const;
+  void set_askvolume4(::google::protobuf::int32 value);
+
+  // double BidPrice5 = 39;
+  void clear_bidprice5();
+  static const int kBidPrice5FieldNumber = 39;
+  double bidprice5() const;
+  void set_bidprice5(double value);
+
+  // double AskPrice5 = 41;
+  void clear_askprice5();
+  static const int kAskPrice5FieldNumber = 41;
+  double askprice5() const;
+  void set_askprice5(double value);
+
+  // int32 BidVolume5 = 40;
+  void clear_bidvolume5();
+  static const int kBidVolume5FieldNumber = 40;
+  ::google::protobuf::int32 bidvolume5() const;
+  void set_bidvolume5(::google::protobuf::int32 value);
+
+  // int32 AskVolume5 = 42;
+  void clear_askvolume5();
+  static const int kAskVolume5FieldNumber = 42;
+  ::google::protobuf::int32 askvolume5() const;
+  void set_askvolume5(::google::protobuf::int32 value);
+
+  // double AveragePrice = 43;
+  void clear_averageprice();
+  static const int kAveragePriceFieldNumber = 43;
+  double averageprice() const;
+  void set_averageprice(double value);
+
+  // @@protoc_insertion_point(class_scope:risk.ctp_depth_market_field)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr tradingday_;
+  ::google::protobuf::internal::ArenaStringPtr instrumentid_;
+  ::google::protobuf::internal::ArenaStringPtr exchangeid_;
+  ::google::protobuf::internal::ArenaStringPtr exchangeinstid_;
+  ::google::protobuf::internal::ArenaStringPtr updatetime_;
+  ::google::protobuf::internal::ArenaStringPtr actionday_;
+  double lastprice_;
+  double presettlementprice_;
+  double precloseprice_;
+  double preopeninterest_;
+  double openprice_;
+  double highestprice_;
+  double lowestprice_;
+  double turnover_;
+  double openinterest_;
+  double closeprice_;
+  double settlementprice_;
+  double upperlimitprice_;
+  ::google::protobuf::int32 volume_;
+  ::google::protobuf::int32 updatemillisec_;
+  double lowerlimitprice_;
+  double predelta_;
+  double currdelta_;
+  double bidprice1_;
+  double askprice1_;
+  ::google::protobuf::int32 bidvolume1_;
+  ::google::protobuf::int32 askvolume1_;
+  double bidprice2_;
+  double askprice2_;
+  ::google::protobuf::int32 bidvolume2_;
+  ::google::protobuf::int32 askvolume2_;
+  double bidprice3_;
+  double askprice3_;
+  ::google::protobuf::int32 bidvolume3_;
+  ::google::protobuf::int32 askvolume3_;
+  double bidprice4_;
+  double askprice4_;
+  ::google::protobuf::int32 bidvolume4_;
+  ::google::protobuf::int32 askvolume4_;
+  double bidprice5_;
+  double askprice5_;
+  ::google::protobuf::int32 bidvolume5_;
+  ::google::protobuf::int32 askvolume5_;
+  double averageprice_;
+  mutable int _cached_size_;
+  friend struct protobuf_quote_5fprotocal_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
 class req_quote_login : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:risk.req_quote_login) */ {
  public:
   req_quote_login();
@@ -545,7 +994,7 @@ class req_quote_login : public ::google::protobuf::Message /* @@protoc_insertion
                &_req_quote_login_default_instance_);
   }
   static PROTOBUF_CONSTEXPR int const kIndexInFileMessages =
-    1;
+    2;
 
   void Swap(req_quote_login* other);
   friend void swap(req_quote_login& a, req_quote_login& b) {
@@ -1507,6 +1956,860 @@ inline void quote_gateway_market_field::set_volumemultiple(::google::protobuf::i
 
 // -------------------------------------------------------------------
 
+// ctp_depth_market_field
+
+// string TradingDay = 1;
+inline void ctp_depth_market_field::clear_tradingday() {
+  tradingday_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& ctp_depth_market_field::tradingday() const {
+  // @@protoc_insertion_point(field_get:risk.ctp_depth_market_field.TradingDay)
+  return tradingday_.GetNoArena();
+}
+inline void ctp_depth_market_field::set_tradingday(const ::std::string& value) {
+  
+  tradingday_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:risk.ctp_depth_market_field.TradingDay)
+}
+#if LANG_CXX11
+inline void ctp_depth_market_field::set_tradingday(::std::string&& value) {
+  
+  tradingday_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:risk.ctp_depth_market_field.TradingDay)
+}
+#endif
+inline void ctp_depth_market_field::set_tradingday(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  tradingday_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:risk.ctp_depth_market_field.TradingDay)
+}
+inline void ctp_depth_market_field::set_tradingday(const char* value, size_t size) {
+  
+  tradingday_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:risk.ctp_depth_market_field.TradingDay)
+}
+inline ::std::string* ctp_depth_market_field::mutable_tradingday() {
+  
+  // @@protoc_insertion_point(field_mutable:risk.ctp_depth_market_field.TradingDay)
+  return tradingday_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* ctp_depth_market_field::release_tradingday() {
+  // @@protoc_insertion_point(field_release:risk.ctp_depth_market_field.TradingDay)
+  
+  return tradingday_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void ctp_depth_market_field::set_allocated_tradingday(::std::string* tradingday) {
+  if (tradingday != NULL) {
+    
+  } else {
+    
+  }
+  tradingday_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), tradingday);
+  // @@protoc_insertion_point(field_set_allocated:risk.ctp_depth_market_field.TradingDay)
+}
+
+// string InstrumentID = 2;
+inline void ctp_depth_market_field::clear_instrumentid() {
+  instrumentid_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& ctp_depth_market_field::instrumentid() const {
+  // @@protoc_insertion_point(field_get:risk.ctp_depth_market_field.InstrumentID)
+  return instrumentid_.GetNoArena();
+}
+inline void ctp_depth_market_field::set_instrumentid(const ::std::string& value) {
+  
+  instrumentid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:risk.ctp_depth_market_field.InstrumentID)
+}
+#if LANG_CXX11
+inline void ctp_depth_market_field::set_instrumentid(::std::string&& value) {
+  
+  instrumentid_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:risk.ctp_depth_market_field.InstrumentID)
+}
+#endif
+inline void ctp_depth_market_field::set_instrumentid(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  instrumentid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:risk.ctp_depth_market_field.InstrumentID)
+}
+inline void ctp_depth_market_field::set_instrumentid(const char* value, size_t size) {
+  
+  instrumentid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:risk.ctp_depth_market_field.InstrumentID)
+}
+inline ::std::string* ctp_depth_market_field::mutable_instrumentid() {
+  
+  // @@protoc_insertion_point(field_mutable:risk.ctp_depth_market_field.InstrumentID)
+  return instrumentid_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* ctp_depth_market_field::release_instrumentid() {
+  // @@protoc_insertion_point(field_release:risk.ctp_depth_market_field.InstrumentID)
+  
+  return instrumentid_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void ctp_depth_market_field::set_allocated_instrumentid(::std::string* instrumentid) {
+  if (instrumentid != NULL) {
+    
+  } else {
+    
+  }
+  instrumentid_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), instrumentid);
+  // @@protoc_insertion_point(field_set_allocated:risk.ctp_depth_market_field.InstrumentID)
+}
+
+// string ExchangeID = 3;
+inline void ctp_depth_market_field::clear_exchangeid() {
+  exchangeid_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& ctp_depth_market_field::exchangeid() const {
+  // @@protoc_insertion_point(field_get:risk.ctp_depth_market_field.ExchangeID)
+  return exchangeid_.GetNoArena();
+}
+inline void ctp_depth_market_field::set_exchangeid(const ::std::string& value) {
+  
+  exchangeid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:risk.ctp_depth_market_field.ExchangeID)
+}
+#if LANG_CXX11
+inline void ctp_depth_market_field::set_exchangeid(::std::string&& value) {
+  
+  exchangeid_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:risk.ctp_depth_market_field.ExchangeID)
+}
+#endif
+inline void ctp_depth_market_field::set_exchangeid(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  exchangeid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:risk.ctp_depth_market_field.ExchangeID)
+}
+inline void ctp_depth_market_field::set_exchangeid(const char* value, size_t size) {
+  
+  exchangeid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:risk.ctp_depth_market_field.ExchangeID)
+}
+inline ::std::string* ctp_depth_market_field::mutable_exchangeid() {
+  
+  // @@protoc_insertion_point(field_mutable:risk.ctp_depth_market_field.ExchangeID)
+  return exchangeid_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* ctp_depth_market_field::release_exchangeid() {
+  // @@protoc_insertion_point(field_release:risk.ctp_depth_market_field.ExchangeID)
+  
+  return exchangeid_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void ctp_depth_market_field::set_allocated_exchangeid(::std::string* exchangeid) {
+  if (exchangeid != NULL) {
+    
+  } else {
+    
+  }
+  exchangeid_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), exchangeid);
+  // @@protoc_insertion_point(field_set_allocated:risk.ctp_depth_market_field.ExchangeID)
+}
+
+// string ExchangeInstID = 4;
+inline void ctp_depth_market_field::clear_exchangeinstid() {
+  exchangeinstid_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& ctp_depth_market_field::exchangeinstid() const {
+  // @@protoc_insertion_point(field_get:risk.ctp_depth_market_field.ExchangeInstID)
+  return exchangeinstid_.GetNoArena();
+}
+inline void ctp_depth_market_field::set_exchangeinstid(const ::std::string& value) {
+  
+  exchangeinstid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:risk.ctp_depth_market_field.ExchangeInstID)
+}
+#if LANG_CXX11
+inline void ctp_depth_market_field::set_exchangeinstid(::std::string&& value) {
+  
+  exchangeinstid_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:risk.ctp_depth_market_field.ExchangeInstID)
+}
+#endif
+inline void ctp_depth_market_field::set_exchangeinstid(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  exchangeinstid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:risk.ctp_depth_market_field.ExchangeInstID)
+}
+inline void ctp_depth_market_field::set_exchangeinstid(const char* value, size_t size) {
+  
+  exchangeinstid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:risk.ctp_depth_market_field.ExchangeInstID)
+}
+inline ::std::string* ctp_depth_market_field::mutable_exchangeinstid() {
+  
+  // @@protoc_insertion_point(field_mutable:risk.ctp_depth_market_field.ExchangeInstID)
+  return exchangeinstid_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* ctp_depth_market_field::release_exchangeinstid() {
+  // @@protoc_insertion_point(field_release:risk.ctp_depth_market_field.ExchangeInstID)
+  
+  return exchangeinstid_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void ctp_depth_market_field::set_allocated_exchangeinstid(::std::string* exchangeinstid) {
+  if (exchangeinstid != NULL) {
+    
+  } else {
+    
+  }
+  exchangeinstid_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), exchangeinstid);
+  // @@protoc_insertion_point(field_set_allocated:risk.ctp_depth_market_field.ExchangeInstID)
+}
+
+// double LastPrice = 5;
+inline void ctp_depth_market_field::clear_lastprice() {
+  lastprice_ = 0;
+}
+inline double ctp_depth_market_field::lastprice() const {
+  // @@protoc_insertion_point(field_get:risk.ctp_depth_market_field.LastPrice)
+  return lastprice_;
+}
+inline void ctp_depth_market_field::set_lastprice(double value) {
+  
+  lastprice_ = value;
+  // @@protoc_insertion_point(field_set:risk.ctp_depth_market_field.LastPrice)
+}
+
+// double PreSettlementPrice = 6;
+inline void ctp_depth_market_field::clear_presettlementprice() {
+  presettlementprice_ = 0;
+}
+inline double ctp_depth_market_field::presettlementprice() const {
+  // @@protoc_insertion_point(field_get:risk.ctp_depth_market_field.PreSettlementPrice)
+  return presettlementprice_;
+}
+inline void ctp_depth_market_field::set_presettlementprice(double value) {
+  
+  presettlementprice_ = value;
+  // @@protoc_insertion_point(field_set:risk.ctp_depth_market_field.PreSettlementPrice)
+}
+
+// double PreClosePrice = 7;
+inline void ctp_depth_market_field::clear_precloseprice() {
+  precloseprice_ = 0;
+}
+inline double ctp_depth_market_field::precloseprice() const {
+  // @@protoc_insertion_point(field_get:risk.ctp_depth_market_field.PreClosePrice)
+  return precloseprice_;
+}
+inline void ctp_depth_market_field::set_precloseprice(double value) {
+  
+  precloseprice_ = value;
+  // @@protoc_insertion_point(field_set:risk.ctp_depth_market_field.PreClosePrice)
+}
+
+// double PreOpenInterest = 8;
+inline void ctp_depth_market_field::clear_preopeninterest() {
+  preopeninterest_ = 0;
+}
+inline double ctp_depth_market_field::preopeninterest() const {
+  // @@protoc_insertion_point(field_get:risk.ctp_depth_market_field.PreOpenInterest)
+  return preopeninterest_;
+}
+inline void ctp_depth_market_field::set_preopeninterest(double value) {
+  
+  preopeninterest_ = value;
+  // @@protoc_insertion_point(field_set:risk.ctp_depth_market_field.PreOpenInterest)
+}
+
+// double OpenPrice = 9;
+inline void ctp_depth_market_field::clear_openprice() {
+  openprice_ = 0;
+}
+inline double ctp_depth_market_field::openprice() const {
+  // @@protoc_insertion_point(field_get:risk.ctp_depth_market_field.OpenPrice)
+  return openprice_;
+}
+inline void ctp_depth_market_field::set_openprice(double value) {
+  
+  openprice_ = value;
+  // @@protoc_insertion_point(field_set:risk.ctp_depth_market_field.OpenPrice)
+}
+
+// double HighestPrice = 10;
+inline void ctp_depth_market_field::clear_highestprice() {
+  highestprice_ = 0;
+}
+inline double ctp_depth_market_field::highestprice() const {
+  // @@protoc_insertion_point(field_get:risk.ctp_depth_market_field.HighestPrice)
+  return highestprice_;
+}
+inline void ctp_depth_market_field::set_highestprice(double value) {
+  
+  highestprice_ = value;
+  // @@protoc_insertion_point(field_set:risk.ctp_depth_market_field.HighestPrice)
+}
+
+// double LowestPrice = 11;
+inline void ctp_depth_market_field::clear_lowestprice() {
+  lowestprice_ = 0;
+}
+inline double ctp_depth_market_field::lowestprice() const {
+  // @@protoc_insertion_point(field_get:risk.ctp_depth_market_field.LowestPrice)
+  return lowestprice_;
+}
+inline void ctp_depth_market_field::set_lowestprice(double value) {
+  
+  lowestprice_ = value;
+  // @@protoc_insertion_point(field_set:risk.ctp_depth_market_field.LowestPrice)
+}
+
+// int32 Volume = 12;
+inline void ctp_depth_market_field::clear_volume() {
+  volume_ = 0;
+}
+inline ::google::protobuf::int32 ctp_depth_market_field::volume() const {
+  // @@protoc_insertion_point(field_get:risk.ctp_depth_market_field.Volume)
+  return volume_;
+}
+inline void ctp_depth_market_field::set_volume(::google::protobuf::int32 value) {
+  
+  volume_ = value;
+  // @@protoc_insertion_point(field_set:risk.ctp_depth_market_field.Volume)
+}
+
+// double Turnover = 13;
+inline void ctp_depth_market_field::clear_turnover() {
+  turnover_ = 0;
+}
+inline double ctp_depth_market_field::turnover() const {
+  // @@protoc_insertion_point(field_get:risk.ctp_depth_market_field.Turnover)
+  return turnover_;
+}
+inline void ctp_depth_market_field::set_turnover(double value) {
+  
+  turnover_ = value;
+  // @@protoc_insertion_point(field_set:risk.ctp_depth_market_field.Turnover)
+}
+
+// double OpenInterest = 14;
+inline void ctp_depth_market_field::clear_openinterest() {
+  openinterest_ = 0;
+}
+inline double ctp_depth_market_field::openinterest() const {
+  // @@protoc_insertion_point(field_get:risk.ctp_depth_market_field.OpenInterest)
+  return openinterest_;
+}
+inline void ctp_depth_market_field::set_openinterest(double value) {
+  
+  openinterest_ = value;
+  // @@protoc_insertion_point(field_set:risk.ctp_depth_market_field.OpenInterest)
+}
+
+// double ClosePrice = 15;
+inline void ctp_depth_market_field::clear_closeprice() {
+  closeprice_ = 0;
+}
+inline double ctp_depth_market_field::closeprice() const {
+  // @@protoc_insertion_point(field_get:risk.ctp_depth_market_field.ClosePrice)
+  return closeprice_;
+}
+inline void ctp_depth_market_field::set_closeprice(double value) {
+  
+  closeprice_ = value;
+  // @@protoc_insertion_point(field_set:risk.ctp_depth_market_field.ClosePrice)
+}
+
+// double SettlementPrice = 16;
+inline void ctp_depth_market_field::clear_settlementprice() {
+  settlementprice_ = 0;
+}
+inline double ctp_depth_market_field::settlementprice() const {
+  // @@protoc_insertion_point(field_get:risk.ctp_depth_market_field.SettlementPrice)
+  return settlementprice_;
+}
+inline void ctp_depth_market_field::set_settlementprice(double value) {
+  
+  settlementprice_ = value;
+  // @@protoc_insertion_point(field_set:risk.ctp_depth_market_field.SettlementPrice)
+}
+
+// double UpperLimitPrice = 17;
+inline void ctp_depth_market_field::clear_upperlimitprice() {
+  upperlimitprice_ = 0;
+}
+inline double ctp_depth_market_field::upperlimitprice() const {
+  // @@protoc_insertion_point(field_get:risk.ctp_depth_market_field.UpperLimitPrice)
+  return upperlimitprice_;
+}
+inline void ctp_depth_market_field::set_upperlimitprice(double value) {
+  
+  upperlimitprice_ = value;
+  // @@protoc_insertion_point(field_set:risk.ctp_depth_market_field.UpperLimitPrice)
+}
+
+// double LowerLimitPrice = 18;
+inline void ctp_depth_market_field::clear_lowerlimitprice() {
+  lowerlimitprice_ = 0;
+}
+inline double ctp_depth_market_field::lowerlimitprice() const {
+  // @@protoc_insertion_point(field_get:risk.ctp_depth_market_field.LowerLimitPrice)
+  return lowerlimitprice_;
+}
+inline void ctp_depth_market_field::set_lowerlimitprice(double value) {
+  
+  lowerlimitprice_ = value;
+  // @@protoc_insertion_point(field_set:risk.ctp_depth_market_field.LowerLimitPrice)
+}
+
+// double PreDelta = 19;
+inline void ctp_depth_market_field::clear_predelta() {
+  predelta_ = 0;
+}
+inline double ctp_depth_market_field::predelta() const {
+  // @@protoc_insertion_point(field_get:risk.ctp_depth_market_field.PreDelta)
+  return predelta_;
+}
+inline void ctp_depth_market_field::set_predelta(double value) {
+  
+  predelta_ = value;
+  // @@protoc_insertion_point(field_set:risk.ctp_depth_market_field.PreDelta)
+}
+
+// double CurrDelta = 20;
+inline void ctp_depth_market_field::clear_currdelta() {
+  currdelta_ = 0;
+}
+inline double ctp_depth_market_field::currdelta() const {
+  // @@protoc_insertion_point(field_get:risk.ctp_depth_market_field.CurrDelta)
+  return currdelta_;
+}
+inline void ctp_depth_market_field::set_currdelta(double value) {
+  
+  currdelta_ = value;
+  // @@protoc_insertion_point(field_set:risk.ctp_depth_market_field.CurrDelta)
+}
+
+// string UpdateTime = 21;
+inline void ctp_depth_market_field::clear_updatetime() {
+  updatetime_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& ctp_depth_market_field::updatetime() const {
+  // @@protoc_insertion_point(field_get:risk.ctp_depth_market_field.UpdateTime)
+  return updatetime_.GetNoArena();
+}
+inline void ctp_depth_market_field::set_updatetime(const ::std::string& value) {
+  
+  updatetime_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:risk.ctp_depth_market_field.UpdateTime)
+}
+#if LANG_CXX11
+inline void ctp_depth_market_field::set_updatetime(::std::string&& value) {
+  
+  updatetime_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:risk.ctp_depth_market_field.UpdateTime)
+}
+#endif
+inline void ctp_depth_market_field::set_updatetime(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  updatetime_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:risk.ctp_depth_market_field.UpdateTime)
+}
+inline void ctp_depth_market_field::set_updatetime(const char* value, size_t size) {
+  
+  updatetime_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:risk.ctp_depth_market_field.UpdateTime)
+}
+inline ::std::string* ctp_depth_market_field::mutable_updatetime() {
+  
+  // @@protoc_insertion_point(field_mutable:risk.ctp_depth_market_field.UpdateTime)
+  return updatetime_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* ctp_depth_market_field::release_updatetime() {
+  // @@protoc_insertion_point(field_release:risk.ctp_depth_market_field.UpdateTime)
+  
+  return updatetime_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void ctp_depth_market_field::set_allocated_updatetime(::std::string* updatetime) {
+  if (updatetime != NULL) {
+    
+  } else {
+    
+  }
+  updatetime_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), updatetime);
+  // @@protoc_insertion_point(field_set_allocated:risk.ctp_depth_market_field.UpdateTime)
+}
+
+// int32 UpdateMillisec = 22;
+inline void ctp_depth_market_field::clear_updatemillisec() {
+  updatemillisec_ = 0;
+}
+inline ::google::protobuf::int32 ctp_depth_market_field::updatemillisec() const {
+  // @@protoc_insertion_point(field_get:risk.ctp_depth_market_field.UpdateMillisec)
+  return updatemillisec_;
+}
+inline void ctp_depth_market_field::set_updatemillisec(::google::protobuf::int32 value) {
+  
+  updatemillisec_ = value;
+  // @@protoc_insertion_point(field_set:risk.ctp_depth_market_field.UpdateMillisec)
+}
+
+// double BidPrice1 = 23;
+inline void ctp_depth_market_field::clear_bidprice1() {
+  bidprice1_ = 0;
+}
+inline double ctp_depth_market_field::bidprice1() const {
+  // @@protoc_insertion_point(field_get:risk.ctp_depth_market_field.BidPrice1)
+  return bidprice1_;
+}
+inline void ctp_depth_market_field::set_bidprice1(double value) {
+  
+  bidprice1_ = value;
+  // @@protoc_insertion_point(field_set:risk.ctp_depth_market_field.BidPrice1)
+}
+
+// int32 BidVolume1 = 24;
+inline void ctp_depth_market_field::clear_bidvolume1() {
+  bidvolume1_ = 0;
+}
+inline ::google::protobuf::int32 ctp_depth_market_field::bidvolume1() const {
+  // @@protoc_insertion_point(field_get:risk.ctp_depth_market_field.BidVolume1)
+  return bidvolume1_;
+}
+inline void ctp_depth_market_field::set_bidvolume1(::google::protobuf::int32 value) {
+  
+  bidvolume1_ = value;
+  // @@protoc_insertion_point(field_set:risk.ctp_depth_market_field.BidVolume1)
+}
+
+// double AskPrice1 = 25;
+inline void ctp_depth_market_field::clear_askprice1() {
+  askprice1_ = 0;
+}
+inline double ctp_depth_market_field::askprice1() const {
+  // @@protoc_insertion_point(field_get:risk.ctp_depth_market_field.AskPrice1)
+  return askprice1_;
+}
+inline void ctp_depth_market_field::set_askprice1(double value) {
+  
+  askprice1_ = value;
+  // @@protoc_insertion_point(field_set:risk.ctp_depth_market_field.AskPrice1)
+}
+
+// int32 AskVolume1 = 26;
+inline void ctp_depth_market_field::clear_askvolume1() {
+  askvolume1_ = 0;
+}
+inline ::google::protobuf::int32 ctp_depth_market_field::askvolume1() const {
+  // @@protoc_insertion_point(field_get:risk.ctp_depth_market_field.AskVolume1)
+  return askvolume1_;
+}
+inline void ctp_depth_market_field::set_askvolume1(::google::protobuf::int32 value) {
+  
+  askvolume1_ = value;
+  // @@protoc_insertion_point(field_set:risk.ctp_depth_market_field.AskVolume1)
+}
+
+// double BidPrice2 = 27;
+inline void ctp_depth_market_field::clear_bidprice2() {
+  bidprice2_ = 0;
+}
+inline double ctp_depth_market_field::bidprice2() const {
+  // @@protoc_insertion_point(field_get:risk.ctp_depth_market_field.BidPrice2)
+  return bidprice2_;
+}
+inline void ctp_depth_market_field::set_bidprice2(double value) {
+  
+  bidprice2_ = value;
+  // @@protoc_insertion_point(field_set:risk.ctp_depth_market_field.BidPrice2)
+}
+
+// int32 BidVolume2 = 28;
+inline void ctp_depth_market_field::clear_bidvolume2() {
+  bidvolume2_ = 0;
+}
+inline ::google::protobuf::int32 ctp_depth_market_field::bidvolume2() const {
+  // @@protoc_insertion_point(field_get:risk.ctp_depth_market_field.BidVolume2)
+  return bidvolume2_;
+}
+inline void ctp_depth_market_field::set_bidvolume2(::google::protobuf::int32 value) {
+  
+  bidvolume2_ = value;
+  // @@protoc_insertion_point(field_set:risk.ctp_depth_market_field.BidVolume2)
+}
+
+// double AskPrice2 = 29;
+inline void ctp_depth_market_field::clear_askprice2() {
+  askprice2_ = 0;
+}
+inline double ctp_depth_market_field::askprice2() const {
+  // @@protoc_insertion_point(field_get:risk.ctp_depth_market_field.AskPrice2)
+  return askprice2_;
+}
+inline void ctp_depth_market_field::set_askprice2(double value) {
+  
+  askprice2_ = value;
+  // @@protoc_insertion_point(field_set:risk.ctp_depth_market_field.AskPrice2)
+}
+
+// int32 AskVolume2 = 30;
+inline void ctp_depth_market_field::clear_askvolume2() {
+  askvolume2_ = 0;
+}
+inline ::google::protobuf::int32 ctp_depth_market_field::askvolume2() const {
+  // @@protoc_insertion_point(field_get:risk.ctp_depth_market_field.AskVolume2)
+  return askvolume2_;
+}
+inline void ctp_depth_market_field::set_askvolume2(::google::protobuf::int32 value) {
+  
+  askvolume2_ = value;
+  // @@protoc_insertion_point(field_set:risk.ctp_depth_market_field.AskVolume2)
+}
+
+// double BidPrice3 = 31;
+inline void ctp_depth_market_field::clear_bidprice3() {
+  bidprice3_ = 0;
+}
+inline double ctp_depth_market_field::bidprice3() const {
+  // @@protoc_insertion_point(field_get:risk.ctp_depth_market_field.BidPrice3)
+  return bidprice3_;
+}
+inline void ctp_depth_market_field::set_bidprice3(double value) {
+  
+  bidprice3_ = value;
+  // @@protoc_insertion_point(field_set:risk.ctp_depth_market_field.BidPrice3)
+}
+
+// int32 BidVolume3 = 32;
+inline void ctp_depth_market_field::clear_bidvolume3() {
+  bidvolume3_ = 0;
+}
+inline ::google::protobuf::int32 ctp_depth_market_field::bidvolume3() const {
+  // @@protoc_insertion_point(field_get:risk.ctp_depth_market_field.BidVolume3)
+  return bidvolume3_;
+}
+inline void ctp_depth_market_field::set_bidvolume3(::google::protobuf::int32 value) {
+  
+  bidvolume3_ = value;
+  // @@protoc_insertion_point(field_set:risk.ctp_depth_market_field.BidVolume3)
+}
+
+// double AskPrice3 = 33;
+inline void ctp_depth_market_field::clear_askprice3() {
+  askprice3_ = 0;
+}
+inline double ctp_depth_market_field::askprice3() const {
+  // @@protoc_insertion_point(field_get:risk.ctp_depth_market_field.AskPrice3)
+  return askprice3_;
+}
+inline void ctp_depth_market_field::set_askprice3(double value) {
+  
+  askprice3_ = value;
+  // @@protoc_insertion_point(field_set:risk.ctp_depth_market_field.AskPrice3)
+}
+
+// int32 AskVolume3 = 34;
+inline void ctp_depth_market_field::clear_askvolume3() {
+  askvolume3_ = 0;
+}
+inline ::google::protobuf::int32 ctp_depth_market_field::askvolume3() const {
+  // @@protoc_insertion_point(field_get:risk.ctp_depth_market_field.AskVolume3)
+  return askvolume3_;
+}
+inline void ctp_depth_market_field::set_askvolume3(::google::protobuf::int32 value) {
+  
+  askvolume3_ = value;
+  // @@protoc_insertion_point(field_set:risk.ctp_depth_market_field.AskVolume3)
+}
+
+// double BidPrice4 = 35;
+inline void ctp_depth_market_field::clear_bidprice4() {
+  bidprice4_ = 0;
+}
+inline double ctp_depth_market_field::bidprice4() const {
+  // @@protoc_insertion_point(field_get:risk.ctp_depth_market_field.BidPrice4)
+  return bidprice4_;
+}
+inline void ctp_depth_market_field::set_bidprice4(double value) {
+  
+  bidprice4_ = value;
+  // @@protoc_insertion_point(field_set:risk.ctp_depth_market_field.BidPrice4)
+}
+
+// int32 BidVolume4 = 36;
+inline void ctp_depth_market_field::clear_bidvolume4() {
+  bidvolume4_ = 0;
+}
+inline ::google::protobuf::int32 ctp_depth_market_field::bidvolume4() const {
+  // @@protoc_insertion_point(field_get:risk.ctp_depth_market_field.BidVolume4)
+  return bidvolume4_;
+}
+inline void ctp_depth_market_field::set_bidvolume4(::google::protobuf::int32 value) {
+  
+  bidvolume4_ = value;
+  // @@protoc_insertion_point(field_set:risk.ctp_depth_market_field.BidVolume4)
+}
+
+// double AskPrice4 = 37;
+inline void ctp_depth_market_field::clear_askprice4() {
+  askprice4_ = 0;
+}
+inline double ctp_depth_market_field::askprice4() const {
+  // @@protoc_insertion_point(field_get:risk.ctp_depth_market_field.AskPrice4)
+  return askprice4_;
+}
+inline void ctp_depth_market_field::set_askprice4(double value) {
+  
+  askprice4_ = value;
+  // @@protoc_insertion_point(field_set:risk.ctp_depth_market_field.AskPrice4)
+}
+
+// int32 AskVolume4 = 38;
+inline void ctp_depth_market_field::clear_askvolume4() {
+  askvolume4_ = 0;
+}
+inline ::google::protobuf::int32 ctp_depth_market_field::askvolume4() const {
+  // @@protoc_insertion_point(field_get:risk.ctp_depth_market_field.AskVolume4)
+  return askvolume4_;
+}
+inline void ctp_depth_market_field::set_askvolume4(::google::protobuf::int32 value) {
+  
+  askvolume4_ = value;
+  // @@protoc_insertion_point(field_set:risk.ctp_depth_market_field.AskVolume4)
+}
+
+// double BidPrice5 = 39;
+inline void ctp_depth_market_field::clear_bidprice5() {
+  bidprice5_ = 0;
+}
+inline double ctp_depth_market_field::bidprice5() const {
+  // @@protoc_insertion_point(field_get:risk.ctp_depth_market_field.BidPrice5)
+  return bidprice5_;
+}
+inline void ctp_depth_market_field::set_bidprice5(double value) {
+  
+  bidprice5_ = value;
+  // @@protoc_insertion_point(field_set:risk.ctp_depth_market_field.BidPrice5)
+}
+
+// int32 BidVolume5 = 40;
+inline void ctp_depth_market_field::clear_bidvolume5() {
+  bidvolume5_ = 0;
+}
+inline ::google::protobuf::int32 ctp_depth_market_field::bidvolume5() const {
+  // @@protoc_insertion_point(field_get:risk.ctp_depth_market_field.BidVolume5)
+  return bidvolume5_;
+}
+inline void ctp_depth_market_field::set_bidvolume5(::google::protobuf::int32 value) {
+  
+  bidvolume5_ = value;
+  // @@protoc_insertion_point(field_set:risk.ctp_depth_market_field.BidVolume5)
+}
+
+// double AskPrice5 = 41;
+inline void ctp_depth_market_field::clear_askprice5() {
+  askprice5_ = 0;
+}
+inline double ctp_depth_market_field::askprice5() const {
+  // @@protoc_insertion_point(field_get:risk.ctp_depth_market_field.AskPrice5)
+  return askprice5_;
+}
+inline void ctp_depth_market_field::set_askprice5(double value) {
+  
+  askprice5_ = value;
+  // @@protoc_insertion_point(field_set:risk.ctp_depth_market_field.AskPrice5)
+}
+
+// int32 AskVolume5 = 42;
+inline void ctp_depth_market_field::clear_askvolume5() {
+  askvolume5_ = 0;
+}
+inline ::google::protobuf::int32 ctp_depth_market_field::askvolume5() const {
+  // @@protoc_insertion_point(field_get:risk.ctp_depth_market_field.AskVolume5)
+  return askvolume5_;
+}
+inline void ctp_depth_market_field::set_askvolume5(::google::protobuf::int32 value) {
+  
+  askvolume5_ = value;
+  // @@protoc_insertion_point(field_set:risk.ctp_depth_market_field.AskVolume5)
+}
+
+// double AveragePrice = 43;
+inline void ctp_depth_market_field::clear_averageprice() {
+  averageprice_ = 0;
+}
+inline double ctp_depth_market_field::averageprice() const {
+  // @@protoc_insertion_point(field_get:risk.ctp_depth_market_field.AveragePrice)
+  return averageprice_;
+}
+inline void ctp_depth_market_field::set_averageprice(double value) {
+  
+  averageprice_ = value;
+  // @@protoc_insertion_point(field_set:risk.ctp_depth_market_field.AveragePrice)
+}
+
+// string ActionDay = 44;
+inline void ctp_depth_market_field::clear_actionday() {
+  actionday_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& ctp_depth_market_field::actionday() const {
+  // @@protoc_insertion_point(field_get:risk.ctp_depth_market_field.ActionDay)
+  return actionday_.GetNoArena();
+}
+inline void ctp_depth_market_field::set_actionday(const ::std::string& value) {
+  
+  actionday_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:risk.ctp_depth_market_field.ActionDay)
+}
+#if LANG_CXX11
+inline void ctp_depth_market_field::set_actionday(::std::string&& value) {
+  
+  actionday_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:risk.ctp_depth_market_field.ActionDay)
+}
+#endif
+inline void ctp_depth_market_field::set_actionday(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  actionday_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:risk.ctp_depth_market_field.ActionDay)
+}
+inline void ctp_depth_market_field::set_actionday(const char* value, size_t size) {
+  
+  actionday_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:risk.ctp_depth_market_field.ActionDay)
+}
+inline ::std::string* ctp_depth_market_field::mutable_actionday() {
+  
+  // @@protoc_insertion_point(field_mutable:risk.ctp_depth_market_field.ActionDay)
+  return actionday_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* ctp_depth_market_field::release_actionday() {
+  // @@protoc_insertion_point(field_release:risk.ctp_depth_market_field.ActionDay)
+  
+  return actionday_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void ctp_depth_market_field::set_allocated_actionday(::std::string* actionday) {
+  if (actionday != NULL) {
+    
+  } else {
+    
+  }
+  actionday_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), actionday);
+  // @@protoc_insertion_point(field_set_allocated:risk.ctp_depth_market_field.ActionDay)
+}
+
+// -------------------------------------------------------------------
+
 // req_quote_login
 
 // string riskerid = 1;
@@ -1619,6 +2922,8 @@ inline void req_quote_login::set_allocated_password(::std::string* password) {
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
 #endif  // !PROTOBUF_INLINE_NOT_IN_HEADERS
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 

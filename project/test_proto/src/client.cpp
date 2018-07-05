@@ -25,6 +25,22 @@ void Client::receive(const light::transaction_head& head, const char* data)
     std::cout << "receive\n";
     switch (head.transaction_type_)
     {
+    case common::TYPE_RISKAPI_INVESTORINFO_RSP:
+    {
+        risk::rsp_investor_info message;
+        message.ParseFromString(data);
+
+        cout << "errorid:" << message.header().info().errorid()
+            << " errormsg:" << message.header().info().errormsg() << endl;
+
+        for (int i = 0; i < message.infos_size(); ++i) {
+            cout << "investorid:" << message.infos(i).investorid()
+                << " investorname:" << message.infos(i).investorname()
+                << " identifiedcardno:" << message.infos(i).identifiedcardno()
+                << endl;
+        }
+    }
+    break;
     case common::TYPE_MANAGER_LOGIN_RSP:
     {
         manager::rsp_login message;
@@ -190,8 +206,8 @@ void Client::Start()
 {
     //connect trialserver
     boost::asio::ip::tcp::endpoint ed(
-            boost::asio::ip::address::from_string("120.136.160.83"),
-        16270);
+            boost::asio::ip::address::from_string("10.100.250.66"),
+        7777);
     clientptr_ = std::make_shared<light::clientapi>(ed);
     clientptr_->set_handle(this);
     clientptr_->run();

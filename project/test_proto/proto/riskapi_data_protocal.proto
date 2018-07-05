@@ -249,4 +249,44 @@ message rtn_whatif
     whatif_argv field = 1;
     double option_value = 2;
 }
+////////////////////////////////////////////////////////////////////////////////////////////////////
+message investor_info
+{
+    string          investorid=1;
+    string          brokerid=2;
+    string          investortype=3;
+    string          investorname=4;
+    string          identifiedcardtype=5;
+    string          identifiedcardno=6;
+    string          country=7;
+    string          province=8;
+    string          city=9;
+    string          birthday=10;
+    string          sex=11;
+    string          profession=12;
+    string          national=13;
+    double          capital=14;
+    string          capitalcurrency=15;
+    string          telephone=16;
+    string          address=17;
+    string          zipcode=18;
+    string          email=19;
+    string          memo=20;
+    string          openinvestorname=21;
+    string          orderinvestorname=22;
+    string          fundinvestorname=23;
+    string          settleinvestorname=24;
+    int32           isactive=25;
+    string          departmentid=26;
+    string          investorfullname=27;
+    int32           isemail=28;
+    int32           issms=29;
+    int32           isusingotp=30;
+    string          clientregion=31;
+}
 
+message rsp_investor_info
+{
+    rsp_head_info header=1;
+    repeated investor_info infos = 2;
+}

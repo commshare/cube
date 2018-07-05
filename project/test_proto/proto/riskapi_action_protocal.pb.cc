@@ -178,13 +178,18 @@ public:
  ::google::protobuf::internal::ExplicitlyConstructed<sub_whatif>
      _instance;
 } _sub_whatif_default_instance_;
+class req_investor_infoDefaultTypeInternal {
+public:
+ ::google::protobuf::internal::ExplicitlyConstructed<req_investor_info>
+     _instance;
+} _req_investor_info_default_instance_;
 
 namespace protobuf_riskapi_5faction_5fprotocal_2eproto {
 
 
 namespace {
 
-::google::protobuf::Metadata file_level_metadata[32];
+::google::protobuf::Metadata file_level_metadata[33];
 
 }  // namespace
 
@@ -199,6 +204,7 @@ PROTOBUF_CONSTEXPR_VAR ::google::protobuf::internal::AuxillaryParseTableField
 };
 PROTOBUF_CONSTEXPR_VAR ::google::protobuf::internal::ParseTable const
     TableStruct::schema[] GOOGLE_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
+  { NULL, NULL, 0, -1, -1, -1, -1, NULL, false },
   { NULL, NULL, 0, -1, -1, -1, -1, NULL, false },
   { NULL, NULL, 0, -1, -1, -1, -1, NULL, false },
   { NULL, NULL, 0, -1, -1, -1, -1, NULL, false },
@@ -460,6 +466,13 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_ATTRIBUTE_SECTION
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(sub_whatif, infos_),
+  ~0u,  // no _has_bits_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(req_investor_info, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(req_investor_info, requestid_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(req_investor_info, investor_),
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(req_risker_login)},
@@ -494,6 +507,7 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_ATTR
   { 205, -1, sizeof(req_option_argv)},
   { 211, -1, sizeof(whatif_argv)},
   { 220, -1, sizeof(sub_whatif)},
+  { 226, -1, sizeof(req_investor_info)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -529,6 +543,7 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::google::protobuf::Message*>(&_req_option_argv_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&_whatif_argv_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&_sub_whatif_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&_req_investor_info_default_instance_),
 };
 
 namespace {
@@ -549,7 +564,7 @@ void protobuf_AssignDescriptorsOnce() {
 void protobuf_RegisterTypes(const ::std::string&) GOOGLE_ATTRIBUTE_COLD;
 void protobuf_RegisterTypes(const ::std::string&) {
   protobuf_AssignDescriptorsOnce();
-  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 32);
+  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 33);
 }
 
 }  // namespace
@@ -621,7 +636,9 @@ void TableStruct::InitDefaultsImpl() {
   ::google::protobuf::internal::OnShutdownDestroyMessage(
       &_whatif_argv_default_instance_);_sub_whatif_default_instance_._instance.DefaultConstruct();
   ::google::protobuf::internal::OnShutdownDestroyMessage(
-      &_sub_whatif_default_instance_);_req_add_group_default_instance_._instance.get_mutable()->group_ = const_cast< ::risk::sys_group*>(
+      &_sub_whatif_default_instance_);_req_investor_info_default_instance_._instance.DefaultConstruct();
+  ::google::protobuf::internal::OnShutdownDestroyMessage(
+      &_req_investor_info_default_instance_);_req_add_group_default_instance_._instance.get_mutable()->group_ = const_cast< ::risk::sys_group*>(
       ::risk::sys_group::internal_default_instance());
   _req_edit_group_default_instance_._instance.get_mutable()->group_ = const_cast< ::risk::sys_group*>(
       ::risk::sys_group::internal_default_instance());
@@ -683,11 +700,12 @@ void AddDescriptorsImpl() {
       "rgv\022\021\n\trequestid\030\001 \001(\005\"R\n\013whatif_argv\022\014\n"
       "\004type\030\001 \001(\005\022\022\n\ninstrument\030\002 \001(\t\022\r\n\005range"
       "\030\003 \001(\001\022\022\n\nbase_value\030\004 \001(\001\".\n\nsub_whatif"
-      "\022 \n\005infos\030\001 \003(\0132\021.risk.whatif_argvb\006prot"
-      "o3"
+      "\022 \n\005infos\030\001 \003(\0132\021.risk.whatif_argv\"8\n\021re"
+      "q_investor_info\022\021\n\trequestid\030\001 \001(\005\022\020\n\010in"
+      "vestor\030\002 \003(\tb\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 1962);
+      descriptor, 2020);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "riskapi_action_protocal.proto", &protobuf_RegisterTypes);
 }
@@ -12945,6 +12963,379 @@ const ::google::protobuf::RepeatedPtrField< ::risk::whatif_argv >&
 sub_whatif::infos() const {
   // @@protoc_insertion_point(field_list:risk.sub_whatif.infos)
   return infos_;
+}
+
+#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
+
+// ===================================================================
+
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int req_investor_info::kRequestidFieldNumber;
+const int req_investor_info::kInvestorFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+req_investor_info::req_investor_info()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  if (GOOGLE_PREDICT_TRUE(this != internal_default_instance())) {
+    protobuf_riskapi_5faction_5fprotocal_2eproto::InitDefaults();
+  }
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:risk.req_investor_info)
+}
+req_investor_info::req_investor_info(const req_investor_info& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(NULL),
+      investor_(from.investor_),
+      _cached_size_(0) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  requestid_ = from.requestid_;
+  // @@protoc_insertion_point(copy_constructor:risk.req_investor_info)
+}
+
+void req_investor_info::SharedCtor() {
+  requestid_ = 0;
+  _cached_size_ = 0;
+}
+
+req_investor_info::~req_investor_info() {
+  // @@protoc_insertion_point(destructor:risk.req_investor_info)
+  SharedDtor();
+}
+
+void req_investor_info::SharedDtor() {
+}
+
+void req_investor_info::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* req_investor_info::descriptor() {
+  protobuf_riskapi_5faction_5fprotocal_2eproto::protobuf_AssignDescriptorsOnce();
+  return protobuf_riskapi_5faction_5fprotocal_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+}
+
+const req_investor_info& req_investor_info::default_instance() {
+  protobuf_riskapi_5faction_5fprotocal_2eproto::InitDefaults();
+  return *internal_default_instance();
+}
+
+req_investor_info* req_investor_info::New(::google::protobuf::Arena* arena) const {
+  req_investor_info* n = new req_investor_info;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
+}
+
+void req_investor_info::Clear() {
+// @@protoc_insertion_point(message_clear_start:risk.req_investor_info)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  investor_.Clear();
+  requestid_ = 0;
+  _internal_metadata_.Clear();
+}
+
+bool req_investor_info::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:risk.req_investor_info)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // int32 requestid = 1;
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(8u /* 8 & 0xFF */)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &requestid_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // repeated string investor = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(18u /* 18 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->add_investor()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->investor(this->investor_size() - 1).data(),
+            static_cast<int>(this->investor(this->investor_size() - 1).length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "risk.req_investor_info.investor"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:risk.req_investor_info)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:risk.req_investor_info)
+  return false;
+#undef DO_
+}
+
+void req_investor_info::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:risk.req_investor_info)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // int32 requestid = 1;
+  if (this->requestid() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->requestid(), output);
+  }
+
+  // repeated string investor = 2;
+  for (int i = 0, n = this->investor_size(); i < n; i++) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->investor(i).data(), static_cast<int>(this->investor(i).length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "risk.req_investor_info.investor");
+    ::google::protobuf::internal::WireFormatLite::WriteString(
+      2, this->investor(i), output);
+  }
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
+  }
+  // @@protoc_insertion_point(serialize_end:risk.req_investor_info)
+}
+
+::google::protobuf::uint8* req_investor_info::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic; // Unused
+  // @@protoc_insertion_point(serialize_to_array_start:risk.req_investor_info)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // int32 requestid = 1;
+  if (this->requestid() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->requestid(), target);
+  }
+
+  // repeated string investor = 2;
+  for (int i = 0, n = this->investor_size(); i < n; i++) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->investor(i).data(), static_cast<int>(this->investor(i).length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "risk.req_investor_info.investor");
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteStringToArray(2, this->investor(i), target);
+  }
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:risk.req_investor_info)
+  return target;
+}
+
+size_t req_investor_info::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:risk.req_investor_info)
+  size_t total_size = 0;
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
+  }
+  // repeated string investor = 2;
+  total_size += 1 *
+      ::google::protobuf::internal::FromIntSize(this->investor_size());
+  for (int i = 0, n = this->investor_size(); i < n; i++) {
+    total_size += ::google::protobuf::internal::WireFormatLite::StringSize(
+      this->investor(i));
+  }
+
+  // int32 requestid = 1;
+  if (this->requestid() != 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::Int32Size(
+        this->requestid());
+  }
+
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = cached_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void req_investor_info::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:risk.req_investor_info)
+  GOOGLE_DCHECK_NE(&from, this);
+  const req_investor_info* source =
+      ::google::protobuf::internal::DynamicCastToGenerated<const req_investor_info>(
+          &from);
+  if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:risk.req_investor_info)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:risk.req_investor_info)
+    MergeFrom(*source);
+  }
+}
+
+void req_investor_info::MergeFrom(const req_investor_info& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:risk.req_investor_info)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  investor_.MergeFrom(from.investor_);
+  if (from.requestid() != 0) {
+    set_requestid(from.requestid());
+  }
+}
+
+void req_investor_info::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:risk.req_investor_info)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void req_investor_info::CopyFrom(const req_investor_info& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:risk.req_investor_info)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool req_investor_info::IsInitialized() const {
+  return true;
+}
+
+void req_investor_info::Swap(req_investor_info* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void req_investor_info::InternalSwap(req_investor_info* other) {
+  using std::swap;
+  investor_.InternalSwap(&other->investor_);
+  swap(requestid_, other->requestid_);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(_cached_size_, other->_cached_size_);
+}
+
+::google::protobuf::Metadata req_investor_info::GetMetadata() const {
+  protobuf_riskapi_5faction_5fprotocal_2eproto::protobuf_AssignDescriptorsOnce();
+  return protobuf_riskapi_5faction_5fprotocal_2eproto::file_level_metadata[kIndexInFileMessages];
+}
+
+#if PROTOBUF_INLINE_NOT_IN_HEADERS
+// req_investor_info
+
+// int32 requestid = 1;
+void req_investor_info::clear_requestid() {
+  requestid_ = 0;
+}
+::google::protobuf::int32 req_investor_info::requestid() const {
+  // @@protoc_insertion_point(field_get:risk.req_investor_info.requestid)
+  return requestid_;
+}
+void req_investor_info::set_requestid(::google::protobuf::int32 value) {
+  
+  requestid_ = value;
+  // @@protoc_insertion_point(field_set:risk.req_investor_info.requestid)
+}
+
+// repeated string investor = 2;
+int req_investor_info::investor_size() const {
+  return investor_.size();
+}
+void req_investor_info::clear_investor() {
+  investor_.Clear();
+}
+const ::std::string& req_investor_info::investor(int index) const {
+  // @@protoc_insertion_point(field_get:risk.req_investor_info.investor)
+  return investor_.Get(index);
+}
+::std::string* req_investor_info::mutable_investor(int index) {
+  // @@protoc_insertion_point(field_mutable:risk.req_investor_info.investor)
+  return investor_.Mutable(index);
+}
+void req_investor_info::set_investor(int index, const ::std::string& value) {
+  // @@protoc_insertion_point(field_set:risk.req_investor_info.investor)
+  investor_.Mutable(index)->assign(value);
+}
+#if LANG_CXX11
+void req_investor_info::set_investor(int index, ::std::string&& value) {
+  // @@protoc_insertion_point(field_set:risk.req_investor_info.investor)
+  investor_.Mutable(index)->assign(std::move(value));
+}
+#endif
+void req_investor_info::set_investor(int index, const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  investor_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set_char:risk.req_investor_info.investor)
+}
+void req_investor_info::set_investor(int index, const char* value, size_t size) {
+  investor_.Mutable(index)->assign(
+    reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:risk.req_investor_info.investor)
+}
+::std::string* req_investor_info::add_investor() {
+  // @@protoc_insertion_point(field_add_mutable:risk.req_investor_info.investor)
+  return investor_.Add();
+}
+void req_investor_info::add_investor(const ::std::string& value) {
+  investor_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add:risk.req_investor_info.investor)
+}
+#if LANG_CXX11
+void req_investor_info::add_investor(::std::string&& value) {
+  investor_.Add(std::move(value));
+  // @@protoc_insertion_point(field_add:risk.req_investor_info.investor)
+}
+#endif
+void req_investor_info::add_investor(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  investor_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add_char:risk.req_investor_info.investor)
+}
+void req_investor_info::add_investor(const char* value, size_t size) {
+  investor_.Add()->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_add_pointer:risk.req_investor_info.investor)
+}
+const ::google::protobuf::RepeatedPtrField< ::std::string>&
+req_investor_info::investor() const {
+  // @@protoc_insertion_point(field_list:risk.req_investor_info.investor)
+  return investor_;
+}
+::google::protobuf::RepeatedPtrField< ::std::string>*
+req_investor_info::mutable_investor() {
+  // @@protoc_insertion_point(field_mutable_list:risk.req_investor_info.investor)
+  return &investor_;
 }
 
 #endif  // PROTOBUF_INLINE_NOT_IN_HEADERS

@@ -173,13 +173,23 @@ public:
  ::google::protobuf::internal::ExplicitlyConstructed<rtn_whatif>
      _instance;
 } _rtn_whatif_default_instance_;
+class investor_infoDefaultTypeInternal {
+public:
+ ::google::protobuf::internal::ExplicitlyConstructed<investor_info>
+     _instance;
+} _investor_info_default_instance_;
+class rsp_investor_infoDefaultTypeInternal {
+public:
+ ::google::protobuf::internal::ExplicitlyConstructed<rsp_investor_info>
+     _instance;
+} _rsp_investor_info_default_instance_;
 
 namespace protobuf_riskapi_5fdata_5fprotocal_2eproto {
 
 
 namespace {
 
-::google::protobuf::Metadata file_level_metadata[31];
+::google::protobuf::Metadata file_level_metadata[33];
 
 }  // namespace
 
@@ -194,6 +204,8 @@ PROTOBUF_CONSTEXPR_VAR ::google::protobuf::internal::AuxillaryParseTableField
 };
 PROTOBUF_CONSTEXPR_VAR ::google::protobuf::internal::ParseTable const
     TableStruct::schema[] GOOGLE_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
+  { NULL, NULL, 0, -1, -1, -1, -1, NULL, false },
+  { NULL, NULL, 0, -1, -1, -1, -1, NULL, false },
   { NULL, NULL, 0, -1, -1, -1, -1, NULL, false },
   { NULL, NULL, 0, -1, -1, -1, -1, NULL, false },
   { NULL, NULL, 0, -1, -1, -1, -1, NULL, false },
@@ -495,6 +507,49 @@ const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_ATTRIBUTE_SECTION
   ~0u,  // no _weak_field_map_
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(rtn_whatif, field_),
   GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(rtn_whatif, option_value_),
+  ~0u,  // no _has_bits_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(investor_info, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(investor_info, investorid_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(investor_info, brokerid_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(investor_info, investortype_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(investor_info, investorname_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(investor_info, identifiedcardtype_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(investor_info, identifiedcardno_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(investor_info, country_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(investor_info, province_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(investor_info, city_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(investor_info, birthday_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(investor_info, sex_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(investor_info, profession_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(investor_info, national_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(investor_info, capital_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(investor_info, capitalcurrency_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(investor_info, telephone_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(investor_info, address_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(investor_info, zipcode_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(investor_info, email_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(investor_info, memo_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(investor_info, openinvestorname_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(investor_info, orderinvestorname_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(investor_info, fundinvestorname_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(investor_info, settleinvestorname_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(investor_info, isactive_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(investor_info, departmentid_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(investor_info, investorfullname_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(investor_info, isemail_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(investor_info, issms_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(investor_info, isusingotp_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(investor_info, clientregion_),
+  ~0u,  // no _has_bits_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(rsp_investor_info, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(rsp_investor_info, header_),
+  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(rsp_investor_info, infos_),
 };
 static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(error_info)},
@@ -528,6 +583,8 @@ static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_ATTR
   { 244, -1, sizeof(option_argv)},
   { 253, -1, sizeof(rsp_option_argv)},
   { 260, -1, sizeof(rtn_whatif)},
+  { 267, -1, sizeof(investor_info)},
+  { 303, -1, sizeof(rsp_investor_info)},
 };
 
 static ::google::protobuf::Message const * const file_default_instances[] = {
@@ -562,6 +619,8 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::google::protobuf::Message*>(&_option_argv_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&_rsp_option_argv_default_instance_),
   reinterpret_cast<const ::google::protobuf::Message*>(&_rtn_whatif_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&_investor_info_default_instance_),
+  reinterpret_cast<const ::google::protobuf::Message*>(&_rsp_investor_info_default_instance_),
 };
 
 namespace {
@@ -582,7 +641,7 @@ void protobuf_AssignDescriptorsOnce() {
 void protobuf_RegisterTypes(const ::std::string&) GOOGLE_ATTRIBUTE_COLD;
 void protobuf_RegisterTypes(const ::std::string&) {
   protobuf_AssignDescriptorsOnce();
-  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 31);
+  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 33);
 }
 
 }  // namespace
@@ -655,7 +714,11 @@ void TableStruct::InitDefaultsImpl() {
   ::google::protobuf::internal::OnShutdownDestroyMessage(
       &_rsp_option_argv_default_instance_);_rtn_whatif_default_instance_._instance.DefaultConstruct();
   ::google::protobuf::internal::OnShutdownDestroyMessage(
-      &_rtn_whatif_default_instance_);_rsp_head_info_default_instance_._instance.get_mutable()->info_ = const_cast< ::risk::error_info*>(
+      &_rtn_whatif_default_instance_);_investor_info_default_instance_._instance.DefaultConstruct();
+  ::google::protobuf::internal::OnShutdownDestroyMessage(
+      &_investor_info_default_instance_);_rsp_investor_info_default_instance_._instance.DefaultConstruct();
+  ::google::protobuf::internal::OnShutdownDestroyMessage(
+      &_rsp_investor_info_default_instance_);_rsp_head_info_default_instance_._instance.get_mutable()->info_ = const_cast< ::risk::error_info*>(
       ::risk::error_info::internal_default_instance());
   _rsp_risker_login_default_instance_._instance.get_mutable()->info_ = const_cast< ::risk::error_info*>(
       ::risk::error_info::internal_default_instance());
@@ -721,6 +784,8 @@ void TableStruct::InitDefaultsImpl() {
       ::risk::option_argv::internal_default_instance());
   _rtn_whatif_default_instance_._instance.get_mutable()->field_ = const_cast< ::risk::whatif_argv*>(
       ::risk::whatif_argv::internal_default_instance());
+  _rsp_investor_info_default_instance_._instance.get_mutable()->header_ = const_cast< ::risk::rsp_head_info*>(
+      ::risk::rsp_head_info::internal_default_instance());
 }
 
 void InitDefaults() {
@@ -825,11 +890,29 @@ void AddDescriptorsImpl() {
       "sp_option_argv\022#\n\006header\030\001 \001(\0132\023.risk.rs"
       "p_head_info\022\037\n\004info\030\002 \001(\0132\021.risk.option_"
       "argv\"D\n\nrtn_whatif\022 \n\005field\030\001 \001(\0132\021.risk"
-      ".whatif_argv\022\024\n\014option_value\030\002 \001(\001b\006prot"
-      "o3"
+      ".whatif_argv\022\024\n\014option_value\030\002 \001(\001\"\200\005\n\ri"
+      "nvestor_info\022\022\n\ninvestorid\030\001 \001(\t\022\020\n\010brok"
+      "erid\030\002 \001(\t\022\024\n\014investortype\030\003 \001(\t\022\024\n\014inve"
+      "storname\030\004 \001(\t\022\032\n\022identifiedcardtype\030\005 \001"
+      "(\t\022\030\n\020identifiedcardno\030\006 \001(\t\022\017\n\007country\030"
+      "\007 \001(\t\022\020\n\010province\030\010 \001(\t\022\014\n\004city\030\t \001(\t\022\020\n"
+      "\010birthday\030\n \001(\t\022\013\n\003sex\030\013 \001(\t\022\022\n\nprofessi"
+      "on\030\014 \001(\t\022\020\n\010national\030\r \001(\t\022\017\n\007capital\030\016 "
+      "\001(\001\022\027\n\017capitalcurrency\030\017 \001(\t\022\021\n\ttelephon"
+      "e\030\020 \001(\t\022\017\n\007address\030\021 \001(\t\022\017\n\007zipcode\030\022 \001("
+      "\t\022\r\n\005email\030\023 \001(\t\022\014\n\004memo\030\024 \001(\t\022\030\n\020openin"
+      "vestorname\030\025 \001(\t\022\031\n\021orderinvestorname\030\026 "
+      "\001(\t\022\030\n\020fundinvestorname\030\027 \001(\t\022\032\n\022settlei"
+      "nvestorname\030\030 \001(\t\022\020\n\010isactive\030\031 \001(\005\022\024\n\014d"
+      "epartmentid\030\032 \001(\t\022\030\n\020investorfullname\030\033 "
+      "\001(\t\022\017\n\007isemail\030\034 \001(\005\022\r\n\005issms\030\035 \001(\005\022\022\n\ni"
+      "susingotp\030\036 \001(\005\022\024\n\014clientregion\030\037 \001(\t\"\\\n"
+      "\021rsp_investor_info\022#\n\006header\030\001 \001(\0132\023.ris"
+      "k.rsp_head_info\022\"\n\005infos\030\002 \003(\0132\023.risk.in"
+      "vestor_infob\006proto3"
   };
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 3802);
+      descriptor, 4539);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "riskapi_data_protocal.proto", &protobuf_RegisterTypes);
   ::risk::protobuf_trade_5fprotocal_2eproto::AddDescriptors();
@@ -15575,6 +15658,3686 @@ void rtn_whatif::set_option_value(double value) {
   
   option_value_ = value;
   // @@protoc_insertion_point(field_set:risk.rtn_whatif.option_value)
+}
+
+#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
+
+// ===================================================================
+
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int investor_info::kInvestoridFieldNumber;
+const int investor_info::kBrokeridFieldNumber;
+const int investor_info::kInvestortypeFieldNumber;
+const int investor_info::kInvestornameFieldNumber;
+const int investor_info::kIdentifiedcardtypeFieldNumber;
+const int investor_info::kIdentifiedcardnoFieldNumber;
+const int investor_info::kCountryFieldNumber;
+const int investor_info::kProvinceFieldNumber;
+const int investor_info::kCityFieldNumber;
+const int investor_info::kBirthdayFieldNumber;
+const int investor_info::kSexFieldNumber;
+const int investor_info::kProfessionFieldNumber;
+const int investor_info::kNationalFieldNumber;
+const int investor_info::kCapitalFieldNumber;
+const int investor_info::kCapitalcurrencyFieldNumber;
+const int investor_info::kTelephoneFieldNumber;
+const int investor_info::kAddressFieldNumber;
+const int investor_info::kZipcodeFieldNumber;
+const int investor_info::kEmailFieldNumber;
+const int investor_info::kMemoFieldNumber;
+const int investor_info::kOpeninvestornameFieldNumber;
+const int investor_info::kOrderinvestornameFieldNumber;
+const int investor_info::kFundinvestornameFieldNumber;
+const int investor_info::kSettleinvestornameFieldNumber;
+const int investor_info::kIsactiveFieldNumber;
+const int investor_info::kDepartmentidFieldNumber;
+const int investor_info::kInvestorfullnameFieldNumber;
+const int investor_info::kIsemailFieldNumber;
+const int investor_info::kIssmsFieldNumber;
+const int investor_info::kIsusingotpFieldNumber;
+const int investor_info::kClientregionFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+investor_info::investor_info()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  if (GOOGLE_PREDICT_TRUE(this != internal_default_instance())) {
+    protobuf_riskapi_5fdata_5fprotocal_2eproto::InitDefaults();
+  }
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:risk.investor_info)
+}
+investor_info::investor_info(const investor_info& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(NULL),
+      _cached_size_(0) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  investorid_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.investorid().size() > 0) {
+    investorid_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.investorid_);
+  }
+  brokerid_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.brokerid().size() > 0) {
+    brokerid_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.brokerid_);
+  }
+  investortype_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.investortype().size() > 0) {
+    investortype_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.investortype_);
+  }
+  investorname_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.investorname().size() > 0) {
+    investorname_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.investorname_);
+  }
+  identifiedcardtype_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.identifiedcardtype().size() > 0) {
+    identifiedcardtype_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.identifiedcardtype_);
+  }
+  identifiedcardno_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.identifiedcardno().size() > 0) {
+    identifiedcardno_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.identifiedcardno_);
+  }
+  country_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.country().size() > 0) {
+    country_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.country_);
+  }
+  province_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.province().size() > 0) {
+    province_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.province_);
+  }
+  city_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.city().size() > 0) {
+    city_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.city_);
+  }
+  birthday_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.birthday().size() > 0) {
+    birthday_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.birthday_);
+  }
+  sex_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.sex().size() > 0) {
+    sex_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.sex_);
+  }
+  profession_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.profession().size() > 0) {
+    profession_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.profession_);
+  }
+  national_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.national().size() > 0) {
+    national_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.national_);
+  }
+  capitalcurrency_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.capitalcurrency().size() > 0) {
+    capitalcurrency_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.capitalcurrency_);
+  }
+  telephone_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.telephone().size() > 0) {
+    telephone_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.telephone_);
+  }
+  address_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.address().size() > 0) {
+    address_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.address_);
+  }
+  zipcode_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.zipcode().size() > 0) {
+    zipcode_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.zipcode_);
+  }
+  email_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.email().size() > 0) {
+    email_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.email_);
+  }
+  memo_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.memo().size() > 0) {
+    memo_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.memo_);
+  }
+  openinvestorname_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.openinvestorname().size() > 0) {
+    openinvestorname_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.openinvestorname_);
+  }
+  orderinvestorname_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.orderinvestorname().size() > 0) {
+    orderinvestorname_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.orderinvestorname_);
+  }
+  fundinvestorname_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.fundinvestorname().size() > 0) {
+    fundinvestorname_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.fundinvestorname_);
+  }
+  settleinvestorname_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.settleinvestorname().size() > 0) {
+    settleinvestorname_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.settleinvestorname_);
+  }
+  departmentid_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.departmentid().size() > 0) {
+    departmentid_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.departmentid_);
+  }
+  investorfullname_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.investorfullname().size() > 0) {
+    investorfullname_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.investorfullname_);
+  }
+  clientregion_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  if (from.clientregion().size() > 0) {
+    clientregion_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.clientregion_);
+  }
+  ::memcpy(&capital_, &from.capital_,
+    static_cast<size_t>(reinterpret_cast<char*>(&isusingotp_) -
+    reinterpret_cast<char*>(&capital_)) + sizeof(isusingotp_));
+  // @@protoc_insertion_point(copy_constructor:risk.investor_info)
+}
+
+void investor_info::SharedCtor() {
+  investorid_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  brokerid_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  investortype_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  investorname_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  identifiedcardtype_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  identifiedcardno_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  country_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  province_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  city_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  birthday_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  sex_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  profession_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  national_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  capitalcurrency_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  telephone_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  address_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  zipcode_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  email_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  memo_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  openinvestorname_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  orderinvestorname_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  fundinvestorname_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  settleinvestorname_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  departmentid_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  investorfullname_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  clientregion_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  ::memset(&capital_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&isusingotp_) -
+      reinterpret_cast<char*>(&capital_)) + sizeof(isusingotp_));
+  _cached_size_ = 0;
+}
+
+investor_info::~investor_info() {
+  // @@protoc_insertion_point(destructor:risk.investor_info)
+  SharedDtor();
+}
+
+void investor_info::SharedDtor() {
+  investorid_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  brokerid_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  investortype_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  investorname_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  identifiedcardtype_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  identifiedcardno_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  country_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  province_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  city_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  birthday_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  sex_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  profession_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  national_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  capitalcurrency_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  telephone_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  address_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  zipcode_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  email_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  memo_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  openinvestorname_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  orderinvestorname_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  fundinvestorname_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  settleinvestorname_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  departmentid_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  investorfullname_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  clientregion_.DestroyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+
+void investor_info::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* investor_info::descriptor() {
+  protobuf_riskapi_5fdata_5fprotocal_2eproto::protobuf_AssignDescriptorsOnce();
+  return protobuf_riskapi_5fdata_5fprotocal_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+}
+
+const investor_info& investor_info::default_instance() {
+  protobuf_riskapi_5fdata_5fprotocal_2eproto::InitDefaults();
+  return *internal_default_instance();
+}
+
+investor_info* investor_info::New(::google::protobuf::Arena* arena) const {
+  investor_info* n = new investor_info;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
+}
+
+void investor_info::Clear() {
+// @@protoc_insertion_point(message_clear_start:risk.investor_info)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  investorid_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  brokerid_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  investortype_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  investorname_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  identifiedcardtype_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  identifiedcardno_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  country_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  province_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  city_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  birthday_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  sex_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  profession_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  national_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  capitalcurrency_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  telephone_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  address_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  zipcode_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  email_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  memo_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  openinvestorname_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  orderinvestorname_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  fundinvestorname_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  settleinvestorname_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  departmentid_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  investorfullname_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  clientregion_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  ::memset(&capital_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&isusingotp_) -
+      reinterpret_cast<char*>(&capital_)) + sizeof(isusingotp_));
+  _internal_metadata_.Clear();
+}
+
+bool investor_info::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:risk.investor_info)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(16383u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // string investorid = 1;
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_investorid()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->investorid().data(), static_cast<int>(this->investorid().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "risk.investor_info.investorid"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // string brokerid = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(18u /* 18 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_brokerid()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->brokerid().data(), static_cast<int>(this->brokerid().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "risk.investor_info.brokerid"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // string investortype = 3;
+      case 3: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(26u /* 26 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_investortype()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->investortype().data(), static_cast<int>(this->investortype().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "risk.investor_info.investortype"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // string investorname = 4;
+      case 4: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(34u /* 34 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_investorname()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->investorname().data(), static_cast<int>(this->investorname().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "risk.investor_info.investorname"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // string identifiedcardtype = 5;
+      case 5: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(42u /* 42 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_identifiedcardtype()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->identifiedcardtype().data(), static_cast<int>(this->identifiedcardtype().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "risk.investor_info.identifiedcardtype"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // string identifiedcardno = 6;
+      case 6: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(50u /* 50 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_identifiedcardno()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->identifiedcardno().data(), static_cast<int>(this->identifiedcardno().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "risk.investor_info.identifiedcardno"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // string country = 7;
+      case 7: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(58u /* 58 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_country()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->country().data(), static_cast<int>(this->country().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "risk.investor_info.country"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // string province = 8;
+      case 8: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(66u /* 66 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_province()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->province().data(), static_cast<int>(this->province().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "risk.investor_info.province"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // string city = 9;
+      case 9: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(74u /* 74 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_city()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->city().data(), static_cast<int>(this->city().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "risk.investor_info.city"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // string birthday = 10;
+      case 10: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(82u /* 82 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_birthday()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->birthday().data(), static_cast<int>(this->birthday().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "risk.investor_info.birthday"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // string sex = 11;
+      case 11: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(90u /* 90 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_sex()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->sex().data(), static_cast<int>(this->sex().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "risk.investor_info.sex"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // string profession = 12;
+      case 12: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(98u /* 98 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_profession()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->profession().data(), static_cast<int>(this->profession().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "risk.investor_info.profession"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // string national = 13;
+      case 13: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(106u /* 106 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_national()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->national().data(), static_cast<int>(this->national().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "risk.investor_info.national"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // double capital = 14;
+      case 14: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(113u /* 113 & 0xFF */)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   double, ::google::protobuf::internal::WireFormatLite::TYPE_DOUBLE>(
+                 input, &capital_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // string capitalcurrency = 15;
+      case 15: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(122u /* 122 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_capitalcurrency()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->capitalcurrency().data(), static_cast<int>(this->capitalcurrency().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "risk.investor_info.capitalcurrency"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // string telephone = 16;
+      case 16: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(130u /* 130 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_telephone()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->telephone().data(), static_cast<int>(this->telephone().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "risk.investor_info.telephone"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // string address = 17;
+      case 17: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(138u /* 138 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_address()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->address().data(), static_cast<int>(this->address().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "risk.investor_info.address"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // string zipcode = 18;
+      case 18: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(146u /* 146 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_zipcode()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->zipcode().data(), static_cast<int>(this->zipcode().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "risk.investor_info.zipcode"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // string email = 19;
+      case 19: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(154u /* 154 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_email()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->email().data(), static_cast<int>(this->email().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "risk.investor_info.email"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // string memo = 20;
+      case 20: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(162u /* 162 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_memo()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->memo().data(), static_cast<int>(this->memo().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "risk.investor_info.memo"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // string openinvestorname = 21;
+      case 21: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(170u /* 170 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_openinvestorname()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->openinvestorname().data(), static_cast<int>(this->openinvestorname().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "risk.investor_info.openinvestorname"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // string orderinvestorname = 22;
+      case 22: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(178u /* 178 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_orderinvestorname()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->orderinvestorname().data(), static_cast<int>(this->orderinvestorname().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "risk.investor_info.orderinvestorname"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // string fundinvestorname = 23;
+      case 23: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(186u /* 186 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_fundinvestorname()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->fundinvestorname().data(), static_cast<int>(this->fundinvestorname().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "risk.investor_info.fundinvestorname"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // string settleinvestorname = 24;
+      case 24: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(194u /* 194 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_settleinvestorname()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->settleinvestorname().data(), static_cast<int>(this->settleinvestorname().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "risk.investor_info.settleinvestorname"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // int32 isactive = 25;
+      case 25: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(200u /* 200 & 0xFF */)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &isactive_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // string departmentid = 26;
+      case 26: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(210u /* 210 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_departmentid()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->departmentid().data(), static_cast<int>(this->departmentid().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "risk.investor_info.departmentid"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // string investorfullname = 27;
+      case 27: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(218u /* 218 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_investorfullname()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->investorfullname().data(), static_cast<int>(this->investorfullname().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "risk.investor_info.investorfullname"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // int32 isemail = 28;
+      case 28: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(224u /* 224 & 0xFF */)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &isemail_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // int32 issms = 29;
+      case 29: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(232u /* 232 & 0xFF */)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &issms_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // int32 isusingotp = 30;
+      case 30: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(240u /* 240 & 0xFF */)) {
+
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &isusingotp_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // string clientregion = 31;
+      case 31: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(250u /* 250 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadString(
+                input, this->mutable_clientregion()));
+          DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+            this->clientregion().data(), static_cast<int>(this->clientregion().length()),
+            ::google::protobuf::internal::WireFormatLite::PARSE,
+            "risk.investor_info.clientregion"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:risk.investor_info)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:risk.investor_info)
+  return false;
+#undef DO_
+}
+
+void investor_info::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:risk.investor_info)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string investorid = 1;
+  if (this->investorid().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->investorid().data(), static_cast<int>(this->investorid().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "risk.investor_info.investorid");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      1, this->investorid(), output);
+  }
+
+  // string brokerid = 2;
+  if (this->brokerid().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->brokerid().data(), static_cast<int>(this->brokerid().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "risk.investor_info.brokerid");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      2, this->brokerid(), output);
+  }
+
+  // string investortype = 3;
+  if (this->investortype().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->investortype().data(), static_cast<int>(this->investortype().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "risk.investor_info.investortype");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      3, this->investortype(), output);
+  }
+
+  // string investorname = 4;
+  if (this->investorname().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->investorname().data(), static_cast<int>(this->investorname().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "risk.investor_info.investorname");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      4, this->investorname(), output);
+  }
+
+  // string identifiedcardtype = 5;
+  if (this->identifiedcardtype().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->identifiedcardtype().data(), static_cast<int>(this->identifiedcardtype().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "risk.investor_info.identifiedcardtype");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      5, this->identifiedcardtype(), output);
+  }
+
+  // string identifiedcardno = 6;
+  if (this->identifiedcardno().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->identifiedcardno().data(), static_cast<int>(this->identifiedcardno().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "risk.investor_info.identifiedcardno");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      6, this->identifiedcardno(), output);
+  }
+
+  // string country = 7;
+  if (this->country().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->country().data(), static_cast<int>(this->country().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "risk.investor_info.country");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      7, this->country(), output);
+  }
+
+  // string province = 8;
+  if (this->province().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->province().data(), static_cast<int>(this->province().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "risk.investor_info.province");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      8, this->province(), output);
+  }
+
+  // string city = 9;
+  if (this->city().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->city().data(), static_cast<int>(this->city().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "risk.investor_info.city");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      9, this->city(), output);
+  }
+
+  // string birthday = 10;
+  if (this->birthday().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->birthday().data(), static_cast<int>(this->birthday().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "risk.investor_info.birthday");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      10, this->birthday(), output);
+  }
+
+  // string sex = 11;
+  if (this->sex().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->sex().data(), static_cast<int>(this->sex().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "risk.investor_info.sex");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      11, this->sex(), output);
+  }
+
+  // string profession = 12;
+  if (this->profession().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->profession().data(), static_cast<int>(this->profession().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "risk.investor_info.profession");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      12, this->profession(), output);
+  }
+
+  // string national = 13;
+  if (this->national().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->national().data(), static_cast<int>(this->national().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "risk.investor_info.national");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      13, this->national(), output);
+  }
+
+  // double capital = 14;
+  if (this->capital() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteDouble(14, this->capital(), output);
+  }
+
+  // string capitalcurrency = 15;
+  if (this->capitalcurrency().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->capitalcurrency().data(), static_cast<int>(this->capitalcurrency().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "risk.investor_info.capitalcurrency");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      15, this->capitalcurrency(), output);
+  }
+
+  // string telephone = 16;
+  if (this->telephone().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->telephone().data(), static_cast<int>(this->telephone().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "risk.investor_info.telephone");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      16, this->telephone(), output);
+  }
+
+  // string address = 17;
+  if (this->address().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->address().data(), static_cast<int>(this->address().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "risk.investor_info.address");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      17, this->address(), output);
+  }
+
+  // string zipcode = 18;
+  if (this->zipcode().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->zipcode().data(), static_cast<int>(this->zipcode().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "risk.investor_info.zipcode");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      18, this->zipcode(), output);
+  }
+
+  // string email = 19;
+  if (this->email().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->email().data(), static_cast<int>(this->email().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "risk.investor_info.email");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      19, this->email(), output);
+  }
+
+  // string memo = 20;
+  if (this->memo().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->memo().data(), static_cast<int>(this->memo().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "risk.investor_info.memo");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      20, this->memo(), output);
+  }
+
+  // string openinvestorname = 21;
+  if (this->openinvestorname().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->openinvestorname().data(), static_cast<int>(this->openinvestorname().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "risk.investor_info.openinvestorname");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      21, this->openinvestorname(), output);
+  }
+
+  // string orderinvestorname = 22;
+  if (this->orderinvestorname().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->orderinvestorname().data(), static_cast<int>(this->orderinvestorname().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "risk.investor_info.orderinvestorname");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      22, this->orderinvestorname(), output);
+  }
+
+  // string fundinvestorname = 23;
+  if (this->fundinvestorname().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->fundinvestorname().data(), static_cast<int>(this->fundinvestorname().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "risk.investor_info.fundinvestorname");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      23, this->fundinvestorname(), output);
+  }
+
+  // string settleinvestorname = 24;
+  if (this->settleinvestorname().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->settleinvestorname().data(), static_cast<int>(this->settleinvestorname().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "risk.investor_info.settleinvestorname");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      24, this->settleinvestorname(), output);
+  }
+
+  // int32 isactive = 25;
+  if (this->isactive() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(25, this->isactive(), output);
+  }
+
+  // string departmentid = 26;
+  if (this->departmentid().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->departmentid().data(), static_cast<int>(this->departmentid().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "risk.investor_info.departmentid");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      26, this->departmentid(), output);
+  }
+
+  // string investorfullname = 27;
+  if (this->investorfullname().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->investorfullname().data(), static_cast<int>(this->investorfullname().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "risk.investor_info.investorfullname");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      27, this->investorfullname(), output);
+  }
+
+  // int32 isemail = 28;
+  if (this->isemail() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(28, this->isemail(), output);
+  }
+
+  // int32 issms = 29;
+  if (this->issms() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(29, this->issms(), output);
+  }
+
+  // int32 isusingotp = 30;
+  if (this->isusingotp() != 0) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(30, this->isusingotp(), output);
+  }
+
+  // string clientregion = 31;
+  if (this->clientregion().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->clientregion().data(), static_cast<int>(this->clientregion().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "risk.investor_info.clientregion");
+    ::google::protobuf::internal::WireFormatLite::WriteStringMaybeAliased(
+      31, this->clientregion(), output);
+  }
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
+  }
+  // @@protoc_insertion_point(serialize_end:risk.investor_info)
+}
+
+::google::protobuf::uint8* investor_info::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic; // Unused
+  // @@protoc_insertion_point(serialize_to_array_start:risk.investor_info)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string investorid = 1;
+  if (this->investorid().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->investorid().data(), static_cast<int>(this->investorid().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "risk.investor_info.investorid");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        1, this->investorid(), target);
+  }
+
+  // string brokerid = 2;
+  if (this->brokerid().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->brokerid().data(), static_cast<int>(this->brokerid().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "risk.investor_info.brokerid");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        2, this->brokerid(), target);
+  }
+
+  // string investortype = 3;
+  if (this->investortype().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->investortype().data(), static_cast<int>(this->investortype().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "risk.investor_info.investortype");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        3, this->investortype(), target);
+  }
+
+  // string investorname = 4;
+  if (this->investorname().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->investorname().data(), static_cast<int>(this->investorname().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "risk.investor_info.investorname");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        4, this->investorname(), target);
+  }
+
+  // string identifiedcardtype = 5;
+  if (this->identifiedcardtype().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->identifiedcardtype().data(), static_cast<int>(this->identifiedcardtype().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "risk.investor_info.identifiedcardtype");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        5, this->identifiedcardtype(), target);
+  }
+
+  // string identifiedcardno = 6;
+  if (this->identifiedcardno().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->identifiedcardno().data(), static_cast<int>(this->identifiedcardno().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "risk.investor_info.identifiedcardno");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        6, this->identifiedcardno(), target);
+  }
+
+  // string country = 7;
+  if (this->country().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->country().data(), static_cast<int>(this->country().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "risk.investor_info.country");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        7, this->country(), target);
+  }
+
+  // string province = 8;
+  if (this->province().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->province().data(), static_cast<int>(this->province().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "risk.investor_info.province");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        8, this->province(), target);
+  }
+
+  // string city = 9;
+  if (this->city().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->city().data(), static_cast<int>(this->city().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "risk.investor_info.city");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        9, this->city(), target);
+  }
+
+  // string birthday = 10;
+  if (this->birthday().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->birthday().data(), static_cast<int>(this->birthday().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "risk.investor_info.birthday");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        10, this->birthday(), target);
+  }
+
+  // string sex = 11;
+  if (this->sex().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->sex().data(), static_cast<int>(this->sex().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "risk.investor_info.sex");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        11, this->sex(), target);
+  }
+
+  // string profession = 12;
+  if (this->profession().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->profession().data(), static_cast<int>(this->profession().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "risk.investor_info.profession");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        12, this->profession(), target);
+  }
+
+  // string national = 13;
+  if (this->national().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->national().data(), static_cast<int>(this->national().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "risk.investor_info.national");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        13, this->national(), target);
+  }
+
+  // double capital = 14;
+  if (this->capital() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteDoubleToArray(14, this->capital(), target);
+  }
+
+  // string capitalcurrency = 15;
+  if (this->capitalcurrency().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->capitalcurrency().data(), static_cast<int>(this->capitalcurrency().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "risk.investor_info.capitalcurrency");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        15, this->capitalcurrency(), target);
+  }
+
+  // string telephone = 16;
+  if (this->telephone().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->telephone().data(), static_cast<int>(this->telephone().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "risk.investor_info.telephone");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        16, this->telephone(), target);
+  }
+
+  // string address = 17;
+  if (this->address().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->address().data(), static_cast<int>(this->address().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "risk.investor_info.address");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        17, this->address(), target);
+  }
+
+  // string zipcode = 18;
+  if (this->zipcode().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->zipcode().data(), static_cast<int>(this->zipcode().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "risk.investor_info.zipcode");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        18, this->zipcode(), target);
+  }
+
+  // string email = 19;
+  if (this->email().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->email().data(), static_cast<int>(this->email().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "risk.investor_info.email");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        19, this->email(), target);
+  }
+
+  // string memo = 20;
+  if (this->memo().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->memo().data(), static_cast<int>(this->memo().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "risk.investor_info.memo");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        20, this->memo(), target);
+  }
+
+  // string openinvestorname = 21;
+  if (this->openinvestorname().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->openinvestorname().data(), static_cast<int>(this->openinvestorname().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "risk.investor_info.openinvestorname");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        21, this->openinvestorname(), target);
+  }
+
+  // string orderinvestorname = 22;
+  if (this->orderinvestorname().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->orderinvestorname().data(), static_cast<int>(this->orderinvestorname().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "risk.investor_info.orderinvestorname");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        22, this->orderinvestorname(), target);
+  }
+
+  // string fundinvestorname = 23;
+  if (this->fundinvestorname().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->fundinvestorname().data(), static_cast<int>(this->fundinvestorname().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "risk.investor_info.fundinvestorname");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        23, this->fundinvestorname(), target);
+  }
+
+  // string settleinvestorname = 24;
+  if (this->settleinvestorname().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->settleinvestorname().data(), static_cast<int>(this->settleinvestorname().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "risk.investor_info.settleinvestorname");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        24, this->settleinvestorname(), target);
+  }
+
+  // int32 isactive = 25;
+  if (this->isactive() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(25, this->isactive(), target);
+  }
+
+  // string departmentid = 26;
+  if (this->departmentid().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->departmentid().data(), static_cast<int>(this->departmentid().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "risk.investor_info.departmentid");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        26, this->departmentid(), target);
+  }
+
+  // string investorfullname = 27;
+  if (this->investorfullname().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->investorfullname().data(), static_cast<int>(this->investorfullname().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "risk.investor_info.investorfullname");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        27, this->investorfullname(), target);
+  }
+
+  // int32 isemail = 28;
+  if (this->isemail() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(28, this->isemail(), target);
+  }
+
+  // int32 issms = 29;
+  if (this->issms() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(29, this->issms(), target);
+  }
+
+  // int32 isusingotp = 30;
+  if (this->isusingotp() != 0) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(30, this->isusingotp(), target);
+  }
+
+  // string clientregion = 31;
+  if (this->clientregion().size() > 0) {
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+      this->clientregion().data(), static_cast<int>(this->clientregion().length()),
+      ::google::protobuf::internal::WireFormatLite::SERIALIZE,
+      "risk.investor_info.clientregion");
+    target =
+      ::google::protobuf::internal::WireFormatLite::WriteStringToArray(
+        31, this->clientregion(), target);
+  }
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:risk.investor_info)
+  return target;
+}
+
+size_t investor_info::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:risk.investor_info)
+  size_t total_size = 0;
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
+  }
+  // string investorid = 1;
+  if (this->investorid().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->investorid());
+  }
+
+  // string brokerid = 2;
+  if (this->brokerid().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->brokerid());
+  }
+
+  // string investortype = 3;
+  if (this->investortype().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->investortype());
+  }
+
+  // string investorname = 4;
+  if (this->investorname().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->investorname());
+  }
+
+  // string identifiedcardtype = 5;
+  if (this->identifiedcardtype().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->identifiedcardtype());
+  }
+
+  // string identifiedcardno = 6;
+  if (this->identifiedcardno().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->identifiedcardno());
+  }
+
+  // string country = 7;
+  if (this->country().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->country());
+  }
+
+  // string province = 8;
+  if (this->province().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->province());
+  }
+
+  // string city = 9;
+  if (this->city().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->city());
+  }
+
+  // string birthday = 10;
+  if (this->birthday().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->birthday());
+  }
+
+  // string sex = 11;
+  if (this->sex().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->sex());
+  }
+
+  // string profession = 12;
+  if (this->profession().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->profession());
+  }
+
+  // string national = 13;
+  if (this->national().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->national());
+  }
+
+  // string capitalcurrency = 15;
+  if (this->capitalcurrency().size() > 0) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->capitalcurrency());
+  }
+
+  // string telephone = 16;
+  if (this->telephone().size() > 0) {
+    total_size += 2 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->telephone());
+  }
+
+  // string address = 17;
+  if (this->address().size() > 0) {
+    total_size += 2 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->address());
+  }
+
+  // string zipcode = 18;
+  if (this->zipcode().size() > 0) {
+    total_size += 2 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->zipcode());
+  }
+
+  // string email = 19;
+  if (this->email().size() > 0) {
+    total_size += 2 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->email());
+  }
+
+  // string memo = 20;
+  if (this->memo().size() > 0) {
+    total_size += 2 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->memo());
+  }
+
+  // string openinvestorname = 21;
+  if (this->openinvestorname().size() > 0) {
+    total_size += 2 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->openinvestorname());
+  }
+
+  // string orderinvestorname = 22;
+  if (this->orderinvestorname().size() > 0) {
+    total_size += 2 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->orderinvestorname());
+  }
+
+  // string fundinvestorname = 23;
+  if (this->fundinvestorname().size() > 0) {
+    total_size += 2 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->fundinvestorname());
+  }
+
+  // string settleinvestorname = 24;
+  if (this->settleinvestorname().size() > 0) {
+    total_size += 2 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->settleinvestorname());
+  }
+
+  // string departmentid = 26;
+  if (this->departmentid().size() > 0) {
+    total_size += 2 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->departmentid());
+  }
+
+  // string investorfullname = 27;
+  if (this->investorfullname().size() > 0) {
+    total_size += 2 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->investorfullname());
+  }
+
+  // string clientregion = 31;
+  if (this->clientregion().size() > 0) {
+    total_size += 2 +
+      ::google::protobuf::internal::WireFormatLite::StringSize(
+        this->clientregion());
+  }
+
+  // double capital = 14;
+  if (this->capital() != 0) {
+    total_size += 1 + 8;
+  }
+
+  // int32 isactive = 25;
+  if (this->isactive() != 0) {
+    total_size += 2 +
+      ::google::protobuf::internal::WireFormatLite::Int32Size(
+        this->isactive());
+  }
+
+  // int32 isemail = 28;
+  if (this->isemail() != 0) {
+    total_size += 2 +
+      ::google::protobuf::internal::WireFormatLite::Int32Size(
+        this->isemail());
+  }
+
+  // int32 issms = 29;
+  if (this->issms() != 0) {
+    total_size += 2 +
+      ::google::protobuf::internal::WireFormatLite::Int32Size(
+        this->issms());
+  }
+
+  // int32 isusingotp = 30;
+  if (this->isusingotp() != 0) {
+    total_size += 2 +
+      ::google::protobuf::internal::WireFormatLite::Int32Size(
+        this->isusingotp());
+  }
+
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = cached_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void investor_info::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:risk.investor_info)
+  GOOGLE_DCHECK_NE(&from, this);
+  const investor_info* source =
+      ::google::protobuf::internal::DynamicCastToGenerated<const investor_info>(
+          &from);
+  if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:risk.investor_info)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:risk.investor_info)
+    MergeFrom(*source);
+  }
+}
+
+void investor_info::MergeFrom(const investor_info& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:risk.investor_info)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.investorid().size() > 0) {
+
+    investorid_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.investorid_);
+  }
+  if (from.brokerid().size() > 0) {
+
+    brokerid_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.brokerid_);
+  }
+  if (from.investortype().size() > 0) {
+
+    investortype_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.investortype_);
+  }
+  if (from.investorname().size() > 0) {
+
+    investorname_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.investorname_);
+  }
+  if (from.identifiedcardtype().size() > 0) {
+
+    identifiedcardtype_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.identifiedcardtype_);
+  }
+  if (from.identifiedcardno().size() > 0) {
+
+    identifiedcardno_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.identifiedcardno_);
+  }
+  if (from.country().size() > 0) {
+
+    country_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.country_);
+  }
+  if (from.province().size() > 0) {
+
+    province_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.province_);
+  }
+  if (from.city().size() > 0) {
+
+    city_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.city_);
+  }
+  if (from.birthday().size() > 0) {
+
+    birthday_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.birthday_);
+  }
+  if (from.sex().size() > 0) {
+
+    sex_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.sex_);
+  }
+  if (from.profession().size() > 0) {
+
+    profession_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.profession_);
+  }
+  if (from.national().size() > 0) {
+
+    national_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.national_);
+  }
+  if (from.capitalcurrency().size() > 0) {
+
+    capitalcurrency_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.capitalcurrency_);
+  }
+  if (from.telephone().size() > 0) {
+
+    telephone_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.telephone_);
+  }
+  if (from.address().size() > 0) {
+
+    address_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.address_);
+  }
+  if (from.zipcode().size() > 0) {
+
+    zipcode_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.zipcode_);
+  }
+  if (from.email().size() > 0) {
+
+    email_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.email_);
+  }
+  if (from.memo().size() > 0) {
+
+    memo_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.memo_);
+  }
+  if (from.openinvestorname().size() > 0) {
+
+    openinvestorname_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.openinvestorname_);
+  }
+  if (from.orderinvestorname().size() > 0) {
+
+    orderinvestorname_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.orderinvestorname_);
+  }
+  if (from.fundinvestorname().size() > 0) {
+
+    fundinvestorname_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.fundinvestorname_);
+  }
+  if (from.settleinvestorname().size() > 0) {
+
+    settleinvestorname_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.settleinvestorname_);
+  }
+  if (from.departmentid().size() > 0) {
+
+    departmentid_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.departmentid_);
+  }
+  if (from.investorfullname().size() > 0) {
+
+    investorfullname_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.investorfullname_);
+  }
+  if (from.clientregion().size() > 0) {
+
+    clientregion_.AssignWithDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), from.clientregion_);
+  }
+  if (from.capital() != 0) {
+    set_capital(from.capital());
+  }
+  if (from.isactive() != 0) {
+    set_isactive(from.isactive());
+  }
+  if (from.isemail() != 0) {
+    set_isemail(from.isemail());
+  }
+  if (from.issms() != 0) {
+    set_issms(from.issms());
+  }
+  if (from.isusingotp() != 0) {
+    set_isusingotp(from.isusingotp());
+  }
+}
+
+void investor_info::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:risk.investor_info)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void investor_info::CopyFrom(const investor_info& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:risk.investor_info)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool investor_info::IsInitialized() const {
+  return true;
+}
+
+void investor_info::Swap(investor_info* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void investor_info::InternalSwap(investor_info* other) {
+  using std::swap;
+  investorid_.Swap(&other->investorid_);
+  brokerid_.Swap(&other->brokerid_);
+  investortype_.Swap(&other->investortype_);
+  investorname_.Swap(&other->investorname_);
+  identifiedcardtype_.Swap(&other->identifiedcardtype_);
+  identifiedcardno_.Swap(&other->identifiedcardno_);
+  country_.Swap(&other->country_);
+  province_.Swap(&other->province_);
+  city_.Swap(&other->city_);
+  birthday_.Swap(&other->birthday_);
+  sex_.Swap(&other->sex_);
+  profession_.Swap(&other->profession_);
+  national_.Swap(&other->national_);
+  capitalcurrency_.Swap(&other->capitalcurrency_);
+  telephone_.Swap(&other->telephone_);
+  address_.Swap(&other->address_);
+  zipcode_.Swap(&other->zipcode_);
+  email_.Swap(&other->email_);
+  memo_.Swap(&other->memo_);
+  openinvestorname_.Swap(&other->openinvestorname_);
+  orderinvestorname_.Swap(&other->orderinvestorname_);
+  fundinvestorname_.Swap(&other->fundinvestorname_);
+  settleinvestorname_.Swap(&other->settleinvestorname_);
+  departmentid_.Swap(&other->departmentid_);
+  investorfullname_.Swap(&other->investorfullname_);
+  clientregion_.Swap(&other->clientregion_);
+  swap(capital_, other->capital_);
+  swap(isactive_, other->isactive_);
+  swap(isemail_, other->isemail_);
+  swap(issms_, other->issms_);
+  swap(isusingotp_, other->isusingotp_);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(_cached_size_, other->_cached_size_);
+}
+
+::google::protobuf::Metadata investor_info::GetMetadata() const {
+  protobuf_riskapi_5fdata_5fprotocal_2eproto::protobuf_AssignDescriptorsOnce();
+  return protobuf_riskapi_5fdata_5fprotocal_2eproto::file_level_metadata[kIndexInFileMessages];
+}
+
+#if PROTOBUF_INLINE_NOT_IN_HEADERS
+// investor_info
+
+// string investorid = 1;
+void investor_info::clear_investorid() {
+  investorid_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+const ::std::string& investor_info::investorid() const {
+  // @@protoc_insertion_point(field_get:risk.investor_info.investorid)
+  return investorid_.GetNoArena();
+}
+void investor_info::set_investorid(const ::std::string& value) {
+  
+  investorid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:risk.investor_info.investorid)
+}
+#if LANG_CXX11
+void investor_info::set_investorid(::std::string&& value) {
+  
+  investorid_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:risk.investor_info.investorid)
+}
+#endif
+void investor_info::set_investorid(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  investorid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:risk.investor_info.investorid)
+}
+void investor_info::set_investorid(const char* value, size_t size) {
+  
+  investorid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:risk.investor_info.investorid)
+}
+::std::string* investor_info::mutable_investorid() {
+  
+  // @@protoc_insertion_point(field_mutable:risk.investor_info.investorid)
+  return investorid_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+::std::string* investor_info::release_investorid() {
+  // @@protoc_insertion_point(field_release:risk.investor_info.investorid)
+  
+  return investorid_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+void investor_info::set_allocated_investorid(::std::string* investorid) {
+  if (investorid != NULL) {
+    
+  } else {
+    
+  }
+  investorid_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), investorid);
+  // @@protoc_insertion_point(field_set_allocated:risk.investor_info.investorid)
+}
+
+// string brokerid = 2;
+void investor_info::clear_brokerid() {
+  brokerid_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+const ::std::string& investor_info::brokerid() const {
+  // @@protoc_insertion_point(field_get:risk.investor_info.brokerid)
+  return brokerid_.GetNoArena();
+}
+void investor_info::set_brokerid(const ::std::string& value) {
+  
+  brokerid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:risk.investor_info.brokerid)
+}
+#if LANG_CXX11
+void investor_info::set_brokerid(::std::string&& value) {
+  
+  brokerid_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:risk.investor_info.brokerid)
+}
+#endif
+void investor_info::set_brokerid(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  brokerid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:risk.investor_info.brokerid)
+}
+void investor_info::set_brokerid(const char* value, size_t size) {
+  
+  brokerid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:risk.investor_info.brokerid)
+}
+::std::string* investor_info::mutable_brokerid() {
+  
+  // @@protoc_insertion_point(field_mutable:risk.investor_info.brokerid)
+  return brokerid_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+::std::string* investor_info::release_brokerid() {
+  // @@protoc_insertion_point(field_release:risk.investor_info.brokerid)
+  
+  return brokerid_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+void investor_info::set_allocated_brokerid(::std::string* brokerid) {
+  if (brokerid != NULL) {
+    
+  } else {
+    
+  }
+  brokerid_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), brokerid);
+  // @@protoc_insertion_point(field_set_allocated:risk.investor_info.brokerid)
+}
+
+// string investortype = 3;
+void investor_info::clear_investortype() {
+  investortype_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+const ::std::string& investor_info::investortype() const {
+  // @@protoc_insertion_point(field_get:risk.investor_info.investortype)
+  return investortype_.GetNoArena();
+}
+void investor_info::set_investortype(const ::std::string& value) {
+  
+  investortype_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:risk.investor_info.investortype)
+}
+#if LANG_CXX11
+void investor_info::set_investortype(::std::string&& value) {
+  
+  investortype_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:risk.investor_info.investortype)
+}
+#endif
+void investor_info::set_investortype(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  investortype_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:risk.investor_info.investortype)
+}
+void investor_info::set_investortype(const char* value, size_t size) {
+  
+  investortype_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:risk.investor_info.investortype)
+}
+::std::string* investor_info::mutable_investortype() {
+  
+  // @@protoc_insertion_point(field_mutable:risk.investor_info.investortype)
+  return investortype_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+::std::string* investor_info::release_investortype() {
+  // @@protoc_insertion_point(field_release:risk.investor_info.investortype)
+  
+  return investortype_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+void investor_info::set_allocated_investortype(::std::string* investortype) {
+  if (investortype != NULL) {
+    
+  } else {
+    
+  }
+  investortype_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), investortype);
+  // @@protoc_insertion_point(field_set_allocated:risk.investor_info.investortype)
+}
+
+// string investorname = 4;
+void investor_info::clear_investorname() {
+  investorname_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+const ::std::string& investor_info::investorname() const {
+  // @@protoc_insertion_point(field_get:risk.investor_info.investorname)
+  return investorname_.GetNoArena();
+}
+void investor_info::set_investorname(const ::std::string& value) {
+  
+  investorname_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:risk.investor_info.investorname)
+}
+#if LANG_CXX11
+void investor_info::set_investorname(::std::string&& value) {
+  
+  investorname_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:risk.investor_info.investorname)
+}
+#endif
+void investor_info::set_investorname(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  investorname_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:risk.investor_info.investorname)
+}
+void investor_info::set_investorname(const char* value, size_t size) {
+  
+  investorname_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:risk.investor_info.investorname)
+}
+::std::string* investor_info::mutable_investorname() {
+  
+  // @@protoc_insertion_point(field_mutable:risk.investor_info.investorname)
+  return investorname_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+::std::string* investor_info::release_investorname() {
+  // @@protoc_insertion_point(field_release:risk.investor_info.investorname)
+  
+  return investorname_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+void investor_info::set_allocated_investorname(::std::string* investorname) {
+  if (investorname != NULL) {
+    
+  } else {
+    
+  }
+  investorname_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), investorname);
+  // @@protoc_insertion_point(field_set_allocated:risk.investor_info.investorname)
+}
+
+// string identifiedcardtype = 5;
+void investor_info::clear_identifiedcardtype() {
+  identifiedcardtype_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+const ::std::string& investor_info::identifiedcardtype() const {
+  // @@protoc_insertion_point(field_get:risk.investor_info.identifiedcardtype)
+  return identifiedcardtype_.GetNoArena();
+}
+void investor_info::set_identifiedcardtype(const ::std::string& value) {
+  
+  identifiedcardtype_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:risk.investor_info.identifiedcardtype)
+}
+#if LANG_CXX11
+void investor_info::set_identifiedcardtype(::std::string&& value) {
+  
+  identifiedcardtype_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:risk.investor_info.identifiedcardtype)
+}
+#endif
+void investor_info::set_identifiedcardtype(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  identifiedcardtype_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:risk.investor_info.identifiedcardtype)
+}
+void investor_info::set_identifiedcardtype(const char* value, size_t size) {
+  
+  identifiedcardtype_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:risk.investor_info.identifiedcardtype)
+}
+::std::string* investor_info::mutable_identifiedcardtype() {
+  
+  // @@protoc_insertion_point(field_mutable:risk.investor_info.identifiedcardtype)
+  return identifiedcardtype_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+::std::string* investor_info::release_identifiedcardtype() {
+  // @@protoc_insertion_point(field_release:risk.investor_info.identifiedcardtype)
+  
+  return identifiedcardtype_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+void investor_info::set_allocated_identifiedcardtype(::std::string* identifiedcardtype) {
+  if (identifiedcardtype != NULL) {
+    
+  } else {
+    
+  }
+  identifiedcardtype_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), identifiedcardtype);
+  // @@protoc_insertion_point(field_set_allocated:risk.investor_info.identifiedcardtype)
+}
+
+// string identifiedcardno = 6;
+void investor_info::clear_identifiedcardno() {
+  identifiedcardno_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+const ::std::string& investor_info::identifiedcardno() const {
+  // @@protoc_insertion_point(field_get:risk.investor_info.identifiedcardno)
+  return identifiedcardno_.GetNoArena();
+}
+void investor_info::set_identifiedcardno(const ::std::string& value) {
+  
+  identifiedcardno_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:risk.investor_info.identifiedcardno)
+}
+#if LANG_CXX11
+void investor_info::set_identifiedcardno(::std::string&& value) {
+  
+  identifiedcardno_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:risk.investor_info.identifiedcardno)
+}
+#endif
+void investor_info::set_identifiedcardno(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  identifiedcardno_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:risk.investor_info.identifiedcardno)
+}
+void investor_info::set_identifiedcardno(const char* value, size_t size) {
+  
+  identifiedcardno_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:risk.investor_info.identifiedcardno)
+}
+::std::string* investor_info::mutable_identifiedcardno() {
+  
+  // @@protoc_insertion_point(field_mutable:risk.investor_info.identifiedcardno)
+  return identifiedcardno_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+::std::string* investor_info::release_identifiedcardno() {
+  // @@protoc_insertion_point(field_release:risk.investor_info.identifiedcardno)
+  
+  return identifiedcardno_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+void investor_info::set_allocated_identifiedcardno(::std::string* identifiedcardno) {
+  if (identifiedcardno != NULL) {
+    
+  } else {
+    
+  }
+  identifiedcardno_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), identifiedcardno);
+  // @@protoc_insertion_point(field_set_allocated:risk.investor_info.identifiedcardno)
+}
+
+// string country = 7;
+void investor_info::clear_country() {
+  country_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+const ::std::string& investor_info::country() const {
+  // @@protoc_insertion_point(field_get:risk.investor_info.country)
+  return country_.GetNoArena();
+}
+void investor_info::set_country(const ::std::string& value) {
+  
+  country_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:risk.investor_info.country)
+}
+#if LANG_CXX11
+void investor_info::set_country(::std::string&& value) {
+  
+  country_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:risk.investor_info.country)
+}
+#endif
+void investor_info::set_country(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  country_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:risk.investor_info.country)
+}
+void investor_info::set_country(const char* value, size_t size) {
+  
+  country_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:risk.investor_info.country)
+}
+::std::string* investor_info::mutable_country() {
+  
+  // @@protoc_insertion_point(field_mutable:risk.investor_info.country)
+  return country_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+::std::string* investor_info::release_country() {
+  // @@protoc_insertion_point(field_release:risk.investor_info.country)
+  
+  return country_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+void investor_info::set_allocated_country(::std::string* country) {
+  if (country != NULL) {
+    
+  } else {
+    
+  }
+  country_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), country);
+  // @@protoc_insertion_point(field_set_allocated:risk.investor_info.country)
+}
+
+// string province = 8;
+void investor_info::clear_province() {
+  province_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+const ::std::string& investor_info::province() const {
+  // @@protoc_insertion_point(field_get:risk.investor_info.province)
+  return province_.GetNoArena();
+}
+void investor_info::set_province(const ::std::string& value) {
+  
+  province_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:risk.investor_info.province)
+}
+#if LANG_CXX11
+void investor_info::set_province(::std::string&& value) {
+  
+  province_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:risk.investor_info.province)
+}
+#endif
+void investor_info::set_province(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  province_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:risk.investor_info.province)
+}
+void investor_info::set_province(const char* value, size_t size) {
+  
+  province_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:risk.investor_info.province)
+}
+::std::string* investor_info::mutable_province() {
+  
+  // @@protoc_insertion_point(field_mutable:risk.investor_info.province)
+  return province_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+::std::string* investor_info::release_province() {
+  // @@protoc_insertion_point(field_release:risk.investor_info.province)
+  
+  return province_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+void investor_info::set_allocated_province(::std::string* province) {
+  if (province != NULL) {
+    
+  } else {
+    
+  }
+  province_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), province);
+  // @@protoc_insertion_point(field_set_allocated:risk.investor_info.province)
+}
+
+// string city = 9;
+void investor_info::clear_city() {
+  city_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+const ::std::string& investor_info::city() const {
+  // @@protoc_insertion_point(field_get:risk.investor_info.city)
+  return city_.GetNoArena();
+}
+void investor_info::set_city(const ::std::string& value) {
+  
+  city_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:risk.investor_info.city)
+}
+#if LANG_CXX11
+void investor_info::set_city(::std::string&& value) {
+  
+  city_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:risk.investor_info.city)
+}
+#endif
+void investor_info::set_city(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  city_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:risk.investor_info.city)
+}
+void investor_info::set_city(const char* value, size_t size) {
+  
+  city_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:risk.investor_info.city)
+}
+::std::string* investor_info::mutable_city() {
+  
+  // @@protoc_insertion_point(field_mutable:risk.investor_info.city)
+  return city_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+::std::string* investor_info::release_city() {
+  // @@protoc_insertion_point(field_release:risk.investor_info.city)
+  
+  return city_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+void investor_info::set_allocated_city(::std::string* city) {
+  if (city != NULL) {
+    
+  } else {
+    
+  }
+  city_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), city);
+  // @@protoc_insertion_point(field_set_allocated:risk.investor_info.city)
+}
+
+// string birthday = 10;
+void investor_info::clear_birthday() {
+  birthday_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+const ::std::string& investor_info::birthday() const {
+  // @@protoc_insertion_point(field_get:risk.investor_info.birthday)
+  return birthday_.GetNoArena();
+}
+void investor_info::set_birthday(const ::std::string& value) {
+  
+  birthday_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:risk.investor_info.birthday)
+}
+#if LANG_CXX11
+void investor_info::set_birthday(::std::string&& value) {
+  
+  birthday_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:risk.investor_info.birthday)
+}
+#endif
+void investor_info::set_birthday(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  birthday_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:risk.investor_info.birthday)
+}
+void investor_info::set_birthday(const char* value, size_t size) {
+  
+  birthday_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:risk.investor_info.birthday)
+}
+::std::string* investor_info::mutable_birthday() {
+  
+  // @@protoc_insertion_point(field_mutable:risk.investor_info.birthday)
+  return birthday_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+::std::string* investor_info::release_birthday() {
+  // @@protoc_insertion_point(field_release:risk.investor_info.birthday)
+  
+  return birthday_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+void investor_info::set_allocated_birthday(::std::string* birthday) {
+  if (birthday != NULL) {
+    
+  } else {
+    
+  }
+  birthday_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), birthday);
+  // @@protoc_insertion_point(field_set_allocated:risk.investor_info.birthday)
+}
+
+// string sex = 11;
+void investor_info::clear_sex() {
+  sex_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+const ::std::string& investor_info::sex() const {
+  // @@protoc_insertion_point(field_get:risk.investor_info.sex)
+  return sex_.GetNoArena();
+}
+void investor_info::set_sex(const ::std::string& value) {
+  
+  sex_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:risk.investor_info.sex)
+}
+#if LANG_CXX11
+void investor_info::set_sex(::std::string&& value) {
+  
+  sex_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:risk.investor_info.sex)
+}
+#endif
+void investor_info::set_sex(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  sex_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:risk.investor_info.sex)
+}
+void investor_info::set_sex(const char* value, size_t size) {
+  
+  sex_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:risk.investor_info.sex)
+}
+::std::string* investor_info::mutable_sex() {
+  
+  // @@protoc_insertion_point(field_mutable:risk.investor_info.sex)
+  return sex_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+::std::string* investor_info::release_sex() {
+  // @@protoc_insertion_point(field_release:risk.investor_info.sex)
+  
+  return sex_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+void investor_info::set_allocated_sex(::std::string* sex) {
+  if (sex != NULL) {
+    
+  } else {
+    
+  }
+  sex_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), sex);
+  // @@protoc_insertion_point(field_set_allocated:risk.investor_info.sex)
+}
+
+// string profession = 12;
+void investor_info::clear_profession() {
+  profession_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+const ::std::string& investor_info::profession() const {
+  // @@protoc_insertion_point(field_get:risk.investor_info.profession)
+  return profession_.GetNoArena();
+}
+void investor_info::set_profession(const ::std::string& value) {
+  
+  profession_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:risk.investor_info.profession)
+}
+#if LANG_CXX11
+void investor_info::set_profession(::std::string&& value) {
+  
+  profession_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:risk.investor_info.profession)
+}
+#endif
+void investor_info::set_profession(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  profession_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:risk.investor_info.profession)
+}
+void investor_info::set_profession(const char* value, size_t size) {
+  
+  profession_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:risk.investor_info.profession)
+}
+::std::string* investor_info::mutable_profession() {
+  
+  // @@protoc_insertion_point(field_mutable:risk.investor_info.profession)
+  return profession_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+::std::string* investor_info::release_profession() {
+  // @@protoc_insertion_point(field_release:risk.investor_info.profession)
+  
+  return profession_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+void investor_info::set_allocated_profession(::std::string* profession) {
+  if (profession != NULL) {
+    
+  } else {
+    
+  }
+  profession_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), profession);
+  // @@protoc_insertion_point(field_set_allocated:risk.investor_info.profession)
+}
+
+// string national = 13;
+void investor_info::clear_national() {
+  national_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+const ::std::string& investor_info::national() const {
+  // @@protoc_insertion_point(field_get:risk.investor_info.national)
+  return national_.GetNoArena();
+}
+void investor_info::set_national(const ::std::string& value) {
+  
+  national_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:risk.investor_info.national)
+}
+#if LANG_CXX11
+void investor_info::set_national(::std::string&& value) {
+  
+  national_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:risk.investor_info.national)
+}
+#endif
+void investor_info::set_national(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  national_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:risk.investor_info.national)
+}
+void investor_info::set_national(const char* value, size_t size) {
+  
+  national_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:risk.investor_info.national)
+}
+::std::string* investor_info::mutable_national() {
+  
+  // @@protoc_insertion_point(field_mutable:risk.investor_info.national)
+  return national_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+::std::string* investor_info::release_national() {
+  // @@protoc_insertion_point(field_release:risk.investor_info.national)
+  
+  return national_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+void investor_info::set_allocated_national(::std::string* national) {
+  if (national != NULL) {
+    
+  } else {
+    
+  }
+  national_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), national);
+  // @@protoc_insertion_point(field_set_allocated:risk.investor_info.national)
+}
+
+// double capital = 14;
+void investor_info::clear_capital() {
+  capital_ = 0;
+}
+double investor_info::capital() const {
+  // @@protoc_insertion_point(field_get:risk.investor_info.capital)
+  return capital_;
+}
+void investor_info::set_capital(double value) {
+  
+  capital_ = value;
+  // @@protoc_insertion_point(field_set:risk.investor_info.capital)
+}
+
+// string capitalcurrency = 15;
+void investor_info::clear_capitalcurrency() {
+  capitalcurrency_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+const ::std::string& investor_info::capitalcurrency() const {
+  // @@protoc_insertion_point(field_get:risk.investor_info.capitalcurrency)
+  return capitalcurrency_.GetNoArena();
+}
+void investor_info::set_capitalcurrency(const ::std::string& value) {
+  
+  capitalcurrency_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:risk.investor_info.capitalcurrency)
+}
+#if LANG_CXX11
+void investor_info::set_capitalcurrency(::std::string&& value) {
+  
+  capitalcurrency_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:risk.investor_info.capitalcurrency)
+}
+#endif
+void investor_info::set_capitalcurrency(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  capitalcurrency_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:risk.investor_info.capitalcurrency)
+}
+void investor_info::set_capitalcurrency(const char* value, size_t size) {
+  
+  capitalcurrency_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:risk.investor_info.capitalcurrency)
+}
+::std::string* investor_info::mutable_capitalcurrency() {
+  
+  // @@protoc_insertion_point(field_mutable:risk.investor_info.capitalcurrency)
+  return capitalcurrency_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+::std::string* investor_info::release_capitalcurrency() {
+  // @@protoc_insertion_point(field_release:risk.investor_info.capitalcurrency)
+  
+  return capitalcurrency_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+void investor_info::set_allocated_capitalcurrency(::std::string* capitalcurrency) {
+  if (capitalcurrency != NULL) {
+    
+  } else {
+    
+  }
+  capitalcurrency_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), capitalcurrency);
+  // @@protoc_insertion_point(field_set_allocated:risk.investor_info.capitalcurrency)
+}
+
+// string telephone = 16;
+void investor_info::clear_telephone() {
+  telephone_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+const ::std::string& investor_info::telephone() const {
+  // @@protoc_insertion_point(field_get:risk.investor_info.telephone)
+  return telephone_.GetNoArena();
+}
+void investor_info::set_telephone(const ::std::string& value) {
+  
+  telephone_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:risk.investor_info.telephone)
+}
+#if LANG_CXX11
+void investor_info::set_telephone(::std::string&& value) {
+  
+  telephone_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:risk.investor_info.telephone)
+}
+#endif
+void investor_info::set_telephone(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  telephone_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:risk.investor_info.telephone)
+}
+void investor_info::set_telephone(const char* value, size_t size) {
+  
+  telephone_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:risk.investor_info.telephone)
+}
+::std::string* investor_info::mutable_telephone() {
+  
+  // @@protoc_insertion_point(field_mutable:risk.investor_info.telephone)
+  return telephone_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+::std::string* investor_info::release_telephone() {
+  // @@protoc_insertion_point(field_release:risk.investor_info.telephone)
+  
+  return telephone_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+void investor_info::set_allocated_telephone(::std::string* telephone) {
+  if (telephone != NULL) {
+    
+  } else {
+    
+  }
+  telephone_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), telephone);
+  // @@protoc_insertion_point(field_set_allocated:risk.investor_info.telephone)
+}
+
+// string address = 17;
+void investor_info::clear_address() {
+  address_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+const ::std::string& investor_info::address() const {
+  // @@protoc_insertion_point(field_get:risk.investor_info.address)
+  return address_.GetNoArena();
+}
+void investor_info::set_address(const ::std::string& value) {
+  
+  address_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:risk.investor_info.address)
+}
+#if LANG_CXX11
+void investor_info::set_address(::std::string&& value) {
+  
+  address_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:risk.investor_info.address)
+}
+#endif
+void investor_info::set_address(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  address_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:risk.investor_info.address)
+}
+void investor_info::set_address(const char* value, size_t size) {
+  
+  address_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:risk.investor_info.address)
+}
+::std::string* investor_info::mutable_address() {
+  
+  // @@protoc_insertion_point(field_mutable:risk.investor_info.address)
+  return address_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+::std::string* investor_info::release_address() {
+  // @@protoc_insertion_point(field_release:risk.investor_info.address)
+  
+  return address_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+void investor_info::set_allocated_address(::std::string* address) {
+  if (address != NULL) {
+    
+  } else {
+    
+  }
+  address_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), address);
+  // @@protoc_insertion_point(field_set_allocated:risk.investor_info.address)
+}
+
+// string zipcode = 18;
+void investor_info::clear_zipcode() {
+  zipcode_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+const ::std::string& investor_info::zipcode() const {
+  // @@protoc_insertion_point(field_get:risk.investor_info.zipcode)
+  return zipcode_.GetNoArena();
+}
+void investor_info::set_zipcode(const ::std::string& value) {
+  
+  zipcode_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:risk.investor_info.zipcode)
+}
+#if LANG_CXX11
+void investor_info::set_zipcode(::std::string&& value) {
+  
+  zipcode_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:risk.investor_info.zipcode)
+}
+#endif
+void investor_info::set_zipcode(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  zipcode_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:risk.investor_info.zipcode)
+}
+void investor_info::set_zipcode(const char* value, size_t size) {
+  
+  zipcode_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:risk.investor_info.zipcode)
+}
+::std::string* investor_info::mutable_zipcode() {
+  
+  // @@protoc_insertion_point(field_mutable:risk.investor_info.zipcode)
+  return zipcode_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+::std::string* investor_info::release_zipcode() {
+  // @@protoc_insertion_point(field_release:risk.investor_info.zipcode)
+  
+  return zipcode_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+void investor_info::set_allocated_zipcode(::std::string* zipcode) {
+  if (zipcode != NULL) {
+    
+  } else {
+    
+  }
+  zipcode_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), zipcode);
+  // @@protoc_insertion_point(field_set_allocated:risk.investor_info.zipcode)
+}
+
+// string email = 19;
+void investor_info::clear_email() {
+  email_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+const ::std::string& investor_info::email() const {
+  // @@protoc_insertion_point(field_get:risk.investor_info.email)
+  return email_.GetNoArena();
+}
+void investor_info::set_email(const ::std::string& value) {
+  
+  email_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:risk.investor_info.email)
+}
+#if LANG_CXX11
+void investor_info::set_email(::std::string&& value) {
+  
+  email_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:risk.investor_info.email)
+}
+#endif
+void investor_info::set_email(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  email_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:risk.investor_info.email)
+}
+void investor_info::set_email(const char* value, size_t size) {
+  
+  email_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:risk.investor_info.email)
+}
+::std::string* investor_info::mutable_email() {
+  
+  // @@protoc_insertion_point(field_mutable:risk.investor_info.email)
+  return email_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+::std::string* investor_info::release_email() {
+  // @@protoc_insertion_point(field_release:risk.investor_info.email)
+  
+  return email_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+void investor_info::set_allocated_email(::std::string* email) {
+  if (email != NULL) {
+    
+  } else {
+    
+  }
+  email_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), email);
+  // @@protoc_insertion_point(field_set_allocated:risk.investor_info.email)
+}
+
+// string memo = 20;
+void investor_info::clear_memo() {
+  memo_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+const ::std::string& investor_info::memo() const {
+  // @@protoc_insertion_point(field_get:risk.investor_info.memo)
+  return memo_.GetNoArena();
+}
+void investor_info::set_memo(const ::std::string& value) {
+  
+  memo_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:risk.investor_info.memo)
+}
+#if LANG_CXX11
+void investor_info::set_memo(::std::string&& value) {
+  
+  memo_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:risk.investor_info.memo)
+}
+#endif
+void investor_info::set_memo(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  memo_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:risk.investor_info.memo)
+}
+void investor_info::set_memo(const char* value, size_t size) {
+  
+  memo_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:risk.investor_info.memo)
+}
+::std::string* investor_info::mutable_memo() {
+  
+  // @@protoc_insertion_point(field_mutable:risk.investor_info.memo)
+  return memo_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+::std::string* investor_info::release_memo() {
+  // @@protoc_insertion_point(field_release:risk.investor_info.memo)
+  
+  return memo_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+void investor_info::set_allocated_memo(::std::string* memo) {
+  if (memo != NULL) {
+    
+  } else {
+    
+  }
+  memo_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), memo);
+  // @@protoc_insertion_point(field_set_allocated:risk.investor_info.memo)
+}
+
+// string openinvestorname = 21;
+void investor_info::clear_openinvestorname() {
+  openinvestorname_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+const ::std::string& investor_info::openinvestorname() const {
+  // @@protoc_insertion_point(field_get:risk.investor_info.openinvestorname)
+  return openinvestorname_.GetNoArena();
+}
+void investor_info::set_openinvestorname(const ::std::string& value) {
+  
+  openinvestorname_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:risk.investor_info.openinvestorname)
+}
+#if LANG_CXX11
+void investor_info::set_openinvestorname(::std::string&& value) {
+  
+  openinvestorname_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:risk.investor_info.openinvestorname)
+}
+#endif
+void investor_info::set_openinvestorname(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  openinvestorname_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:risk.investor_info.openinvestorname)
+}
+void investor_info::set_openinvestorname(const char* value, size_t size) {
+  
+  openinvestorname_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:risk.investor_info.openinvestorname)
+}
+::std::string* investor_info::mutable_openinvestorname() {
+  
+  // @@protoc_insertion_point(field_mutable:risk.investor_info.openinvestorname)
+  return openinvestorname_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+::std::string* investor_info::release_openinvestorname() {
+  // @@protoc_insertion_point(field_release:risk.investor_info.openinvestorname)
+  
+  return openinvestorname_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+void investor_info::set_allocated_openinvestorname(::std::string* openinvestorname) {
+  if (openinvestorname != NULL) {
+    
+  } else {
+    
+  }
+  openinvestorname_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), openinvestorname);
+  // @@protoc_insertion_point(field_set_allocated:risk.investor_info.openinvestorname)
+}
+
+// string orderinvestorname = 22;
+void investor_info::clear_orderinvestorname() {
+  orderinvestorname_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+const ::std::string& investor_info::orderinvestorname() const {
+  // @@protoc_insertion_point(field_get:risk.investor_info.orderinvestorname)
+  return orderinvestorname_.GetNoArena();
+}
+void investor_info::set_orderinvestorname(const ::std::string& value) {
+  
+  orderinvestorname_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:risk.investor_info.orderinvestorname)
+}
+#if LANG_CXX11
+void investor_info::set_orderinvestorname(::std::string&& value) {
+  
+  orderinvestorname_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:risk.investor_info.orderinvestorname)
+}
+#endif
+void investor_info::set_orderinvestorname(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  orderinvestorname_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:risk.investor_info.orderinvestorname)
+}
+void investor_info::set_orderinvestorname(const char* value, size_t size) {
+  
+  orderinvestorname_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:risk.investor_info.orderinvestorname)
+}
+::std::string* investor_info::mutable_orderinvestorname() {
+  
+  // @@protoc_insertion_point(field_mutable:risk.investor_info.orderinvestorname)
+  return orderinvestorname_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+::std::string* investor_info::release_orderinvestorname() {
+  // @@protoc_insertion_point(field_release:risk.investor_info.orderinvestorname)
+  
+  return orderinvestorname_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+void investor_info::set_allocated_orderinvestorname(::std::string* orderinvestorname) {
+  if (orderinvestorname != NULL) {
+    
+  } else {
+    
+  }
+  orderinvestorname_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), orderinvestorname);
+  // @@protoc_insertion_point(field_set_allocated:risk.investor_info.orderinvestorname)
+}
+
+// string fundinvestorname = 23;
+void investor_info::clear_fundinvestorname() {
+  fundinvestorname_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+const ::std::string& investor_info::fundinvestorname() const {
+  // @@protoc_insertion_point(field_get:risk.investor_info.fundinvestorname)
+  return fundinvestorname_.GetNoArena();
+}
+void investor_info::set_fundinvestorname(const ::std::string& value) {
+  
+  fundinvestorname_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:risk.investor_info.fundinvestorname)
+}
+#if LANG_CXX11
+void investor_info::set_fundinvestorname(::std::string&& value) {
+  
+  fundinvestorname_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:risk.investor_info.fundinvestorname)
+}
+#endif
+void investor_info::set_fundinvestorname(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  fundinvestorname_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:risk.investor_info.fundinvestorname)
+}
+void investor_info::set_fundinvestorname(const char* value, size_t size) {
+  
+  fundinvestorname_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:risk.investor_info.fundinvestorname)
+}
+::std::string* investor_info::mutable_fundinvestorname() {
+  
+  // @@protoc_insertion_point(field_mutable:risk.investor_info.fundinvestorname)
+  return fundinvestorname_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+::std::string* investor_info::release_fundinvestorname() {
+  // @@protoc_insertion_point(field_release:risk.investor_info.fundinvestorname)
+  
+  return fundinvestorname_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+void investor_info::set_allocated_fundinvestorname(::std::string* fundinvestorname) {
+  if (fundinvestorname != NULL) {
+    
+  } else {
+    
+  }
+  fundinvestorname_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), fundinvestorname);
+  // @@protoc_insertion_point(field_set_allocated:risk.investor_info.fundinvestorname)
+}
+
+// string settleinvestorname = 24;
+void investor_info::clear_settleinvestorname() {
+  settleinvestorname_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+const ::std::string& investor_info::settleinvestorname() const {
+  // @@protoc_insertion_point(field_get:risk.investor_info.settleinvestorname)
+  return settleinvestorname_.GetNoArena();
+}
+void investor_info::set_settleinvestorname(const ::std::string& value) {
+  
+  settleinvestorname_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:risk.investor_info.settleinvestorname)
+}
+#if LANG_CXX11
+void investor_info::set_settleinvestorname(::std::string&& value) {
+  
+  settleinvestorname_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:risk.investor_info.settleinvestorname)
+}
+#endif
+void investor_info::set_settleinvestorname(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  settleinvestorname_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:risk.investor_info.settleinvestorname)
+}
+void investor_info::set_settleinvestorname(const char* value, size_t size) {
+  
+  settleinvestorname_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:risk.investor_info.settleinvestorname)
+}
+::std::string* investor_info::mutable_settleinvestorname() {
+  
+  // @@protoc_insertion_point(field_mutable:risk.investor_info.settleinvestorname)
+  return settleinvestorname_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+::std::string* investor_info::release_settleinvestorname() {
+  // @@protoc_insertion_point(field_release:risk.investor_info.settleinvestorname)
+  
+  return settleinvestorname_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+void investor_info::set_allocated_settleinvestorname(::std::string* settleinvestorname) {
+  if (settleinvestorname != NULL) {
+    
+  } else {
+    
+  }
+  settleinvestorname_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), settleinvestorname);
+  // @@protoc_insertion_point(field_set_allocated:risk.investor_info.settleinvestorname)
+}
+
+// int32 isactive = 25;
+void investor_info::clear_isactive() {
+  isactive_ = 0;
+}
+::google::protobuf::int32 investor_info::isactive() const {
+  // @@protoc_insertion_point(field_get:risk.investor_info.isactive)
+  return isactive_;
+}
+void investor_info::set_isactive(::google::protobuf::int32 value) {
+  
+  isactive_ = value;
+  // @@protoc_insertion_point(field_set:risk.investor_info.isactive)
+}
+
+// string departmentid = 26;
+void investor_info::clear_departmentid() {
+  departmentid_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+const ::std::string& investor_info::departmentid() const {
+  // @@protoc_insertion_point(field_get:risk.investor_info.departmentid)
+  return departmentid_.GetNoArena();
+}
+void investor_info::set_departmentid(const ::std::string& value) {
+  
+  departmentid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:risk.investor_info.departmentid)
+}
+#if LANG_CXX11
+void investor_info::set_departmentid(::std::string&& value) {
+  
+  departmentid_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:risk.investor_info.departmentid)
+}
+#endif
+void investor_info::set_departmentid(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  departmentid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:risk.investor_info.departmentid)
+}
+void investor_info::set_departmentid(const char* value, size_t size) {
+  
+  departmentid_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:risk.investor_info.departmentid)
+}
+::std::string* investor_info::mutable_departmentid() {
+  
+  // @@protoc_insertion_point(field_mutable:risk.investor_info.departmentid)
+  return departmentid_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+::std::string* investor_info::release_departmentid() {
+  // @@protoc_insertion_point(field_release:risk.investor_info.departmentid)
+  
+  return departmentid_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+void investor_info::set_allocated_departmentid(::std::string* departmentid) {
+  if (departmentid != NULL) {
+    
+  } else {
+    
+  }
+  departmentid_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), departmentid);
+  // @@protoc_insertion_point(field_set_allocated:risk.investor_info.departmentid)
+}
+
+// string investorfullname = 27;
+void investor_info::clear_investorfullname() {
+  investorfullname_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+const ::std::string& investor_info::investorfullname() const {
+  // @@protoc_insertion_point(field_get:risk.investor_info.investorfullname)
+  return investorfullname_.GetNoArena();
+}
+void investor_info::set_investorfullname(const ::std::string& value) {
+  
+  investorfullname_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:risk.investor_info.investorfullname)
+}
+#if LANG_CXX11
+void investor_info::set_investorfullname(::std::string&& value) {
+  
+  investorfullname_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:risk.investor_info.investorfullname)
+}
+#endif
+void investor_info::set_investorfullname(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  investorfullname_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:risk.investor_info.investorfullname)
+}
+void investor_info::set_investorfullname(const char* value, size_t size) {
+  
+  investorfullname_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:risk.investor_info.investorfullname)
+}
+::std::string* investor_info::mutable_investorfullname() {
+  
+  // @@protoc_insertion_point(field_mutable:risk.investor_info.investorfullname)
+  return investorfullname_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+::std::string* investor_info::release_investorfullname() {
+  // @@protoc_insertion_point(field_release:risk.investor_info.investorfullname)
+  
+  return investorfullname_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+void investor_info::set_allocated_investorfullname(::std::string* investorfullname) {
+  if (investorfullname != NULL) {
+    
+  } else {
+    
+  }
+  investorfullname_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), investorfullname);
+  // @@protoc_insertion_point(field_set_allocated:risk.investor_info.investorfullname)
+}
+
+// int32 isemail = 28;
+void investor_info::clear_isemail() {
+  isemail_ = 0;
+}
+::google::protobuf::int32 investor_info::isemail() const {
+  // @@protoc_insertion_point(field_get:risk.investor_info.isemail)
+  return isemail_;
+}
+void investor_info::set_isemail(::google::protobuf::int32 value) {
+  
+  isemail_ = value;
+  // @@protoc_insertion_point(field_set:risk.investor_info.isemail)
+}
+
+// int32 issms = 29;
+void investor_info::clear_issms() {
+  issms_ = 0;
+}
+::google::protobuf::int32 investor_info::issms() const {
+  // @@protoc_insertion_point(field_get:risk.investor_info.issms)
+  return issms_;
+}
+void investor_info::set_issms(::google::protobuf::int32 value) {
+  
+  issms_ = value;
+  // @@protoc_insertion_point(field_set:risk.investor_info.issms)
+}
+
+// int32 isusingotp = 30;
+void investor_info::clear_isusingotp() {
+  isusingotp_ = 0;
+}
+::google::protobuf::int32 investor_info::isusingotp() const {
+  // @@protoc_insertion_point(field_get:risk.investor_info.isusingotp)
+  return isusingotp_;
+}
+void investor_info::set_isusingotp(::google::protobuf::int32 value) {
+  
+  isusingotp_ = value;
+  // @@protoc_insertion_point(field_set:risk.investor_info.isusingotp)
+}
+
+// string clientregion = 31;
+void investor_info::clear_clientregion() {
+  clientregion_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+const ::std::string& investor_info::clientregion() const {
+  // @@protoc_insertion_point(field_get:risk.investor_info.clientregion)
+  return clientregion_.GetNoArena();
+}
+void investor_info::set_clientregion(const ::std::string& value) {
+  
+  clientregion_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:risk.investor_info.clientregion)
+}
+#if LANG_CXX11
+void investor_info::set_clientregion(::std::string&& value) {
+  
+  clientregion_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:risk.investor_info.clientregion)
+}
+#endif
+void investor_info::set_clientregion(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  clientregion_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:risk.investor_info.clientregion)
+}
+void investor_info::set_clientregion(const char* value, size_t size) {
+  
+  clientregion_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:risk.investor_info.clientregion)
+}
+::std::string* investor_info::mutable_clientregion() {
+  
+  // @@protoc_insertion_point(field_mutable:risk.investor_info.clientregion)
+  return clientregion_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+::std::string* investor_info::release_clientregion() {
+  // @@protoc_insertion_point(field_release:risk.investor_info.clientregion)
+  
+  return clientregion_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+void investor_info::set_allocated_clientregion(::std::string* clientregion) {
+  if (clientregion != NULL) {
+    
+  } else {
+    
+  }
+  clientregion_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), clientregion);
+  // @@protoc_insertion_point(field_set_allocated:risk.investor_info.clientregion)
+}
+
+#endif  // PROTOBUF_INLINE_NOT_IN_HEADERS
+
+// ===================================================================
+
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int rsp_investor_info::kHeaderFieldNumber;
+const int rsp_investor_info::kInfosFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+rsp_investor_info::rsp_investor_info()
+  : ::google::protobuf::Message(), _internal_metadata_(NULL) {
+  if (GOOGLE_PREDICT_TRUE(this != internal_default_instance())) {
+    protobuf_riskapi_5fdata_5fprotocal_2eproto::InitDefaults();
+  }
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:risk.rsp_investor_info)
+}
+rsp_investor_info::rsp_investor_info(const rsp_investor_info& from)
+  : ::google::protobuf::Message(),
+      _internal_metadata_(NULL),
+      infos_(from.infos_),
+      _cached_size_(0) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  if (from.has_header()) {
+    header_ = new ::risk::rsp_head_info(*from.header_);
+  } else {
+    header_ = NULL;
+  }
+  // @@protoc_insertion_point(copy_constructor:risk.rsp_investor_info)
+}
+
+void rsp_investor_info::SharedCtor() {
+  header_ = NULL;
+  _cached_size_ = 0;
+}
+
+rsp_investor_info::~rsp_investor_info() {
+  // @@protoc_insertion_point(destructor:risk.rsp_investor_info)
+  SharedDtor();
+}
+
+void rsp_investor_info::SharedDtor() {
+  if (this != internal_default_instance()) delete header_;
+}
+
+void rsp_investor_info::SetCachedSize(int size) const {
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+}
+const ::google::protobuf::Descriptor* rsp_investor_info::descriptor() {
+  protobuf_riskapi_5fdata_5fprotocal_2eproto::protobuf_AssignDescriptorsOnce();
+  return protobuf_riskapi_5fdata_5fprotocal_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
+}
+
+const rsp_investor_info& rsp_investor_info::default_instance() {
+  protobuf_riskapi_5fdata_5fprotocal_2eproto::InitDefaults();
+  return *internal_default_instance();
+}
+
+rsp_investor_info* rsp_investor_info::New(::google::protobuf::Arena* arena) const {
+  rsp_investor_info* n = new rsp_investor_info;
+  if (arena != NULL) {
+    arena->Own(n);
+  }
+  return n;
+}
+
+void rsp_investor_info::Clear() {
+// @@protoc_insertion_point(message_clear_start:risk.rsp_investor_info)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  infos_.Clear();
+  if (GetArenaNoVirtual() == NULL && header_ != NULL) {
+    delete header_;
+  }
+  header_ = NULL;
+  _internal_metadata_.Clear();
+}
+
+bool rsp_investor_info::MergePartialFromCodedStream(
+    ::google::protobuf::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::google::protobuf::uint32 tag;
+  // @@protoc_insertion_point(parse_start:risk.rsp_investor_info)
+  for (;;) {
+    ::std::pair< ::google::protobuf::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // .risk.rsp_head_info header = 1;
+      case 1: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+               input, mutable_header()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // repeated .risk.investor_info infos = 2;
+      case 2: {
+        if (static_cast< ::google::protobuf::uint8>(tag) ==
+            static_cast< ::google::protobuf::uint8>(18u /* 18 & 0xFF */)) {
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+                input, add_infos()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0) {
+          goto success;
+        }
+        DO_(::google::protobuf::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:risk.rsp_investor_info)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:risk.rsp_investor_info)
+  return false;
+#undef DO_
+}
+
+void rsp_investor_info::SerializeWithCachedSizes(
+    ::google::protobuf::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:risk.rsp_investor_info)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .risk.rsp_head_info header = 1;
+  if (this->has_header()) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      1, *this->header_, output);
+  }
+
+  // repeated .risk.investor_info infos = 2;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->infos_size()); i < n; i++) {
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+      2, this->infos(static_cast<int>(i)), output);
+  }
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
+  }
+  // @@protoc_insertion_point(serialize_end:risk.rsp_investor_info)
+}
+
+::google::protobuf::uint8* rsp_investor_info::InternalSerializeWithCachedSizesToArray(
+    bool deterministic, ::google::protobuf::uint8* target) const {
+  (void)deterministic; // Unused
+  // @@protoc_insertion_point(serialize_to_array_start:risk.rsp_investor_info)
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // .risk.rsp_head_info header = 1;
+  if (this->has_header()) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageNoVirtualToArray(
+        1, *this->header_, deterministic, target);
+  }
+
+  // repeated .risk.investor_info infos = 2;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->infos_size()); i < n; i++) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      InternalWriteMessageNoVirtualToArray(
+        2, this->infos(static_cast<int>(i)), deterministic, target);
+  }
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:risk.rsp_investor_info)
+  return target;
+}
+
+size_t rsp_investor_info::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:risk.rsp_investor_info)
+  size_t total_size = 0;
+
+  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+    total_size +=
+      ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
+        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
+  }
+  // repeated .risk.investor_info infos = 2;
+  {
+    unsigned int count = static_cast<unsigned int>(this->infos_size());
+    total_size += 1UL * count;
+    for (unsigned int i = 0; i < count; i++) {
+      total_size +=
+        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+          this->infos(static_cast<int>(i)));
+    }
+  }
+
+  // .risk.rsp_head_info header = 1;
+  if (this->has_header()) {
+    total_size += 1 +
+      ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
+        *this->header_);
+  }
+
+  int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
+  GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
+  _cached_size_ = cached_size;
+  GOOGLE_SAFE_CONCURRENT_WRITES_END();
+  return total_size;
+}
+
+void rsp_investor_info::MergeFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:risk.rsp_investor_info)
+  GOOGLE_DCHECK_NE(&from, this);
+  const rsp_investor_info* source =
+      ::google::protobuf::internal::DynamicCastToGenerated<const rsp_investor_info>(
+          &from);
+  if (source == NULL) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:risk.rsp_investor_info)
+    ::google::protobuf::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:risk.rsp_investor_info)
+    MergeFrom(*source);
+  }
+}
+
+void rsp_investor_info::MergeFrom(const rsp_investor_info& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:risk.rsp_investor_info)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  infos_.MergeFrom(from.infos_);
+  if (from.has_header()) {
+    mutable_header()->::risk::rsp_head_info::MergeFrom(from.header());
+  }
+}
+
+void rsp_investor_info::CopyFrom(const ::google::protobuf::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:risk.rsp_investor_info)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void rsp_investor_info::CopyFrom(const rsp_investor_info& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:risk.rsp_investor_info)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool rsp_investor_info::IsInitialized() const {
+  return true;
+}
+
+void rsp_investor_info::Swap(rsp_investor_info* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void rsp_investor_info::InternalSwap(rsp_investor_info* other) {
+  using std::swap;
+  infos_.InternalSwap(&other->infos_);
+  swap(header_, other->header_);
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(_cached_size_, other->_cached_size_);
+}
+
+::google::protobuf::Metadata rsp_investor_info::GetMetadata() const {
+  protobuf_riskapi_5fdata_5fprotocal_2eproto::protobuf_AssignDescriptorsOnce();
+  return protobuf_riskapi_5fdata_5fprotocal_2eproto::file_level_metadata[kIndexInFileMessages];
+}
+
+#if PROTOBUF_INLINE_NOT_IN_HEADERS
+// rsp_investor_info
+
+// .risk.rsp_head_info header = 1;
+bool rsp_investor_info::has_header() const {
+  return this != internal_default_instance() && header_ != NULL;
+}
+void rsp_investor_info::clear_header() {
+  if (GetArenaNoVirtual() == NULL && header_ != NULL) delete header_;
+  header_ = NULL;
+}
+const ::risk::rsp_head_info& rsp_investor_info::header() const {
+  const ::risk::rsp_head_info* p = header_;
+  // @@protoc_insertion_point(field_get:risk.rsp_investor_info.header)
+  return p != NULL ? *p : *reinterpret_cast<const ::risk::rsp_head_info*>(
+      &::risk::_rsp_head_info_default_instance_);
+}
+::risk::rsp_head_info* rsp_investor_info::mutable_header() {
+  
+  if (header_ == NULL) {
+    header_ = new ::risk::rsp_head_info;
+  }
+  // @@protoc_insertion_point(field_mutable:risk.rsp_investor_info.header)
+  return header_;
+}
+::risk::rsp_head_info* rsp_investor_info::release_header() {
+  // @@protoc_insertion_point(field_release:risk.rsp_investor_info.header)
+  
+  ::risk::rsp_head_info* temp = header_;
+  header_ = NULL;
+  return temp;
+}
+void rsp_investor_info::set_allocated_header(::risk::rsp_head_info* header) {
+  delete header_;
+  header_ = header;
+  if (header) {
+    
+  } else {
+    
+  }
+  // @@protoc_insertion_point(field_set_allocated:risk.rsp_investor_info.header)
+}
+
+// repeated .risk.investor_info infos = 2;
+int rsp_investor_info::infos_size() const {
+  return infos_.size();
+}
+void rsp_investor_info::clear_infos() {
+  infos_.Clear();
+}
+const ::risk::investor_info& rsp_investor_info::infos(int index) const {
+  // @@protoc_insertion_point(field_get:risk.rsp_investor_info.infos)
+  return infos_.Get(index);
+}
+::risk::investor_info* rsp_investor_info::mutable_infos(int index) {
+  // @@protoc_insertion_point(field_mutable:risk.rsp_investor_info.infos)
+  return infos_.Mutable(index);
+}
+::risk::investor_info* rsp_investor_info::add_infos() {
+  // @@protoc_insertion_point(field_add:risk.rsp_investor_info.infos)
+  return infos_.Add();
+}
+::google::protobuf::RepeatedPtrField< ::risk::investor_info >*
+rsp_investor_info::mutable_infos() {
+  // @@protoc_insertion_point(field_mutable_list:risk.rsp_investor_info.infos)
+  return &infos_;
+}
+const ::google::protobuf::RepeatedPtrField< ::risk::investor_info >&
+rsp_investor_info::infos() const {
+  // @@protoc_insertion_point(field_list:risk.rsp_investor_info.infos)
+  return infos_;
 }
 
 #endif  // PROTOBUF_INLINE_NOT_IN_HEADERS

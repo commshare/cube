@@ -208,48 +208,30 @@ void test_riskapi_querygroup()
     client.Send(common::TYPE_RISKAPI_QUERY_RISKGROUP_REQ, reply);
 }
 
-struct WhatifArgvComp
+void test_common()
 {
-    bool operator() (const risk::whatif_argv& lhs, const risk::whatif_argv& rhs) const
-    {
-        return lhs.type() < rhs.type() ||
-            lhs.instrument() < rhs.instrument() ||
-            lhs.range() < rhs.range() ||
-            lhs.base_value() < rhs.base_value();
-    }
-};
+    std::string userid;
+
+    cout << "input querygroup userid£º ";
+    cin >> userid;
+    risk::req_investor_info req_message;
+    req_message.set_requestid(10000);
+    req_message.add_investor(userid);
+
+    std::string reply;
+    req_message.AppendToString(&reply);
+    client.Send(common::TYPE_RISKAPI_INVESTORINFO_REQ, reply);
+}
 
 int main(int argc, char *argv[])
 {
-    std::map<risk::whatif_argv, double, WhatifArgvComp> book;
-    for (int i = 0; i < 1000000; ++i) {
-        risk::whatif_argv message;
-        message.set_type(1);
-        std::string inst = std::to_string(i%10);
-        message.set_instrument(inst);
-        message.set_range(1);
-        message.set_base_value(1);
-        double result = 0.0;
-        auto it = book.find(message);
-        if (it != book.end()) {
-             result = it->second;
-        }
-         else {
-            result = 99.99;
-            book[message] = result;
-        }
-    }
-
-    cout << "this test is over..." << endl;
-    getchar();
-    getchar();
-
     client.Start();
 
     int ch = '1';
     do {
         printf("the list: \n");
         printf("0: exit \n");
+        printf("w: test common\n");
         printf("1: test manager login \n");
         printf("2: test manager subs \n");
         printf("3: test manager adduser \n");
@@ -268,6 +250,9 @@ int main(int argc, char *argv[])
         switch (ch) {
         case '0':
             printf("exit OK ~~\n");
+            break;
+        case 'w':
+            test_common();
             break;
         case '1':
             test_manager_login();

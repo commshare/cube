@@ -199,3 +199,9 @@ message sub_whatif
     repeated whatif_argv infos = 1;
 }
 
+////////////////////////////////////////////////////////////////////////////////////////////////////
+message req_investor_info
+{
+    int32 requestid=1;
+    repeated string investor = 2;
+}

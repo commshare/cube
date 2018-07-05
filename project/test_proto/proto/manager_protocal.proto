@@ -193,6 +193,28 @@ message rtn_change_insmrgnrate
     repeated insmrgnrate_info infos = 1;
 }
 
+message req_add_insmrgnrate
+{
+    int32 requestid=1;
+    insmrgnrate_info info = 2;
+}
+
+message rtn_add_insmrgnrate
+{
+    insmrgnrate_info info = 1;
+}
+
+message req_del_insmrgnrate
+{
+    int32 requestid=1;
+    insmrgnrate_info info = 2;
+}
+
+message rtn_del_insmrgnrate
+{
+    insmrgnrate_info info = 1;
+}
+
 message req_option_argv
 {
     int32 requestid=1;
@@ -219,4 +241,88 @@ message req_option_argv_adj
     option_argv info=2;
 }
 
+message req_contract
+{
+    int32 requestid=1;
+}
+
+message contract_info
+{
+    string          contractcode=1;
+    string          productcode=2;
+    string          productkind=3;
+    string          exchangecode=4;
+    string          marketcode=5;
+    string          createdate=6;
+    string          opendate=7;
+    string          expiredate=8;
+    int32           multiplier=9;
+    double          pricetick=10;
+    string          contractname=11;
+    string          delivbegindate=12;
+    string          delivenddate=13;
+    string          excontractname=14;
+    string          exproductname=15;
+    string          ismrgndisc=16;
+    string          productclass=17;
+    double          baseprice=18;
+    string          optionstype=19;
+    double          strikeprice=20;
+    string          underlyinginstrid=21;
+    string          strikemode=22;
+    double          underlyingmultiple=23;
+}
+
+message rsp_contract
+{
+    rsp_head_info header=1;
+    repeated contract_info infos = 2;
+}
+
+message req_investor_info
+{
+    int32 requestid=1;
+    repeated string investor = 2;
+}
+
+message investor_info
+{
+    string          investorid=1;
+    string          brokerid=2;
+    string          investortype=3;
+    string          investorname=4;
+    string          identifiedcardtype=5;
+    string          identifiedcardno=6;
+    string          country=7;
+    string          province=8;
+    string          city=9;
+    string          birthday=10;
+    string          sex=11;
+    string          profession=12;
+    string          national=13;
+    double          capital=14;
+    string          capitalcurrency=15;
+    string          telephone=16;
+    string          address=17;
+    string          zipcode=18;
+    string          email=19;
+    string          memo=20;
+    string          openinvestorname=21;
+    string          orderinvestorname=22;
+    string          fundinvestorname=23;
+    string          settleinvestorname=24;
+    int32           isactive=25;
+    string          departmentid=26;
+    string          investorfullname=27;
+    int32           isemail=28;
+    int32           issms=29;
+    int32           isusingotp=30;
+    string          clientregion=31;
+}
+
+message rsp_investor_info
+{
+    rsp_head_info header=1;
+    repeated investor_info infos = 2;
+}
 
