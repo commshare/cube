@@ -128,6 +128,12 @@ private:
 
 int main(int argc, char *argv[])
 {
+    std::string date = "SHFE,CFFEX,DCE,CZCE,INE";
+    if (date.find("INE") == std::string::npos) {
+        cout << "hello" << endl;
+    }
+
+
     ConcreteStrategyA inst;
     Test<ConcreteStrategyA> one(inst);
     one.test(1, 2);

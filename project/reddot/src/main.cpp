@@ -15,7 +15,7 @@ eric     2018.4.27   1.0     Create
 #include <functional>
 #include <chrono>
 #include <thread>
-
+#include <ctime>
 #include "libeco/project.h"
 #include "libeco/dispatch_server.h"
 #include "libeco/monitor.h"
@@ -24,6 +24,7 @@ eric     2018.4.27   1.0     Create
 #include "libeco/file.h"
 #include "libeco/lexical_cast.h"
 #include "libeco/any.h"
+#include "libeco/util.h"
 using namespace std;
 
 using protocal_struct = std::map<std::string, eco::Any>;
@@ -128,9 +129,11 @@ int main(int argc, char **argv)
     GetSingle().print();
 
     std::set<protocal_struct, ProtocalStructComp> inst;
-    
+    std::this_thread::sleep_for(std::chrono::milliseconds(2000));
 
-    eco::DispatchServer<uint32_t, protocal_struct> dispatch;
+    cout << eco::util::local_date_string() << endl;
+
+    eco::DispatchServer<int64_t, protocal_struct> dispatch;
     dispatch.set_default(fun_default);
     dispatch.set_dispatch(10001, fun_eco);
     dispatch.run(1);

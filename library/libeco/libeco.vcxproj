@@ -158,10 +158,12 @@ copy $(ProjectDir)src\*.h*  $(SolutionDir)include\$(TargetName)</Command>
     <ClInclude Include="src\state.h" />
     <ClInclude Include="src\thread_pool.h" />
     <ClInclude Include="src\type.h" />
+    <ClInclude Include="src\util.h" />
     <ClInclude Include="src\windows_port.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\event.cpp" />
+    <ClCompile Include="src\util.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

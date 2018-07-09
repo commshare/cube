@@ -78,9 +78,15 @@
     <ClInclude Include="src\memoryex.h">
       <Filter>源文件</Filter>
     </ClInclude>
+    <ClInclude Include="src\util.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\event.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\util.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
