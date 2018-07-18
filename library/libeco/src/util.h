@@ -117,6 +117,12 @@ public:
     * 将yyyy-mm-dd和yyyy-mm-dd hh:mm:ss的格式的时间转换为时间戳
     */
     static long string_to_datestamp(char* str);
+
+#ifndef WIN32
+    static std::string get_adapter();
+    //获取本地IP
+    static std::string get_local_ip();
+#endif
 };
 
 }

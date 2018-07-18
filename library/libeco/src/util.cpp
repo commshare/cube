@@ -13,16 +13,22 @@ eric     2016.4.13   1.0     Create
 #ifdef _MSC_VER
 #include <Windows.h>
 #include <time.h>
-#include <assert.h>
 #else
 #include <sys/time.h>
 #include <string.h>
 #include <time.h>
 #include <unistd.h>
-#include "base.h"
 #include <stdlib.h>
+#include <netdb.h>
+#include <sys/stat.h>
+#include <sys/param.h>
+#include <arpa/inet.h>
+#include <sys/socket.h>
+#include <sys/ioctl.h>
+#include <net/if.h>
 #endif
 #include <stdio.h>
+#include <assert.h>
 #include <iostream>
 
 namespace eco {
@@ -662,5 +668,65 @@ long util::string_to_datestamp(char* str)
 
     return 0;
 }
+
+#ifndef WIN32
+
+std::string util::get_adapter()
+{
+    FILE* f = fopen("/proc/net/dev", "r");
+    if (!f) {
+        fprintf(stderr, "Open /proc/net/dev failed\n");
+        return "";
+    }
+    std::string inter = "";
+    char szLine[512] = {0};
+    fgets(szLine, sizeof(szLine), f);    /* eat line */
+    fgets(szLine, sizeof(szLine), f);
+    while(fgets(szLine, sizeof(szLine), f)) {
+        char szName[128] = {0};
+        int receive = 0;
+        int transmit = 0;
+        sscanf(szLine, "%s %d %d", szName, &receive, &transmit);
+        int nLen = strlen(szName);
+        if (nLen <= 0)continue;
+        if (szName[nLen-1] == ':') szName[nLen-1] = '\0';
+        if ((strcmp(szName, "lo") == 0) || ((receive == 0) && (transmit == 0)))continue;
+        inter = szName;
+    }
+
+    fclose(f);
+    f = NULL;
+    return inter;
+}
+
+std::string util::get_local_ip()
+{
+    int sock_get_ip;
+    char ipaddr[50];
+
+    struct sockaddr_in *sin;
+    struct ifreq ifr_ip;
+
+    if ((sock_get_ip=socket(AF_INET, SOCK_STREAM, 0)) == -1) {
+         printf("socket create failed!/n");
+         return "";
+    }
+
+    std::string adapter = get_adapter();
+    memset(&ifr_ip, 0, sizeof(ifr_ip));
+    strncpy(ifr_ip.ifr_name, adapter.c_str(), sizeof(ifr_ip.ifr_name) - 1);
+
+    if( ioctl( sock_get_ip, SIOCGIFADDR, &ifr_ip) < 0 ) {
+         return "";
+    }
+    sin = (struct sockaddr_in *)&ifr_ip.ifr_addr;
+    strcpy(ipaddr,inet_ntoa(sin->sin_addr));
+
+    close( sock_get_ip );
+
+    return std::string(ipaddr);
+}
+
+#endif
 
 }
