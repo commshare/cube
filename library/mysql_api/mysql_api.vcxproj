@@ -73,6 +73,7 @@
     <LinkIncremental>true</LinkIncremental>
     <OutDir>$(ProjectDir)bin\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)temp\$(ProjectName)</IntDir>
+    <TargetExt>.dll</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
@@ -89,21 +90,27 @@
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>COMMON_EXPORT;WIN32;_DEBUG;_WINDOWS;_USRDLL;MYSQL_API_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>COMMON_EXPORT;WIN32;_DEBUG;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>$(SolutionDir)include;$(SolutionDir)..\contrib</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)..\contrib\mysql\lib\;$(SolutionDir)lib\$(Configuration)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>ws2_32.lib;libmysql.lib;utility.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)..\contrib\mysql-5.7.22;$(SolutionDir)lib\$(Configuration)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>libmysql.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
       <Command>IF NOT EXIST $(SolutionDir)lib\$(Configuration) md $(SolutionDir)lib\$(Configuration)
+
 IF NOT EXIST $(SolutionDir)bin\$(Configuration) md $(SolutionDir)bin\$(Configuration)
+
 IF NOT EXIST $(SolutionDir)include\$(TargetName) md $(SolutionDir)include\$(TargetName)
+
 copy $(OutDir)$(TargetName).lib $(SolutionDir)lib\$(Configuration)
+
 copy $(OutDir)$(TargetName).dll $(SolutionDir)bin\$(Configuration)
+
 copy $(ProjectDir)src\*.h  $(SolutionDir)include\$(TargetName)</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>

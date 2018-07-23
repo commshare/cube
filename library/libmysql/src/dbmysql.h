@@ -12,15 +12,11 @@
 #ifndef DBMYSQL_H_
 #define DBMYSQL_H_
 
-#include "base.h"
-#ifdef _WIN32   
-#include "winsock.h"
-#endif 
-
-#include "unidb.h"
-#include "mysql.h"
+#include "mysql-5.7.22/include/mysql.h"
 #include <map>
 #include <unordered_map>
+#include "base.h"
+#include "unidb.h"
 
 namespace database
 {

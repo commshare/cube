@@ -15,6 +15,7 @@
 #include <stdint.h>
 #include <string>
 #include <vector>
+#include "base.h"
 
 namespace database
 {
@@ -80,7 +81,7 @@ namespace database
 
     /*********************************************************************/
 
-    class unidb
+    class COMMON_API unidb
         : public unidb_base
     {
     public:
@@ -159,7 +160,7 @@ namespace database
 
     /*********************************************************************/
 
-    class unidb_conn
+    class COMMON_API unidb_conn
         : public unidb_conn_base
     {
     public:

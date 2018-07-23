@@ -1,10 +1,6 @@
 #ifndef MYSQl_WRAPPER_H_ 
 #define MYSQl_WRAPPER_H_ 
 
-#ifdef _WIN32
-#include <winsock.h>
-#endif 
-
 #include <stdio.h>
 #include <string.h>
 #include <iostream> 
@@ -16,7 +12,7 @@
 #include <functional>
 
 #include "utility/utility.h"
-#include "mysql/include/mysql.h" 
+#include "mysql-5.7.22/include/mysql.h" 
 
 namespace mysql_wrapper {
 

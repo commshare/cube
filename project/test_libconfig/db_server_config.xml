@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<root>
+    <log_level>2</log_level>
+    <load_once>0</load_once>
+    <load_bcalendar>0</load_bcalendar>
+    <load_insmrgnrate>0</load_insmrgnrate>
+    <trial_server>
+        <ip note="试算服务IP">127.0.0.1</ip>
+        <port note="试算服务port">7777</port>
+    </trial_server>
+    <db_mysql>
+        <type note="数据库类型">mysql</type>
+        <host note="MYSQL服务地址">192.168.4.44</host>
+        <port note="MYSQL服务端口">3306</port>
+        <user note="MYSQL服务用户名">risk</user>
+        <pwd note="MYSQL服务密码">risk</pwd>
+        <dbname note="MYSQL服务名称">w_test</dbname>
+        <charset note="MYSQL字符集">utf8</charset>
+    </db_mysql>
+    
+    <db_oracle>
+        <type note="数据库类型">oracle</type>
+        <host note="oracle服务地址">//192.168.4.57/ORCL</host>
+        <port note="oracle服务端口">1521</port>
+        <user note="oracle服务用户名">system</user>
+        <pwd note="oracle服务密码">system</pwd>
+        <dbname note="oracle服务名称">orcl</dbname>
+        <charset note="oracle字符集">utf8</charset>
+    </db_oracle>
+    
+    <table_config>
+        <calendar>t_calendar</calendar>
+        <instrument>t_instrument</instrument>
+        <insmrgnrate>t_insmrgnrate</insmrgnrate>
+        <dcepair_inscom>t_dcepair_inscom</dcepair_inscom>
+        <bcalendar>b_calendar</bcalendar>
+        <fucontract>t_fucontract</fucontract>
+        <product>t_product</product>
+        <hsholdsinfo>t_hsholdsinfo</hsholdsinfo>
+        <stlinvestorposition>t_stlinvestorposition</stlinvestorposition>
+        <investordelivery>t_investordelivery</investordelivery>
+        <exchmarginrate>t_exchmarginrate</exchmarginrate>
+        <mrgnratetmpl>z_mrgnratetmpl</mrgnratetmpl>
+        <mrgnratetmplhldadj>z_mrgnratetmplhldadj</mrgnratetmplhldadj>
+        <mrgnratetmplpriceadj>z_mrgnratetmplpriceadj</mrgnratetmplpriceadj>
+        <productcomtmpl>z_productcomtmpl</productcomtmpl>
+        <investor>t_investor_orgin</investor>
+    </table_config>
+    
+    <oracle_table_config>
+        <calendar>t_calendar</calendar>
+        <instrument>t_instrument</instrument>
+        <insmrgnrate>T_INSMRGNRATE</insmrgnrate>
+        <dcepair_inscom>T_DCEPAIR_INSCOM</dcepair_inscom>
+        <bcalendar>B_CALENDAR</bcalendar>
+        <operation_instrument>operation_t_instrument</operation_instrument>
+        <settlement_instrument>settlement_t_instrument</settlement_instrument>
+        <settlement_cominstrument>settlement_t_cominstrument</settlement_cominstrument>
+        <settlement_product>settlement_t_product</settlement_product>
+        <hs_futures_hsholdsinfo>hs_futures_holdsinfo</hs_futures_hsholdsinfo>
+        <settlement_investordelivery>settlement_t_investordelivery</settlement_investordelivery>
+        <settlement_exchmarginrate>settlement_t_exchmarginrate</settlement_exchmarginrate>
+        <mrgnratetmpl>Z_MRGNRATETMPL</mrgnratetmpl>
+        <mrgnratetmplhldadj>Z_MRGNRATETMPLHLDADJ</mrgnratetmplhldadj>
+        <mrgnratetmplpriceadj>Z_MRGNRATETMPLPRICEADJ</mrgnratetmplpriceadj>
+        <productcomtmpl>Z_PRODUCTCOMTMPL</productcomtmpl>
+        <settlement_investor>settlement_t_investor</settlement_investor>
+    </oracle_table_config>
+    
+    <alarm_info>
+        <hour>8</hour>
+        <minute>30</minute>
+        <second>0</second>
+    </alarm_info>
+    <open_work_time>08:30:00</open_work_time>
+    <close_work_time>15:30:00</close_work_time>
+    
+    <hsholds_time>
+        <start_time>10:00:00</start_time>
+        <stop_time>16:00:00</stop_time>
+    </hsholds_time>
+    
+    <hsholds_interval>30</hsholds_interval>
+    
+</root>
