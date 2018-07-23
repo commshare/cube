@@ -70,6 +70,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libeco", "library\libeco\li
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libmysql", "library\libmysql\libmysql.vcxproj", "{A2F531C4-001A-456F-B9DF-344C6EECD36D}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libconfig", "library\libconfig\esunnyconf.vcxproj", "{C00FA4D4-5E85-4AC3-A658-05C550A3B7CE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Mixed Platforms = Debug|Mixed Platforms
@@ -484,6 +486,22 @@ Global
 		{A2F531C4-001A-456F-B9DF-344C6EECD36D}.Release|x64.Build.0 = Release|x64
 		{A2F531C4-001A-456F-B9DF-344C6EECD36D}.Release|x86.ActiveCfg = Release|Win32
 		{A2F531C4-001A-456F-B9DF-344C6EECD36D}.Release|x86.Build.0 = Release|Win32
+		{C00FA4D4-5E85-4AC3-A658-05C550A3B7CE}.Debug|Mixed Platforms.ActiveCfg = Debug|Win32
+		{C00FA4D4-5E85-4AC3-A658-05C550A3B7CE}.Debug|Mixed Platforms.Build.0 = Debug|Win32
+		{C00FA4D4-5E85-4AC3-A658-05C550A3B7CE}.Debug|Win32.ActiveCfg = Debug|Win32
+		{C00FA4D4-5E85-4AC3-A658-05C550A3B7CE}.Debug|Win32.Build.0 = Debug|Win32
+		{C00FA4D4-5E85-4AC3-A658-05C550A3B7CE}.Debug|x64.ActiveCfg = Debug|x64
+		{C00FA4D4-5E85-4AC3-A658-05C550A3B7CE}.Debug|x64.Build.0 = Debug|x64
+		{C00FA4D4-5E85-4AC3-A658-05C550A3B7CE}.Debug|x86.ActiveCfg = Debug|Win32
+		{C00FA4D4-5E85-4AC3-A658-05C550A3B7CE}.Debug|x86.Build.0 = Debug|Win32
+		{C00FA4D4-5E85-4AC3-A658-05C550A3B7CE}.Release|Mixed Platforms.ActiveCfg = Release|Win32
+		{C00FA4D4-5E85-4AC3-A658-05C550A3B7CE}.Release|Mixed Platforms.Build.0 = Release|Win32
+		{C00FA4D4-5E85-4AC3-A658-05C550A3B7CE}.Release|Win32.ActiveCfg = Release|Win32
+		{C00FA4D4-5E85-4AC3-A658-05C550A3B7CE}.Release|Win32.Build.0 = Release|Win32
+		{C00FA4D4-5E85-4AC3-A658-05C550A3B7CE}.Release|x64.ActiveCfg = Release|x64
+		{C00FA4D4-5E85-4AC3-A658-05C550A3B7CE}.Release|x64.Build.0 = Release|x64
+		{C00FA4D4-5E85-4AC3-A658-05C550A3B7CE}.Release|x86.ActiveCfg = Release|Win32
+		{C00FA4D4-5E85-4AC3-A658-05C550A3B7CE}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -514,5 +532,6 @@ Global
 		{C93E8BD8-258B-4527-AC11-18BD5B5E2E92} = {C40D92BC-7224-45B9-9295-F07A6014A9F9}
 		{2369670A-DC3D-49EF-A80F-EA214A27215C} = {C40D92BC-7224-45B9-9295-F07A6014A9F9}
 		{A2F531C4-001A-456F-B9DF-344C6EECD36D} = {C40D92BC-7224-45B9-9295-F07A6014A9F9}
+		{C00FA4D4-5E85-4AC3-A658-05C550A3B7CE} = {C40D92BC-7224-45B9-9295-F07A6014A9F9}
 	EndGlobalSection
 EndGlobal
