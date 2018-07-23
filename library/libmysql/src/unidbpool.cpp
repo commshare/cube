@@ -32,6 +32,11 @@ db_conn_pool::~db_conn_pool()
         isrunning_ = false;
     }
 
+    if (ptr_reconnect_->joinable()) {
+        ptr_reconnect_->join();
+        ptr_reconnect_.reset();
+    }
+
     release_all_conns();
 
     if(db_) {
