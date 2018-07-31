@@ -107,7 +107,8 @@ void Session::do_receive(const transaction_head& head, const transaction_additio
     const char* body)
 {
     if (!additional.hasnext_ && !additional.serialnumber_) {
-        Dispatcher::_Instance().DispatchTransaction(shared_from_this(), std::make_shared<transaction>(&head, body));
+        Dispatcher::_Instance().DispatchTransaction(shared_from_this(), 
+            std::make_shared<transaction>(&head, &additional, body));
     }
     else {
         //multi pack
@@ -118,7 +119,7 @@ void Session::do_receive(const transaction_head& head, const transaction_additio
             }
             transaction_head header(head.transaction_type_, receive_buffer_.length());
             Dispatcher::_Instance().DispatchTransaction(shared_from_this(), 
-                std::make_shared<transaction>(&header, &receive_buffer_[0]));
+                std::make_shared<transaction>(&header, &additional, &receive_buffer_[0]));
             receive_buffer_.clear();
         }
     }
@@ -162,7 +163,8 @@ void Session::handle_read(boost::system::error_code ec, std::size_t length)
                 buffer_read_.retrieve(Trans_Head_Length_);
                 transaction_additional* addition_ptr = (transaction_additional*)buffer_read_.peek();
                 buffer_read_.retrieve(Trans_Head_Additional_Length_);
-                if (head_ptr->body_length_) {
+                if (head_ptr->transaction_type_ != kHeartBeatServer && 
+                    head_ptr->transaction_type_ != kHeartBeatClient) {
                     do_receive(*head_ptr, *addition_ptr, buffer_read_.peek());
                 }
                 else {

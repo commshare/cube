@@ -194,7 +194,8 @@ void clientapi::handle_read(boost::system::error_code ec, std::size_t length)
                 buffer_read_.retrieve(Trans_Head_Length_);
                 transaction_additional* addition_ptr = (transaction_additional*)buffer_read_.peek();
                 buffer_read_.retrieve(Trans_Head_Additional_Length_);
-                if (head_ptr->body_length_) {
+                if (head_ptr->transaction_type_ != kHeartBeatClient && 
+                    head_ptr->transaction_type_ != kHeartBeatServer) {
                     do_receive(*head_ptr, *addition_ptr, buffer_read_.peek());
                 }
                 else {
