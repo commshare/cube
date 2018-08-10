@@ -28,6 +28,7 @@ namespace eco{;
 //若文件不存在则建立该文件。
 //"a+"：以附加方式打开可读写的文件。若文件不存在，则会建立该文件，
 //如果文件存在，写入的数据会被加到文件尾后，即文件原先的内容会被保留。（原来的EOF符不保留）
+//"ab+"读写打开一个二进制文件，允许读，或在文件末追加数据。
 
 enum FILE_SEEK_TYPE
 {
@@ -112,14 +113,14 @@ public:
         return m_fp == nullptr;
     }
 
-    inline void read(IN char* buf, IN size_t size)
+    inline int read(IN char* buf, IN size_t size)
     {
-        ::fread(buf, 1, size, m_fp);
+        return ::fread(buf, 1, size, m_fp);
     }
 
-    inline void write(IN const char* buf, IN size_t size)
+    inline int write(IN const char* buf, IN size_t size)
     {
-        ::fwrite(buf, size, 1, m_fp);
+        return ::fwrite(buf, size, 1, m_fp);
     }
 
     inline void flush()

@@ -128,11 +128,28 @@ private:
 
 int main(int argc, char *argv[])
 {
-    std::string date = "SHFE,CFFEX,DCE,CZCE,INE";
-    if (date.find("INE") == std::string::npos) {
-        cout << "hello" << endl;
-    }
+    std::string data;
+    data.resize(10);
 
+    cout << data.size() << endl;
+
+    std::chrono::time_point<std::chrono::system_clock> begin_clock = std::chrono::system_clock::now();
+
+    std::chrono::system_clock::time_point now = std::chrono::system_clock::now();
+    std::time_t time = std::chrono::system_clock::to_time_t(now +
+        std::chrono::hours(24 * 5));
+    struct tm ti = *std::localtime(&time);
+
+    char date_time_buf[32];
+    sprintf(date_time_buf, "%04d-%02d-%02d %02d:%02d:%02d", 1900 + ti.tm_year,
+        ti.tm_mon + 1, ti.tm_mday, ti.tm_hour, ti.tm_min, ti.tm_sec);
+
+    std::cout << date_time_buf << std::endl;
+
+
+    auto end_clock = std::chrono::system_clock::now();
+    std::cout << std::chrono::duration_cast<std::chrono::microseconds>
+        (end_clock - begin_clock).count() << std::endl;
 
     ConcreteStrategyA inst;
     Test<ConcreteStrategyA> one(inst);
