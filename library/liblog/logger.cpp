@@ -93,11 +93,11 @@ namespace light
 
     public:
         impl();
+        ~impl();
 
         // init attributes.
         void InitAttributes();
 
-        // �첽�ֵȼ������־
         void InitLevelSink();
 
         // init console sink.
@@ -106,19 +106,15 @@ namespace light
 
         template<typename sink_type>
         void InitPersistSink(bool is_auto_flush);
-
-        // get logger object.
-        inline Logger::logger_mt& GetLogger()
-        {
-            return m_logger;
-        }
-
-    private:
-        Logger::logger_mt m_logger;
     };
 
     Logger::impl::impl()
     {
+    }
+
+    Logger::impl::~impl()
+    {
+        logging::core::get()->remove_all_sinks();
     }
 
     void Logger::impl::InitAttributes()
@@ -141,8 +137,7 @@ namespace light
 
     void Logger::impl::InitLevelSink()
     {
-        for (int i = trace; i <= fatal; ++i) 
-		{
+        for (int i = trace; i <= fatal; ++i) {
             std::stringstream allfilename;
             allfilename << "logs/level_" << (SeverityLevel)i << "_%Y%m%d_%N.log";
 
@@ -270,10 +265,5 @@ namespace light
     void Logger::Enable(bool is_enabled)
     {
         logging::core::get()->set_logging_enabled(is_enabled);
-    }
-
-    Logger::logger_mt& Logger::GetMt()
-    {
-        return m_impl->GetLogger();
     }
 }

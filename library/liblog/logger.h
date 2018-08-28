@@ -52,9 +52,6 @@ namespace light
         Logger();
 
     public:
-        typedef boost::log::sources::severity_logger_mt<
-            SeverityLevel> logger_mt;
-
         ~Logger();
 
         static Logger& Instance()
@@ -63,7 +60,6 @@ namespace light
             return instance_;
         }
 
-        // �첽�ֵȼ������־
         void InitLevelLog();
 
         // init console sink.
@@ -82,9 +78,6 @@ namespace light
 
         /*@ open logging.*/
         void Enable(bool is_enabled = true);
-
-        // get logger object.
-        logger_mt& GetMt();
 
     private:
         class impl;
