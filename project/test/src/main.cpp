@@ -5,6 +5,7 @@
 
 #include <iostream>
 #include <string>
+#include <fstream>
 #include <sstream>
 #include <memory>
 #include <vector>
@@ -37,25 +38,25 @@ using namespace std;
 class MyClass
 {
 public:
-    MyClass(int i = 100);
+    MyClass(int i, double j);
 
     ~MyClass() 
     {
         cout << __FUNCTION__ << endl;
     };
 
-    void test()
+    void test() const
     {
         cout << "hello world" << endl;
     }
 private:
-
+    int num;
 };
 
-MyClass::MyClass(int i)
+MyClass::MyClass(int i, double j)
 {
     cout << __FUNCTION__ << endl;
-    cout << i << endl;
+    num = i;
 }
 
 template <typename Derived>
@@ -127,11 +128,13 @@ private:
 };
 
 int main(int argc, char *argv[])
-{
-    std::string data;
-    data.resize(10);
+{   
+    std::string str = "hello";
+    std::size_t i = str.find('e');
 
-    cout << data.size() << endl;
+    if (i == std::string::npos) {
+        cout << "hello";
+    }
 
     std::chrono::time_point<std::chrono::system_clock> begin_clock = std::chrono::system_clock::now();
 
