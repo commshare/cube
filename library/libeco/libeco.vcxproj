@@ -157,6 +157,7 @@ copy $(ProjectDir)src\*.h*  $(SolutionDir)include\$(TargetName)</Command>
     <ClInclude Include="src\server_status.h" />
     <ClInclude Include="src\state.h" />
     <ClInclude Include="src\thread_pool.h" />
+    <ClInclude Include="src\timer.h" />
     <ClInclude Include="src\type.h" />
     <ClInclude Include="src\util.h" />
     <ClInclude Include="src\windows_port.h" />
