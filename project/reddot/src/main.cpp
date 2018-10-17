@@ -126,6 +126,10 @@ struct ProtocalStructComp
 int main(int argc, char **argv)
 {
     cout << "hello reddot" << endl;
+    std::string strikeprice = "100.2343";
+    double price = eco::lexical_cast<double>(strikeprice);
+    cout << price << endl;
+
     GetSingle().print();
 
     std::set<protocal_struct, ProtocalStructComp> inst;

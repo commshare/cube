@@ -1,6 +1,7 @@
 #ifndef LEXICAL_CAST_H_
 #define LEXICAL_CAST_H_
 
+#include <cstring>
 #include <iostream>
 #include <memory>
 #include <string>

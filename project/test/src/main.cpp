@@ -129,12 +129,10 @@ private:
 
 int main(int argc, char *argv[])
 {   
-    std::string str = "hello";
-    std::size_t i = str.find('e');
-
-    if (i == std::string::npos) {
-        cout << "hello";
-    }
+    std::vector<char> sql;
+    sql.resize(1024);
+    snprintf(sql.data(), 1024, "hello world");
+    cout << sql.data() << endl;
 
     std::chrono::time_point<std::chrono::system_clock> begin_clock = std::chrono::system_clock::now();
 
