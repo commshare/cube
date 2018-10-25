@@ -127,7 +127,7 @@ int main(int argc, char **argv)
 {
     cout << "hello reddot" << endl;
     std::string strikeprice = "100.2343";
-    double price = eco::lexical_cast<double>(strikeprice);
+    double price = eco::lexical_cast<double>(strikeprice.c_str());
     cout << price << endl;
 
     GetSingle().print();
