@@ -748,3 +748,8 @@ scp Trade_Gateway.exe test@192.168.4.10:/home/test/test/risk/gtja/trade_gateway
 
 //google
 http://www.huizhanzhang.com/2017/03/google-mirror.html
+
+scp /home/shengkaishan/trunk/EsunnyRiskServer/bin//debug/esunny_server.exe risk@192.168.4.44:/home/risk/app/esunny_server
+scp /home/shengkaishan/trunk/EsunnyRiskServer/bin//debug/quote_offer.exe risk@192.168.4.44:/home/risk/app/quote_offer
+scp /home/shengkaishan/trunk/EsunnyRiskServer/bin//debug/gamma_server.exe risk@192.168.4.44:/home/risk/app/gamma
+scp /home/shengkaishan/trunk/EsunnyRiskServer/bin//debug/trial_server.exe risk@192.168.4.44:/home/risk/app/trial
