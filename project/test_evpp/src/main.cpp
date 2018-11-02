@@ -49,6 +49,7 @@ static int periodic_run_count = 0;
 static void PeriodicFunc() {
     periodic_run_count++;
     LOG_INFO << "PeriodicFunc is called , periodic_run_count=" << periodic_run_count;
+    LOG_INFO << "thread_id=" << std::this_thread::get_id();
 }
 
 void TestEventLoop(int argc, char* argv[])

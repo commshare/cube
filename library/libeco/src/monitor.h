@@ -4,6 +4,7 @@
 #include <mutex>
 #include <condition_variable>
 #include <chrono> 
+#include "project.h"
 
 namespace eco{;
 
@@ -20,14 +21,9 @@ public:
     {}
 
     /*@ reset monitor to wait.*/
-    inline std::mutex& mutex()
-    {
-        return m_mutex;
-    }
-
-    /*@ reset monitor to wait.*/
     inline void reset(IN int32_t task_count = 1)
     {
+        std::unique_lock<std::mutex> lock(m_mutex);
         m_task_count = task_count;
     }
 
@@ -48,7 +44,7 @@ public:
     * @ return: if tasks finised: ok; if tasks fail: return fail; else return
     timeout.
     */
-    inline int timed_wait(IN int32_t millsec)
+    inline eco::Result timed_wait(IN int32_t millsec)
     {
         std::unique_lock<std::mutex> lock(m_mutex);
         if (m_task_count > 0)
