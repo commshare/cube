@@ -70,7 +70,7 @@ void LightService::del_session(std::shared_ptr<Session> s)
 void LightService::send(int sessionid, transaction_ptr trans)
 {
     auto it = sessions_.find(sessionid);
-    if (sessions_.end() != it && it->second)
+    if (sessions_.end() != it && it->second && it->second->connected())
     {
         it->second->send(*trans->get_head_ptr(), trans->get_body_ptr());
     }

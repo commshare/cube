@@ -59,6 +59,11 @@ void Session::send(const transaction_head& head, const char* body)
         std::make_shared<transaction>(&head, body)));
 }
 
+bool Session::connected() const
+{
+    return is_connected_;
+}
+
 void Session::deliver(transaction_ptr trans)
 {
     do_send(*trans->get_head_ptr(), trans->get_body_ptr());
@@ -155,6 +160,16 @@ void Session::handle_read(boost::system::error_code ec, std::size_t length)
             if (buffer_read_.readableBytes() < 
                 head_ptr->body_length_ + transaction::get_additionallength()) {
                 //only head read complete
+                if ((size_t)head_ptr->body_length_ > Buffer::kInitialSize - transaction::get_additionallength()) {
+                    STLOG_ERROR << "body lenth error, read error session 0x"
+                        << std::setbase(16) << sessionid_
+                        << ", errorid = " << ec.value()
+                        << ", length = " << length
+                        << ", bodylenth = " << head_ptr->body_length_
+                        << ", transactionid = " << head_ptr->transaction_type_;
+                    stop(std::string("handle read error: ") + "bodylenth error");
+                    return;
+                }
                 buffer_read_.ensureWritableBytes( head_ptr->body_length_ + 
                     transaction::get_additionallength() - buffer_read_.readableBytes());
                 break;

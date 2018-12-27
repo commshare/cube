@@ -21,7 +21,7 @@ public:
     void start();
     void stop(const std::string& message);
     void send(const transaction_head& head, const char* body);
-
+    bool connected() const;
 private:
     void deliver(transaction_ptr trans);
     void do_send(const transaction_head& head, const char* body);
