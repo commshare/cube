@@ -16,6 +16,8 @@ eric     2018.4.27   1.0     Create
 #include <chrono>
 #include <thread>
 #include <ctime>
+#include <regex>
+#include <tuple>
 #include "libeco/project.h"
 #include "libeco/dispatch_server.h"
 #include "libeco/monitor.h"
@@ -25,6 +27,8 @@ eric     2018.4.27   1.0     Create
 #include "libeco/lexical_cast.h"
 #include "libeco/any.h"
 #include "libeco/util.h"
+#include "libeco/md5.h"
+
 using namespace std;
 
 using protocal_struct = std::map<std::string, eco::Any>;
@@ -123,8 +127,66 @@ struct ProtocalStructComp
     }
 };
 
+bool GetContractInfo(IN const std::string& str, OUT protocal_struct& msg)
+{
+    auto it = str.find('&');
+    if (it == std::string::npos) return false;
+    std::size_t i = 0;
+    for (i = 0; i < str.size(); ++i) {
+        if (isdigit(str[i])) break;
+    }
+    msg["commodityno"] = str.substr(0, i);
+    msg["contractno1"] = str.substr(i, it - i);
+    std::size_t j = 0;
+    for (j = it+1; j < str.size(); ++j) {
+        if (isdigit(str[j])) break;
+    }
+    msg["contractno2"] = str.substr(j);
+
+    return true;
+}
+
+
 int main(int argc, char **argv)
 {
+
+    int random = 7;
+    std::string tmp = "";
+    std::string src = std::string("9999") + "9781888";
+    for (const auto &val : src) {
+        char x = ((int)val + random) % 255;
+        tmp += x;
+    }
+
+    std::string result = eco::md5(tmp.c_str());
+    cout << result << endl;
+
+    string str = "181123084338.475739";
+    std::string date, time;
+    if (str.size() > 12) {
+        char year[2], month[2], day[2], hour[2], minute[2], second[2];
+        sscanf(str.c_str(), "%2s%2s%2s%2s%2s%2s", year, month, day, hour, minute, second);
+        date = std::string("20") + year + std::string("-") + month + std::string("-") + day;
+        time = hour + std::string(":") + minute + std::string(":") + second;
+    }
+
+    
+
+    typedef std::tuple<std::string, std::string> mkey;
+
+    std::set<mkey> map_t;
+    map_t.insert(std::make_tuple("CME", "SR901"));
+    map_t.insert(std::make_tuple("CME", "SR601"));
+    map_t.insert(std::make_tuple("CME", "SR911"));
+
+    for (auto val : map_t) {
+        cout << std::get<1>(val) << endl;
+    }
+
+    std::string str1 = "ZB1903&ZB1906";
+    protocal_struct msg;
+    GetContractInfo(str1, msg);
+
     cout << "hello reddot" << endl;
     std::string strikeprice = "100.2343";
     double price = eco::lexical_cast<double>(strikeprice.c_str());

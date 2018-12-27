@@ -129,6 +129,14 @@ private:
 
 int main(int argc, char *argv[])
 {   
+    std::vector<int> v_num;
+    v_num.resize(4, 100);
+
+     if (!v_num.empty()) {
+        v_num.clear();
+        cout << v_num.size() << endl;
+    }
+
     std::vector<char> sql;
     sql.resize(1024);
     snprintf(sql.data(), 1024, "hello world");
