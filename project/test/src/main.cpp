@@ -33,7 +33,6 @@
 #include <stdexcept>
 #include <typeindex>
 #include <exception>
-using namespace std;
 
 class MyClass
 {
@@ -42,12 +41,12 @@ public:
 
     ~MyClass() 
     {
-        cout << __FUNCTION__ << endl;
+        std::cout << __FUNCTION__ << std::endl;
     };
 
     void test() const
     {
-        cout << "hello world" << endl;
+        std::cout << "hello world" << std::endl;
     }
 private:
     int num;
@@ -55,92 +54,27 @@ private:
 
 MyClass::MyClass(int i, double j)
 {
-    cout << __FUNCTION__ << endl;
+    std::cout << __FUNCTION__ << std::endl;
     num = i;
 }
 
-template <typename Derived>
-class Strategy
+template <typename T1, typename T2, 
+    template<typename T, typename = std::allocator<T> > class Container>
+class Relation
 {
-public:
-    Strategy(void)
-    {
-        cout << "Strategy....." << endl;
-    }
-    virtual ~Strategy()
-    {
-        cout << "~Strategy....." << endl;
-    }
-
-    //由于虚函数不能是模板函数，故使用c++ template多态的CRTP 模式
-    template<typename ...Args>
-    void VirAlgrithmInterface(Args...args)
-    {
-        static_cast<Derived&>(*this).AlgrithmInterface(args...);
-    }
-
-    template<typename ...Args>
-    void AlgrithmInterface(Args...args)
-    {
-        std::cout << "Strategy::AlgrithmInterface\n";
-    }
-
-protected:
 private:
-};
-
-template <typename T>
-class Test
-{
-public:
-    Test(const Strategy<T>& t)
-    : inst(t)
-    {}
-
-    void test(int a, int b)
-    {
-        inst.VirAlgrithmInterface(a, b);
-    }
-
-private:
-    Strategy<T> inst;
-};
-
-class ConcreteStrategyA : public Strategy<ConcreteStrategyA>
-{
-public:
-    ConcreteStrategyA()
-    {
-        cout << "ConcreteStrategyA....." << endl;
-    }
-    virtual ~ConcreteStrategyA()
-    {
-        cout << "~ConcreteStrategyA....." << endl;
-    }
-
-    void AlgrithmInterface(int a, int b)
-    {
-        cout << "testConcreteStrategyA....." << a << ", " << b << endl;
-    }
-
-protected:
-private:
+    Container<T1> dom1;
+    Container<T2> dom2;
 };
 
 int main(int argc, char *argv[])
-{   
-    std::vector<int> v_num;
-    v_num.resize(4, 100);
-
-     if (!v_num.empty()) {
-        v_num.clear();
-        cout << v_num.size() << endl;
-    }
+{
+    Relation<int, double, std::list> relation;
 
     std::vector<char> sql;
     sql.resize(1024);
     snprintf(sql.data(), 1024, "hello world");
-    cout << sql.data() << endl;
+    std::cout << sql.data() << std::endl;
 
     std::chrono::time_point<std::chrono::system_clock> begin_clock = std::chrono::system_clock::now();
 
@@ -155,14 +89,9 @@ int main(int argc, char *argv[])
 
     std::cout << date_time_buf << std::endl;
 
-
     auto end_clock = std::chrono::system_clock::now();
     std::cout << std::chrono::duration_cast<std::chrono::microseconds>
         (end_clock - begin_clock).count() << std::endl;
-
-    ConcreteStrategyA inst;
-    Test<ConcreteStrategyA> one(inst);
-    one.test(1, 2);
 
     getchar();
     return 0;

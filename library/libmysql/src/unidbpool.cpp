@@ -22,6 +22,7 @@ db_conn_pool::db_conn_pool()
     : m_nconns(5)
     , db_(NULL)
     , isrunning_(false)
+    , ptr_reconnect_(nullptr)
 {
     m_vec_conn.clear();
 }
@@ -32,7 +33,7 @@ db_conn_pool::~db_conn_pool()
         isrunning_ = false;
     }
 
-    if (ptr_reconnect_->joinable()) {
+    if (ptr_reconnect_ != nullptr && ptr_reconnect_->joinable()) {
         ptr_reconnect_->join();
         ptr_reconnect_.reset();
     }

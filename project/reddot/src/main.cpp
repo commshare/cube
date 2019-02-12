@@ -150,17 +150,6 @@ bool GetContractInfo(IN const std::string& str, OUT protocal_struct& msg)
 int main(int argc, char **argv)
 {
 
-    int random = 7;
-    std::string tmp = "";
-    std::string src = std::string("9999") + "9781888";
-    for (const auto &val : src) {
-        char x = ((int)val + random) % 255;
-        tmp += x;
-    }
-
-    std::string result = eco::md5(tmp.c_str());
-    cout << result << endl;
-
     string str = "181123084338.475739";
     std::string date, time;
     if (str.size() > 12) {
