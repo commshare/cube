@@ -653,7 +653,7 @@ long util::local_datestamp()
     return mktime(&timeinfo1);
 }
 
-long util::string_to_datestamp(char* str)
+long util::string_to_datestamp(const char* str)
 {
     struct tm timeinfo1 = { 0 };
 
